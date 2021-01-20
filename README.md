@@ -1,2 +1,2 @@
 # LAMP-Contacts
-Test 2
+Discord Update Test.
