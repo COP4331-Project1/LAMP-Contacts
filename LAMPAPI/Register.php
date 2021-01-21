@@ -3,8 +3,8 @@
 	$inData = getRequestInfo();
 	
 	$id = 0;
-	$firstName = $inData["first"];
-    $lastName = $inData["last"];
+	$firstName = $inData["firstName"];
+    $lastName = $inData["lastName"];
     $userName = $inData["userName"];
     $password = $inData["password"];
 	$email = $inData["email"];
@@ -21,8 +21,8 @@
 	else
 	{
         // This is selecting based on login and password matching. We just need to select on username and thats it.
-        $sql = "SELECT ID,firstname,lastname FROM Users where Login='" . $inData["userName"] . "'";
-
+        $sql = "SELECT ID,FirstName,LastName FROM Users where Login='" . $inData["userName"] . "'";
+		
         $result = $conn->query($sql);
 
         if($result->num_rows > 0)
@@ -33,21 +33,21 @@
         }   
         else
         {
-            // It does not exist, therefore allow it to be created.
-            $sql = "insert into Users (firstName,lastName,userName,password,email) VALUES (" . $firstName . "," . $lastName . "," . $userName . "," . $password . "," $email ."')";
-
+			// It does not exist, therefore allow it to be created.
+			// Going to try without single quotes for each argument since it'd be annoying to concat.
+            $sql = "insert into Users (FirstName,LastName,UserName,Password,Email) VALUES (" . $firstName . "," . $lastName . "," . $userName . "," . $password . "," $email .")";
+			
             if($result = $conn->query($sql) != TRUE)
             {
                 returnWithError(conn->error);
             }
-
+			
+			returnWithError("Successful Register.");
         }
 		
         $conn->close();
 	}
     
-    returnWithError("");
-
 	function getRequestInfo()
 	{
 		// json_decode converts a json string into a mixed variable type. True to set associative type to true.
