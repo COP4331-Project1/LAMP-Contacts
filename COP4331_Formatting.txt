@@ -26,7 +26,7 @@ Delete Contact Endpoint
 - Using ID from JSON delete the contact from Contact Table.
 
 Delete Account Endpoint
-- userID 
+- userId
 
 Extra Ideas
 - Types of contacts where colors differentiate the type? (Work, Family, Friend)
