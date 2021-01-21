@@ -5,9 +5,9 @@
 	$id = 0;
 	$firstName = "";
 	$lastName = "";
-
+	
 	// localhost, admin_username, password, database
-	$conn = new mysqli("localhost", "superU", "group17COP4331C", "ricklein_COP4331");
+	$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
 
 	// Attempt to connect to the server, and return error message if failed.
 	if ($conn->connect_error) 
@@ -20,7 +20,7 @@
 		// Grab ID, firstName, and lastName of the input login and password, generating an associative array.
 		// The keys are then concatenated to generate a mysql command.
 		// Users will be the table being pulled from.
-		$sql = "SELECT ID,firstName,lastName FROM Users where Login='" . $inData["login"] . "' and Password='" . $inData["password"] . "'";
+		$sql = "SELECT ID,firstName,lastName FROM Users where Login='" . $inData["userName"] . "' and Password='" . $inData["password"] . "'";
 
 		// Perform a query on the database to test whether the login and password exist within the database.
 		$result = $conn->query($sql);

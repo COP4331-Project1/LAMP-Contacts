@@ -5,11 +5,12 @@
 	$id = 0;
 	$firstName = $inData["first"];
     $lastName = $inData["last"];
-    $login = $inData["log"];
-    $password = $inData["pass"];
+    $userName = $inData["userName"];
+    $password = $inData["password"];
+	$email = $inData["email"];
 
 	// localhost, admin_username, password, database
-	$conn = new mysqli("localhost", "superU", "group17COP4331C", "ricklein_COP4331");
+	$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
 
 	// Attempt to connect to the server, and return error message if failed.
 	if ($conn->connect_error) 
@@ -20,7 +21,7 @@
 	else
 	{
         // This is selecting based on login and password matching. We just need to select on username and thats it.
-        $sql = "SELECT ID,firstname,lastname FROM Users where Login='" . $inData["login"] . "'";
+        $sql = "SELECT ID,firstname,lastname FROM Users where Login='" . $inData["userName"] . "'";
 
         $result = $conn->query($sql);
 
@@ -33,7 +34,7 @@
         else
         {
             // It does not exist, therefore allow it to be created.
-            $sql = "insert into Users (First,Last,Log,Pass) VALUES (" . $firstName . "," . $lastName . "," . $login . "," . $password . "')";
+            $sql = "insert into Users (firstName,lastName,userName,password,email) VALUES (" . $firstName . "," . $lastName . "," . $userName . "," . $password . "," $email ."')";
 
             if($result = $conn->query($sql) != TRUE)
             {
@@ -41,7 +42,7 @@
             }
 
         }
-
+		
         $conn->close();
 	}
     

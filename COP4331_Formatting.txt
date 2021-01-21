@@ -1,0 +1,34 @@
+Using camelCase
+----------------------------------------
+Register Endpoint
+- userName
+- password
+- firstName
+- lastName
+- email
+
+Login Endpoint
+- userName
+- password
+
+Update and Add Endpoint
+- contactFirstName
+- contactLastName
+- phoneNumber
+- adress
+- email
+
+Search Endpoint
+- contactFirstName
+- contactLastName
+
+Delete Contact Endpoint
+- Using ID from JSON delete the contact from Contact Table.
+
+Delete Account Endpoint
+- userID 
+
+Extra Ideas
+- Types of contacts where colors differentiate the type? (Work, Family, Friend)
+
+$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
