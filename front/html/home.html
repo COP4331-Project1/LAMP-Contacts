@@ -1,52 +1,93 @@
 <!DOCTYPE html>
 
 <head> 
-
-<script type="text/javascript" src="../js/home.js"></script>
+<script type="text/javascript" src="../js/code.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../css/home.css">	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
 </head>
 
 <body style="background-color:#f2f2f2; height:100vh;">
 
     <div class="container-fluid h-100 bg-light">
 
-    <div class = "row h-100"> 
+    <div class = "row h-100 w-100"> 
 
-    <div class = "col-2 bg-dark text-white" > 
+      <div class = "col-5 h-100 bg-dark" id = "contactSearch" > 
 
-        <div class = "d-flex justify-content-center flex-column"> 
-        </br>
-        <button type="button" class="btn btn-light">LogOut</button> </br>  
-        <button type="button" class="btn btn-light">Change Password</button></br>  
-        <button type="button" class="btn btn-light">LogOut</button> </br>  
-        <button type="button" class="btn btn-light">Change Password</button></br>  
+      <div class = "searchbox" style = "height:5% ">
+        <div class="input-group input-group-sm mb-0">
+        <input type = "text" class = "form-control" onchange = "search()" id = "searchbar" > 
         </div>
-            
-    </div>
+      </div>
 
-        <div class = "col-10 bg-light" id = "contacts_container"> 
+      <div class = "row h-75 w-100 bg-dark overflow-auto d-flex" id = "contactBox">
+        <div class = "contacts">
+        </div>
+      </div>
+
+       </div>
+
+        <div class = "col-7 h-100 bg-light"> 
+
+          <div class ="row" id = "navigation">
     
-        <div class = "row" id = "search_container"> 
- 
-        <input type = "text" onchange = "search()" id = "searchbar" > 
-
+          <nav class="navbar navbar-expand-sm navbar-light bg-light">   
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="../html/index.html">Log Out</span></a>
+                <a class="nav-item nav-link" href="../html/add.html">Add Contact</a>
+    
+            </div>
+          </div>
         </div>
 
-        <div class = "contacts"> 
+            <div class = "row h-100" id = "viewContacts">
 
-            
-     
+              <div class = "d-flex justify-content-center align-items-center">
+              <div class="card" style="width: 35rem; height: 35rem">
+
+
+                <div class="card-body" id = "contact">
+                 
+                    <span>
+                    <div class = "d-flex justify-content-inline"> 
+                    <h1>First Name : Name </h1> 
+                    <i class="bi-pencil"></i>
+                    </div>
+                  </span>
+
+                  <span>
+                    <div class = "d-flex justify-content-inline"> 
+                    <h1>Last Name : Name </h1> 
+                    <i class="bi-pencil"></i>
+                    </div>
+                  </span>
+
+                  <span>
+                    <div class = "d-flex justify-content-inline"> 
+                    <h1>Adress : Name </h1> 
+                    <i class="bi-pencil"></i>
+                    </div>
+                  </span>
+
+
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+          </nav>
+    
+      
         </div>
-    </div>
-</div>
-</div>
+        </div>
+        </div>
 
-
-
- 
-
-
+  
 </body>
