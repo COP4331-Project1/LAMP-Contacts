@@ -1,0 +1,38 @@
+Using camelCase
+----------------------------------------
+Register Endpoint
+- userName
+- password
+- firstName
+- lastName
+- email
+
+Login Endpoint
+- userName
+- password
+
+Update and Add Endpoint
+- contactFirstName
+- contactLastName
+- phoneNumber
+- adress
+- email
+
+Search Endpoint
+- contactFirstName
+- contactLastName
+
+Delete Contact Endpoint
+- Using ID from JSON delete the contact from Contact Table.
+
+Delete Account Endpoint
+- userId
+
+Extra Ideas
+- Types of contacts where colors differentiate the type? (Work, Family, Friend)
+
+$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
+
+Within mySql it is already...
+FirstName, LastName, Login, Password
+(this is just for reference if you have trouble getting results back from query due to different casing. We can probably alter them later if anything?)
