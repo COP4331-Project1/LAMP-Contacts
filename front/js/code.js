@@ -108,7 +108,7 @@ function search() {
 		fillSearchBox(JSONObject);
 
 		}
-		
+
 		console.log("Test");
 		xhr.send(jsonData)
 		}
@@ -224,7 +224,9 @@ function update(value){ //For updating the contact
 
 		var element = "." + value
 		var update = "#" + value + "text"
+		console.log(element)
 		var updateValue = $(update).val()
+		console.log(updateValue)
 		
 		var url = "http://159.203.70.233/LAMPAPI/showContact.php"
 
@@ -295,14 +297,17 @@ function modify(value) { //Just to replace the textvalue
 
 		var element = "." + value
 		var textId = value +"text"
-		console.log(textId)
+		
 		$(element).empty()
+		
 
-		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ textId +"' onchange = 'update(" + value + ")' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default'>" +
+		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ textId + "' onchange = update('" + value + "') aria-describedby='inputGroup-sizing-default'>" +
 		"</div>"
   
+		
 		$(element).append(input)
-		console.log(textId)
+		console.log("Test")
+		
 	}
 
 	
