@@ -1,15 +1,19 @@
 Using camelCase
 ----------------------------------------
+ShowContact Endpoint
+- Receieves contactId
+- Sends (firstName, lastName, phone, email, adress)
+
+
 Register Endpoint
-- userName
-- password
-- firstName
-- lastName
-- email
+- Receives (userName, password, firstName, lastName, email)
+- Checks whether there is a matching userName existing in User table.
+- Sends (Nothing I believe)
+
 
 Login Endpoint
-- userName
-- password
+- Receives (userName, password)
+- Sends (ID, firstName, lastName)
 
 Update and Add Endpoint
 - contactFirstName
@@ -23,10 +27,13 @@ Search Endpoint
 - contactLastName
 
 Delete Contact Endpoint
-- Using ID from JSON delete the contact from Contact Table.
+- Receives (contactId)
+- Can reference contact to remove based on the contactId given.
+- Sends (...)
 
 Delete Account Endpoint
-- userId
+- Receives (userId)
+- Sends (...)
 
 Extra Ideas
 - Types of contacts where colors differentiate the type? (Work, Family, Friend)
@@ -36,3 +43,21 @@ $conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
 Within mySql it is already...
 FirstName, LastName, Login, Password
 (this is just for reference if you have trouble getting results back from query due to different casing. We can probably alter them later if anything?)
+
+
+USER-
+ID
+DateCreated
+FirstName
+LastName
+UserName
+Password
+Email
+
+Contacts-
+CID
+contactFirstName
+contactLastName
+phoneNumber
+adress
+email
