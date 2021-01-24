@@ -55,7 +55,6 @@ function login() {
 
 }
 
-
 function register() {
 
 	var registerUsername = $(".registerUsername").val() //gets the username and password from the input field
@@ -102,26 +101,26 @@ function search() {
 	
 		if(this.readyState == 4 && this.status == 200) {
 			
-		var jsonObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
+		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		 //Will send the data and when the state changes will recieve a response
 		}
+
 		xhr.send(jsonData)
 		}
 	}	
 	catch(err) {
 		$(".contacts").append(err.message)
+		return;
 	}
 
 	$("#contacts").empty()
+	
+	var entries = JSONObject.entries
 
-	var contactFirstName = 'Ryan'
-	var contactLastName = 'Pattillo'
-
-	//var contactFirstName = JSONObject.results[i].contactFirstName
-	//var contactLastName = JSONObject.results[i].contactLastName
-	//contacts.push(JSONObject.results[i].contactID)
-
-	for(var i = 0 ; i < 20 ; i++){
+	for(var i = 0 ; i < entries ; i++){
+	var contactFirstName = JSONObject.results[i].contactFirstName
+	var contactLastName = JSONObject.results[i].contactLastName
+	contacts.push(JSONObject.results[i].contactID)	
 	var button = "<button type = 'button' class = 'btn btn-primary btn-sm bg-light text-dark' id = 'contact' onClick = showContact('" + contactFirstName + "','" + contactLastName + "','" + i +"') style = 'width:100%'> " +
     "<div class = 'd-flex justify-content-inline' id = 'flexFormat'>" +
 	"<div class = 'circle'><h4>"+ contactFirstName[0] + contactLastName[0] +"</h4></div>" +
@@ -283,10 +282,14 @@ function modify(value) { //Just to replace the textvalue
 		var textId = value +"text"
 		console.log(textId)
 		$(element).empty()
-		$(element).append("<input type = 'text' id = '"+ textId+ "' onchange = update('" + value + "') >")
+
+		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ textId +"' onchange = 'update(" + value + ")' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default'>" +
+		"</div>"
+  
+		$(element).append(input)
 		console.log(textId)
 	}
-	
+
 	
 function saveCookie(){ //Need to save cookies so if user refreshes page they are still remembered
 
@@ -297,5 +300,4 @@ function saveCookie(){ //Need to save cookies so if user refreshes page they are
     
     //Saves the cookie to keep track of the user
 }
-
 

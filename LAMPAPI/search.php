@@ -5,16 +5,18 @@
     
     $searchResults = "";
     $searchCount = 0;
-   
+    
 
     $conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
-	if ($conn->connect_error) 
-	{
-		returnWithError( $conn->connect_error );
-	} 
-	else
-        {
-        $sql = "select firstName,lastName,contactId from Users where firstName like '%" . $inData["search"] . "%' or lastName like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
+    
+    if ($conn->connect_error)
+    {
+        returnWithError( $conn->connect_error );
+    }
+    
+    else
+    {
+        $sql = "select firstName and lastName and contactId from Users where firstName like '%" . $inData["search"] . "%' or lastName like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
         
         $result = $conn->query($sql); #Will return an array
         
@@ -24,23 +26,22 @@
             {
                 if( $searchCount > 0 ) #After the firt search value
                 {
-                $searchResults .= ",";
+                    $searchResults .= ",";
                 }
                 $searchCount++;
-                $searchResults.= "{"."firstName:" . $row["firstName"] . "," . "lastName:". $row["lastName"]. "," . "contactId:". $row["contactId"]. "}";
+                $searchResults .= '{"firstName": '.$row["firstName"] .' ,"lastName":'.$row["lastName"].',"contactId":'.$row["contactId"].'},';
             }
+
+        returnWithInfo( $searchResults );
         }
+        
         else
         {
-            returnWithError( "No Records Found" );
+        returnWithError( "No Records Found" );
         }
         $conn->close();
     }
                           
-
-    returnWithInfo( $searchResults );
-                          
-    
     function getRequestInfo()
     {
         return json_decode(file_get_contents('php://input'), true);
@@ -58,9 +59,9 @@
         sendResultInfoAsJson( $retValue );
     }
     
-    function returnWithInfo( $searchResults )
+    function returnWithInfo( $searchResults,$searchCount )
     {
-        $retValue = '{"results":[' . $searchResults . '],"error":""}';
+        $retValue = '{"results":[' . $searchResults . '],"error":"",entries:'.$searchCount.'}';
         sendResultInfoAsJson( $retValue );
     }
     

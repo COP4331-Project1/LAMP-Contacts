@@ -145,14 +145,10 @@ select{
 }
 
 
-
-
 .informationBox {
 
     display:flex-column;
-    background-color:white;
-    border-radius: 5px;
-    width: auto;  
+    width: 100%;  
  }
  
  .informationContainer {
@@ -174,8 +170,9 @@ select{
  .homebackgroundImage {
  
     background-image: url("../../images/background.jpg");
+    background-size:cover;
     height:100%;
-    width:100%
+    width:100%;
  }
  
  .circle{
@@ -199,10 +196,20 @@ select{
  
     display:flex;
     height:100;
-    width:auto;
+    width:100;
     justify-content:flex-end;
-    align-items:flex-end;
  
  }
  
- 
+
+ #contactBox{
+
+    display:flex;
+    padding: 0%;
+    margin:0%;
+    height:100%;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+
+ }
