@@ -5,9 +5,9 @@ var contacts = []
 
 function openHTTP(url,action){
 
-	var xhr = new XMLHttpRequest()
-	xhr.open(action,url,true)
-	return xhr
+	var xhr = new XMLHttpRequest();
+	xhr.open(action,url,true);
+	return xhr;
 }
 
 function login() {
@@ -85,18 +85,15 @@ function register() {
 
 function search() {
 
-	contacts = [] //hold the returned contacts
+	 //hold the returned contacts
 
 	var contactSearch = $("#searchbar").val() //gets the value from the search bar
-
 	var	url = "http://159.203.70.233/LAMPAPI/search.php"
-
-	var xhr = openHTTP(url,"POST")
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	var jsonData = JSON.stringify({"contactSearch":contactSearch})
-
-	try {
-		
+	var xhr = openHTTP(url,"POST");
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	
+	try {	
 	
 		xhr.onreadystatechange = function() {
 	
@@ -104,29 +101,27 @@ function search() {
 			
 		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		 //Will send the data and when the state changes will recieve a response
-		console.log("No Error");
 		fillSearchBox(JSONObject);
-
 		}
 
-		console.log("Test");
-		xhr.send(jsonData)
-		}
+		};
+		xhr.send(jsonData);	
 	}	
 	catch(err) {
+
 		var errorMessage = "<h3>" + err.message + "</h3>"
-		console.log(errorMessage)
+		console.log(errorMessage)		
 		$("#contacts").append(errorMessage)
 		
 	}
 
-
-	 //Loop through all the values returned and add teh contacts
 }
 
 function fillSearchBox(JSONObject) {
 
 
+	console.log("Test")
+	contacts = []
 	$("#contacts").empty()
 	
 	var entries = JSONObject.entries
