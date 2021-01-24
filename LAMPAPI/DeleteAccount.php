@@ -13,7 +13,7 @@
 	else
 	{
 
-		$sql = "DELETE FROM 'Users' WHERE 'ID'=". $inData["userId"];
+		$sql = "DELETE FROM Users WHERE ID='". $inData["userId"] . "'";
 
 		if ($result = $conn->query($sql) != TRUE)
 		{
