@@ -13,7 +13,7 @@
 	else
 	{
 
-		$sql = "DELETE FROM 'Users' WHERE 'ID'=". $inData["userId"];
+		$sql = "DELETE FROM Users WHERE ID='". $inData["ID"] . "'";
 
 		if ($result = $conn->query($sql) != TRUE)
 		{
@@ -41,7 +41,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"ID":0,"firstName":"","lastName":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	

@@ -20,8 +20,8 @@
 		// Grab ID, firstName, and lastName of the input login and password, generating an associative array.
 		// The keys are then concatenated to generate a mysql command.
 		// Users will be the table being pulled from.
-		$sql = "SELECT ID,FirstName,LastName FROM Users where Login='" . $inData["userName"] . "' and Password='" . $inData["password"] . "'";
-		
+		$sql = "SELECT ID,FirstName,LastName FROM Users where UserName='" . $inData["userName"] . "' and Password='" . $inData["password"] . "'";
+
 		// Perform a query on the database to test whether the login and password exist within the database.
 		$result = $conn->query($sql);
 
@@ -58,13 +58,13 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"ID":0,"firstName":"","lastName":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
 	function returnWithInfo( $firstName, $lastName, $id )
 	{
-		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+		$retValue = '{"ID":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
