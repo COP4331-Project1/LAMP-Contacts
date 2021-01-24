@@ -15,12 +15,20 @@ function login() {
     var username = $("#loginName").val() //gets the username and password from the input field
     var password = $("#loginPassword").val()
 
-    var jsonData = JSON.stringify({"username" : username , "password":  password}) //Json is formatted in key value pairs
+    var jsonData = JSON.stringify({"userName" : username , "password":  password}) //Json is formatted in key value pairs
 
     url = "http://159.203.70.233/LAMPAPI/Login.php"
 
+<<<<<<< HEAD
 	
+=======
+
+	
+
+>>>>>>> b0693825b0535e27dc0d0f8d472698014a69f017
   	try {
+		var xhr = openHTTP(url,"POST")
+	        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 		var xhr = openHTTP(url,"POST")
 	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
