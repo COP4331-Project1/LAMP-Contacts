@@ -19,10 +19,11 @@ function login() {
 
     url = "http://159.203.70.233/LAMPAPI/Login.php"
 
-	var xhr = openHTTP(url,"POST")
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
+	
   	try {
+
+		var xhr = openHTTP(url,"POST")
+	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 		xhr.onreadystatechange = function() {
 
@@ -30,14 +31,14 @@ function login() {
 		
 		var jsonObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		
-		userId = jsonObject.id; //Gets the user ID form the databsae
+		userId = jsonObject.ID; //Gets the user ID form the databsae
 		
 		if( userId < 1 ) //Represents an error 
 		{
 			$("#loginInput").append("<p> User/Password combination incorrect </p>");
 			return;
 		}	
-
+		console.log(userId)
 		firstName = jsonObject.firstName; //Gets the first name
 		lastName = jsonObject.lastName;
 		window.location.href = "../html/home.html"
@@ -57,21 +58,23 @@ function login() {
 
 function register() {
 
-	var registerUsername = $(".registerUsername").val() //gets the username and password from the input field
-    var registerPassword = $(".registerPassword").val()
+	var firstName = "Ryan";
+	var lastName = "Pattillo";
+	var userName = $("#userName").val() //gets the username and password from the input field
+    var password =  $("#userName").val()
+	var email = $("#email").val()
+	var url = "http://159.203.70.233/LAMPAPI/Register.php"
 
-	var jsonData = JSON.stringify({"username" : registerUsername , "password":  registerPassword}) //Json 
+	var jsonData = JSON.stringify({"firstName":firstName,"lastName":lastName,"userName":userName , "password":  password , "email": email}) //Json 
 	
 	try {
 
 		var xhr = openHttp(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 		xhr.onreadystatechange = function() {
-
 		if(this.readyState == 4 && this.status == 200) {
 		
 		window.location.href = "index.html"
-
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
 		}
