@@ -19,13 +19,7 @@ function login() {
 
     url = "http://159.203.70.233/LAMPAPI/Login.php"
 
-<<<<<<< HEAD
-	
-=======
 
-	
-
->>>>>>> b0693825b0535e27dc0d0f8d472698014a69f017
   	try {
 		var xhr = openHTTP(url,"POST")
 	        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -69,7 +63,7 @@ function register() {
 	var firstName = "Ryan";
 	var lastName = "Pattillo";
 	var userName = $("#userName").val() //gets the username and password from the input field
-    var password =  $("#userName").val()
+    var password =  $("#password").val()
 	var email = $("#email").val()
 	var url = "http://159.203.70.233/LAMPAPI/Register.php"
 
