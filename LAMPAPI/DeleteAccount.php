@@ -13,7 +13,8 @@
 	else
 	{
 
-		$sql = "DELETE FROM Users WHERE ID='". $inData["ID"] . "'";
+		// Numbers do not need quotes.
+		$sql = "DELETE FROM Users WHERE ID=". $inData["ID"];
 
 		if ($result = $conn->query($sql) != TRUE)
 		{
