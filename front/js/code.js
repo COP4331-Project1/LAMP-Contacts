@@ -89,13 +89,14 @@ function search() {
 
 	var contactSearch = $("#searchbar").val() //gets the value from the search bar
 
-	var	url = "http://159.203.70.233//LAMPAPI/search.php"
+	var	url = "http://159.203.70.233/LAMPAPI/search.php"
+
+	var xhr = openHTTP(url,"POST")
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	var jsonData = JSON.stringify({"contactSearch":contactSearch})
 
 	try {
-
-		var xhr = openHTTP(url,"POST")
-		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-		var jsonData = JSON.stringify({"contactSearch":contactSearch})
+		
 	
 		xhr.onreadystatechange = function() {
 	
@@ -107,6 +108,8 @@ function search() {
 		fillSearchBox(JSONObject);
 
 		}
+		
+		console.log("Test");
 		xhr.send(jsonData)
 		}
 	}	
