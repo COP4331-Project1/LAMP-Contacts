@@ -89,7 +89,8 @@ function search() {
 
 	var contactSearch = $("#searchbar").val() //gets the value from the search bar
 	var	url = "http://159.203.70.233/LAMPAPI/search.php"
-	var jsonData = JSON.stringify({"contactSearch":contactSearch})
+	userID = 0;
+	var jsonData = JSON.stringify({"userId":userId, "contactSearch":contactSearch})
 	var xhr = openHTTP(url,"POST");
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	
