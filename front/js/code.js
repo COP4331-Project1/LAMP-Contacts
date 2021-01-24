@@ -104,13 +104,14 @@ function search() {
 		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		 //Will send the data and when the state changes will recieve a response
 		fillSearchBox(JSONObject);
-		
+
 		}
 		xhr.send(jsonData)
 		}
 	}	
 	catch(err) {
-		$(".contacts").append(err.message)
+		var errorMessage = "<h3>" + err.message + "</h3>"
+		$("#contacts").append(errorMessage)
 		
 	}
 
