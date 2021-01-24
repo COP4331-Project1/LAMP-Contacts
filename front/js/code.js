@@ -103,6 +103,7 @@ function search() {
 			
 		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		 //Will send the data and when the state changes will recieve a response
+		console.log("No Error");
 		fillSearchBox(JSONObject);
 
 		}
