@@ -12,8 +12,8 @@ function openHTTP(url,action){
 
 function login() {
 
-    var username = $(".username").val() //gets the username and password from the input field
-    var password = $(".password").val()
+    var username = $("#loginName").val() //gets the username and password from the input field
+    var password = $("#loginPassword").val()
 
     var jsonData = JSON.stringify({"username" : username , "password":  password}) //Json is formatted in key value pairs
 
@@ -44,8 +44,8 @@ function login() {
 		saveCookie(); //have firstName last name saved in scope.
 		}
 	}
-		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
-		
+
+	xhr.send(jsonData); //Will send the data and when the state changes will recieve a response	
 	}
     catch(err)
 	{
