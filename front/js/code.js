@@ -89,7 +89,7 @@ function search() {
 
 	var contactSearch = $("#searchbar").val() //gets the value from the search bar
 
-	var	url = "http://COP4331-17.com/LAMPAPI/search.php"
+	var	url = "http://159.203.70.233//LAMPAPI/search.php"
 
 	try {
 
@@ -111,6 +111,7 @@ function search() {
 	}	
 	catch(err) {
 		var errorMessage = "<h3>" + err.message + "</h3>"
+		console.log(errorMessage)
 		$("#contacts").append(errorMessage)
 		
 	}
