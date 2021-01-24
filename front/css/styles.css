@@ -143,3 +143,66 @@ select{
     font-family: "Times New Roman", Times, serif;
     color: #95060a;
 }
+
+
+
+
+.informationBox {
+
+    display:flex-column;
+    background-color:white;
+    border-radius: 5px;
+    width: auto;  
+ }
+ 
+ .informationContainer {
+ 
+    background-color:white;
+    border-radius: 25px;
+    width:100%;
+    height:100%;
+    padding : 5%
+ }
+ .titleBox {
+ 
+    display:flex;
+    justify-content : inline;
+    width: 100%
+ }
+ 
+ 
+ .homebackgroundImage {
+ 
+    background-image: url("../images/homebackground.jpg");
+    height:100%;
+    width:100%
+ }
+ 
+ .circle{
+ 
+ 
+    height: 100px;
+    width: 100px;
+    background-image: url("../images/homebackground.jpg");
+    border-radius: 50%;
+    text-align:center;
+ 
+ 
+ }
+ 
+ #contactAttribute {
+ 
+    font-family: "Trirong", serif;
+ }
+ 
+ #deleteButton {
+ 
+    display:flex;
+    height:100;
+    width:auto;
+    justify-content:flex-end;
+    align-items:flex-end;
+ 
+ }
+ 
+ 
