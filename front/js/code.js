@@ -103,15 +103,23 @@ function search() {
 			
 		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		 //Will send the data and when the state changes will recieve a response
+		fillSearchBox(JSONObject);
+		
 		}
-
 		xhr.send(jsonData)
 		}
 	}	
 	catch(err) {
 		$(".contacts").append(err.message)
-		return;
+		
 	}
+
+
+	 //Loop through all the values returned and add teh contacts
+}
+
+function fillSearchBox(JSONObject) {
+
 
 	$("#contacts").empty()
 	
@@ -131,7 +139,8 @@ function search() {
 	$("#contacts").append(button)
 	}
 
-	 //Loop through all the values returned and add teh contacts
+
+
 }
 
 function showContact(contactFirstName,contactLastName,contactNumber){
