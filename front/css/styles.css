@@ -1,7 +1,7 @@
 body
 {
     background-color: purple;
-    background-image: url(../images/Back.png) !important;
+    background-image: url(../../images/background.png) !important;
 }
 
 #title
