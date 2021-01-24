@@ -1,7 +1,7 @@
 body
 {
     background-color: purple;
-    background-image: url(../../images/background.png) !important;
+    background-image: url(../../images/background.jpg) ;
 }
 
 #title
@@ -173,7 +173,7 @@ select{
  
  .homebackgroundImage {
  
-    background-image: url("../images/homebackground.jpg");
+    background-image: url("../../images/background.jpg");
     height:100%;
     width:100%
  }
@@ -183,7 +183,7 @@ select{
  
     height: 100px;
     width: 100px;
-    background-image: url("../images/homebackground.jpg");
+    background-image: url("../../images/background.jpg");
     border-radius: 50%;
     text-align:center;
  
