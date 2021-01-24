@@ -11,7 +11,7 @@
     }
     else
     {
-        $sql = "DELETE FROM Contacts WHERE contactId='" . $inData["contactId"] . "'";
+        $sql = "DELETE FROM Contacts WHERE CID='" . $inData["CID"] . "'";
 
         if($result = $conn->query($sql) != TRUE)
         {
@@ -36,7 +36,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"ID":0,"firstName":"","lastName":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}   
 

@@ -13,11 +13,11 @@
 	else
 	{
 
-        $sql =  "UPDATE Contacts SET firstName='" . $inData["firstName"] . 
-                                    "',lastName='" . $inData["lastName"] .
+        $sql =  "UPDATE Contacts SET contactFirstName='" . $inData["contactFirstName"] . 
+                                    "',contactLastName='" . $inData["contactLastName"] .
                                     "',phoneNumber='" . $inData["phoneNumber"] .
                                     "',email='" . $inData["email"] .
-                                    "',adress='" . $inData["adress"] . "'";
+                                    "',address='" . $inData["address"] . "'";
 
 
 		if ($result = $conn->query($sql) != TRUE)
@@ -44,7 +44,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"ID":0,"firstName":"","lastName":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	

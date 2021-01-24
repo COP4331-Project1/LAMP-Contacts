@@ -43,3 +43,21 @@ $conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
 Within mySql it is already...
 FirstName, LastName, Login, Password
 (this is just for reference if you have trouble getting results back from query due to different casing. We can probably alter them later if anything?)
+
+
+USER-
+ID
+DateCreated
+FirstName
+LastName
+UserName
+Password
+Email
+
+Contacts-
+CID
+contactFirstName
+contactLastName
+phoneNumber
+adress
+email
