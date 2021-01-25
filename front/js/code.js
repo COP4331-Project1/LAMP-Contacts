@@ -150,11 +150,6 @@ function createInfoBoxes() {
 	var contactPhoneNumber = "test"
 	var contactEmail = "test"
 
-	var fName = "contactFirstName"
-	var lName = "contactLastName"
-	var address = "contactAddress"
-	var phoneNumber = "contactPhoneNumber"
-	var email = "contactEmail"
 
 	var boxes =    "<div class = 'container w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
 	"<div class = 'row w-100 p-3'>" +
@@ -170,7 +165,7 @@ function createInfoBoxes() {
 	  "<div class = 'informationBox'>" +
 		"<span class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Last</h3>" + 
-		  "<i class='bi-pencil' onclick = 'modify('contactLastName')'></i>" +
+		  "<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + ")'></i>" +
 	"</span> " +
 		"<div class = 'contactLastName'>" +
 		"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
@@ -179,7 +174,7 @@ function createInfoBoxes() {
 	"<div class = 'informationBox'>" +
 	  "<span class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>Phone</h3>" + 
-		"<i class='bi-pencil' onclick = 'modify('contactPhoneNumber')'></i>" +
+		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + ")'></i>" +
 	 "</span> " +
 	  "<div class = 'contactPhoneNumber'>" +
 	  "<p>" +contactPhoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
@@ -188,7 +183,7 @@ function createInfoBoxes() {
 	  "<div class = 'informationBox'>" +
 		"<span class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Address</h3>" + 
-		  "<i class='bi-pencil' onclick = 'modify('contactAddress')'></i>" +
+		  "<i class='bi-pencil' onclick = 'modify(" + '"contactAdress"' + ")'></i>" +
 	   "</span> " +
 		"<div class = 'contactAddress'>" +
 		"<p>" + contactAddress + "</p>" + "</div>" + "</div>" + "</div>" +
@@ -197,11 +192,10 @@ function createInfoBoxes() {
 		"<div class = 'informationBox'>" +
 		  "<span class = 'titleBox'>" +
 			"<h3 id = 'contactAttribute'>Email</h3>" + 
-			"<i class='bi-pencil' onclick = 'modify('contactEmail')'></i>" +
+			"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + ")'></i>" +
 		 "</span> " +
 		  "<div class = 'contactEmail'>" +
 		  "<p>"+ contactEmail + "</p>" + "</div>" + "</div>" + "</div>" +
-
 		"<div class = 'row w-100 p-2'>"+
 			"<div id = 'deleteButton'>" +
 			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + contactEmail +")'></i>" +
@@ -372,7 +366,6 @@ function modify(value) { //Just to replace the textvalue
 		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ textId + "' onchange = update('" + value + "') aria-describedby='inputGroup-sizing-default'>" +
 		"</div>"
   
-	
 		$(element).append(input)
 		console.log("Test")
 		
