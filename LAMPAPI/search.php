@@ -31,7 +31,7 @@
                 $searchResults .= '{"contactFirstName": '.$row["contactFirstName"] .' ,"contactLastName":'.$row["contactLastName"].',"contactID":'.$row["CID"].'}';
             }
 
-        returnWithInfo($searchResults);
+        returnWithInfo($searchResults,$searchCount);
             
         }
         else
