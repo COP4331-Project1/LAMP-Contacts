@@ -208,7 +208,7 @@ function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contact
 function showContact(contactFirstName,contactLastName,contactNumber){
 
 	//createInfoBoxes();
-	var url = "http://159.203.70.233/LAMPAPI/showContact.php"
+	var url = "http://159.203.70.233/LAMPAPI/ShowContact.php"
 	var CID = contacts[contactNumber]
 
 	var jsonData= JSON.stringify({"CID":CID})
