@@ -143,11 +143,7 @@ function fillSearchBox(JSONObject) {
 }
 function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contactPhoneNumber,contactEmail,CID) {
 
-	var contactFirstName = "test"
-	var contactLastName = "test"
-	var contactAddress= "test"
-	var contactPhoneNumber = "test"
-	var contactEmail = "test"
+
 
 
 	var boxes = "<div class = 'col w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
