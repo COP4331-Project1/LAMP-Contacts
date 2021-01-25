@@ -123,7 +123,6 @@ function search() {
 function fillSearchBox(JSONObject) {
 
 
-	console.log("Test")
 	contacts = []
 	$("#contacts").empty()
 	

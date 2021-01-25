@@ -29,7 +29,7 @@
                     $searchResults .= ",";
                 }
                 $searchCount++;
-                $searchResults .= '{"firstName": '.$row["firstName"] .' ,"lastName":'.$row["lastName"].',"contactId":'.$row["contactId"].'},';
+                $searchResults .= '{"contactFirstName": '.$row["firstName"] .' ,"contactLastName":'.$row["lastName"].',"contactID":'.$row["contactId"].'}';
             }
 
         returnWithInfo( $searchResults );
