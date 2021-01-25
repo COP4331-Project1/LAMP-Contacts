@@ -150,12 +150,18 @@ function createInfoBoxes() {
 	var contactPhoneNumber = "test"
 	var contactEmail = "test"
 
+	var fName = "contactFirstName"
+	var lName = "contactLastName"
+	var address = "contactAddress"
+	var phoneNumber = "contactPhoneNumber"
+	var email = "contactEmail"
+
 	var boxes =    "<div class = 'container w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
 	"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
 	  "<span class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>First</h3>" + 
-		"<i class='bi-pencil' onclick = 'modify('contactFirstName')'></i>" +
+		"<i class='bi-pencil' onclick = 'modify(" + "fName" + ")'></i>" +
 	"</span> " +
 	  "<div class = 'contactFirstName'>" +
 	  "<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  +
@@ -182,7 +188,7 @@ function createInfoBoxes() {
 	  "<div class = 'informationBox'>" +
 		"<span class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Address</h3>" + 
-		  "<i class='bi-pencil' onclick = 'modify(\'contactAddress\')'></i>" +
+		  "<i class='bi-pencil' onclick = 'modify('contactAddress')'></i>" +
 	   "</span> " +
 		"<div class = 'contactAddress'>" +
 		"<p>" + contactAddress + "</p>" + "</div>" + "</div>" + "</div>" +
