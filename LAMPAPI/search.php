@@ -28,7 +28,7 @@
                     $searchResults .= ",";
                 }
                 $searchCount++;
-                $searchResults .= '{"contactFirstName": '.$row["contactFirstName"] .' ,"contactLastName":'.$row["contactLastName"].',"contactID":'.$row["CID"].'}';
+                $searchResults .= '{"contactFirstName": "'.$row["contactFirstName"] .'" ,"contactLastName":"'.$row["contactLastName"].'","contactID":"'.$row["CID"].'"}';
             }
 
         returnWithInfo($searchResults,$searchCount);
