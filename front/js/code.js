@@ -198,12 +198,11 @@ function createInfoBoxes() {
 		  "<p>"+ contactEmail + "</p>" + "</div>" + "</div>" + "</div>" +
 		"<div class = 'row w-100 p-2'>"+
 			"<div id = 'deleteButton'>" +
-			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + contactEmail +")'></i>" +
+			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + contactNumber +")'></i>" +
 			"</div>" + "</div>"
 
 			$("#contactView").empty();
 			$("#contactView").append(boxes);
-
 
 }
 
@@ -239,12 +238,6 @@ function showContact(contactFirstName,contactLastName,contactNumber){
 		console.log(err.message)
 	}
 
-
-	
-
-	//Load a delete button that deletes based on Id
-
-	
 
 }
 
@@ -326,8 +319,7 @@ function deleteContact(contactNumber){
 
 	var url = "http://159.203.70.233/LAMPAPI/deleteContact.php"
 
-
-	var jsonData = JSON.stringify({"contactID":contactID})
+	var jsonData = JSON.stringify({"CID":contactID})
 
 	try {
 
@@ -338,7 +330,7 @@ function deleteContact(contactNumber){
 
 			if(this.status == 200 && this.readyState == 4){
 
-			//contact was deleteed
+			console.log("Deleted")
 			}
 		}
 		xhr.send(jsonData)
