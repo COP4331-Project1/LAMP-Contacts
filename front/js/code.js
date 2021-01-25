@@ -141,8 +141,7 @@ function fillSearchBox(JSONObject) {
 	}
 
 }
-
-function createInfoBoxes() {
+function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contactPhoneNumber,contactEmail,CID) {
 
 	var contactFirstName = "test"
 	var contactLastName = "test"
@@ -198,7 +197,7 @@ function createInfoBoxes() {
 		  "<p>"+ contactEmail + "</p>" + "</div>" + "</div>" + "</div>" +
 		"<div class = 'row w-100 p-2'>"+
 			"<div id = 'deleteButton'>" +
-			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + contactEmail +")'></i>" +
+			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + CID +")'></i>" +
 			"</div>" + "</div>"
 
 			$("#contactView").empty();
@@ -208,13 +207,11 @@ function createInfoBoxes() {
 
 function showContact(contactFirstName,contactLastName,contactNumber){
 
-
-	createInfoBoxes();
+	//createInfoBoxes();
 	var url = "http://159.203.70.233/LAMPAPI/showContact.php"
-	var contactId = contacts[contactNumber]
+	var CID = contacts[contactNumber]
 
-	var jsonData= JSON.stringify({"contactId":contactId})
-
+	var jsonData= JSON.stringify({"CID":CID})
 	try
 	{
 		var xhr = openHTTP(url,"POST")
@@ -229,16 +226,15 @@ function showContact(contactFirstName,contactLastName,contactNumber){
 		var contactAddress = JSONObject.contactAddress
 		var contactPhoneNumber = JSONObject.contactPhoneNumber
 		var contactEmail = JSONObject.contactEmail
+		createInfoBoxes(contactFirstName,contactLastName,contactAddress,contactPhoneNumber,contactEmail,CID)
 		}
+	}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
-		}
-
+		
 	}
 	catch (err) {
 		console.log(err.message)
 	}
-
-
 }
 
 function addContact() {
@@ -313,13 +309,11 @@ function update(value){ //For updating the contact
 	
 }
 
-function deleteContact(contactNumber){
-
-	contactId = contacts[contactNumber]
+function deleteContact(CID){
 
 	var url = "http://159.203.70.233/LAMPAPI/deleteContact.php"
 
-	var jsonData = JSON.stringify({"CID":contactID})
+	var jsonData = JSON.stringify({"CID":CID})
 
 	try {
 
@@ -340,7 +334,6 @@ function deleteContact(contactNumber){
 
 			console.log(err.message) //otherwise output error
 		}
-
 
 	var search = $("#searchBar").val()
 	$("#searchBar").val(search)
