@@ -75,8 +75,8 @@ function register() {
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 		xhr.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
-		
-		window.location.href = "index.html"
+
+	
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
 		}
@@ -90,11 +90,8 @@ function register() {
 
 function search() {
 
-	 //hold the returned contacts
-
 	var contactSearch = $("#searchbar").val() //gets the value from the search bar
 	var	url = "http://159.203.70.233/LAMPAPI/search.php"
-	userID = 0;
 	var jsonData = JSON.stringify({"userId":userId, "contactSearch":contactSearch})
 	var xhr = openHTTP(url,"POST");
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -301,17 +298,15 @@ function modify(value) { //Just to replace the textvalue
 		
 		$(element).empty()
 		
-
 		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ textId + "' onchange = update('" + value + "') aria-describedby='inputGroup-sizing-default'>" +
 		"</div>"
   
-		
+	
 		$(element).append(input)
 		console.log("Test")
 		
 	}
 
-	
 function saveCookie(){ //Need to save cookies so if user refreshes page they are still remembered
 
 	var minutes = 20; //The time to save cookie
@@ -322,3 +317,35 @@ function saveCookie(){ //Need to save cookies so if user refreshes page they are
     //Saves the cookie to keep track of the user
 }
 
+function readCookie()
+{
+	userId = -1;
+	var data = document.cookie;
+	var splits = data.split(",");
+	for(var i = 0; i < splits.length; i++) 
+	{
+		var thisOne = splits[i].trim();
+		var tokens = thisOne.split("=");
+		if( tokens[0] == "firstName" )
+		{
+			firstName = tokens[1];
+		}
+		else if( tokens[0] == "lastName" )
+		{
+			lastName = tokens[1];
+		}
+		else if( tokens[0] == "userId" )
+		{
+			userId = parseInt( tokens[1].trim() );
+		}
+	}
+	
+	if( userId < 0 )
+	{
+		window.location.href = "index.html";
+	}
+	else
+	{
+		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+	}
+}
