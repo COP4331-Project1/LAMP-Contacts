@@ -19,10 +19,7 @@ function login() {
 
     url = "http://159.203.70.233/LAMPAPI/Login.php"
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main
   	try {
 		var xhr = openHTTP(url,"POST")
 	        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -66,11 +63,7 @@ function register() {
 	var firstName = "Ryan";
 	var lastName = "Pattillo";
 	var userName = $("#userName").val() //gets the username and password from the input field
-<<<<<<< HEAD
-   	 var password =  $("#password").val()
-=======
     var password =  $("#password").val()
->>>>>>> origin/main
 	var email = $("#email").val()
 	var url = "http://159.203.70.233/LAMPAPI/Register.php"
 
@@ -82,22 +75,16 @@ function register() {
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 		xhr.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> origin/main
 	
 		}
-	       //Will send the data and when the state changes will recieve a response
+		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
 		}
-		xhr.send(jsonData)
 
 	}
 	catch(err){
 		console.log(err.message)
 	}
-	window.location.href = "../html/index.html"
 }
 
 
