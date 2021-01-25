@@ -146,8 +146,8 @@ function createInfoBoxes() {
 
 	var contactFirstName = "test"
 	var contactLastName = "test"
-	var address= "test"
-	var phoneNumber = "test"
+	var contactAddress= "test"
+	var contactPhoneNumber = "test"
 	var contactEmail = "test"
 
 	var boxes =    "<div class = 'container w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
@@ -155,46 +155,46 @@ function createInfoBoxes() {
 	"<div class = 'informationBox'>" +
 	  "<span class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>First</h3>" + 
-		"<i class='bi-pencil' onclick = 'modify(" +contactFirstName + ")'></i>" +
+		"<i class='bi-pencil' onclick = 'modify('contactFirstName')'></i>" +
 	"</span> " +
 	  "<div class = 'contactFirstName'>" +
-	  "<p> NAME </p>" + "</div>" + "</div>"  +
+	  "<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  +
 
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
 		"<span class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Last</h3>" + 
-		  "<i class='bi-pencil' onclick = 'modify(" +contactLastName + ")'></i>" +
+		  "<i class='bi-pencil' onclick = 'modify('contactLastName')'></i>" +
 	"</span> " +
 		"<div class = 'contactLastName'>" +
-		"<p> NAME </p>" + "</div>" + "</div>" + "</div>" +
+		"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
 
 		"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
 	  "<span class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>Phone</h3>" + 
-		"<i class='bi-pencil' onclick = 'modify(" + phoneNumber + ")'></i>" +
+		"<i class='bi-pencil' onclick = 'modify('contactPhoneNumber')'></i>" +
 	 "</span> " +
-	  "<div class = 'phone'>" +
-	  "<p> phone </p>" + "</div>" + "</div>" + "</div>" +
+	  "<div class = 'contactPhoneNumber'>" +
+	  "<p>" +contactPhoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
 
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
 		"<span class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Address</h3>" + 
-		  "<i class='bi-pencil' onclick = 'modify(" + address + ")'></i>" +
+		  "<i class='bi-pencil' onclick = 'modify('contactAddress')'></i>" +
 	   "</span> " +
-		"<div class = 'address'>" +
-		"<p> address </p>" + "</div>" + "</div>" + "</div>" +
+		"<div class = 'contactAddress'>" +
+		"<p>" + contactAddress + "</p>" + "</div>" + "</div>" + "</div>" +
 
 		"<div class = 'row w-100 p-3'>" +
 		"<div class = 'informationBox'>" +
 		  "<span class = 'titleBox'>" +
 			"<h3 id = 'contactAttribute'>Email</h3>" + 
-			"<i class='bi-pencil' onclick = 'modify(" + contactEmail + ")'></i>" +
+			"<i class='bi-pencil' onclick = 'modify('contactEmail')'></i>" +
 		 "</span> " +
-		  "<div class = 'email'>" +
-		  "<p> email </p>" + "</div>" + "</div>" + "</div>" +
+		  "<div class = 'contactEmail'>" +
+		  "<p>"+ contactEmail + "</p>" + "</div>" + "</div>" + "</div>" +
 
 		"<div class = 'row w-100 p-2'>"+
 			"<div id = 'deleteButton'>" +
