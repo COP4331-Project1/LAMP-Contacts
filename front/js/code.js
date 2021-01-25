@@ -219,7 +219,7 @@ function showContact(contactFirstName,contactLastName,contactNumber){
 		
 		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		
-		var contactAddress = address
+		var contactAddress = JSONObject.address
 		var contactPhoneNumber = JSONObject.phoneNumber
 		var contactEmail = JSONObject.email
 		createInfoBoxes(contactFirstName,contactLastName,contactAddress,contactPhoneNumber,contactEmail,CID)
