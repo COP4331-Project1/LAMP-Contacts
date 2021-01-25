@@ -1,46 +1,46 @@
 <?php
     
- 
+
     $inData = getRequestInfo();
     
     $searchResults = "";
     $searchCount = 0;
-   
-
+    
     $conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
-	if ($conn->connect_error) 
-	{
-		returnWithError( $conn->connect_error );
-	} 
-	else
-        {
-        $sql = "select firstName,lastName,contactId from Users where firstName like '%" . $inData["search"] . "%' or lastName like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
+    
+    if ($conn->connect_error)
+    {
+        returnWithError( $conn->connect_error );
+    }
+    
+    else
+    {
+        $sql = "SELECT contactFirstName,contactLastName,CID FROM Contacts where contactFirstName LIKE '%" .$inData["search"] . "%' OR contactLastName LIKE '%" . $inData["search"] . "%' AND ID=" .$inData["userId"];
         
         $result = $conn->query($sql); #Will return an array
         
         if ($result->num_rows > 0)
         {
-            while($row = $result->fetch_assoc()) #Fetchesst line
+            while($row = $result->fetch_assoc())
             {
                 if( $searchCount > 0 ) #After the firt search value
                 {
-                $searchResults .= ",";
+                    $searchResults .= ",";
                 }
                 $searchCount++;
-                $searchResults.= "{"."firstName:" . $row["firstName"] . "," . "lastName:". $row["lastName"]. "," . "contactId:". $row["contactId"]. "}";
+                $searchResults .= '{"contactFirstName": "'.$row["contactFirstName"] .'" ,"contactLastName":"'.$row["contactLastName"].'","contactID":"'.$row["CID"].'"}';
             }
+
+        returnWithInfo($searchResults,$searchCount);
+            
         }
         else
         {
-            returnWithError( "No Records Found" );
+        returnWithError( "No Records Found" );
         }
         $conn->close();
     }
                           
-
-    returnWithInfo( $searchResults );
-                          
-    
     function getRequestInfo()
     {
         return json_decode(file_get_contents('php://input'), true);
@@ -54,13 +54,13 @@
     
     function returnWithError( $err )
     {
-        $retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+        $retValue = '{"CID":0,"firstName":"","lastName":"","error":"' . $err . '"}';
         sendResultInfoAsJson( $retValue );
     }
     
-    function returnWithInfo( $searchResults )
+    function returnWithInfo( $searchResults,$searchCount )
     {
-        $retValue = '{"results":[' . $searchResults . '],"error":""}';
+        $retValue = '{"results":[' . $searchResults . '],"error":"","entries":'.$searchCount.'}';
         sendResultInfoAsJson( $retValue );
     }
     

@@ -9,102 +9,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+<script type="text/javascript">
+
+	//document.addEventListener('DOMContentLoaded', function() 
+	//{
+		//readCookie();
+  //}, false);
+
+</script>
+
 
 </head>
 
+
+
 <body style="background-color:white; height:100vh; width:100vw; padding:0%">
 
-  <div class="container-fluid h-100 bg-dark id = searchColumn">
-     <div class = "row h-100 w-100 "> 
-        <div class = "col-md-5 h-100 bg-dark " id = "contactSearch" > 
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
-            </div>
-            <input type="text" class="form-control" id = "searchbar" onchange = "search()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <div class="container-fluid h-100 bg-dark g-0 id = searchColumn">
+
+     <div class = "row h-100 w-100 g-0 "> 
+
+        <div class = "col-sm-5 h-100 g-0 bg-light " id = "contactSearch" > 
+        <div class="input-group mb-0 p-1">
+            <input type="text" class="form-control form-control-md" id = "searchbar" onchange = "search()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
             </div>
      
-
-          <div class = "row h-75 w-100 bg-dark overflow-auto d-flex" id = "contactBox">
+          <div class = "row h-75 w-100 g-0 bg-light overflow-auto d-flex" id = "contactBox">
             <div class = "col-12" id ="contacts">
               </div>
                 </div>
-    </div>
+         </div>
+     
+        <div class = "col-sm-7 h-100 bg-light g-0 id = mainColumn">
 
-        <div class = "col-md-7 h-100 bg-light id = mainColumn">
           <div class = "homebackgroundImage">
-            <div class ="row w-auto" id = "navigation">
-            <nav class="navbar navbar-expand-sm navbar-light bg-light">   
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-item nav-link active" href="../html/index.html">Log Out</span></a>
-                  <a class="nav-item nav-link active" href="../html/add.html">Add Contact</span></a>       
-          </div>
-          </div>
-          </div>
 
-            <div class = "row h-100" id = "viewContacts">
-              <div class = "d-flex justify-content-center align-items-center">
-                <div class="col-6 h-75" id = "contactView">
-            
-                  <div class = "informationContainer">
+          <div class = "container h-100 w-100">
+        
+            <div class = "row h-auto g-0" id = "viewContacts">
+              <div class="container d-flex justify-content-center">
 
-                    <div class = "informationBox"> 
-                      <span class = "titleBox" >
-                        <h3 id = "contactAttribute">First</h3> 
-                        <i class="bi-pencil" onclick = 'modify("contactFirstName")'></i>
-                      </span>
-                      <div class = "contactFirstName">
-                      <p> NAME</p>
-                     </div>
-                      </div>
-
-                    <div class = "informationBox"> 
-                      <span class = "titleBox" >
-                        <h3 id = "contactAttribute">Last</h3> 
-                        <i class="bi-pencil" onclick = 'modify("contactLastName")'></i>
-                      </span>
-                      <div class = "contactLastName">
-                      <p>NAME</p>
-                     </div>
-                      </div>
-
-                      <div class = "informationBox"> 
-                        <span class = "titleBox" >
-                          <h3 id = "contactAttribute">Phone</h3> 
-                          <i class="bi-pencil" onclick = 'modify("phone")'></i>
-                        </span>
-                        <div class = "phone">
-                        <p> NAME</p>
-                       </div>
-                        </div>
-                      
-                        <div class = "informationBox"> 
-                          <span class = "titleBox" >
-                            <h3 id = "contactAttribute">Address</h3>
-                            <i class="bi-pencil" onclick = 'modify("address")'></i>
-                          </span>
-                          <div class = "address">
-                          <p> NAME</p>
-                         </div>
-                          </div>
-
-                          <div class = "informationBox"> 
-                            <span class = "titleBox" >
-                              <h3 id = "contactAttribute">Email</h3> 
-                              <i class="bi-pencil" onclick = 'modify("email")'></i>
-                            </span>
-                            <div class = "email">
-                            <p> NAME</p>
-                           </div>
-                            </div>
-                            <div id = "deleteButton">
-                            <i class="bi-trash" style = "color:red; font-size:30px" onclick = 'deleteContact("email")'></i>
-                            </div>
-
-
+                <div class="col-10 h-100 g-0" id = "contactView">
+             
+              </div>
                 </div>
+              </div>
+                <div class = "container h-100 d-flex align-content-end">
+                <div class="row h-auto w-100 p-4 g-0 bg-transparent">
+              
+                  <div class = "col-6 d-flex justify-content-start align-items-end">
+                    <i class="bi-box-arrow-in-left" style = "color:white;font-size:60px" onclick = "window.location.href = 'index.html'"></i>
+                  </div>
+                 
+                  <div class = "col-6 d-flex justify-content-end align-items-end">
+                    <i class="bi-plus-square" style = "color:white;font-size:50px" onclick = 'addContact()'></i>
+                    </div>
+
+                  </div>
+                </div>
+                </div>
+             
+              </div>
+            </div>
+           
+
+
+              </div>
                 </div>
               </div>
             </div>

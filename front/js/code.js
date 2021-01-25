@@ -5,24 +5,27 @@ var contacts = []
 
 function openHTTP(url,action){
 
-	var xhr = new XMLHttpRequest()
-	xhr.open(action,url,true)
-	return xhr
+	var xhr = new XMLHttpRequest();
+	xhr.open(action,url,true);
+	return xhr;
 }
 
 function login() {
 
-    var username = $(".username").val() //gets the username and password from the input field
-    var password = $(".password").val()
+    var username = $("#loginName").val() //gets the username and password from the input field
+    var password = $("#loginPassword").val()
 
-    var jsonData = JSON.stringify({"username" : username , "password":  password}) //Json is formatted in key value pairs
+    var jsonData = JSON.stringify({"userName" : username , "password":  password}) //Json is formatted in key value pairs
 
     url = "http://159.203.70.233/LAMPAPI/Login.php"
 
-	var xhr = openHTTP(url,"POST")
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
   	try {
+		var xhr = openHTTP(url,"POST")
+	        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+		var xhr = openHTTP(url,"POST")
+	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 		xhr.onreadystatechange = function() {
 
@@ -30,22 +33,22 @@ function login() {
 		
 		var jsonObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		
-		userId = jsonObject.id; //Gets the user ID form the databsae
+		userId = jsonObject.ID; //Gets the user ID form the databsae
 		
 		if( userId < 1 ) //Represents an error 
 		{
 			$("#loginInput").append("<p> User/Password combination incorrect </p>");
 			return;
 		}	
-
+		console.log(userId)
 		firstName = jsonObject.firstName; //Gets the first name
 		lastName = jsonObject.lastName;
 		window.location.href = "../html/home.html"
 		saveCookie(); //have firstName last name saved in scope.
 		}
 	}
-		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
-		
+
+	xhr.send(jsonData); //Will send the data and when the state changes will recieve a response	
 	}
     catch(err)
 	{
@@ -55,24 +58,25 @@ function login() {
 
 }
 
-
 function register() {
 
-	var registerUsername = $(".registerUsername").val() //gets the username and password from the input field
-    var registerPassword = $(".registerPassword").val()
+	var firstName = "Ryan";
+	var lastName = "Pattillo";
+	var userName = $("#userName").val() //gets the username and password from the input field
+    var password =  $("#password").val()
+	var email = $("#email").val()
+	var url = "http://159.203.70.233/LAMPAPI/Register.php"
 
-	var jsonData = JSON.stringify({"username" : registerUsername , "password":  registerPassword}) //Json 
+	var jsonData = JSON.stringify({"firstName":firstName,"lastName":lastName,"userName":userName , "password":  password , "email": email}) //Json 
 	
 	try {
 
 		var xhr = openHttp(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 		xhr.onreadystatechange = function() {
-
 		if(this.readyState == 4 && this.status == 200) {
-		
-		window.location.href = "index.html"
 
+	
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
 		}
@@ -86,42 +90,46 @@ function register() {
 
 function search() {
 
-	contacts = [] //hold the returned contacts
-
-	var contactSearch = $("#searchbar").val() //gets the value from the search bar
-
-	var	url = "http://COP4331-17.com/LAMPAPI/search.php"
-
-	try {
-
-		var xhr = openHTTP(url,"POST")
-		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-		var jsonData = JSON.stringify({"contactSearch":contactSearch})
+	var search = $("#searchbar").val() //gets the value from the search bar
+	var	url = "http://159.203.70.233/LAMPAPI/search.php"
+	var jsonData = JSON.stringify({"userId":userId, "search":search})
+	var xhr = openHTTP(url,"POST");
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	
+	try {	
 	
 		xhr.onreadystatechange = function() {
 	
 		if(this.readyState == 4 && this.status == 200) {
 			
-		var jsonObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
+		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		 //Will send the data and when the state changes will recieve a response
+		fillSearchBox(JSONObject);
 		}
-		xhr.send(jsonData)
-		}
+
+		};
+		xhr.send(jsonData);	
 	}	
 	catch(err) {
-		$(".contacts").append(err.message)
+		var errorMessage = "<h3>" + err.message + "</h3>"
+		console.log(errorMessage)		
+		$("#contacts").append(errorMessage)
+		
 	}
 
+}
+
+function fillSearchBox(JSONObject) {
+
+	contacts = []
 	$("#contacts").empty()
+	
+	var entries = JSONObject.entries
 
-	var contactFirstName = 'Ryan'
-	var contactLastName = 'Pattillo'
-
-	//var contactFirstName = JSONObject.results[i].contactFirstName
-	//var contactLastName = JSONObject.results[i].contactLastName
-	//contacts.push(JSONObject.results[i].contactID)
-
-	for(var i = 0 ; i < 20 ; i++){
+	for(var i = 0 ; i < entries ; i++){
+	var contactFirstName = JSONObject.results[i].contactFirstName
+	var contactLastName = JSONObject.results[i].contactLastName
+	contacts.push(JSONObject.results[i].contactID)	
 	var button = "<button type = 'button' class = 'btn btn-primary btn-sm bg-light text-dark' id = 'contact' onClick = showContact('" + contactFirstName + "','" + contactLastName + "','" + i +"') style = 'width:100%'> " +
     "<div class = 'd-flex justify-content-inline' id = 'flexFormat'>" +
 	"<div class = 'circle'><h4>"+ contactFirstName[0] + contactLastName[0] +"</h4></div>" +
@@ -132,11 +140,76 @@ function search() {
 	$("#contacts").append(button)
 	}
 
-	 //Loop through all the values returned and add teh contacts
+}
+
+function createInfoBoxes() {
+
+	var contactFirstName = "test"
+	var contactLastName = "test"
+	var contactAddress= "test"
+	var contactPhoneNumber = "test"
+	var contactEmail = "test"
+
+
+	var boxes =    "<div class = 'container w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
+	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	  "<span class = 'titleBox'>" +
+		"<h3 id = 'contactAttribute'>First</h3>" + 
+		"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + ")'></i>" +
+	"</span> " +
+	  "<div class = 'contactFirstName'>" +
+	  "<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  +
+
+	  "<div class = 'row w-100 p-3'>" +
+	  "<div class = 'informationBox'>" +
+		"<span class = 'titleBox'>" +
+		  "<h3 id = 'contactAttribute'>Last</h3>" + 
+		  "<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + ")'></i>" +
+	"</span> " +
+		"<div class = 'contactLastName'>" +
+		"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
+
+		"<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	  "<span class = 'titleBox'>" +
+		"<h3 id = 'contactAttribute'>Phone</h3>" + 
+		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + ")'></i>" +
+	 "</span> " +
+	  "<div class = 'contactPhoneNumber'>" +
+	  "<p>" +contactPhoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
+
+	  "<div class = 'row w-100 p-3'>" +
+	  "<div class = 'informationBox'>" +
+		"<span class = 'titleBox'>" +
+		  "<h3 id = 'contactAttribute'>Address</h3>" + 
+		  "<i class='bi-pencil' onclick = 'modify(" + '"contactAddress"' + ")'></i>" +
+	   "</span> " +
+		"<div class = 'contactAddress'>" +
+		"<p>" + contactAddress + "</p>" + "</div>" + "</div>" + "</div>" +
+
+		"<div class = 'row w-100 p-3'>" +
+		"<div class = 'informationBox'>" +
+		  "<span class = 'titleBox'>" +
+			"<h3 id = 'contactAttribute'>Email</h3>" + 
+			"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + ")'></i>" +
+		 "</span> " +
+		  "<div class = 'contactEmail'>" +
+		  "<p>"+ contactEmail + "</p>" + "</div>" + "</div>" + "</div>" +
+		"<div class = 'row w-100 p-2'>"+
+			"<div id = 'deleteButton'>" +
+			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + contactEmail +")'></i>" +
+			"</div>" + "</div>"
+
+			$("#contactView").empty();
+			$("#contactView").append(boxes);
+
 }
 
 function showContact(contactFirstName,contactLastName,contactNumber){
 
+
+	createInfoBoxes();
 	var url = "http://159.203.70.233/LAMPAPI/showContact.php"
 	var contactId = contacts[contactNumber]
 
@@ -165,9 +238,6 @@ function showContact(contactFirstName,contactLastName,contactNumber){
 		console.log(err.message)
 	}
 
-	//Load a delete button that deletes based on Id
-
-	$("#viewContacts").append(contact) //Append the contact information
 
 }
 
@@ -210,7 +280,9 @@ function update(value){ //For updating the contact
 
 		var element = "." + value
 		var update = "#" + value + "text"
+		console.log(element)
 		var updateValue = $(update).val()
+		console.log(updateValue)
 		
 		var url = "http://159.203.70.233/LAMPAPI/showContact.php"
 
@@ -247,8 +319,7 @@ function deleteContact(contactNumber){
 
 	var url = "http://159.203.70.233/LAMPAPI/deleteContact.php"
 
-
-	var jsonData = JSON.stringify({"contactID":contactID})
+	var jsonData = JSON.stringify({"CID":contactID})
 
 	try {
 
@@ -259,7 +330,7 @@ function deleteContact(contactNumber){
 
 			if(this.status == 200 && this.readyState == 4){
 
-			//contact was deleteed
+			console.log("Deleted")
 			}
 		}
 		xhr.send(jsonData)
@@ -281,13 +352,17 @@ function modify(value) { //Just to replace the textvalue
 
 		var element = "." + value
 		var textId = value +"text"
-		console.log(textId)
+		
 		$(element).empty()
-		$(element).append("<input type = 'text' id = '"+ textId+ "' onchange = update('" + value + "') >")
-		console.log(textId)
+		
+		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ textId + "' onchange = update('" + value + "') aria-describedby='inputGroup-sizing-default'>" +
+		"</div>"
+  
+		$(element).append(input)
+		console.log("Test")
+		
 	}
-	
-	
+
 function saveCookie(){ //Need to save cookies so if user refreshes page they are still remembered
 
 	var minutes = 20; //The time to save cookie
@@ -298,4 +373,32 @@ function saveCookie(){ //Need to save cookies so if user refreshes page they are
     //Saves the cookie to keep track of the user
 }
 
-
+function readCookie()
+{
+	userId = -1;
+	var data = document.cookie;
+	var splits = data.split(",");
+	for(var i = 0; i < splits.length; i++) 
+	{
+		var thisOne = splits[i].trim();
+		var tokens = thisOne.split("=");
+		if( tokens[0] == "firstName" )
+		{
+			firstName = tokens[1];
+		}
+		else if( tokens[0] == "lastName" )
+		{
+			lastName = tokens[1];
+		}
+		else if( tokens[0] == "userId" )
+		{
+			userId = parseInt( tokens[1].trim() );
+		}
+	}
+	
+	if( userId < 0 )
+	{
+		window.location.href = "index.html";
+	}
+	
+}

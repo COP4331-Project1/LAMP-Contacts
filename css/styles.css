@@ -1,7 +1,7 @@
 body
 {
     background-color: purple;
-    background-image: url(../../images/background.jpg) ;
+    background-image: url(../images/Back.png) !important;
 }
 
 #title
@@ -145,10 +145,14 @@ select{
 }
 
 
+
+
 .informationBox {
 
     display:flex-column;
-    width: 100%;  
+    background-color:white;
+    border-radius: 5px;
+    width: auto;  
  }
  
  .informationContainer {
@@ -169,10 +173,9 @@ select{
  
  .homebackgroundImage {
  
-    background-image: url("../../images/background.jpg");
-    background-size:cover;
+    background-image: url("../images/homebackground.jpg");
     height:100%;
-    width:100%;
+    width:100%
  }
  
  .circle{
@@ -180,7 +183,7 @@ select{
  
     height: 100px;
     width: 100px;
-    background-image: url("../../images/background.jpg");
+    background-image: url("../images/homebackground.jpg");
     border-radius: 50%;
     text-align:center;
  
@@ -196,20 +199,10 @@ select{
  
     display:flex;
     height:100;
-    width:100;
+    width:auto;
     justify-content:flex-end;
+    align-items:flex-end;
  
  }
  
-
- #contactBox{
-
-    display:flex;
-    padding: 0%;
-    margin:0%;
-    height:100%;
-    width:100%;
-    justify-content:center;
-    align-items:center;
-
- }
+ 
