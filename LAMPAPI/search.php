@@ -16,13 +16,13 @@
     
     else
     {
-        $sql = "SELECT FirstName,LastName,CID FROM Contacts where FirstName like '%" . $inData["search"] . "%' or LastName like '%" . $inData["search"] . "%' and UserID=" .$inData["userId"];
+        $sql = "SELECT contactFirstName,contactLastName,CID FROM Contacts where FirstName like '%" . $inData["search"] . "%' or LastName like '%" . $inData["search"] . "%' and UserID=" .$inData["userId"];
         
         $result = $conn->query($sql); #Will return an array
         
         if ($result->num_rows > 0)
         {
-            while($row = $result->fetch_assoc()) #Fetchesst line
+            while($row = $result->fetch_assoc())
             {
                 if( $searchCount > 0 ) #After the firt search value
                 {
@@ -32,7 +32,7 @@
                 $searchResults .= '{"contactFirstName": '.$row["firstName"] .' ,"contactLastName":'.$row["lastName"].',"contactID":'.$row["contactId"].'}';
             }
 
-        returnWithInfo( $searchResults );
+        returnWithInfo($searchResults);
         }
         else
         {
