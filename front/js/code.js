@@ -195,8 +195,8 @@ function createInfoBoxes() {
 		 + "</span> " +
 		  "<div class = 'email'>" +
 		  "<p> email </p>" + "</div>" + "</div>" + "</div>" +
-
-			"<div class = 'row w-100 p-2'>"+
+		  
+		"<div class = 'row w-100 p-2'>"+
 			"<div id = 'deleteButton'>" +
 			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + contactEmail +")'></i>" +
 			"</div>"
