@@ -155,7 +155,7 @@ function createInfoBoxes() {
 	"<div class = 'informationBox'>" +
 	  "<span class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>First</h3>" + 
-		"<i class='bi-pencil' onclick = 'modify('contactFirstName')'></i>" +
+		"<i class='bi-pencil' onclick = 'modify(contactFirstName)'></i>" +
 	"</span> " +
 	  "<div class = 'contactFirstName'>" +
 	  "<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  +
@@ -164,7 +164,7 @@ function createInfoBoxes() {
 	  "<div class = 'informationBox'>" +
 		"<span class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Last</h3>" + 
-		  "<i class='bi-pencil' onclick = 'modify('contactLastName')'></i>" +
+		  "<i class='bi-pencil' onclick = 'modify(contactLastName)'></i>" +
 	"</span> " +
 		"<div class = 'contactLastName'>" +
 		"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
