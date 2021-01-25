@@ -150,52 +150,51 @@ function createInfoBoxes() {
 	var phoneNumber = "test"
 	var contactEmail = "test"
 
-	var boxes = 
-	 + "<div class = 'row w-100 p-3'>" +
+	var boxes = "<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
-	  + "<span class = 'titleBox'>" +
+	  "<span class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>First</h3>" + 
 		"<i class='bi-pencil' onclick = 'modify(" +contactFirstName + ")'></i>" +
-	 + "</span> " +
+	"</span> " +
 	  "<div class = 'contactFirstName'>" +
-	  "<p> NAME </p>" + "</div>" + "</div>" + "</div>" +
+	  "<p> NAME </p>" + "</div>" + "</div>"  +
 
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
-		+ "<span class = 'titleBox'>" +
+		"<span class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Last</h3>" + 
 		  "<i class='bi-pencil' onclick = 'modify(" +contactLastName + ")'></i>" +
-	   + "</span> " +
+	"</span> " +
 		"<div class = 'contactLastName'>" +
 		"<p> NAME </p>" + "</div>" + "</div>" + "</div>" +
 
 		"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
-	  + "<span class = 'titleBox'>" +
+	  "<span class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>Phone</h3>" + 
 		"<i class='bi-pencil' onclick = 'modify(" + phoneNumber + ")'></i>" +
-	 + "</span> " +
+	 "</span> " +
 	  "<div class = 'phone'>" +
 	  "<p> phone </p>" + "</div>" + "</div>" + "</div>" +
 
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
-		+ "<span class = 'titleBox'>" +
+		"<span class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Address</h3>" + 
 		  "<i class='bi-pencil' onclick = 'modify(" + address + ")'></i>" +
-	   + "</span> " +
+	   "</span> " +
 		"<div class = 'address'>" +
 		"<p> address </p>" + "</div>" + "</div>" + "</div>" +
 
 		"<div class = 'row w-100 p-3'>" +
 		"<div class = 'informationBox'>" +
-		  + "<span class = 'titleBox'>" +
+		  "<span class = 'titleBox'>" +
 			"<h3 id = 'contactAttribute'>Email</h3>" + 
 			"<i class='bi-pencil' onclick = 'modify(" + contactEmail + ")'></i>" +
-		 + "</span> " +
+		 "</span> " +
 		  "<div class = 'email'>" +
 		  "<p> email </p>" + "</div>" + "</div>" + "</div>" +
-		  
+
 		"<div class = 'row w-100 p-2'>"+
 			"<div id = 'deleteButton'>" +
 			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + contactEmail +")'></i>" +
@@ -244,7 +243,7 @@ function showContact(contactFirstName,contactLastName,contactNumber){
 
 	//Load a delete button that deletes based on Id
 
-	$("#viewContacts").append(contact) //Append the contact information
+	
 
 }
 
