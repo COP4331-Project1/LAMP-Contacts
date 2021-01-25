@@ -157,13 +157,13 @@ select{
     border-radius: 25px;
     width:100%;
     height:100%;
-    padding : 5%
+    padding : 5%;
  }
  .titleBox {
  
     display:flex;
     justify-content : inline;
-    width: 100%
+    width: 100%;
  }
  
  
@@ -176,17 +176,16 @@ select{
  }
  
  .circle{
- 
- 
+    display:flex;
     height: 100px;
     width: 100px;
     background-image: url("../../images/background.jpg");
     border-radius: 50%;
-    text-align:center;
+    align-content:flex-center;
+    justify-content:flex-center;
  }
  
  #contactAttribute {
- 
     font-family: "Trirong", serif;
  }
  

@@ -155,7 +155,7 @@ function createInfoBoxes() {
 	"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
 	  "<div class = 'titleBox'>" +
-		"<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex justify-content-end'>" +
+		"<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
 		"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + ")'></i>" + "</div>" +
 	"</div> " +
 	  "<div class = 'contactFirstName'>" +
@@ -164,7 +164,7 @@ function createInfoBoxes() {
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
 		"<div class = 'titleBox'>" +
-		  "<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex justify-content-end'>" + 
+		  "<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
 		  "<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + ")'></i>" + "</div>" +
 	"</div> " +
 		"<div class = 'contactLastName'>" +
@@ -173,7 +173,7 @@ function createInfoBoxes() {
 		"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
 	  "<div class = 'titleBox'>" +
-		"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex justify-content-end'>" + 
+		"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
 		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + ")'></i>" + "</div>" +
 	 "</div> " +
 	  "<div class = 'contactPhoneNumber'>" +
@@ -182,7 +182,7 @@ function createInfoBoxes() {
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
 		"<div class = 'titleBox'>" +
-		  "<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex justify-content-end'>" +
+		  "<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
 		  "<i class='bi-pencil' onclick = 'modify(" + '"contactAddress"' + ")'></i>" + "</div>" +
 	   "</div> " +
 		"<div class = 'contactAddress'>" +
@@ -191,7 +191,7 @@ function createInfoBoxes() {
 		"<div class = 'row w-100 p-3'>" +
 		"<div class = 'informationBox'>" +
 		  "<div class = 'titleBox'>" +
-			"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex justify-content-end'>" +
+			"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
 			"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + ")'></i>" + "</div>" +
 		 "</div> " +
 		  "<div class = 'contactEmail'>" +
