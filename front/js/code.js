@@ -132,7 +132,7 @@ function fillSearchBox(JSONObject) {
 	contacts.push(JSONObject.results[i].contactID)	
 	var button = "<div class = 'row w-100 h-auto p-0 g-0' onClick = showContact('" + contactFirstName + "','" + contactLastName + "','" + i +"')>" +
     "<div class = 'col-4 p-0 g-0'>" +
-	"<div class = 'circle'><h3>"+ contactFirstName[0] + contactLastName[0] +"</h3></div>" + "</div>"
+	"<div class = 'circle'><h3>"+ contactFirstName[0] + contactLastName[0] +"</h3></div>" + "</div>" + 
 	"<div class = 'col-7 d-flex flex-column p-0 g-0'>" +
 	"<h2 style = 'padding-left:5%'>" + contactFirstName + "</h2>" +
 	"<h3 style = 'padding-left:20%'>" + contactLastName + "</h3> </div>" +
