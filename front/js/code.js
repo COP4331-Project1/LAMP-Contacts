@@ -159,7 +159,7 @@ function createInfoBoxes() {
 		"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + ")'></i>" + "</div>" +
 	"</div> " +
 	  "<div class = 'contactFirstName'>" +
-	  "<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  + "</div>"
+	  "<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  + "</div>" +
 
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
