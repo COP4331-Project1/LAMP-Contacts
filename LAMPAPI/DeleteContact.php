@@ -18,7 +18,8 @@
             returnWithError($conn->error);
         }
 
-        returnWithError("Successfully Deleted.");
+        // Testing.
+        echo "Successful delete.";
 
         $conn->close();
     }
