@@ -182,7 +182,7 @@ select{
     width:50%;
     background-image: url("../../images/background.jpg");
     border-radius: 50%;
-    padding:5%;
+    padding:15%;
     align-items:center;
     justify-content:center;
  }
