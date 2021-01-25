@@ -17,7 +17,7 @@
                                     "',contactLastName='" . $inData["contactLastName"] .
                                     "',phoneNumber='" . $inData["phoneNumber"] .
                                     "',email='" . $inData["email"] .
-                                    "',address='" . $inData["address"] . "'";
+                                    "',address='" . $inData["address"] . "'" . " WHERE CID=" . $inData["CID"];
 
 
 		if ($result = $conn->query($sql) != TRUE)
@@ -25,8 +25,8 @@
             returnWithError($conn->error);
 		}
 
-        returnWithError("Update Success.");
-        
+		returnWithError("Update Success.");
+		        
 		$conn->close();
 	}
 
