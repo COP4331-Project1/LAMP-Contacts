@@ -90,9 +90,9 @@ function register() {
 
 function search() {
 
-	var contactSearch = $("#searchbar").val() //gets the value from the search bar
+	var search = $("#searchbar").val() //gets the value from the search bar
 	var	url = "http://159.203.70.233/LAMPAPI/search.php"
-	var jsonData = JSON.stringify({"userId":userId, "contactSearch":contactSearch})
+	var jsonData = JSON.stringify({"userId":userId, "search":search})
 	var xhr = openHTTP(url,"POST");
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	
