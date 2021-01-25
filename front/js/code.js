@@ -111,7 +111,6 @@ function search() {
 		xhr.send(jsonData);	
 	}	
 	catch(err) {
-
 		var errorMessage = "<h3>" + err.message + "</h3>"
 		console.log(errorMessage)		
 		$("#contacts").append(errorMessage)
@@ -121,7 +120,6 @@ function search() {
 }
 
 function fillSearchBox(JSONObject) {
-
 
 	contacts = []
 	$("#contacts").empty()
@@ -142,12 +140,77 @@ function fillSearchBox(JSONObject) {
 	$("#contacts").append(button)
 	}
 
+}
+
+function createInfoBoxes() {
+
+	var contactFirstName = "test"
+	var contactLastName = "test"
+	var address= "test"
+	var phoneNumber = "test"
+	var contactEmail = "test"
+
+	var boxes = 
+	 + "<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	  + "<span class = 'titleBox'>" +
+		"<h3 id = 'contactAttribute'>First</h3>" + 
+		"<i class='bi-pencil' onclick = 'modify(" +contactFirstName + ")'></i>" +
+	 + "</span> " +
+	  "<div class = 'contactFirstName'>" +
+	  "<p> NAME </p>" + "</div>" + "</div>" + "</div>" +
+
+	  "<div class = 'row w-100 p-3'>" +
+	  "<div class = 'informationBox'>" +
+		+ "<span class = 'titleBox'>" +
+		  "<h3 id = 'contactAttribute'>Last</h3>" + 
+		  "<i class='bi-pencil' onclick = 'modify(" +contactLastName + ")'></i>" +
+	   + "</span> " +
+		"<div class = 'contactLastName'>" +
+		"<p> NAME </p>" + "</div>" + "</div>" + "</div>" +
+
+		"<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	  + "<span class = 'titleBox'>" +
+		"<h3 id = 'contactAttribute'>Phone</h3>" + 
+		"<i class='bi-pencil' onclick = 'modify(" + phoneNumber + ")'></i>" +
+	 + "</span> " +
+	  "<div class = 'phone'>" +
+	  "<p> phone </p>" + "</div>" + "</div>" + "</div>" +
+
+	  "<div class = 'row w-100 p-3'>" +
+	  "<div class = 'informationBox'>" +
+		+ "<span class = 'titleBox'>" +
+		  "<h3 id = 'contactAttribute'>Address</h3>" + 
+		  "<i class='bi-pencil' onclick = 'modify(" + address + ")'></i>" +
+	   + "</span> " +
+		"<div class = 'address'>" +
+		"<p> address </p>" + "</div>" + "</div>" + "</div>" +
+
+		"<div class = 'row w-100 p-3'>" +
+		"<div class = 'informationBox'>" +
+		  + "<span class = 'titleBox'>" +
+			"<h3 id = 'contactAttribute'>Email</h3>" + 
+			"<i class='bi-pencil' onclick = 'modify(" + contactEmail + ")'></i>" +
+		 + "</span> " +
+		  "<div class = 'email'>" +
+		  "<p> email </p>" + "</div>" + "</div>" + "</div>" +
+
+			"<div class = 'row w-100 p-2'>"+
+			"<div id = 'deleteButton'>" +
+			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + email +")'></i>" +
+			"</div>"
+
+			$("#showContacts").empty();
+			$("#showContacts").append(boxes);
 
 
 }
 
 function showContact(contactFirstName,contactLastName,contactNumber){
 
+
+	createInfoBoxes();
 	var url = "http://159.203.70.233/LAMPAPI/showContact.php"
 	var contactId = contacts[contactNumber]
 
@@ -175,6 +238,9 @@ function showContact(contactFirstName,contactLastName,contactNumber){
 	catch (err) {
 		console.log(err.message)
 	}
+
+
+	
 
 	//Load a delete button that deletes based on Id
 
