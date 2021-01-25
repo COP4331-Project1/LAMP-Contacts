@@ -130,13 +130,13 @@ function fillSearchBox(JSONObject) {
 	var contactFirstName = JSONObject.results[i].contactFirstName
 	var contactLastName = JSONObject.results[i].contactLastName
 	contacts.push(JSONObject.results[i].contactID)	
-	var button = "<button type = 'button' class = 'btn btn-primary btn-sm bg-light text-dark' id = 'contact' onClick = showContact('" + contactFirstName + "','" + contactLastName + "','" + i +"') style = 'width:100%'> " +
-    "<div class = 'd-flex justify-content-inline' id = 'flexFormat'>" +
-	"<div class = 'circle'><h4>"+ contactFirstName[0] + contactLastName[0] +"</h4></div>" +
-	"<div class = 'd-flex flex-column' id = 'flexFormatColumn'>" +
+	var button = "<div class = 'row w-100 h-auto p-0 g-0' onClick = showContact('" + contactFirstName + "','" + contactLastName + "','" + i +"')>" +
+    "<div class = 'col-4 p-0 g-0'>" +
+	"<div class = 'circle'><h3>"+ contactFirstName[0] + contactLastName[0] +"</h3></div>" + "</div>"
+	"<div class = 'col-7 d-flex flex-column p-0 g-0'>" +
 	"<h2 style = 'padding-left:5%'>" + contactFirstName + "</h2>" +
-	"<h3 style = 'padding-left:20%'>" + contactLastName + "</h3> </div></div></button>" 
-
+	"<h3 style = 'padding-left:20%'>" + contactLastName + "</h3> </div>" +
+	"<div class = 'col-1'>" + "</div>"
 	$("#contacts").append(button)
 	}
 

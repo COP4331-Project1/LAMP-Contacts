@@ -176,13 +176,15 @@ select{
  }
  
  .circle{
+
     display:flex;
-    height: 100px;
-    width: 100px;
+    height:auto;
+    width:auto;
     background-image: url("../../images/background.jpg");
     border-radius: 50%;
-    align-content:flex-center;
-    justify-content:flex-center;
+    padding:10%;
+    align-items:center;
+    justify-content:center;
  }
  
  #contactAttribute {
