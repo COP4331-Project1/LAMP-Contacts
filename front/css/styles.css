@@ -4,8 +4,8 @@ body
     background-image: url(../../images/background.jpg) ;
 }
 
-html{
-    font-family: "Trirong", serif;
+*{
+    font-family: "Trirong", serif !important;
 }
 
 #title
