@@ -151,10 +151,10 @@ function createInfoBoxes() {
 	var contactEmail = "test"
 
 
-	var boxes =    "<div class = 'container w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
+	var boxes = "<div class = 'col w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
 	"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
-	  "<span class = 'titleBox'>" +
+	  "<div class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex justify-content-end'>" +
 		"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + ")'></i>" + "</div"> +
 	"</span> " +
@@ -163,7 +163,7 @@ function createInfoBoxes() {
 
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
-		"<span class = 'titleBox'>" +
+		"<div class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex justify-content-end'>" + 
 		  "<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + ")'></i>" + "</div"> +
 	"</span> " +
@@ -172,7 +172,7 @@ function createInfoBoxes() {
 
 		"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
-	  "<span class = 'titleBox'>" +
+	  "<div class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex justify-content-end'>" + 
 		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + ")'></i>" + "</div"> +
 	 "</span> " +
@@ -181,7 +181,7 @@ function createInfoBoxes() {
 
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
-		"<span class = 'titleBox'>" +
+		"<div class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex justify-content-end'>" +
 		  "<i class='bi-pencil' onclick = 'modify(" + '"contactAddress"' + ")'></i>" + "</div"> +
 	   "</span> " +
@@ -190,7 +190,7 @@ function createInfoBoxes() {
 
 		"<div class = 'row w-100 p-3'>" +
 		"<div class = 'informationBox'>" +
-		  "<span class = 'titleBox'>" +
+		  "<div class = 'titleBox'>" +
 			"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex justify-content-end'>" +
 			"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + ")'></i>" + "</div"> +
 		 "</span> " +
