@@ -11,44 +11,51 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
 <script type="text/javascript">
 
-	document.addEventListener('DOMContentLoaded', function() 
-	{
-		readCookie();
-  }, false);
-  </script>
+	//document.addEventListener('DOMContentLoaded', function() 
+	//{
+		//readCookie();
+  //}, false);
+
+</script>
 
 
 </head>
 
+
+
 <body style="background-color:white; height:100vh; width:100vw; padding:0%">
 
-  <div class="container-fluid  h-100 bg-dark g-0 id = searchColumn">
-     <div class = "row h-100 w-100 g-0 "> 
-        <div class = "col-sm-5 h-100 g-0 bg-light " id = "contactSearch" > 
 
+  <div class="container-fluid h-100 bg-dark g-0 id = searchColumn">
+
+     <div class = "row h-100 w-100 g-0 "> 
+
+        <div class = "col-sm-5 h-100 g-0 bg-light " id = "contactSearch" > 
         <div class="input-group mb-0 p-1">
             <input type="text" class="form-control form-control-md" id = "searchbar" onchange = "search()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
             </div>
      
-
           <div class = "row h-75 w-100 g-0 bg-light overflow-auto d-flex" id = "contactBox">
             <div class = "col-12" id ="contacts">
               </div>
                 </div>
-    </div>
+         </div>
      
         <div class = "col-sm-7 h-100 bg-light g-0 id = mainColumn">
-          <div class = "container h-100">
+
           <div class = "homebackgroundImage">
-      
+
+          <div class = "container h-100 w-100">
+        
             <div class = "row h-auto g-0" id = "viewContacts">
               <div class="container d-flex justify-content-center">
-                <div class="col-10 h-100 p-4 g-0" id = "contactView">
+
+                <div class="col-10 h-100 g-0" id = "contactView">
              
               </div>
                 </div>
               </div>
-
+                <div class = "container h-100 d-flex align-content-end">
                 <div class="row h-auto w-100 p-4 g-0 bg-transparent">
               
                   <div class = "col-6 d-flex justify-content-start align-items-end">
@@ -58,7 +65,9 @@
                   <div class = "col-6 d-flex justify-content-end align-items-end">
                     <i class="bi-plus-square" style = "color:white;font-size:50px" onclick = 'addContact()'></i>
                     </div>
+
                   </div>
+                </div>
                 </div>
              
               </div>
