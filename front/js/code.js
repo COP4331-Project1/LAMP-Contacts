@@ -156,8 +156,8 @@ function createInfoBoxes() {
 	"<div class = 'informationBox'>" +
 	  "<div class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex justify-content-end'>" +
-		"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + ")'></i>" + "</div"> +
-	"</span> " +
+		"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + ")'></i>" + "</div>" +
+	"</div> " +
 	  "<div class = 'contactFirstName'>" +
 	  "<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  +
 
@@ -165,8 +165,8 @@ function createInfoBoxes() {
 	  "<div class = 'informationBox'>" +
 		"<div class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex justify-content-end'>" + 
-		  "<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + ")'></i>" + "</div"> +
-	"</span> " +
+		  "<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + ")'></i>" + "</div>" +
+	"</div> " +
 		"<div class = 'contactLastName'>" +
 		"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
 
@@ -174,8 +174,8 @@ function createInfoBoxes() {
 	"<div class = 'informationBox'>" +
 	  "<div class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex justify-content-end'>" + 
-		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + ")'></i>" + "</div"> +
-	 "</span> " +
+		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + ")'></i>" + "</div>" +
+	 "</div> " +
 	  "<div class = 'contactPhoneNumber'>" +
 	  "<p>" +contactPhoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
 
@@ -183,8 +183,8 @@ function createInfoBoxes() {
 	  "<div class = 'informationBox'>" +
 		"<div class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex justify-content-end'>" +
-		  "<i class='bi-pencil' onclick = 'modify(" + '"contactAddress"' + ")'></i>" + "</div"> +
-	   "</span> " +
+		  "<i class='bi-pencil' onclick = 'modify(" + '"contactAddress"' + ")'></i>" + "</div>" +
+	   "</div> " +
 		"<div class = 'contactAddress'>" +
 		"<p>" + contactAddress + "</p>" + "</div>" + "</div>" + "</div>" +
 
@@ -192,8 +192,8 @@ function createInfoBoxes() {
 		"<div class = 'informationBox'>" +
 		  "<div class = 'titleBox'>" +
 			"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex justify-content-end'>" +
-			"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + ")'></i>" + "</div"> +
-		 "</span> " +
+			"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + ")'></i>" + "</div>" +
+		 "</div> " +
 		  "<div class = 'contactEmail'>" +
 		  "<p>"+ contactEmail + "</p>" + "</div>" + "</div>" + "</div>" +
 		"<div class = 'row w-100 p-2'>"+
