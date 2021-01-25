@@ -150,7 +150,8 @@ function createInfoBoxes() {
 	var phoneNumber = "test"
 	var contactEmail = "test"
 
-	var boxes = "<div class = 'row w-100 p-3'>" +
+	var boxes =    "<div class = 'container w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
+	"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
 	  "<span class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>First</h3>" + 
@@ -198,10 +199,10 @@ function createInfoBoxes() {
 		"<div class = 'row w-100 p-2'>"+
 			"<div id = 'deleteButton'>" +
 			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + contactEmail +")'></i>" +
-			"</div>"
+			"</div>" + "</div>"
 
-			$("#showContacts").empty();
-			$("#showContacts").append(boxes);
+			$("#contactView").empty();
+			$("#contactView").append(boxes);
 
 
 }
