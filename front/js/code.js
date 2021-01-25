@@ -133,9 +133,9 @@ function fillSearchBox(JSONObject) {
 	var button = "<div class = 'row w-100 border border-1 border-primary h-auto p-1 g-0' onClick = showContact('" + contactFirstName + "','" + contactLastName + "','" + i +"')>" +
     "<div class = 'col-4 p-0 g-0 d-flex align-items-center justify-content-center'>" +
 	"<div class = 'circle'><h3>"+ contactFirstName[0] + contactLastName[0] +"</h3></div>" + "</div>" + 
-	"<div class = 'col-7 d-flex flex-column p-0 g-0'>" +
-	"<h4 style = 'padding-left:5%'>" + contactFirstName + "</h4>" +
-	"<h4 style = 'padding-left:20%'>" + contactLastName + "</h4> </div>" +
+	"<div class = 'col-7 d-flex flex-column align-items-center p-0 g-0'>" +
+	"<h3 style = 'padding-left:5%'>" + contactFirstName + "</h4>" +
+	"<h3 style = 'padding-left:20%'>" + contactLastName + "</h4> </div>" +
 	"<div class = 'col-1'>" + "</div>"
 	$("#contacts").append(button)
 	}
