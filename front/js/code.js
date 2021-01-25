@@ -198,7 +198,7 @@ function createInfoBoxes() {
 
 			"<div class = 'row w-100 p-2'>"+
 			"<div id = 'deleteButton'>" +
-			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + email +")'></i>" +
+			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + contactEmail +")'></i>" +
 			"</div>"
 
 			$("#showContacts").empty();
