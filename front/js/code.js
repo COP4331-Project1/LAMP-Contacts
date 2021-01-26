@@ -130,7 +130,7 @@ function fillSearchBox(JSONObject) {
 	var contactFirstName = JSONObject.results[i].contactFirstName
 	var contactLastName = JSONObject.results[i].contactLastName
 	contacts.push(JSONObject.results[i].contactID)	
-	var button = "<div class = 'row w-100 border border-1 border-primary h-auto p-1 g-0' onClick = showContact('" + contactFirstName + "','" + contactLastName + "','" + i +"')>" +
+	var button = "<div class = 'row w-100 border border-1 border-primary h-auto p-1 g-0' onClick = showContact('" + i +"')>" +
     "<div class = 'col-4 p-0 g-0 d-flex align-items-center justify-content-center'>" +
 	"<div class = 'circle'><h3>"+ contactFirstName[0] + contactLastName[0] +"</h3></div>" + "</div>" + 
 	"<div class = 'col-7 d-flex flex-column justify-content-center p-0 g-0'>" +
@@ -198,7 +198,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 
 }
 
-function showContact(contactFirstName,contactLastName,contactNumber){
+function showContact(contactNumber){
 
 	//createInfoBoxes();
 	var url = "http://159.203.70.233/LAMPAPI/ShowContact.php"
@@ -216,6 +216,8 @@ function showContact(contactFirstName,contactLastName,contactNumber){
 		
 		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		
+		var contactFirstName = JSONObject.contactFirstName
+		var contactLastName  = JSONObject.contactLastName
 		var contactAddress = JSONObject.address
 		var contactPhoneNumber = JSONObject.phoneNumber
 		var contactEmail = JSONObject.email

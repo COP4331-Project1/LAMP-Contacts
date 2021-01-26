@@ -4,6 +4,8 @@
 
     $conn = new mysqli("localhost","group17", "cop4331c", "COP4331");
 
+    $contactFirstName = "";
+    $contactLastName = "";
     $phoneNumber = "";
     $email = "";
     $address = "";
@@ -15,7 +17,7 @@
     }
     else
     {
-        $sql = "SELECT phoneNumber,email,address FROM Contacts WHERE CID=" . $inData["CID"];
+        $sql = "SELECT contactFirstName,contactLastName,phoneNumber,email,address FROM Contacts WHERE CID=" . $inData["CID"];
 
         $result = $conn->query($sql);
 
@@ -25,8 +27,10 @@
             $phoneNumber = $row["phoneNumber"];
             $email = $row["email"];
             $address = $address["address"];
+            $contactFirstName = $address["contactFirstName"];
+            $contactLastName = $address["contactLastName"];
 
-            returnWithInfo($phoneNumber, $email, $address);
+            returnWithInfo($contactFirstName,$contactLastName,$phoneNumber, $email, $address);
         }
         else
         {
@@ -54,9 +58,9 @@
 		sendResultInfoAsJson( $retValue );
     }
     
-    function returnWithInfo($phoneNumber, $email, $address)
+    function returnWithInfo($contactFirstName,$contactLastName,$phoneNumber, $email, $address)
 	{
-		$retValue = '{"phoneNumber":' . $phoneNumber . ',"email":"' . $email . '","address":"' . $address . '","error":""}';
+		$retValue = '{"contactFirstName":' . $contactFirstName . ',"contactLastName":' . $contactLastName . ',"phoneNumber":' . $phoneNumber . ',"email":"' . $email . '","address":"' . $address . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
