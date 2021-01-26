@@ -5,8 +5,8 @@
 	// localhost, admin_username, password, database
 	$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
     
-    $field = $inData["field"]
-    $value = $inData["value"]
+    $field = $inData["field"];
+    $value = $inData["value"];
 
 	// Attempt to connect to the server, and return error message if failed.
 	if ($conn->connect_error) 
