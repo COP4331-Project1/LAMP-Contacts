@@ -4,6 +4,9 @@
 	
 	// localhost, admin_username, password, database
 	$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
+    
+    $field = $inData["field"]
+    $value = $inData["value"]
 
 	// Attempt to connect to the server, and return error message if failed.
 	if ($conn->connect_error) 
@@ -12,13 +15,7 @@
 	} 
 	else
 	{
-
-        $sql =  "UPDATE Contacts SET contactFirstName='" . $inData["contactFirstName"] . 
-                                    "',contactLastName='" . $inData["contactLastName"] .
-                                    "',phoneNumber='" . $inData["phoneNumber"] .
-                                    "',email='" . $inData["email"] .
-                                    "',address='" . $inData["address"] . "'" . " WHERE CID=" . $inData["CID"];
-
+        $sql =  "UPDATE Contacts SET '".$field."' = '".$value."' WHERE CID=".$inData["CID"];
 
 		if ($result = $conn->query($sql) != TRUE)
 		{

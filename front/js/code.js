@@ -151,7 +151,7 @@ function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contact
 	"<div class = 'informationBox'>" +
 	  "<div class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-		"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + ")'></i>" + "</div>" +
+		"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	  "<div class = 'contactFirstName'>" +
 	  "<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  + "</div>" +
@@ -160,7 +160,7 @@ function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contact
 	  "<div class = 'informationBox'>" +
 		"<div class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
-		  "<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + ")'></i>" + "</div>" +
+		  "<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 		"<div class = 'contactLastName'>" +
 		"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
@@ -169,7 +169,7 @@ function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contact
 	"<div class = 'informationBox'>" +
 	  "<div class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
-		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + ")'></i>" + "</div>" +
+		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + "," + CID + ")'></i>" + "</div>" +
 	 "</div> " +
 	  "<div class = 'contactPhoneNumber'>" +
 	  "<p>" +contactPhoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
@@ -178,7 +178,7 @@ function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contact
 	  "<div class = 'informationBox'>" +
 		"<div class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-		  "<i class='bi-pencil' onclick = 'modify(" + '"contactAddress"' + ")'></i>" + "</div>" +
+		  "<i class='bi-pencil' onclick = 'modify(" + '"contactAddress"' + "," + CID + ")'></i>" + "</div>" +
 	   "</div> " +
 		"<div class = 'contactAddress'>" +
 		"<p>" + contactAddress + "</p>" + "</div>" + "</div>" + "</div>" +
@@ -187,7 +187,7 @@ function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contact
 		"<div class = 'informationBox'>" +
 		  "<div class = 'titleBox'>" +
 			"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-			"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + ")'></i>" + "</div>" +
+			"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + "," + CID + ")'></i>" + "</div>" +
 		 "</div> " +
 		  "<div class = 'contactEmail'>" +
 		  "<p>"+ contactEmail + "</p>" + "</div>" + "</div>" + "</div>" +
@@ -254,8 +254,7 @@ function addContact() {
 			if(this.status == 200 && this.readyState == 4){
 
 					$().append("Has been added")
-					//Contact was added , 
-
+					//Contact was added ,
 			}
 		}
 		xhr.send(jsonData)
@@ -268,40 +267,39 @@ function addContact() {
 		
 }
 
-function update(value){ //For updating the contact 
+function update(fieldName,CID){ //For updating the contact 
 
-		var element = "." + value
-		var update = "#" + value + "text"
-		console.log(element)
-		var updateValue = $(update).val()
-		console.log(updateValue)
 		
-		var url = "http://159.203.70.233/LAMPAPI/showContact.php"
+		var field = "." + fieldName
+		var updateField = "#" + fieldName + "text"
+		var updateValue = $(updateField).val()
+	
+		
+		var url = "http://159.203.70.233/LAMPAPI/UpdateContact.php"
 
-		var jsonData = JSON.stringify({value: updateValue })
-
+		var jsonData = JSON.stringify({"CID":CID,"field":fieldName,"value":updateValue})
+		
 		try {
+
 		xhr = openHTTP(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
-
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
 
-			//Output update succsessful 
 			}
 		}
 		xhr.send(jsonData)
 		}	
-
 		catch(err) {
-
 			console.log(err.message) //otherwise output error
+			return;
 		}
 
-		$(element).empty()
-		$(element).append("<p id = " + value + " > " + updateValue + " </p>")
-		console.log(update)
+
+		$(field).empty()
+		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
+		
 	
 }
 
@@ -341,10 +339,10 @@ function modify(value) { //Just to replace the textvalue
 
 		var element = "." + value
 		var textId = value +"text"
-		
+		var prevValue = $(element.value)
 		$(element).empty()
 		
-		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ textId + "' onchange = update('" + value + "') aria-describedby='inputGroup-sizing-default'>" +
+		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ textId + "' onchange = update('" + value + "," + CID + "') aria-describedby='inputGroup-sizing-default'>" +
 		"</div>"
   
 		$(element).append(input)
