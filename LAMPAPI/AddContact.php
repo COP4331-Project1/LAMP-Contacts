@@ -19,7 +19,7 @@ if ($conn->connect_error)
 else
 {
 	// Generate mySql command to return any Users given the userName supplied from request.
-	$sql = "SELECT contactFirstName,contactLastName FROM Contacts where contactFirstName='" . $inData["contactFirstName"] . "' and contactLastName='" . $inData["contactLastName"] . "' WHERE ID=" . $inData["ID"];
+	$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE contactFirstName='" . $inData["contactFirstName"] . "' and contactLastName='" . $inData["contactLastName"] . "' and ID=" . $inData["ID"];
 
 	$result = $conn->query($sql);
 
