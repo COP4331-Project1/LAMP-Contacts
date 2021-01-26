@@ -274,6 +274,9 @@ function update(fieldName,CID){ //For updating the contact
 		var updateField = "#" + fieldName + "text"
 		var updateValue = $(updateField).val()
 	
+		console.log(CID)
+		console.log(fieldName)
+		console.log(updateValue)
 		
 		var url = "http://159.203.70.233/LAMPAPI/UpdateContact.php"
 
