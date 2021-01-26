@@ -26,9 +26,9 @@
             $row = $result->fetch_assoc();
             $phoneNumber = $row["phoneNumber"];
             $email = $row["email"];
-            $address = $address["address"];
-            $contactFirstName = $address["contactFirstName"];
-            $contactLastName = $address["contactLastName"];
+            $address = $row["address"];
+            $contactFirstName = $row["contactFirstName"];
+            $contactLastName = $row["contactLastName"];
 
             returnWithInfo($contactFirstName,$contactLastName,$phoneNumber, $email, $address);
         }
