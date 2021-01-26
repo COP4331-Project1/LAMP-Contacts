@@ -339,7 +339,7 @@ function modify(field,CID) { //Just to replace the textvalue
 
 		var fieldName = "." + field
 		var fieldText = field +"text"
-		$(element).empty()
+		$(fieldName).empty()
 		
 		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "," + CID + "') aria-describedby='inputGroup-sizing-default'>" +
 		"</div>"
