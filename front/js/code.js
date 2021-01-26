@@ -166,7 +166,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'informationBox'>" +
 	  "<div class = 'titleBox'>" +
 		"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
-		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + "," + CID + ")'></i>" + "</div>" +
+		"<i class='bi-pencil' onclick = 'modify(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" +
 	 "</div> " +
 	  "<div class = 'phoneNumber'>" +
 	  "<p>" + phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
@@ -175,7 +175,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	  "<div class = 'informationBox'>" +
 		"<div class = 'titleBox'>" +
 		  "<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-		  "<i class='bi-pencil' onclick = 'modify(" + '"contactAddress"' + "," + CID + ")'></i>" + "</div>" +
+		  "<i class='bi-pencil' onclick = 'modify(" + '"address"' + "," + CID + ")'></i>" + "</div>" +
 	   "</div> " +
 		"<div class = 'address'>" +
 		"<p>" + address + "</p>" + "</div>" + "</div>" + "</div>" +
@@ -184,7 +184,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 		"<div class = 'informationBox'>" +
 		  "<div class = 'titleBox'>" +
 			"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-			"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + "," + CID + ")'></i>" + "</div>" +
+			"<i class='bi-pencil' onclick = 'modify(" + '"email"' + "," + CID + ")'></i>" + "</div>" +
 		 "</div> " +
 		  "<div class = 'email'>" +
 		  "<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
