@@ -143,9 +143,6 @@ function fillSearchBox(JSONObject) {
 }
 function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contactPhoneNumber,contactEmail,CID) {
 
-
-
-
 	var boxes = "<div class = 'col w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
 	"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
@@ -171,8 +168,8 @@ function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contact
 		"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
 		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + "," + CID + ")'></i>" + "</div>" +
 	 "</div> " +
-	  "<div class = 'contactPhoneNumber'>" +
-	  "<p>" +contactPhoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
+	  "<div class = 'phoneNumber'>" +
+	  "<p>" +phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
 
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
@@ -180,8 +177,8 @@ function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contact
 		  "<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
 		  "<i class='bi-pencil' onclick = 'modify(" + '"contactAddress"' + "," + CID + ")'></i>" + "</div>" +
 	   "</div> " +
-		"<div class = 'contactAddress'>" +
-		"<p>" + contactAddress + "</p>" + "</div>" + "</div>" + "</div>" +
+		"<div class = 'address'>" +
+		"<p>" + address + "</p>" + "</div>" + "</div>" + "</div>" +
 
 		"<div class = 'row w-100 p-3'>" +
 		"<div class = 'informationBox'>" +
@@ -189,8 +186,8 @@ function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contact
 			"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
 			"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + "," + CID + ")'></i>" + "</div>" +
 		 "</div> " +
-		  "<div class = 'contactEmail'>" +
-		  "<p>"+ contactEmail + "</p>" + "</div>" + "</div>" + "</div>" +
+		  "<div class = 'email'>" +
+		  "<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 		"<div class = 'row w-100 p-2'>"+
 			"<div id = 'deleteButton'>" +
 			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + CID +")'></i>" +
@@ -343,7 +340,6 @@ function modify(field,CID) { //Just to replace the textvalue
 		var fieldName = "." + field
 		var fieldText = field +"text"
 		$(fieldName).empty()
-		
 		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
 		"</div>"
   
