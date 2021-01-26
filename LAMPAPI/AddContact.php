@@ -19,7 +19,7 @@ if ($conn->connect_error)
 else
 {
 	// Generate mySql command to return any Users given the userName supplied from request.
-	$sql = "SELECT contactFirstName,contactLastName FROM Contacts where contactFirstName='" . $inData["contactFirstName"] . "'" . "' and contactLastName='" . $inData["contactLastName"] . "'";
+	$sql = "SELECT contactFirstName,contactLastName FROM Contacts where contactFirstName='" . $inData["contactFirstName"] . "'" . "' and contactLastName='" . $inData["contactLastName"] . "' WHERE ID=" . $inData["ID"];
 
 	$result = $conn->query($sql);
 
@@ -33,7 +33,7 @@ else
 	{
 
 		// Generates the mySql command to insert the request info.
-        $sql = "insert into Contacts (contactFirstName, contactLastName, phoneNumber, address, email) VALUES ('" . $conFirstName . "','" . $conLastName . "','" . $phoneNumber . "','" . $address . "','" . $email ."')";
+        $sql = "insert into Contacts (ID, contactFirstName, contactLastName, phoneNumber, address, email) VALUES (". $inData["ID"] . ",'" . $conFirstName . "','" . $conLastName . "','" . $phoneNumber . "','" . $address . "','" . $email ."')";
 		
 		if($result = $conn->query($sql) != TRUE)
 		{
