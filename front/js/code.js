@@ -337,8 +337,8 @@ function deleteContact(CID){
 	
 function modify(field,CID) { //Just to replace the textvalue
 
-		var fieldName = "." + value
-		var fieldText = value +"text"
+		var fieldName = "." + field
+		var fieldText = field +"text"
 		$(element).empty()
 		
 		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "," + CID + "') aria-describedby='inputGroup-sizing-default'>" +
