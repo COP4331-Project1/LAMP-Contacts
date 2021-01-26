@@ -141,7 +141,7 @@ function fillSearchBox(JSONObject) {
 	}
 
 }
-function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contactPhoneNumber,contactEmail,CID) {
+function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID) {
 
 	var boxes = "<div class = 'col w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
 	"<div class = 'row w-100 p-3'>" +
@@ -169,7 +169,7 @@ function createInfoBoxes(contactFirstName,contactLastName,contactAddress,contact
 		"<i class='bi-pencil' onclick = 'modify(" + '"contactPhoneNumber"' + "," + CID + ")'></i>" + "</div>" +
 	 "</div> " +
 	  "<div class = 'phoneNumber'>" +
-	  "<p>" +phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
+	  "<p>" + phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
 
 	  "<div class = 'row w-100 p-3'>" +
 	  "<div class = 'informationBox'>" +
