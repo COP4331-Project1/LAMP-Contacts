@@ -17,12 +17,11 @@ function login() {
 
     var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //Json is formatted in key value pairs
 
-    url = "http://159.203.70.233/LAMPAPI/Login.php"
-
-
+	url = "http://159.203.70.233/LAMPAPI/Login.php"
+	
   	try {
 		var xhr = openHTTP(url,"POST")
-	        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 		var xhr = openHTTP(url,"POST")
 	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -350,14 +349,14 @@ function saveCookie(){ //Need to save cookies so if user refreshes page they are
 	var minutes = 20; //The time to save cookie
 	var date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
-    document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+    document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + ID + ";expires=" + date.toGMTString();
     
     //Saves the cookie to keep track of the user
 }
 
 function readCookie()
 {
-	userId = -1;
+	ID = -1;
 	var data = document.cookie;
 	var splits = data.split(",");
 	for(var i = 0; i < splits.length; i++) 
@@ -374,11 +373,11 @@ function readCookie()
 		}
 		else if( tokens[0] == "userId" )
 		{
-			userId = parseInt( tokens[1].trim() );
+			ID = parseInt( tokens[1].trim() );
 		}
 	}
 	
-	if( userId < 0 )
+	if( ID < 0 )
 	{
 		window.location.href = "index.html";
 	}
