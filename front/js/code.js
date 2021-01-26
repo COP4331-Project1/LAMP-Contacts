@@ -1,6 +1,6 @@
 firstName = ""
 lastName = ""
-userId  = 0
+ID  = 0
 var contacts = []
 
 function openHTTP(url,action){
@@ -12,10 +12,10 @@ function openHTTP(url,action){
 
 function login() {
 
-    var username = $("#loginName").val() //gets the username and password from the input field
+    var userName = $("#loginName").val() //gets the username and password from the input field
     var password = $("#loginPassword").val()
 
-    var jsonData = JSON.stringify({"userName" : username , "password":  password}) //Json is formatted in key value pairs
+    var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //Json is formatted in key value pairs
 
     url = "http://159.203.70.233/LAMPAPI/Login.php"
 
@@ -33,21 +33,20 @@ function login() {
 		
 		var jsonObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		
-		userId = jsonObject.ID; //Gets the user ID form the databsae
+		ID = jsonObject.ID; //Gets the user ID form the databsae
 		
-		if( userId < 1 ) //Represents an error 
+		if( ID < 1 ) //Represents an error 
 		{
 			$("#loginInput").append("<p> User/Password combination incorrect </p>");
 			return;
 		}	
-		console.log(userId)
+		console.log(ID)
 		firstName = jsonObject.firstName; //Gets the first name
 		lastName = jsonObject.lastName;
 		window.location.href = "../html/home.html"
 		saveCookie(); //have firstName last name saved in scope.
 		}
 	}
-
 	xhr.send(jsonData); //Will send the data and when the state changes will recieve a response	
 	}
     catch(err)
@@ -75,11 +74,11 @@ function register() {
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 		xhr.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
-
-	
+		window.location.href = "../html/index.html"
+		}
+		
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
-		}
 
 	}
 	catch(err){
@@ -91,8 +90,9 @@ function register() {
 function search() {
 
 	var search = $("#searchbar").val() //gets the value from the search bar
+
 	var	url = "http://159.203.70.233/LAMPAPI/search.php"
-	var jsonData = JSON.stringify({"userId":userId, "search":search})
+	var jsonData = JSON.stringify({"userId":ID, "search":search})
 	var xhr = openHTTP(url,"POST");
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	
@@ -106,11 +106,11 @@ function search() {
 		 //Will send the data and when the state changes will recieve a response
 		fillSearchBox(JSONObject);
 		}
-
 		};
 		xhr.send(jsonData);	
 	}	
 	catch(err) {
+
 		var errorMessage = "<h3>" + err.message + "</h3>"
 		console.log(errorMessage)		
 		$("#contacts").append(errorMessage)
@@ -129,7 +129,7 @@ function fillSearchBox(JSONObject) {
 	for(var i = 0 ; i < entries ; i++){
 	var contactFirstName = JSONObject.results[i].contactFirstName
 	var contactLastName = JSONObject.results[i].contactLastName
-	contacts.push(JSONObject.results[i].contactID)	
+	contacts.push(JSONObject.results[i].CID)	
 	var button = "<div class = 'row w-100 border border-1 border-primary h-auto p-1 g-0' onClick = showContact('" + i +"')>" +
     "<div class = 'col-4 p-0 g-0 d-flex align-items-center justify-content-center'>" +
 	"<div class = 'circle'><h3>"+ contactFirstName[0] + contactLastName[0] +"</h3></div>" + "</div>" + 
@@ -200,11 +200,12 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 
 function showContact(contactNumber){
 
-	//createInfoBoxes();
+
 	var url = "http://159.203.70.233/LAMPAPI/ShowContact.php"
 	var CID = contacts[contactNumber]
 
 	var jsonData= JSON.stringify({"CID":CID})
+
 	try
 	{
 		var xhr = openHTTP(url,"POST")
@@ -240,7 +241,7 @@ function addContact() {
 	var phoneNumber = $("#phoneNumber").val()
 	var contactEmail = $("#email").val()
 
-	var jsonData = JSON.stringify({"contactFirstName":contactFirstName,"contactLastName":contactLastName,"address":address,"phoneNumber":phoneNumber,"contactEmail":contactEmail})
+	var jsonData = JSON.stringify({"ID":ID,"contactFirstName":contactFirstName,"contactLastName":contactLastName,"address":address,"phoneNumber":phoneNumber,"contactEmail":contactEmail})
 	url = "http://159.203.70.233/LAMPAPI/addContact.php"
 
 	try {
@@ -251,13 +252,10 @@ function addContact() {
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
-
-					$().append("Has been added")
 					//Contact was added ,
 			}
 		}
 		xhr.send(jsonData)
-
 	}
 	catch(err){
 
@@ -266,6 +264,21 @@ function addContact() {
 		
 }
 
+
+function modify(field,CID) { //Just to replace the textvalue
+
+	var fieldName = "." + field
+	var fieldText = field +"text"
+	$(fieldName).empty()
+	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
+	"</div>"
+
+	$(fieldName).append(input)
+	console.log("Test")
+	
+}
+
+
 function update(fieldName,CID){ //For updating the contact 
 
 		
@@ -273,10 +286,6 @@ function update(fieldName,CID){ //For updating the contact
 		var updateField = "#" + fieldName + "text"
 		var updateValue = $(updateField).val()
 	
-		console.log(CID)
-		console.log(fieldName)
-		console.log(updateValue)
-		
 		var url = "http://159.203.70.233/LAMPAPI/UpdateContact.php"
 
 		var jsonData = JSON.stringify({"CID":CID,"field":fieldName,"value":updateValue})
@@ -319,7 +328,6 @@ function deleteContact(CID){
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
-
 			console.log("Deleted")
 			}
 		}
@@ -337,19 +345,6 @@ function deleteContact(CID){
 }
 
 	
-function modify(field,CID) { //Just to replace the textvalue
-
-		var fieldName = "." + field
-		var fieldText = field +"text"
-		$(fieldName).empty()
-		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
-		"</div>"
-  
-		$(fieldName).append(input)
-		console.log("Test")
-		
-	}
-
 function saveCookie(){ //Need to save cookies so if user refreshes page they are still remembered
 
 	var minutes = 20; //The time to save cookie
