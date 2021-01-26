@@ -349,7 +349,7 @@ function saveCookie(){ //Need to save cookies so if user refreshes page they are
 	var minutes = 20; //The time to save cookie
 	var date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
-    document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + ID + ";expires=" + date.toGMTString();
+    document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",ID" + ID + ";expires=" + date.toGMTString();
     
     //Saves the cookie to keep track of the user
 }
@@ -371,7 +371,7 @@ function readCookie()
 		{
 			lastName = tokens[1];
 		}
-		else if( tokens[0] == "userId" )
+		else if( tokens[0] == "ID" )
 		{
 			ID = parseInt( tokens[1].trim() );
 		}
