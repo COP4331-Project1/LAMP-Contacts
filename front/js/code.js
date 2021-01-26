@@ -335,17 +335,16 @@ function deleteContact(CID){
 }
 
 	
-function modify(value) { //Just to replace the textvalue
+function modify(field,CID) { //Just to replace the textvalue
 
-		var element = "." + value
-		var textId = value +"text"
-		var prevValue = $(element.value)
+		var fieldName = "." + value
+		var fieldText = value +"text"
 		$(element).empty()
 		
-		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ textId + "' onchange = update('" + value + "," + CID + "') aria-describedby='inputGroup-sizing-default'>" +
+		var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "," + CID + "') aria-describedby='inputGroup-sizing-default'>" +
 		"</div>"
   
-		$(element).append(input)
+		$(fieldName).append(input)
 		console.log("Test")
 		
 	}
