@@ -74,12 +74,7 @@ function register() {
 		}
 		
 		}
-<<<<<<< HEAD
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
-
-=======
-		
->>>>>>> api
 	}
 	catch(err){
 		console.log(err.message)
