@@ -33,7 +33,7 @@ else
 	{
 
 		// Generates the mySql command to insert the request info.
-        $sql = "insert into Contacts (ID,contactFirstName,contactLastName,phoneNumber,address,email) VALUES (". $inData["ID"] . ",'" . $conFirstName . "','" . $conLastName . "'," . $phoneNumber . ",'" . $address . "','" . $email ."')";
+        $sql = "insert into Contacts (contactFirstName,contactLastName,phoneNumber,address,email,ID) VALUES ('" . $conFirstName . "','" . $conLastName . "'," . $phoneNumber . ",'" . $address . "','" . $email ."',". $inData["ID"] . ")";
 		
 		if($result = $conn->query($sql) != TRUE)
 		{
