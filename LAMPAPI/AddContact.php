@@ -2,6 +2,7 @@
 // Why no add?
 $inData = getRequestInfo();
 
+$ID =  $inData["ID"];
 $conFirstName = $inData["contactFirstName"];
 $conLastName = $inData["contactLastName"];
 $phoneNumber = $inData["phoneNumber"];
@@ -31,9 +32,13 @@ else
 	}
 	else
 	{
+		if($inData["ID"] == NULL)
+		{
+		     $ID = -1;
+		}
 
 		// Generates the mySql command to insert the request info.
-        $sql = "insert into Contacts (contactFirstName,contactLastName,phoneNumber,address,email,ID) VALUES ('" . $conFirstName . "','" . $conLastName . "','" . $phoneNumber . "','" . $address . "','" . $email ."',". $inData["ID"] . ")";
+        $sql = "insert into Contacts (contactFirstName,contactLastName,phoneNumber,address,email,ID) VALUES ('" . $conFirstName . "','" . $conLastName . "','" . $phoneNumber . "','" . $address . "','" . $email ."',". $ID . ")";
 		
 		if($result = $conn->query($sql) != TRUE)
 		{
