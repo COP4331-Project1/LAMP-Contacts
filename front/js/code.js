@@ -55,8 +55,8 @@ function login() {
 
 function register() {
 
-	var firstName = "Ryan";
-	var lastName = "Pattillo";
+	var firstName = $("#firstName").val()
+	var lastName = $("#lastName").val()
 	var userName = $("#userName").val() //gets the username and password from the input field
     var password =  $("#password").val()
 	var email = $("#email").val()
@@ -409,7 +409,6 @@ function readCookie()
 	}
 	
 }
-
 
 function addDialog() {
 
