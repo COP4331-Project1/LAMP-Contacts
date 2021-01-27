@@ -39,7 +39,7 @@ function login() {
 		if( ID < 1 ) //Represents an error 
 		{		
 			$(".errorBar").empty();
-			$(".errorBar").append("</p id = 'errorText'> 'Incorrect Username/Password' </p>)");
+			$(".errorBar").append("<p id = 'errorText'> 'Incorrect Username/Password' </p>)");
 			return;
 		}	
 		firstName = jsonObject.firstName; //Gets the first name
