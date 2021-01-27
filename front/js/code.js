@@ -85,10 +85,11 @@ function register() {
 		xhr.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
 
-		var jsonObject = JSON.parse(xhr.responseText); //Par
-		if(jsonObject.err == "This username already exists, try another one."){
+		var jsonObject = JSON.parse(xhr.responseText); 
+
+		if(jsonObject.error == "This username already exists, try another one."){
 		$(".errorBar").empty();	
-		$("#errorBar").append("<p id = 'errorText'>" + jsonObject.err + "</p>")
+		$(".errorBar").append("<p id = 'errorText'>" + jsonObject.error + "</p>")
 		return;
 		}
 		else {
@@ -398,11 +399,8 @@ function deleteContact(CID){
 
 		catch(err) {
 
-			console.log(err.message) //otherwise output error
+		console.log(err.message) //otherwise output error
 		}
-
-	var search = $("#searchBar").val()
-	$("#searchBar").val(search)
 
 }
 
