@@ -268,7 +268,7 @@ function addContact() {
 	var contactEmail = $("#email").val()
 
 	var jsonData = JSON.stringify({"ID":ID,"contactFirstName":contactFirstName,"contactLastName":contactLastName,"address":address,"phoneNumber":phoneNumber,"contactEmail":contactEmail})
-	url = "http://159.203.70.233/LAMPAPI/addContact.php"
+	url = "http://159.203.70.233/LAMPAPI/AddContact.php"
 
 	try {
 
