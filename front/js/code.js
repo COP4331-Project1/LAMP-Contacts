@@ -18,6 +18,7 @@ function login() {
     var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //Json is formatted in key value pairs
 
 	if (userName == ""||password == "") {
+		$(".errorBar").empty();
 		$(".errorBar").append("<p id = 'errorText'> Please enter a username and password</p>");
 		return;
 	}
@@ -36,8 +37,9 @@ function login() {
 		ID = jsonObject.ID; //Gets the user ID form the databsae
 		
 		if( ID < 1 ) //Represents an error 
-		{	
-			$(".errorBar").append("</p id = 'errorText'> 'Incorrect Username/Password' </p>)");
+		{		
+			$(".errorBar").empty();
+			$(".errorBar").append("<p id = 'errorText'> Incorrect Username/Password </p>");
 			return;
 		}	
 		firstName = jsonObject.firstName; //Gets the first name
@@ -68,6 +70,7 @@ function register() {
 
 	if(userName =="" || password == "") {
 
+	 $(".errorBar").empty();
 	 $(".errorBar").append("<p id = 'errorText'> User Name and Password are required fields </p>")
 	 return;
 
@@ -84,6 +87,7 @@ function register() {
 
 		var jsonObject = JSON.parse(xhr.responseText); //Par
 		if(jsonObject.err == "This username already exists, try another one."){
+		$(".errorBar").empty();	
 		$("#errorBar").append("<p id = 'errorText'>" + jsonObject.err + "</p>")
 		return;
 		}
@@ -263,6 +267,7 @@ function addContact() {
 
 
 	if(contactFirstName == "") {
+		$(".errorBar").empty();
 		$(".errorBar").append("<p id = 'errorText'> First Name is Required </p>");
 		return;
 	}
@@ -280,6 +285,7 @@ function addContact() {
 			if(this.status == 200 && this.readyState == 4){
 				var JSONObject = JSON.parse(xhr.responseText);
 				if(JSONObject.err = "This contact already exists.");
+				$(".errorBar").empty();
 				$(".errorBar").append("<p id = 'errorText'> This contact already exists. </p>");
 
 				return;

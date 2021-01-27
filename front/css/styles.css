@@ -238,10 +238,7 @@ select{
 
 }
 
-body
-{
-    background-image: url(../../images/background.jpg) !important;
-}
+
 
 #block
 {
@@ -266,3 +263,6 @@ body
   font-weight: bold;
   color: mediumvioletred;
 }
+
+
+
