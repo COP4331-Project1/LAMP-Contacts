@@ -6,7 +6,7 @@ $conFirstName = $inData["contactFirstName"];
 $conLastName = $inData["contactLastName"];
 $phoneNumber = $inData["phoneNumber"];
 $address = $inData["address"];
-$email = $inData["email"];
+$email = $inData["contactEmail"];
 
 // localhost, admin_username, password, database
 $conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
