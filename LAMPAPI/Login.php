@@ -20,7 +20,7 @@
 		// Grab ID, firstName, and lastName of the input login and password, generating an associative array.
 		// The keys are then concatenated to generate a mysql command.
 		// Users will be the table being pulled from.
-		$sql = "SELECT ID, firstName, lastName FROM Users where userName='" . $inData["userName"] . "' and Password='" . $inData["password"] . "'";
+		$sql = "SELECT ID, firstName, lastName FROM Users where userName='" . $inData["userName"] . "' and password='" . $inData["password"] . "'";
 
 		// Perform a query on the database to test whether the login and password exist within the database.
 		$result = $conn->query($sql);
@@ -30,8 +30,8 @@
 		{
 			// the result is then turned into an associative array and stored accordingly.
 			$row = $result->fetch_assoc();
-			$firstName = $row["FirstName"];
-			$lastName = $row["LastName"];
+			$firstName = $row["firstName"];
+			$lastName = $row["lastName"];
 			$id = $row["ID"];
 			
 			// Then packaging the info as a JSON and sending it off.

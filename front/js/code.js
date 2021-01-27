@@ -75,11 +75,41 @@ function register() {
 		
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
-
 	}
 	catch(err){
 		console.log(err.message)
 	}
+}
+
+function deleteAccount()
+{
+	
+	var url = "http://159.203.70.233/LAMPAPI/DeleteAccount.php"
+
+	var jsonData = JSON.stringify({"ID": userId}) //Json 
+	
+	try 
+	{
+		var xhr = openHttp(url, "POST");
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		xhr.onreadystatechange = function() 
+		{
+			if(this.readyState == 4 && this.status == 200)
+			{
+
+				$().append("Account Successfully deleted.");
+				console.log("Account successfully deleted.");
+			}
+			
+			xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
+		}
+		
+	}
+	catch(err)
+	{
+		console.log(err.message)
+	}
+
 }
 
 

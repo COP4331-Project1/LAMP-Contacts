@@ -20,7 +20,7 @@ if ($conn->connect_error)
 else
 {
 	// Generate mySql command to return any Users given the userName supplied from request.
-	$sql = "SELECT ID,FirstName,LastName FROM Users where UserName='" . $inData["userName"] . "'";
+	$sql = "SELECT ID,firstName,lastName FROM Users where userName='" . $inData["userName"] . "'";
 
 	$result = $conn->query($sql);
 
@@ -32,9 +32,9 @@ else
 	}
 	else
 	{
-
+		
 		// Generates the mySql command to insert the request info.
-		$sql = "insert into Users (FirstName,LastName,UserName,Password,Email) VALUES ('" . $firstName . "','" . $lastName . "','" . $userName . "','" . $password . "','" . $email ."')";
+		$sql = "insert into Users (firstName,lastName,userName,password,email) VALUES ('" . $firstName . "','" . $lastName . "','" . $userName . "','" . $password . "','" . $email ."')";
 		
 		if($result = $conn->query($sql) != TRUE)
 		{

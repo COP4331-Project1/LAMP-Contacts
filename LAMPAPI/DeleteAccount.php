@@ -33,7 +33,7 @@
 		// json_decode converts a json string into a mixed variable type. True to set associative type to true.
 		return json_decode(file_get_contents('php://input'), true);
 	}
-
+	
 	function sendResultInfoAsJson( $obj )
 	{
 		header('Content-type: application/json');
