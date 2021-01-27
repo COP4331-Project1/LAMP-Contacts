@@ -30,8 +30,8 @@
 		{
 			// the result is then turned into an associative array and stored accordingly.
 			$row = $result->fetch_assoc();
-			$firstName = $row["FirstName"];
-			$lastName = $row["LastName"];
+			$firstName = $row["firstName"];
+			$lastName = $row["lastName"];
 			$id = $row["ID"];
 			
 			// Then packaging the info as a JSON and sending it off.
