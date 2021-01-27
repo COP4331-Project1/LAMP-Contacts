@@ -23,9 +23,6 @@ function login() {
 		var xhr = openHTTP(url,"POST")
 	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-		var xhr = openHTTP(url,"POST")
-	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
 		xhr.onreadystatechange = function() {
 
 		if(this.readyState == 4 && this.status == 200) {
@@ -376,10 +373,15 @@ function readCookie()
 			ID = parseInt( tokens[1].trim() );
 		}
 	}
-	
 	if( ID < 0 )
 	{
 		window.location.href = "index.html";
 	}
 	
+}
+
+
+function addDialog() {
+
+
 }
