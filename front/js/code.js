@@ -66,13 +66,12 @@ function register() {
 	
 	try {
 
-		var xhr = openHttp(url,"POST")
+		var xhr = openHTTP(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 		xhr.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
 		window.location.href = "../html/index.html"
 		}
-		
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
 	}
