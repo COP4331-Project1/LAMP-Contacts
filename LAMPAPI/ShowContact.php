@@ -60,7 +60,7 @@
     
     function returnWithInfo($contactFirstName,$contactLastName,$phoneNumber, $email, $address)
 	{
-		$retValue = '{"contactFirstName":"' . $contactFirstName . '","contactLastName":"' . $contactLastName . '","phoneNumber":' . $phoneNumber . ',"email":"' . $email . '","address":"' . $address . '","error":""}';
+		$retValue = '{"contactFirstName":"' . $contactFirstName . '","contactLastName":"' . $contactLastName . '","phoneNumber":"' . $phoneNumber . '","email":"' . $email . '","address":"' . $address . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
