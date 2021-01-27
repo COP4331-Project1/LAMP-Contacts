@@ -65,11 +65,19 @@ body
 
 #loginName
 {
-	font-size: 10px;
+  color: grey;
+  font-size: 13px;
+  font-family: "Helvetica", sans-serif;
+  font-weight: normal;
+  background:#EFEEEE;
 }
 #loginPassword
 {
-	font-size: 10px;
+  color: grey;
+  font-size: 13px;
+  font-family: "Helvetica", sans-serif;
+  font-weight: normal;
+  background:#EFEEEE;
 }
 #searchText
 {
@@ -215,3 +223,9 @@ select{
     align-items:center;
 
  }
+
+#link
+{
+  margin-top: 23px;
+  font-size: 13px;
+}
