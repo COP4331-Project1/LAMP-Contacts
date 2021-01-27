@@ -5,7 +5,7 @@
     <link href="../css/styles.css" rel="stylesheet">
 
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -15,31 +15,22 @@
 </head>
 <body>
 
-<h1 id="title">  </h1>
-
 <div id="loginDiv">
+	 <div class="container">
 	<span id="inner-title">LOGIN</span>
 
-	<form>
+
+	<div class="input-group mb-3">
+			<input type="text" id="loginName" class="form-control" placeholder="Username" aria-label="username" aria-describedby="basic-addon1">
+	</div>
+
 	  <div class="input-group">
-	    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-	    <input id="loginName" type="text" class="form-control" name="email" placeholder="Username">
-	  </div>
-	  <div class="input-group">
-	    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 	    <input id="loginPassword" type="password" class="form-control" name="password" placeholder="Password">
 	  </div>
-	  <div class="input-group">
-	    <span class="input-group-addon">Text</span>
-	    <input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Info">
-	  </div>
 
-
-
-	<button type="button" id="loginButton" class="btn btn-primary" onclick='login();'>Continue</button>
-	<a href="member.html" class="btn btn-link" role="button">Sign up</a>
-
-	</form>
+		 	<button type="button" id="loginButton" class="btn btn-primary" onclick="login();">Continue</button>
+			<a href="member.html" class="btn btn-link" role="button" id="link">Sign up</a>
+		</div>
 
 
 	<!-- PROFESSORS ORIGINAL HTML
