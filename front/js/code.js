@@ -33,14 +33,16 @@ function login() {
 		
 		if( ID < 1 ) //Represents an error 
 		{
-			$("#loginInput").append("<p> User/Password combination incorrect </p>");
+			$("#loginDiv").append("<div class='alert alert-danger' role='alert'>" +
+			"This is a danger alert—check it out! </div>)" );
 			return;
 		}	
-		console.log(ID)
+
 		firstName = jsonObject.firstName; //Gets the first name
 		lastName = jsonObject.lastName;
 		window.location.href = "../html/home.html"
 		saveCookie(); //have firstName last name saved in scope.
+
 		}
 	}
 	xhr.send(jsonData); //Will send the data and when the state changes will recieve a response	
@@ -48,7 +50,8 @@ function login() {
     catch(err)
 	{
 		console.log(err.message)
-		$("#loginInput").append("<p>" + err.message + '</p>')  
+		$("#loginDiv").append("<div class='alert alert-danger' role='alert'>" +
+		"This is a danger alert—check it out! </div>)" );
 	}
 
 }
@@ -304,10 +307,8 @@ function modify(field,CID) { //Just to replace the textvalue
 	
 }
 
-
 function update(fieldName,CID){ //For updating the contact 
 
-		
 		var field = "." + fieldName
 		var updateField = "#" + fieldName + "text"
 		var updateValue = $(updateField).val()
@@ -340,6 +341,36 @@ function update(fieldName,CID){ //For updating the contact
 	
 }
 
+
+function deleteUser(){
+
+	var url = "http://159.203.70.233/LAMPAPI/deleteContact.php"
+
+	var jsonData = JSON.stringify({"ID":ID})
+
+	try {
+
+		xhr = openHTTP(url,"POST")
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
+
+		xhr.onreadystatechange = function() {
+
+			if(this.status == 200 && this.readyState == 4){
+				window.location.href = "../html/index.html"
+			}
+		}
+		xhr.send(jsonData)
+		}	
+
+		catch(err) {
+
+			console.log(err.message) //otherwise output error
+		}
+
+
+
+}
+
 function deleteContact(CID){
 
 	var url = "http://159.203.70.233/LAMPAPI/deleteContact.php"
@@ -354,7 +385,7 @@ function deleteContact(CID){
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
-			console.log("Deleted")
+
 			}
 		}
 		xhr.send(jsonData)
@@ -370,6 +401,10 @@ function deleteContact(CID){
 
 }
 
+
+function settings() {
+
+}
 	
 function saveCookie(){ //Need to save cookies so if user refreshes page they are still remembered
 
@@ -415,9 +450,9 @@ function addModal() {
 	$('#add').modal('show')
 }
 
-function closeModal() {
+function closeAdd() {
 
-	$('#settings').modal('hide')
+	$('#add').modal('hide')
 }
 
 
@@ -430,3 +465,25 @@ function closeModal() {
 
 	$('#settings').modal('hide')
 }
+
+
+/*
+function changeSettings() {
+
+
+
+	$("#changeUserName").
+	$("#changePassWord").
+	$("#changeEmail").
+
+}
+
+function displaySettings() {
+
+	#("#userName")
+	#("#passWord")
+
+
+
+}
+*/
