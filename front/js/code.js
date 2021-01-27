@@ -112,10 +112,11 @@ function search() {
 	try {	
 	
 		xhr.onreadystatechange = function() {
-	
+			
 		if(this.readyState == 4 && this.status == 200) {
 			
 		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
+		
 		 //Will send the data and when the state changes will recieve a response
 		fillSearchBox(JSONObject);
 		}
@@ -372,7 +373,7 @@ function deleteUser(){
 
 function deleteContact(CID){
 
-	var url = "http://159.203.70.233/LAMPAPI/deleteContact.php"
+	var url = "http://159.203.70.233/LAMPAPI/DeleteContact.php"
 
 	var jsonData = JSON.stringify({"CID":CID})
 
