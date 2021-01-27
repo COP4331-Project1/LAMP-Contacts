@@ -260,6 +260,7 @@ function showContact(contactNumber){
 
 function addContact() {
 
+	$('.modal').modal('hide')
 	var contactFirstName = $("#contactFirstName").val()
 	var contactLastName = $("#contactLastName").val()
 	var address= $("#address").val()
@@ -409,7 +410,23 @@ function readCookie()
 	
 }
 
-function addDialog() {
+function addModal() {
+
+	$('#add').modal('show')
+}
+
+function closeModal() {
+
+	$('#settings').modal('hide')
+}
 
 
+function settingsModal() {
+
+	$('#settings').modal('show')
+}
+
+function closeModal() {
+
+	$('#settings').modal('hide')
 }
