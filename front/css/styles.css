@@ -266,3 +266,34 @@ body
   font-weight: bold;
   color: mediumvioletred;
 }
+
+
+
+body
+{
+    background-image: url(../../images/background.jpg) !important;
+}
+
+#block
+{
+    border-radius: 10px;
+    position: absolute;
+    width: 30%;
+    margin-left: 35%;
+    padding: 45px;
+    bottom: 180px;
+    background-color: White;
+}
+
+#title
+{
+  display: inline-block;
+  font-size: 40px;
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  margin-bottom: 10%;
+  font-family: "Bebas Neue", Sans-serif;
+  font-weight: bold;
+  color: mediumvioletred;
+}
