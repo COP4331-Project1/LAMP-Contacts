@@ -88,7 +88,7 @@ function search() {
 	var search = $("#searchbar").val() //gets the value from the search bar
 
 	var	url = "http://159.203.70.233/LAMPAPI/search.php"
-	var jsonData = JSON.stringify({"userId":ID, "search":search})
+	var jsonData = JSON.stringify({"ID":ID, "search":search})
 	var xhr = openHTTP(url,"POST");
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	
@@ -346,7 +346,7 @@ function saveCookie(){ //Need to save cookies so if user refreshes page they are
 	var minutes = 20; //The time to save cookie
 	var date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
-    document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",ID" + ID + ";expires=" + date.toGMTString();
+    document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",ID=" + ID + ";expires=" + date.toGMTString();
     
     //Saves the cookie to keep track of the user
 }
