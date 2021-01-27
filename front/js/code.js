@@ -17,6 +17,10 @@ function login() {
 
     var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //Json is formatted in key value pairs
 
+	if (userName == ""||password == "") {
+		$(".errorBar").append("<p id = 'errorText'> Please enter a username and password</p>");
+		return;
+	}
 	url = "http://159.203.70.233/LAMPAPI/Login.php"
 	
   	try {
@@ -32,26 +36,23 @@ function login() {
 		ID = jsonObject.ID; //Gets the user ID form the databsae
 		
 		if( ID < 1 ) //Represents an error 
-		{
-			$("#loginDiv").append("<div class='alert alert-danger' role='alert'>" +
-			"This is a danger alert—check it out! </div>)" );
+		{	
+			$(".errorBar").append("</p id = 'errorText'> 'Incorrect Username/Password' </p>)");
 			return;
 		}	
-
 		firstName = jsonObject.firstName; //Gets the first name
 		lastName = jsonObject.lastName;
 		window.location.href = "../html/home.html"
 		saveCookie(); //have firstName last name saved in scope.
-
 		}
-	}
-	xhr.send(jsonData); //Will send the data and when the state changes will recieve a response	
+		}
+		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response	
 	}
     catch(err)
-	{
-		console.log(err.message)
-		$("#loginDiv").append("<div class='alert alert-danger' role='alert'>" +
-		"This is a danger alert—check it out! </div>)" );
+	{	console.log("Test")
+		console.log("Error" + err.message)
+		$(".errorBar").append("<div class='alert alert-danger' role='alert'>" + //Fix Error Logging
+		"'Internal Server Error'" + "</div>)" );
 	}
 
 }
@@ -65,6 +66,13 @@ function register() {
 	var email = $("#email").val()
 	var url = "http://159.203.70.233/LAMPAPI/Register.php"
 
+	if(userName =="" || password == "") {
+
+	 $(".errorBar").append("<p id = 'errorText'> User Name and Password are required fields </p>")
+	 return;
+
+	}
+
 	var jsonData = JSON.stringify({"firstName":firstName,"lastName":lastName,"userName":userName , "password":  password , "email": email}) //Json 
 	
 	try {
@@ -73,47 +81,24 @@ function register() {
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 		xhr.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
+
+		var jsonObject = JSON.parse(xhr.responseText); //Par
+		if(jsonObject.err == "This username already exists, try another one."){
+		$("#errorBar").append("<p id = 'errorText'>" + jsonObject.err + "</p>")
+		return;
+		}
+		else {
 		window.location.href = "../html/index.html"
 		}
+
 		}
+	}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
 	}
 	catch(err){
 		console.log(err.message)
 	}
 }
-
-function deleteAccount()
-{
-	
-	var url = "http://159.203.70.233/LAMPAPI/DeleteAccount.php"
-
-	var jsonData = JSON.stringify({"ID": userId}) //Json 
-	
-	try 
-	{
-		var xhr = openHttp(url, "POST");
-		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-		xhr.onreadystatechange = function() 
-		{
-			if(this.readyState == 4 && this.status == 200)
-			{
-
-				$().append("Account Successfully deleted.");
-				console.log("Account successfully deleted.");
-			}
-			
-			xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
-		}
-		
-	}
-	catch(err)
-	{
-		console.log(err.message)
-	}
-
-}
-
 
 function search() {
 
@@ -153,6 +138,12 @@ function fillSearchBox(JSONObject) {
 	$("#contacts").empty()
 	
 	var entries = JSONObject.entries
+
+	if(entries == 0){
+		$("#contacts").append("<p> 0 results </p>")
+		return;
+
+	} 
 
 	for(var i = 0 ; i < entries ; i++){
 	var contactFirstName = JSONObject.results[i].contactFirstName
@@ -263,12 +254,17 @@ function showContact(contactNumber){
 
 function addContact() {
 
-	$('.modal').modal('hide')
 	var contactFirstName = $("#contactFirstName").val()
 	var contactLastName = $("#contactLastName").val()
 	var address= $("#address").val()
 	var phoneNumber = $("#phoneNumber").val()
 	var contactEmail = $("#email").val()
+
+
+	if(contactFirstName == "") {
+		$(".errorBar").append("<p id = 'errorText'> First Name is Required </p>");
+		return;
+	}
 
 	var jsonData = JSON.stringify({"ID":ID,"contactFirstName":contactFirstName,"contactLastName":contactLastName,"address":address,"phoneNumber":phoneNumber,"contactEmail":contactEmail})
 	url = "http://159.203.70.233/LAMPAPI/AddContact.php"
@@ -281,7 +277,11 @@ function addContact() {
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
-					//Contact was added ,
+				var JSONObject = JSON.parse(xhr.responseText);
+				if(JSONObject.err = "This contact already exists.");
+				$(".errorBar").append("<p id = 'errorText'> This contact already exists. </p>");
+
+				return;
 			}
 		}
 		xhr.send(jsonData)
@@ -290,6 +290,8 @@ function addContact() {
 
 		console.log(err.message)
 	}
+
+	$('.modal').modal('hide')
 		
 }
 
@@ -334,18 +336,15 @@ function update(fieldName,CID){ //For updating the contact
 			return;
 		}
 
-
 		$(field).empty()
 		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
 		
-	
 }
 
 
 function deleteUser(){
 
 	var url = "http://159.203.70.233/LAMPAPI/deleteContact.php"
-
 	var jsonData = JSON.stringify({"ID":ID})
 
 	try {
