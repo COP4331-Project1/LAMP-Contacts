@@ -15,7 +15,7 @@
     
     else
     {
-        $sql = "SELECT contactFirstName,contactLastName,CID FROM Contacts where contactFirstName LIKE '%" .$inData["search"] . "%' OR contactLastName LIKE '%" . $inData["search"] . "%' AND ID=" .$inData["userId"];
+        $sql = "SELECT contactFirstName,contactLastName,CID FROM Contacts where contactFirstName LIKE '%" .$inData["search"] . "%' OR contactLastName LIKE '%" . $inData["search"] . "%' AND ID=" .$inData["ID"];
         
         $result = $conn->query($sql); #Will return an array
         
