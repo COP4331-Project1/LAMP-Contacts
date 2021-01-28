@@ -272,7 +272,7 @@ function addContact() {
 		return;
 	}
 
-	var jsonData = JSON.stringify({"ID":ID,"contactFirstName":contactFirstName,"contactLastName":contactLastName,"address":address,"phoneNumber":phoneNumber,"contactEmail":contactEmail})
+	var jsonData = JSON.stringify({"ID":ID,"contactFirstName":contactFirstName,"contactLastName":contactLastName,"address":address,"phoneNumber":phoneNumber,"email":contactEmail})
 	url = "http://159.203.70.233/LAMPAPI/AddContact.php"
 
 	try {
@@ -351,11 +351,11 @@ function update(fieldName,CID){ //For updating the contact
 
 function deleteUser(){
 
-	var url = "http://159.203.70.233/LAMPAPI/deleteContact.php"
+	var url = "http://159.203.70.233/LAMPAPI/DeleteAccount.php"
 	var jsonData = JSON.stringify({"ID":ID})
 
 	try {
-
+		
 		xhr = openHTTP(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 
@@ -372,9 +372,6 @@ function deleteUser(){
 
 			console.log(err.message) //otherwise output error
 		}
-
-
-
 }
 
 function deleteContact(CID){
