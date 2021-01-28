@@ -42,21 +42,20 @@ function login() {
 			$(".errorBar").append("<p id = 'errorText'> Incorrect Username/Password </p>");
 			return;
 		} else{
-		firstName = jsonObject.firstName; //Gets the first name
-		lastName = jsonObject.lastName;
-		window.location.href = "../html/home.html"
-		saveCookie(); //have firstName last name saved in scope.
+			firstName = jsonObject.firstName; //Gets the first name
+			lastName = jsonObject.lastName;
+			window.location.href = "../html/home.html"
+			saveCookie(); //have firstName last name saved in scope.
 		}
 		}
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response	
 	}
     catch(err)
-	{	console.log("Test")
-		console.log("Error" + err.message)
-		$(".errorBar").append("<div class='alert alert-danger' role='alert'>" + //Fix Error Logging
-		"'Internal Server Error'" + "</div>)" );
-	}
+		{	
+	
+		$(".errorBar").append("<p> Internal Server Error </p>" );
+		}
 
 }
 
@@ -390,8 +389,6 @@ function deleteContact(CID){
 
 			if(this.status == 200 && this.readyState == 4){
 
-			
-
 			}
 		}
 		xhr.send(jsonData)
@@ -446,6 +443,12 @@ function readCookie()
 		window.location.href = "index.html";
 	}
 	
+}
+
+function searchAll(){
+
+	$("#searchbar").val("");
+	search();
 }
 
 function addModal() {
