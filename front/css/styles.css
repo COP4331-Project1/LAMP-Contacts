@@ -192,41 +192,10 @@ input[type="text"],input[type="password"]{
 
 }
 
-<<<<<<< HEAD
 
 #title{
     font-size: 60px;
     font-family: "Bebas Neue", Sans-serif;
     font-weight: bold;
     color: mediumvioletred;
-=======
-#loginButton{
-  background-color: mediumvioletred;
-  margin-top: 23px;
-  font-size: 13px;
-}
-
-#block
-{
-    border-radius: 10px;
-    position: absolute;
-    width: 30%;
-    margin-left: 35%;
-    padding: 45px;
-    bottom: 180px;
-    background-color: White;
-}
-
-#title
-{
-  display: inline-block;
-  font-size: 40px;
-  width: 90%;
-  text-align: center;
-  margin-left: 5%;
-  margin-bottom: 10%;
-  font-family: "Bebas Neue", Sans-serif;
-  font-weight: bold;
-  color: mediumvioletred;
->>>>>>> 4f805d245f76424ce639bdaa7a6743056b9a42a2
 }
