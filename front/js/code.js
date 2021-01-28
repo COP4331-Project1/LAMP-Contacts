@@ -12,8 +12,8 @@ function openHTTP(url,action){
 
 function login() {
 
-    var userName = $("#loginName").val() //gets the username and password from the input field
-    var password = $("#loginPassword").val()
+    var userName = $("#userName").val() //gets the username and password from the input field
+    var password = $("#password").val()
 
     var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //Json is formatted in key value pairs
 
@@ -41,11 +41,12 @@ function login() {
 			$(".errorBar").empty();
 			$(".errorBar").append("<p id = 'errorText'> Incorrect Username/Password </p>");
 			return;
-		}	
+		} else{
 		firstName = jsonObject.firstName; //Gets the first name
 		lastName = jsonObject.lastName;
 		window.location.href = "../html/home.html"
 		saveCookie(); //have firstName last name saved in scope.
+		}
 		}
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response	
