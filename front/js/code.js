@@ -75,7 +75,6 @@ function register() {
 	 return;
 
 	}
-
 	var jsonData = JSON.stringify({"firstName":firstName,"lastName":lastName,"userName":userName , "password":  password , "email": email}) //Json 
 	
 	try {
@@ -303,7 +302,6 @@ function addContact() {
 		
 }
 
-
 function modify(field,CID) { //Just to replace the textvalue
 
 	var fieldName = "." + field
@@ -334,7 +332,8 @@ function update(fieldName,CID){ //For updating the contact
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
-
+			var JSONObject = JSON.parse(xhr.responseText);
+			if(JSONObject.err == "Update Success.") return;
 			}
 		}
 		xhr.send(jsonData)
@@ -363,6 +362,7 @@ function deleteUser(){
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
+
 				window.location.href = "../html/index.html"
 			}
 		}
@@ -370,7 +370,6 @@ function deleteUser(){
 		}	
 
 		catch(err) {
-
 			console.log(err.message) //otherwise output error
 		}
 
@@ -392,6 +391,8 @@ function deleteContact(CID){
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
+
+			
 
 			}
 		}

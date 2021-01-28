@@ -1,7 +1,7 @@
-body
+.background
 {
-    background-color: purple;
     background-image: url(../../images/background.jpg) ;
+    background-size:cover;
 }
 
 *{
@@ -71,6 +71,7 @@ body
   font-weight: normal;
   background:#EFEEEE;
 }
+
 #loginPassword
 {
   color: grey;
@@ -90,27 +91,11 @@ body
 
 input[type="text"],input[type="password"]{
     border-radius: 25px;
-    text-align: center;
-    width: 110%;
-    margin-left: 0%;
-    margin-bottom: 2%;
-    font-family: "Times New Roman", Times, serif;
-}
-
-#inner-title{
-    display: inline-block;
-    font-size: 40px;
-    width: 90%;
-    text-align: center;
-    margin-left: 5%;
-    margin-bottom: 10%;
-    font-family: "Bebas Neue", Sans-serif;
-    font-weight: bold;
-    color: mediumvioletred;
+ 
 }
 
 #loginResult{
-    display: inline-block;
+    display: flex;
     font-size: 0.8em;
     width: 90%;
     text-align: center;
@@ -120,41 +105,14 @@ input[type="text"],input[type="password"]{
     color: #95060a;
 }
 
-#userName{
-    display: inline-block;
-    width: 80%;
-    margin-left: 10%;
-    text-align: center;
-}
+
 
 #logoutButton{
     width: 20%;
     margin-left: 40%;
 }
 
-select{
-    width: 30%;
-    margin-left: 35%;
-    margin-top: 2%;
-    font-size: 0.75em;
-    font-family: "Times New Roman", Times, serif;
-}
 
-#colorSearchResult{
-    display: none;
-}
-
-#colorAddResult{
-    display: inline-block;
-    font-size: 0.8em;
-    width: 90%;
-    text-align: center;
-    margin-left: 5%;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    font-family: "Times New Roman", Times, serif;
-    color: #95060a;
-}
 
 
 .informationBox {
@@ -224,11 +182,7 @@ select{
 
  }
 
-#link
-{
-  margin-top: 23px;
-  font-size: 13px;
-}
+
 
 
 #errorText {
@@ -239,30 +193,9 @@ select{
 }
 
 
-
-#block
-{
-    border-radius: 10px;
-    position: absolute;
-    width: 30%;
-    margin-left: 35%;
-    padding: 45px;
-    bottom: 180px;
-    background-color: White;
+#title{
+    font-size: 60px;
+    font-family: "Bebas Neue", Sans-serif;
+    font-weight: bold;
+    color: mediumvioletred;
 }
-
-#title
-{
-  display: inline-block;
-  font-size: 40px;
-  width: 90%;
-  text-align: center;
-  margin-left: 5%;
-  margin-bottom: 10%;
-  font-family: "Bebas Neue", Sans-serif;
-  font-weight: bold;
-  color: mediumvioletred;
-}
-
-
-
