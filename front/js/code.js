@@ -403,7 +403,40 @@ function deleteContact(CID){
 
 
 function settings() {
+	var first = document.getElementById("firstName");
+	var last = document.getElementById("lastName");
+	var user = document.getElementById("userName");
+	var password = document.getElementById("password");
+	var email = document.getElementById("email");
+	var hash = md5(password); //do we need to re-hash?
 
+	var url = "http://159.203.70.233/LAMPAPI/UpdateUser.php"
+
+//	var jsonData = '{"first": "'+first+'", "last:" "'+last+'", "user:" "'+user+'", "password:" "'+hash+'", "email:" "'+email+'" }';
+	var dat = {first: first, last: last, user: user, password: hash, email:email};
+	var jsonData = JSON.stringify(dat);
+
+	//in case it doesnt work
+	alert(jsonData);
+
+	try {
+
+		xhr = openHTTP(url,"POST")
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
+
+		xhr.onreadystatechange = function() {
+
+			if(this.status == 200 && this.readyState == 4){
+				window.location("index.html");
+			}
+		}
+		xhr.send(jsonData)
+		}
+
+		catch(err) {
+
+		console.log(err.message) //otherwise output error
+		}
 }
 	
 function saveCookie(){ //Need to save cookies so if user refreshes page they are still remembered
