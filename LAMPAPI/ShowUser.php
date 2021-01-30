@@ -58,7 +58,7 @@
 		sendResultInfoAsJson( $retValue );
     }
     
-    function returnWithInfo($contactFirstName,$contactLastName,$phoneNumber, $email, $address)
+    function returnWithInfo($FirstName,$LastName,$UserName, $Password, $Email)
 	{
 		$retValue = '{"FirstName":"' . $cFirstName . '","LastName":"' . $LastName . '","UserName":"' . $UserName . '","Password":"' . $Password . '","Email":"' . $Email . '","error":""}';
 		sendResultInfoAsJson( $retValue );
