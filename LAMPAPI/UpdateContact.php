@@ -15,7 +15,7 @@
 	} 
 	else
 	{
-        $sql =  "UPDATE Contacts SET ".$field." = '".$value."' WHERE ID = ".$inData["ID"];
+        $sql =  "UPDATE Contacts SET ".$field." = '".$value."' WHERE CID = ".$inData["CID"];
 
 		if ($result = $conn->query($sql) != TRUE)
 		{
