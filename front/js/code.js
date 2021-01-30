@@ -17,7 +17,8 @@ function openHTTP(url,action){
 function login() {
 
     userName = $("#userName").val() //gets the username and password from the input field
-    var password = $("#password").val()
+	var password = $("#password").val()
+	password = md5(password)
 
     var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //Json is formatted in key value pairs
 
@@ -261,9 +262,9 @@ function showContact(contactNumber){
 
 		contactFirstName = checkEmpty(contactFirstName)
 		contactLastName = checkEmpty(contactLastName)
-		contactAddress = checkEmpty(address)
-		contactPhoneNumber = checkEmpty(phoneNumber)
-		contactEmail = checkEmpty(email)
+		address = checkEmpty(address)
+		phoneNumber = checkEmpty(phoneNumber)
+		email = checkEmpty(email)
 
 		
 		createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID)
@@ -338,7 +339,7 @@ function modify(field,CID) { //Just to replace the textvalue
 function modifySettings(field) { //Just to replace the textvalue
 
 	var fieldName = "." + field
-	var fieldText = field +"text"
+	var fieldText = field +"textSettings"
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = settings('" + field + "') aria-describedby='inputGroup-sizing-default'>" +
 	"</div>"
@@ -350,7 +351,7 @@ function modifySettings(field) { //Just to replace the textvalue
 function update(fieldName,CID){ //For updating the contact 
 
 		var field = "." + fieldName
-		var updateField = "#" + fieldName + "text"
+		var updateField = "#" + fieldName + "textSettings"
 		var updateValue = $(updateField).val()
 	
 		var url = "http://159.203.70.233/LAMPAPI/UpdateContact.php"
@@ -446,7 +447,6 @@ function settings(fieldName) {
 
 	var jsonData = JSON.stringify({"ID":ID,"field":fieldName,"value":updateValue})
 
-
 	try {
 		xhr = openHTTP(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
@@ -532,9 +532,7 @@ function closeAdd() {
 function settingsModal() {
 
 	$('#settings').modal('show')
-
 	showUser()
-  
 
 }
 
@@ -621,7 +619,6 @@ function showUser() {
 		address = checkEmpty(address)
 		phoneNumber = checkEmpty(phoneNumber)
 		email = checkEmpty(email)
-
 
 		changeSettings()
 		}
