@@ -20,7 +20,7 @@
 	else
 	{
     //update the data on mySQL (Is this updated correctly?)
-    $sql =  "UPDATE Users SET FirstName = '$first', LastName = '$last', Username = '$user', Password = '$password', Email = '$email' WHERE ID = .$inData["ID"]";
+    $sql =  "UPDATE Users SET FirstName = '$firstName', LastName = '$lastName', Username = '$userName', Password = '$password', Email = '$email' WHERE ID = .$inData["ID"]";
 
 		if ($result = $conn->query($sql) != TRUE)
 		{
