@@ -4,8 +4,8 @@
 
     $conn = new mysqli("localhost","group17", "cop4331c", "COP4331");
 
-    $firstName = "";
-    $lastName = "";
+    $contactFirstName = "";
+    $contactLastName = "";
     $phoneNumber = "";
     $email = "";
     $address = "";
@@ -17,18 +17,18 @@
     }
     else
     {
-        $sql = "SELECT firstName,lastName,userName,email FROM Contacts WHERE ID=" . $inData["ID"];
+        $sql = "SELECT contactFirstName,contactLastName,phoneNumber,email,address FROM Contacts WHERE CID=" . $inData["CID"];
 
         $result = $conn->query($sql);
 
         if($result->num_rows > 0)
         {
             $row = $result->fetch_assoc();
-            $phoneNumber = $row["firstName"];
-            $email = $row["lastName"];
-            $address = $row["userName"];
-            $contactFirstName = $row["email"];
-    
+            $phoneNumber = $row["phoneNumber"];
+            $email = $row["email"];
+            $address = $row["address"];
+            $contactFirstName = $row["contactFirstName"];
+            $contactLastName = $row["contactLastName"];
 
             returnWithInfo($contactFirstName,$contactLastName,$phoneNumber, $email, $address);
         }
