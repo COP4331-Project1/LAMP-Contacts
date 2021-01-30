@@ -432,7 +432,7 @@ function deleteContact(CID){
 
 }
 
-function settings() {
+function settings(fieldName) {
 
 	var field = "." + fieldName
 	var updateField = "#" + fieldName + "text"
