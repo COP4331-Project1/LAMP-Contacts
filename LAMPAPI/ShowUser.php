@@ -60,7 +60,7 @@
     
     function returnWithInfo($FirstName,$LastName,$UserName, $Password, $Email)
 	{
-		$retValue = '{"FirstName":"' . $FirstName . '","LastName":"' . $LastName . '","UserName":"' . $UserName . '","Password":"' . $Password . '","Email":"' . $Email . '","error":""}';
+		$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","userName":"' . $UserName . '","password":"' . $Password . '","email":"' . $email . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
