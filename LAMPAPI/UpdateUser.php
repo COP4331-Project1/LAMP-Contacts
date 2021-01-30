@@ -6,11 +6,8 @@
 	$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
 
     //Get the user data
-    $firstName = $inData["firstName"];
-    $lastName = $inData["lastName"];
-    $userName = $inData["userName"];
-    $email = $inData["email"];
-    $password = $inData["password"];
+    $field = $inData["field"];
+    $value = $inData["value"];
 
 	// Attempt to connect to the server, and return error message if failed.
 	if ($conn->connect_error)
@@ -20,8 +17,8 @@
 	else
 	{
     //update the data on mySQL (Is this updated correctly?)
-    $sql =  "UPDATE Users SET FirstName = '$firstName', LastName = '$lastName', Username = '$userName', Password = '$password', Email = '$email' WHERE ID = .$inData["ID"]";
-
+    $sql =  "UPDATE Users SET ".$field." = '".$value."' WHERE ID = .$inData["ID"]";
+		
 		if ($result = $conn->query($sql) != TRUE)
 		{
             returnWithError($conn->error);

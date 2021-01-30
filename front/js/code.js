@@ -293,7 +293,7 @@ function addContact() {
 	}
 
 	var jsonData = JSON.stringify({"ID":ID,"contactFirstName":contactFirstName,"contactLastName":contactLastName,"address":address,"phoneNumber":phoneNumber,"email":contactEmail})
-	url = "http://159.203.70.233/LAMPAPI/AddContact.php"
+	var url = "http://159.203.70.233/LAMPAPI/AddContact.php"
 
 	try {
 
