@@ -1,6 +1,12 @@
 firstName = ""
 lastName = ""
+email = ""
+userName = ""
+
+
 ID  = 0
+
+
 var contacts = []
 
 function openHTTP(url,action){
@@ -12,7 +18,7 @@ function openHTTP(url,action){
 
 function login() {
 
-    var userName = $("#userName").val() //gets the username and password from the input field
+    userName = $("#userName").val() //gets the username and password from the input field
     var password = $("#password").val()
 
     var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //Json is formatted in key value pairs
@@ -41,9 +47,11 @@ function login() {
 			$(".errorBar").empty();
 			$(".errorBar").append("<p id = 'errorText'> Incorrect Username/Password </p>");
 			return;
-		} else{
+		} else {
+
 			firstName = jsonObject.firstName; //Gets the first name
 			lastName = jsonObject.lastName;
+			email = jsonObject.email;
 			window.location.href = "../html/home.html"
 			saveCookie(); //have firstName last name saved in scope.
 		}
@@ -51,9 +59,8 @@ function login() {
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response	
 	}
-    catch(err)
-		{	
-	
+    catch(err){	
+
 		$(".errorBar").append("<p> Internal Server Error </p>" );
 		}
 
@@ -222,6 +229,13 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 
 }
 
+function checkEmpty(string) {
+
+	if(string == "") return "N/A"
+	else return string
+
+}
+
 function showContact(contactNumber){
 
 
@@ -243,10 +257,18 @@ function showContact(contactNumber){
 		
 		var contactFirstName = JSONObject.contactFirstName
 		var contactLastName  = JSONObject.contactLastName
-		var contactAddress = JSONObject.address
-		var contactPhoneNumber = JSONObject.phoneNumber
-		var contactEmail = JSONObject.email
-		createInfoBoxes(contactFirstName,contactLastName,contactAddress,contactPhoneNumber,contactEmail,CID)
+		var address = JSONObject.address
+		var phoneNumber = JSONObject.phoneNumber
+		var email = JSONObject.email
+
+		contactFirstName = checkEmpty(contactFirstName)
+		contactLastName = checkEmpty(contactLastName)
+		contactAddress = checkEmpty(address)
+		contactPhoneNumber = checkEmpty(phoneNumber)
+		contactEmail = checkEmpty(email)
+
+		
+		createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID)
 		}
 	}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
@@ -311,8 +333,20 @@ function modify(field,CID) { //Just to replace the textvalue
 	"</div>"
 
 	$(fieldName).append(input)
-	console.log("Test")
 	
+	
+}
+
+function modifySettings(field) { //Just to replace the textvalue
+
+	var fieldName = "." + field
+	var fieldText = field +"text"
+	$(fieldName).empty()
+	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = settings('" + field + "') aria-describedby='inputGroup-sizing-default'>" +
+	"</div>"
+
+	$(fieldName).append(input)
+		
 }
 
 function update(fieldName,CID){ //For updating the contact 
@@ -368,7 +402,6 @@ function deleteUser(){
 		}
 		xhr.send(jsonData)
 		}	
-
 		catch(err) {
 			console.log(err.message) //otherwise output error
 		}
@@ -401,42 +434,44 @@ function deleteContact(CID){
 
 }
 
+function settings(fieldName) {
 
-function settings() {
-	var first = document.getElementById("firstName");
-	var last = document.getElementById("lastName");
-	var user = document.getElementById("userName");
-	var password = document.getElementById("password");
-	var email = document.getElementById("email");
-	var hash = md5(password); //do we need to re-hash?
+	    var field = "." + fieldName
+		var updateField = "#" + fieldName + "text"
+		var updateValue = $(updateField).val()
 
-	var url = "http://159.203.70.233/LAMPAPI/UpdateUser.php"
+		if(fieldName == "password") {
+			updateValue = hash(updateValue)
+		}
+	
+		var url = "http://159.203.70.233/LAMPAPI/settings.php"
 
-//	var jsonData = '{"first": "'+first+'", "last:" "'+last+'", "user:" "'+user+'", "password:" "'+hash+'", "email:" "'+email+'" }';
-	var dat = {first: first, last: last, user: user, password: hash, email:email};
-	var jsonData = JSON.stringify(dat);
-
-	//in case it doesnt work
-	alert(jsonData);
-
-	try {
-
+		var jsonData = JSON.stringify({"ID":ID,"field":fieldName,"value":updateValue})
+		
+		try {
 		xhr = openHTTP(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
-
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
-				window.location("index.html");
+			var JSONObject = JSON.parse(xhr.responseText);
+			if(JSONObject.err == "Update Success.") return;
 			}
 		}
 		xhr.send(jsonData)
-		}
-
+		}	
 		catch(err) {
-
-		console.log(err.message) //otherwise output error
+			console.log(err.message) //otherwise output error
+			return;
 		}
+		$(field).empty()
+
+		if(fieldName == "password"){
+
+			$(field).append("<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button></div><br></br>")
+
+		}
+		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
 }
 	
 function saveCookie(){ //Need to save cookies so if user refreshes page they are still remembered
@@ -505,24 +540,54 @@ function closeModal() {
 	$('#settings').modal('hide')
 }
 
-
-/*
 function changeSettings() {
 
+	var boxes = "<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	  "<div class = 'titleBox'>" +
+		"<h3 id = 'contactAttribute'>Username</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
+		"<i class='bi-pencil' onclick = 'modifySettings(" + '"userName"' +")'></i>" + "</div>" +
+	"</div> " +
+	  "<div class = 'userName'>" +
+	  "<p>" + userName + "</p>" + "</div>" + "</div>"  + "</div>" +
+
+	  "<div class = 'row w-100 p-3'>" +
+	  "<div class = 'informationBox'>" +
+		"<div class = 'titleBox'>" +
+		  "<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
+		  "<i class='bi-pencil' onclick = 'modifySettings(" + '"firstName"' +")'></i>" + "</div>" +
+	"</div> " +
+		"<div class = 'firstName'>" +
+		"<p>" + firstName + "</p>" + "</div>" + "</div>" + "</div>" +
 
 
-	$("#changeUserName").
-	$("#changePassWord").
-	$("#changeEmail").
+	  "<div class = 'row w-100 p-3'>" +
+	  "<div class = 'informationBox'>" +
+		"<div class = 'titleBox'>" +
+		  "<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
+		  "<i class='bi-pencil' onclick = 'modifySettings(" + '"lastName"' + ")'></i>" + "</div>" +
+	   "</div> " +
+		"<div class = 'lastName'>" +
+		"<p>" + lastName + "</p>" + "</div>" + "</div>" + "</div>" +
+
+		"<div class = 'row w-100 p-3'>" +
+		"<div class = 'informationBox'>" +
+		  "<div class = 'titleBox'>" +
+			"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
+			"<i class='bi-pencil' onclick = 'modifySettings(" + '"email"' +")'></i>" + "</div>" +
+		 "</div> " +
+		  "<div class = 'email'>" +
+		  "<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
+
+		  "<div class = 'password'>" +
+		  "<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
+		  + "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
+		
+	
+	$("#settingsModal").empty();
+	$("#settingsModal").append(boxes);
+
 
 }
 
-function displaySettings() {
 
-	#("#userName")
-	#("#passWord")
-
-
-
-}
-*/
