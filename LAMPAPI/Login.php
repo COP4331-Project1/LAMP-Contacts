@@ -21,7 +21,7 @@
 		// Grab ID, firstName, and lastName of the input login and password, generating an associative array.
 		// The keys are then concatenated to generate a mysql command.
 		// Users will be the table being pulled from.
-		$sql = "SELECT ID, firstName, lastName , email, FROM Users where userName='" . $inData["userName"] . "' and password='" . $inData["password"] . "'";
+		$sql = "SELECT ID, firstName, lastName , email FROM Users where userName='" . $inData["userName"] . "' and password='" . $inData["password"] . "'";
 
 		// Perform a query on the database to test whether the login and password exist within the database.
 		$result = $conn->query($sql);
