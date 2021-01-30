@@ -21,7 +21,7 @@
 		// Grab ID, firstName, and lastName of the input login and password, generating an associative array.
 		// The keys are then concatenated to generate a mysql command.
 		// Users will be the table being pulled from.
-		$sql = "SELECT ID, firstName, lastName , Email, FROM Users where userName='" . $inData["userName"] . "' and password='" . $inData["password"] . "'";
+		$sql = "SELECT ID, firstName, lastName , email, FROM Users where userName='" . $inData["userName"] . "' and password='" . $inData["password"] . "'";
 
 		// Perform a query on the database to test whether the login and password exist within the database.
 		$result = $conn->query($sql);
@@ -33,11 +33,11 @@
 			$row = $result->fetch_assoc();
 			$firstName = $row["firstName"];
 			$lastName = $row["lastName"];
-            $email = $row["Email"];
+            $email = $row["email"];
 			$id = $row["ID"];
 			
 			// Then packaging the info as a JSON and sending it off.
-			returnWithInfo($firstName, $lastName, $id );
+			returnWithInfo($firstName, $lastName, $id, $email );
 		}
 		else
 		{
@@ -64,7 +64,7 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $firstName, $lastName, $id )
+	function returnWithInfo( $firstName, $lastName, $id,$email )
 	{
 		$retValue = '{"ID":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","email":"' . $email. '","error":""}';
 		sendResultInfoAsJson( $retValue );
