@@ -532,6 +532,10 @@ function closeAdd() {
 function settingsModal() {
 
 	$('#settings').modal('show')
+
+	changeSettings()
+  
+
 }
 
 function closeModal() {
