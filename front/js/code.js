@@ -338,7 +338,7 @@ function modify(field,CID) { //Just to replace the textvalue
 function modifySettings(field) { //Just to replace the textvalue
 
 	var fieldName = "." + field
-	var fieldText = field +"text"
+	var fieldText = field +"textSettings"
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = settings('" + field + "') aria-describedby='inputGroup-sizing-default'>" +
 	"</div>"
@@ -435,7 +435,7 @@ function deleteContact(CID){
 function settings(fieldName) {
 
 	var field = "." + fieldName
-	var updateField = "#" + fieldName + "text"
+	var updateField = "#" + fieldName + "textSettings"
 	var updateValue = $(updateField).val()
 
 	if(fieldName == "password") {
