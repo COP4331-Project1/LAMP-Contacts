@@ -15,7 +15,7 @@
 	} 
 	else
 	{
-        $sql =  "UPDATE Contacts SET ".$field." = '".$value."' WHERE CID = ".$inData["CID"];
+        $sql =  "UPDATE Contacts SET ".$field." = '".$value."' WHERE ID = ".$inData["ID"];
 
 		if ($result = $conn->query($sql) != TRUE)
 		{
@@ -41,7 +41,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"ID":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	

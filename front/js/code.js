@@ -2,8 +2,6 @@ firstName = ""
 lastName = ""
 email = ""
 userName = ""
-
-
 ID  = 0
 
 
@@ -436,34 +434,22 @@ function deleteContact(CID){
 
 function settings() {
 
-	
-	var firstName = $("#firstName").val()
-	var lastName = $("#lastName").val()
-	var userName = $("#userName").val()
-	var password = $("#password").val()
-	var email = $("#email").val()
-	//var hash = md5(password); //do we need to re-hash?
+	var field = "." + fieldName
+	var updateField = "#" + fieldName + "text"
+	var updateValue = $(updateField).val()
 
+	if(fieldName == "password") {
+		updateValue = md5(updateValue)
+	}
+	
 	var url = "http://159.203.70.233/LAMPAPI/UpdateUser.php"
 
-//	var jsonData = '{"first": "'+first+'", "last:" "'+last+'", "user:" "'+user+'", "password:" "'+hash+'", "email:" "'+email+'" }';
-//	var dat = {firstName: firstName, lastName: lastName, userName: userName, email: email, password: password};
-//	var jsonData = JSON.stringify(dat);
+	var jsonData = JSON.stringify({"ID":ID,"field":fieldName,"value":updateValue})
 
-    	var jsonData = JSON.stringify({"firstName": firstName, "lastName": lastName, "userName" : userName , "password":  password, "email": email})
 
-	//in case it doesnt work
-	alert(jsonData);
+	var url = "http://159.203.70.233/LAMPAPI/settings.php"
 
-		if(fieldName == "password") {
-			updateValue = hash(updateValue)
-		}
-	
-		var url = "http://159.203.70.233/LAMPAPI/settings.php"
-
-		var jsonData = JSON.stringify({"ID":ID,"field":fieldName,"value":updateValue})
-		
-		try {
+	try {
 		xhr = openHTTP(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 		xhr.onreadystatechange = function() {
@@ -473,18 +459,18 @@ function settings() {
 			if(JSONObject.err == "Update Success.") return;
 			}
 		}
+
 		xhr.send(jsonData)
 		}	
 		catch(err) {
 			console.log(err.message) //otherwise output error
 			return;
 		}
+
 		$(field).empty()
 
 		if(fieldName == "password"){
-
 			$(field).append("<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button></div><br></br>")
-
 		}
 		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
 }
@@ -598,10 +584,9 @@ function changeSettings() {
 		  "<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
 		  + "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
 		
-	
+
 	$("#settingsModal").empty();
 	$("#settingsModal").append(boxes);
-
 
 }
 
