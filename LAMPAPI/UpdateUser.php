@@ -6,9 +6,9 @@
 	$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
 
     //Get the user data
-    $first = $inData["firstName"];
-    $last = $inData["lastName"];
-    $user = $inData["userName"];
+    $firstName = $inData["firstName"];
+    $lastName = $inData["lastName"];
+    $userName = $inData["userName"];
     $email = $inData["email"];
     $password = $inData["password"];
 
