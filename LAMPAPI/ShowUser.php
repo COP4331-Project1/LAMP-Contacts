@@ -30,7 +30,7 @@
             $password = $row["password"];
             $email = $row["email"];
 
-            returnWithInfo($FirstName,$LastName,$UserName, $Password, $Email);
+            returnWithInfo($firstName,$lastName,$userName, $password, $email);
         }
         else
         {
