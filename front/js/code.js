@@ -49,7 +49,7 @@ function login() {
 
 			firstName = jsonObject.firstName; //Gets the first name
 			lastName = jsonObject.lastName;
-			email = jsonObject.email;
+		
 			window.location.href = "../html/home.html"
 			saveCookie(); //have firstName last name saved in scope.
 		}
@@ -592,8 +592,8 @@ function changeSettings() {
 
 function showUser() {
 
-
 	var url = "http://159.203.70.233/LAMPAPI/ShowUser.php"
+
 
 	var jsonData= JSON.stringify({"ID":ID})
 
@@ -620,7 +620,7 @@ function showUser() {
 		phoneNumber = checkEmpty(phoneNumber)
 		email = checkEmpty(email)
 		}
-	}
+		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
 		
 	}
