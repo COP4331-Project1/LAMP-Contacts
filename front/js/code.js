@@ -434,11 +434,26 @@ function deleteContact(CID){
 
 }
 
-function settings(fieldName) {
+function settings() {
 
-	    var field = "." + fieldName
-		var updateField = "#" + fieldName + "text"
-		var updateValue = $(updateField).val()
+	
+	var firstName = $("#firstName").val()
+	var lastName = $("#lastName").val()
+	var userName = $("#userName").val()
+	var password = $("#password").val()
+	var email = $("#email").val()
+	//var hash = md5(password); //do we need to re-hash?
+
+	var url = "http://159.203.70.233/LAMPAPI/UpdateUser.php"
+
+//	var jsonData = '{"first": "'+first+'", "last:" "'+last+'", "user:" "'+user+'", "password:" "'+hash+'", "email:" "'+email+'" }';
+//	var dat = {firstName: firstName, lastName: lastName, userName: userName, email: email, password: password};
+//	var jsonData = JSON.stringify(dat);
+
+    	var jsonData = JSON.stringify({"firstName": firstName, "lastName": lastName, "userName" : userName , "password":  password, "email": email})
+
+	//in case it doesnt work
+	alert(jsonData);
 
 		if(fieldName == "password") {
 			updateValue = hash(updateValue)

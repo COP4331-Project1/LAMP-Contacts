@@ -6,9 +6,9 @@
 	$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
 
     //Get the user data
-    $first = $inData["firstName"];
-    $last = $inData["lastName"];
-    $user = $inData["userName"];
+    $firstName = $inData["firstName"];
+    $lastName = $inData["lastName"];
+    $userName = $inData["userName"];
     $email = $inData["email"];
     $password = $inData["password"];
 
@@ -20,7 +20,7 @@
 	else
 	{
     //update the data on mySQL (Is this updated correctly?)
-    $sql =  "UPDATE Users SET FirstName = '$first', LastName = '$last', Username = '$user', Password = '$password', Email = '$email' WHERE ID = .$inData["ID"]";
+    $sql =  "UPDATE Users SET FirstName = '$firstName', LastName = '$lastName', Username = '$userName', Password = '$password', Email = '$email' WHERE ID = .$inData["ID"]";
 
 		if ($result = $conn->query($sql) != TRUE)
 		{
