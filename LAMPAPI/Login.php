@@ -5,7 +5,7 @@
 	$id = 0;
 	$firstName = "";
 	$lastName = "";
-    $email = ""
+    $email = "";
 	
 	// localhost, admin_username, password, database
 	$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
