@@ -17,8 +17,7 @@ function openHTTP(url,action){
 function login() {
 
     userName = $("#userName").val() //gets the username and password from the input field
-	var password = $("#password").val()
-	password = md5(password)
+    var password = $("#password").val()
 
     var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //Json is formatted in key value pairs
 
@@ -262,9 +261,9 @@ function showContact(contactNumber){
 
 		contactFirstName = checkEmpty(contactFirstName)
 		contactLastName = checkEmpty(contactLastName)
-		address = checkEmpty(address)
-		phoneNumber = checkEmpty(phoneNumber)
-		email = checkEmpty(email)
+		contactAddress = checkEmpty(address)
+		contactPhoneNumber = checkEmpty(phoneNumber)
+		contactEmail = checkEmpty(email)
 
 		
 		createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID)
@@ -339,7 +338,7 @@ function modify(field,CID) { //Just to replace the textvalue
 function modifySettings(field) { //Just to replace the textvalue
 
 	var fieldName = "." + field
-	var fieldText = field +"textSettings"
+	var fieldText = field +"text"
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = settings('" + field + "') aria-describedby='inputGroup-sizing-default'>" +
 	"</div>"
@@ -351,7 +350,7 @@ function modifySettings(field) { //Just to replace the textvalue
 function update(fieldName,CID){ //For updating the contact 
 
 		var field = "." + fieldName
-		var updateField = "#" + fieldName + "textSettings"
+		var updateField = "#" + fieldName + "text"
 		var updateValue = $(updateField).val()
 	
 		var url = "http://159.203.70.233/LAMPAPI/UpdateContact.php"
@@ -439,13 +438,14 @@ function settings(fieldName) {
 	var updateField = "#" + fieldName + "text"
 	var updateValue = $(updateField).val()
 
-	//if(fieldName == "password") {
-	//	updateValue = md5(updateValue)
-	//}
+	if(fieldName == "password") {
+		updateValue = md5(updateValue)
+	}
 	
 	var url = "http://159.203.70.233/LAMPAPI/UpdateUser.php"
 
 	var jsonData = JSON.stringify({"ID":ID,"field":fieldName,"value":updateValue})
+
 
 	try {
 		xhr = openHTTP(url,"POST")
@@ -467,9 +467,9 @@ function settings(fieldName) {
 
 		$(field).empty()
 
-		//if(fieldName == "password"){
-			//$(field).append("<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button></div><br></br>")
-		//}
+		if(fieldName == "password"){
+			$(field).append("<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button></div><br></br>")
+		}
 		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
 }
 	
@@ -532,7 +532,9 @@ function closeAdd() {
 function settingsModal() {
 
 	$('#settings').modal('show')
+
 	showUser()
+  
 
 }
 
@@ -619,6 +621,7 @@ function showUser() {
 		address = checkEmpty(address)
 		phoneNumber = checkEmpty(phoneNumber)
 		email = checkEmpty(email)
+
 
 		changeSettings()
 		}
