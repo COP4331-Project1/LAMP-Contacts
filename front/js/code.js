@@ -533,7 +533,7 @@ function settingsModal() {
 
 	$('#settings').modal('show')
 
-	changeSettings()
+	showUser()
   
 
 }
@@ -544,8 +544,6 @@ function closeModal() {
 }
 
 function changeSettings() {
-
-	showUser()
 
 	var boxes = "<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
@@ -623,6 +621,9 @@ function showUser() {
 		address = checkEmpty(address)
 		phoneNumber = checkEmpty(phoneNumber)
 		email = checkEmpty(email)
+
+
+		changeSettings()
 		}
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
