@@ -438,9 +438,9 @@ function settings(fieldName) {
 	var updateField = "#" + fieldName + "text"
 	var updateValue = $(updateField).val()
 
-	if(fieldName == "password") {
-		updateValue = md5(updateValue)
-	}
+	//if(fieldName == "password") {
+	//	updateValue = md5(updateValue)
+	//}
 	
 	var url = "http://159.203.70.233/LAMPAPI/UpdateUser.php"
 
@@ -467,9 +467,9 @@ function settings(fieldName) {
 
 		$(field).empty()
 
-		if(fieldName == "password"){
-			$(field).append("<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button></div><br></br>")
-		}
+		//if(fieldName == "password"){
+			//$(field).append("<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button></div><br></br>")
+		//}
 		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
 }
 	
