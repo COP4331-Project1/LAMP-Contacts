@@ -447,8 +447,6 @@ function settings(fieldName) {
 	var jsonData = JSON.stringify({"ID":ID,"field":fieldName,"value":updateValue})
 
 
-	var url = "http://159.203.70.233/LAMPAPI/settings.php"
-
 	try {
 		xhr = openHTTP(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
@@ -542,6 +540,10 @@ function closeModal() {
 }
 
 function changeSettings() {
+
+	//retrieve user data
+
+	
 
 	var boxes = "<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
