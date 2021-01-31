@@ -1,2 +1,2 @@
 # LAMP-Contacts
-Discord Update Test.
+A contact app.
