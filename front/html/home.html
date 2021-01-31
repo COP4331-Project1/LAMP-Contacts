@@ -11,16 +11,16 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
 <script type="text/javascript">
 
-document.addEventListener('DOMContentLoaded', function() 
-	{
-	readCookie();
-  }, false);
+//document.addEventListener('DOMContentLoaded', function() 
+	//{
+	//readCookie();
+  //}, false);
 
 </script>
 
 </head>
 
-<body style="background-color:white; height:100vh; width:100vw; padding:0%">
+<div class = "container-fluid min-vh-100 vw-100 g-0 p-0 bg-light">
 
   <!-- Modal -->
   <div class="modal fade in" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -62,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function()
           </div>
 
         </div>
+
+
+
         <div class="modal-footer">
 
           <button type="button" class="btn btn-primary" onclick = addContact()>Add</button>
@@ -96,10 +99,9 @@ document.addEventListener('DOMContentLoaded', function()
           <button type="button" class="btn btn-primary" onclick = addContact()>Apply</button>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="container-fluid h-100 bg-dark g-0">
+
+  <div class="container-fluid h-100 bg-light g-0">
 
      <div class = "row h-100 w-100 g-0 "> 
 
@@ -119,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function()
                 </div>
          </div>
 
-        <div class = "col-sm-7 h-100 bg-light g-0 ">
+        <div class = "col-sm-7 min-vh-100 bg-light g-0 ">
 
           <div class = "homebackgroundImage">
 
@@ -127,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function()
 
               <div class="col-lg-12 d-flex justify-content-center align-content-center g-0" id= "contactView">
 
-                <div class = "col w-100 bg-light h-100 border border-2 border-primary rounded-3">
+                <div class = "col w-100 bg-light h-auto border border-2 border-primary rounded-3">
 
                   <h1 style = "text-align:center"> Getting Started </h1>
                   <p></p>
@@ -181,6 +183,7 @@ document.addEventListener('DOMContentLoaded', function()
      
         </div>
         </div>
+      </div>
 
 
 
