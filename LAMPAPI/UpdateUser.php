@@ -17,7 +17,7 @@
 	else
 	{
     //update the data on mySQL (Is this updated correctly?)
-    $sql =  "UPDATE Users SET ".$field." = '".$value."' WHERE ID = .$inData["ID"]";
+    $sql =  "UPDATE Users SET ".$field." = '".$value."' WHERE ID = ".$inData["ID"];
 		
 		if ($result = $conn->query($sql) != TRUE)
 		{
