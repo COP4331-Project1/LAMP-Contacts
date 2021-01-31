@@ -17,7 +17,9 @@ function openHTTP(url,action){
 function login() {
 
     userName = $("#userName").val() //gets the username and password from the input field
-    var password = $("#password").val()
+	var password = $("#password").val()
+	
+	password = md5(password)
 
     var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //Json is formatted in key value pairs
 
@@ -80,6 +82,9 @@ function register() {
 	 return;
 
 	}
+
+	password = md5(password)
+
 	var jsonData = JSON.stringify({"firstName":firstName,"lastName":lastName,"userName":userName , "password":  password , "email": email}) //Json 
 	
 	try {
@@ -595,7 +600,6 @@ function changeSettings() {
 function showUser() {
 
 	var url = "http://159.203.70.233/LAMPAPI/ShowUser.php"
-
 
 	var jsonData= JSON.stringify({"ID":ID})
 
