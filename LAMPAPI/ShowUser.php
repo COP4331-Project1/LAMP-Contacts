@@ -58,9 +58,9 @@
 		sendResultInfoAsJson( $retValue );
     }
     
-    function returnWithInfo($FirstName,$LastName,$UserName, $Password, $Email)
+    function returnWithInfo($firstName,$lastName,$userName, $password, $email)
 	{
-		$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","userName":"' . $UserName . '","password":"' . $Password . '","email":"' . $email . '","error":""}';
+		$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","userName":"' . $userName . '","email":"' . $email . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
