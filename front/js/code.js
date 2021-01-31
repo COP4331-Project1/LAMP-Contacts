@@ -474,6 +474,7 @@ function settings(fieldName) {
 
 		if(fieldName == "password"){
 			$(field).append("<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button></div><br></br>")
+			return;
 		}
 		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
 }
