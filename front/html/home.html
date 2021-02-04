@@ -106,11 +106,11 @@ document.addEventListener('DOMContentLoaded', function()
 
      <div class = "row h-100 w-100 g-0 "> 
 
-        <div class = "col-sm-5 max-vh-100 g-0 bg-light " id = "contactSearch" > 
-        <div class="input-group mb-0 p-1">
+        <div class = "col-sm-5 max-vh-100 g-0 border border-2 border-muted " id = "contactSearch" > 
+        <div class="input-group mb-0 p-2">
        
             <div class="input-group-prepend">
-              <button class="btn btn-outline-primary" type="button" onclick = "searchAll()">View All</button>
+              <button class="btn btn-outline-muted" type="button" onclick = "searchAll()">View All</button>
             </div>
             <input type="text" class="form-control form-control-md" id = "searchbar" placeholder = "Search for a Contact" onchange = "search()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
             </div>
@@ -122,34 +122,34 @@ document.addEventListener('DOMContentLoaded', function()
                 </div>
          </div>
 
-        <div class = "col-sm-7 min-vh-100 bg-light g-0 ">
+        <div class = "col-sm-7 min-vh-100  g-0 ">
           
 
           <div class = "homebackgroundImage">
 
-            <div class = "row h-100 p-4 g-0 d-flex align" id = "viewContacts">
+            <div class = "row h-100 p-4 g-0 d-flex" id = "viewContacts">
 
-              <div class = "row">
-              <div class="col-lg-12 d-flex justify-content-center align-content-center g-0" id= "contactView">
+              <div class = "row h-75 g-0">
+              <div class="col-lg-12 h-100 d-flex justify-content-center align-items-center g-0" id= "contactView">
 
-                <div class = "col w-100 bg-light h-auto border border-2 border-primary rounded-3">
+                <div class = "col-10 bg-light h-100 border border-2 border-muted rounded-3 shadow-lg bg-white rounded p-2">
 
-                  <h1 style = "text-align:center"> Getting Started </h1>
+                  <h1 style id = "startPageTitle" style = "text-align:center"> Getting Started </h1>
                   <p></p>
                     <div class = "row w-100 p-1">
-                    <i class="bi-box-arrow-in-left" style = "color:black; font-size:50px;"></i>
-                    <p>Logout</p>
+                    <i class="bi-box-arrow-in-left" style = "color:rgb(133, 133, 133); font-size:50px;"></i>
+                    <p id ="startPageGuide">Logout</p>
                     </div>
 
                     <div class = "row w-100 p-1">
-                    <i class="bi-gear" style = "color:black; font-size:50px;"></i>
-                    <p>Settings</p>
+                    <i class="bi-gear" style = "color:rgb(133, 133, 133); font-size:50px; "></i>
+                    <p id ="startPageGuide">Settings</p>
                     </div>
 
                     <div class = "row w-100 p-1">
                       
-                    <i class="bi-plus-square" style = "color:black;font-size:50px"></i>
-                    <p>Add Contact</p>
+                    <i class="bi-plus-square" style = "color:rgb(133, 133, 133);font-size:50px"></i>
+                    <p id ="startPageGuide">Add Contact</p>
                   </div>
 
                 </div>
@@ -162,13 +162,13 @@ document.addEventListener('DOMContentLoaded', function()
               
                   <div class = "col-6 d-flex  g-0 justify-content-start align-items-end">
                     <div class = "d-flex justify-content-inline">
-                    <i class="bi-box-arrow-in-left" style = "color:white; font-size:50px;" onclick = "window.location.href = 'index.html'"></i>
-                    <i class="bi-gear" style = "color:white; font-size:50px;" onclick = "settingsModal()"></i>
+                    <i class="bi-box-arrow-in-left" style = "color:rgb(236, 236, 236); font-size:50px;" onclick = "window.location.href = 'index.html'"></i>
+                    <i class="bi-gear" style = "color:rgb(236, 236, 236); font-size:50px;" onclick = "settingsModal()"></i>
                   </div>
                   </div>
                  
                   <div class = "col-6 d-flex g-0 justify-content-end align-items-end">
-                    <i class="bi-plus-square" style = "color:white;font-size:50px" onclick = 'addModal()'></i>
+                    <i class="bi-plus-square" style = "color:rgb(236, 236, 236);font-size:50px" onclick = 'addModal()'></i>
                     </div>
 
                   </div>

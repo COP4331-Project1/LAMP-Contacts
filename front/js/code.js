@@ -162,8 +162,9 @@ function fillSearchBox(JSONObject) {
 	for(var i = 0 ; i < entries ; i++){
 	var contactFirstName = JSONObject.results[i].contactFirstName
 	var contactLastName = JSONObject.results[i].contactLastName
+
 	contacts.push(JSONObject.results[i].CID)	
-	var button = "<div class = 'row w-100 border border-1 border-primary h-auto p-1 g-0' onClick = showContact('" + i +"')>" +
+	var button = "<div class = 'row w-100 border border-1 border-muted h-auto p-1 g-0' onClick = showContact('" + i +"')>" +
     "<div class = 'col-4 p-0 g-0 d-flex align-items-center justify-content-center'>" +
 	"<div class = 'circle'><h3>"+ contactFirstName[0] + contactLastName[0] +"</h3></div>" + "</div>" + 
 	"<div class = 'col-7 d-flex flex-column justify-content-center p-0 g-0'>" +
@@ -176,7 +177,7 @@ function fillSearchBox(JSONObject) {
 }
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID) {
 
-	var boxes = "<div class = 'col w-100 bg-light h-100 border border-2 border-primary rounded-3' id = 'showContacts'>" +
+	var boxes = "<div class = 'col w-100 bg-light h-100 border border-2 border-muted' id = 'showContacts'>" +
 	"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
 	  "<div class = 'titleBox'>" +
@@ -290,9 +291,9 @@ function addContact() {
 	var contactEmail = $("#email").val()
 
 
-	if(contactFirstName == "") {
+	if(contactFirstName == "" || contactLastName == "") {
 		$(".errorBar").empty();
-		$(".errorBar").append("<p id = 'errorText'> First Name is Required </p>");
+		$(".errorBar").append("<p id = 'errorText'> First Name and Last Name is a required field </p>");
 		return;
 	}
 
@@ -335,7 +336,6 @@ function modify(field,CID) { //Just to replace the textvalue
 	"</div>"
 
 	$(fieldName).append(input)
-	
 	
 }
 
@@ -533,14 +533,11 @@ function closeAdd() {
 	$('#add').modal('hide')
 }
 
-
 function settingsModal() {
 
 	$('#settings').modal('show')
 
 	showUser()
-  
-
 }
 
 function closeModal() {
@@ -625,7 +622,6 @@ function showUser() {
 		address = checkEmpty(address)
 		phoneNumber = checkEmpty(phoneNumber)
 		email = checkEmpty(email)
-
 
 		changeSettings()
 		}
