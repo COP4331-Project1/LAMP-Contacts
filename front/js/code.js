@@ -4,7 +4,6 @@ email = ""
 userName = ""
 ID  = 0
 
-
 var contacts = []
 
 function openHTTP(url,action){

@@ -12,10 +12,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
 <script type="text/javascript">
 
-document.addEventListener('DOMContentLoaded', function() 
-	{
-	readCookie();
-  }, false);
+//document.addEventListener('DOMContentLoaded', function() 
+	//{
+	//readCookie();
+  //}, false);
 
 </script>
 
@@ -123,11 +123,13 @@ document.addEventListener('DOMContentLoaded', function()
          </div>
 
         <div class = "col-sm-7 min-vh-100 bg-light g-0 ">
+          
 
           <div class = "homebackgroundImage">
 
-            <div class = "row h-100 p-4 g-0" id = "viewContacts">
+            <div class = "row h-100 p-4 g-0 d-flex align" id = "viewContacts">
 
+              <div class = "row">
               <div class="col-lg-12 d-flex justify-content-center align-content-center g-0" id= "contactView">
 
                 <div class = "col w-100 bg-light h-auto border border-2 border-primary rounded-3">
@@ -135,25 +137,27 @@ document.addEventListener('DOMContentLoaded', function()
                   <h1 style = "text-align:center"> Getting Started </h1>
                   <p></p>
                     <div class = "row w-100 p-1">
-                    <i class="bi-box-arrow-in-left" style = "color:black; font-size:50px;" onclick = "window.location.href = 'index.html'"></i>
+                    <i class="bi-box-arrow-in-left" style = "color:black; font-size:50px;"></i>
                     <p>Logout</p>
                     </div>
 
                     <div class = "row w-100 p-1">
-                    <i class="bi-gear" style = "color:black; font-size:50px;" onclick = "settingsModal()"></i>
+                    <i class="bi-gear" style = "color:black; font-size:50px;"></i>
                     <p>Settings</p>
                     </div>
 
                     <div class = "row w-100 p-1">
                       
-                    <i class="bi-plus-square" style = "color:black;font-size:50px" onclick = 'addModal()'></i>
+                    <i class="bi-plus-square" style = "color:black;font-size:50px"></i>
                     <p>Add Contact</p>
                   </div>
 
                 </div>
+              </div>
             
                 </div>
                
+                <div class = "row">
                 <div class="col-lg-12 d-flex align-self-end h-auto w-100 p-4 g-0 bg-transparent ">
               
                   <div class = "col-6 d-flex  g-0 justify-content-start align-items-end">
@@ -166,6 +170,8 @@ document.addEventListener('DOMContentLoaded', function()
                   <div class = "col-6 d-flex g-0 justify-content-end align-items-end">
                     <i class="bi-plus-square" style = "color:white;font-size:50px" onclick = 'addModal()'></i>
                     </div>
+
+                  </div>
 
                   </div>
                 </div>
