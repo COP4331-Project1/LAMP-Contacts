@@ -293,7 +293,7 @@ function addContact() {
 
 	if(contactFirstName == "" || contactLastName == "") {
 		$(".errorBar").empty();
-		$(".errorBar").append("<p id = 'errorText'> First Name and Last Name is a required field </p>");
+		$(".errorBar").append("<p id = 'errorText'> First Name and Last Name are required field </p>");
 		return;
 	}
 
@@ -312,7 +312,6 @@ function addContact() {
 				if(JSONObject.err = "This contact already exists.");
 				$(".errorBar").empty();
 				$(".errorBar").append("<p id = 'errorText'> This contact already exists. </p>");
-
 				return;
 			}
 		}
