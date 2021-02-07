@@ -612,12 +612,14 @@ function showUser() {
 		address = JSONObject.address
 		userName = JSONObject.userName
 		email = JSONObject.email
+		//dateCreated = JSONObject.dateCreated
 
 		firstName = checkEmpty(firstName)
 		lastName = checkEmpty(lastName)
 		address = checkEmpty(address)
 		phoneNumber = checkEmpty(phoneNumber)
 		email = checkEmpty(email)
+		//dateCreated = JSONObject.dateCreated
 
 		changeSettings()
 		}
