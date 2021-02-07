@@ -243,9 +243,9 @@ function deleteAlertBox(CID) {
 		 + "<button type='button' class='close' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>" 
 			+"<span aria-hidden='true'>&times;</span>" 
 		 + " </button>" 
-		+ "</div> " 
+		+ "</div>" 
 		+ "<div class= modal-body  id =  settingsModal >"
-		 + "</div> </div> </div></div>"
+		 + "</div> " + "</div>" + "</div>" + "</div>"
 		
 	
 	("#mainContainer").append(deleteModal)
