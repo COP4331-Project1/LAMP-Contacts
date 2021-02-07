@@ -240,7 +240,8 @@ function deleteAlertBox(CID) {
 	  + "<div class='modal-content'>" 
 	  +	"<div class='modal-header'>" 
 	  + "<h5 class='modal-title' id='exampleModalLongTitle'>Delete Contact</h5>"
-	  + "<button type='button' class='close' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>" 
+	  + "<button type='button' class='close' onclick = 'closeDelete()' aria-label='Close'>" 
+	  + "<button type='button btn-primary' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>"
 	  + "<span aria-hidden='true'>&times;</span>" 
 	  + "</button>" 
 	  + "</div>" 
@@ -431,7 +432,6 @@ function deleteContact(CID){
 
 	$("#mainContaner").remove("#deleteContact")
 	
-
 	var url = "http://159.203.70.233/LAMPAPI/DeleteContact.php"
 
 	var jsonData = JSON.stringify({"CID":CID})
@@ -552,6 +552,11 @@ function addModal() {
 function closeAdd() {
 
 	$('#add').modal('hide')
+}
+
+function closeAdd() {
+
+	$('#deleteContact').modal('hide')
 }
 
 function settingsModal() {
