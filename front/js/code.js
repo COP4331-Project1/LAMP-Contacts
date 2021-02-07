@@ -244,8 +244,8 @@ function deleteAlertBox(CID) {
 	  + "<span aria-hidden='true'>&times;</span>" 
 	  + "</button>" 
 	  + "</div>" 
-	  + "<div class= modal-body  id =  settingsModal >"
-	  + "</div> " + "</div>" + "</div>" 
+	  + "<div class= modal-body  id =  'settingsModal' >"
+	  + "</div> " + "</div>" + "</div>" + "</div>"
 		
 	
 	("#mainContainer").append(deleteModal)
