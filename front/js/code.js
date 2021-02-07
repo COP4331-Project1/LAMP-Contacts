@@ -241,11 +241,12 @@ function deleteAlertBox(CID) {
 	  +	"<div class='modal-header'>" 
 	  + "<h5 class='modal-title' id='exampleModalLongTitle'>Delete Contact</h5>"
 	  + "<button type='button' class='close' onclick = 'closeDelete()' aria-label='Close'>" 
-	  + "<button type='button btn-primary' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>"
+	  
 	  + "<span aria-hidden='true'>&times;</span>" 
 	  + "</button>" 
 	  + "</div>" 
-	  + "<div class= modal-body  id =  'settingsModal' >"
+	  + "<div class= modal-body>"
+	  + "<button type='button btn-primary' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>"
 	  + "</div> " + "</div>" + "</div>" + "</div>"
 		
 	
@@ -554,7 +555,7 @@ function closeAdd() {
 	$('#add').modal('hide')
 }
 
-function closeAdd() {
+function closeDelete() {
 
 	$('#deleteContact').modal('hide')
 }
