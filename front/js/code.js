@@ -248,8 +248,8 @@ function deleteAlertBox(CID) {
 	  + "</div> " + "</div>" + "</div>" + "</div>"
 		
 	
-	("#mainContainer").append(deleteModal)
-	("#deleteContact").modal('show')
+	$("#mainContainer").append(deleteModal)
+	$("#deleteContact").modal('show')
 
 }
 
