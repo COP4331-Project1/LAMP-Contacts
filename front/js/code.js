@@ -224,13 +224,35 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 		  "<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 		"<div class = 'row w-100 p-2'>"+
 			"<div id = 'deleteButton'>" +
-			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + CID +")'></i>" +
+			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteAlertBox(" + CID + ")'></i>" +
 			"</div>" + "</div>"
 
 		$("#contactView").empty();
 		$("#contactView").append(boxes);
 
 }
+
+function deleteAlertBox(CID) {
+
+
+	var deleteModal = "<div class='modal fade in' id='deleteContact' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>"
+	  + "<div class='modal-dialog modal-dialog-centered' role='document'>"
+	  + "<div class='modal-content'>" +
+		"<div class='modal-header'>" +
+		+ "<h5 class='modal-title' id='exampleModalLongTitle'>Delete Contact</h5>"
+		 + "<button type='button' class='close' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>" +
+			"<span aria-hidden='true'>&times;</span>" +
+		 " </button>" +
+		"</div> " +
+		"<div class= modal-body  id =  settingsModal >"
+		 + "</div></div></div></div>"
+		
+	
+	("#mainContainer").append(deleteModal)
+	("#deleteContact").modal('show')
+
+}
+
 
 function checkEmpty(string) {
 
@@ -407,6 +429,9 @@ function deleteUser(){
 
 function deleteContact(CID){
 
+	$("#mainContaner").remove("#deleteContact")
+	
+
 	var url = "http://159.203.70.233/LAMPAPI/DeleteContact.php"
 
 	var jsonData = JSON.stringify({"CID":CID})
@@ -512,7 +537,6 @@ function readCookie()
 	}
 	
 }
-
 
 function searchAll(){
 
