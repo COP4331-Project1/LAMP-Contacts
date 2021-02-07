@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function()
 
 </head>
 
-<div class = "container-fluid min-vh-100 vw-100 g-0 p-0 bg-light">
+<div class = "container-fluid min-vh-100 vw-100 g-0 p-0 bg-light" id = "mainContainer">
 
   <!-- Modal -->
   <div class="modal fade in" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -34,11 +34,8 @@ document.addEventListener('DOMContentLoaded', function()
           </button>
         </div>
         <div class="modal-body">
-         
-       
-          <div class='input-group mb-1'>
-        
-          <input type='text' class='form-control' placeholder = "First Name" id = 'contactFirstName' aria-describedby='inputGroup-sizing-default'>
+           <div class='input-group mb-1'>
+              <input type='text' class='form-control' placeholder = "First Name" id = 'contactFirstName' aria-describedby='inputGroup-sizing-default'>
           </div>
 
           <div class='input-group mb-1'>
@@ -63,9 +60,6 @@ document.addEventListener('DOMContentLoaded', function()
           </div>
 
         </div>
-
-
-
         <div class="modal-footer">
 
           <button type="button" class="btn btn-primary" onclick = addContact()>Add</button>
@@ -83,10 +77,10 @@ document.addEventListener('DOMContentLoaded', function()
           <h5 class="modal-title" id="exampleModalLongTitle">Settings</h5>
 
           <button type="button" class="close" onclick = 'closeModal()' aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class= modal-body  id =  settingsModal >
+            <div class= modal-body  id =  settingsModal >
        
           </div>
           </div>
@@ -94,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function()
         </div>
      
       </div>
-
 
   <div class="container-fluid h-100 bg-light g-0">
 
@@ -109,11 +102,11 @@ document.addEventListener('DOMContentLoaded', function()
             <input type="text" class="form-control form-control-md" id = "searchbar" placeholder = "Search for a Contact" onchange = "search()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
             </div>
      
-          <div class = "row h-75 w-100 g-0 bg-light overflow-auto d-flex" id = "contactBox">
+          <div class = "row max-h-75 w-100 g-0 bg-light overflow-auto d-flex" id = "contactBox">
             <div class = "col-12" id ="contacts">
 
-              </div>
-                </div>
+            </div>
+          </div>
          </div>
 
         <div class = "col-sm-7 min-vh-100  g-0 ">
@@ -148,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function()
                   </div>
 
                 </div>
-              </div>
+                </div>
             
                 </div>
 
