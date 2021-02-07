@@ -239,14 +239,14 @@ function deleteAlertBox(CID) {
 	  + "<div class='modal-dialog modal-dialog-centered' role='document'>"
 	  + "<div class='modal-content'>" 
 	  +	"<div class='modal-header'>" 
-	  + "<h5 class='modal-title' id='exampleModalLongTitle'>Delete Contact</h5>"
+	  + "<h5 class='modal-title' id='exampleModalLongTitle'>Are you sure you want to delete this contact</h5>"
 	  + "<button type='button' class='close' onclick = 'closeDelete()' aria-label='Close'>" 
 	  
 	  + "<span aria-hidden='true'>&times;</span>" 
 	  + "</button>" 
 	  + "</div>" 
 	  + "<div class= modal-body>"
-	  + "<button type='button' class='btn btn-danger' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>"
+	  + "<button type='button' class='btn btn-danger' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>Delete</button>"
 	  + "</div> " + "</div>" + "</div>" + "</div>"
 		
 	
