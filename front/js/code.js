@@ -419,8 +419,8 @@ function deleteContact(CID){
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
-				
-			location.reload();	
+
+			window.location.reload();	
 			}
 		}
 		xhr.send(jsonData)
