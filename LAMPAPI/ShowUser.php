@@ -9,6 +9,7 @@
     $userName = "";
     $password = "";
     $email = "";
+    //$dateCreated = "";
 
     if($conn->connect_error)
     {
@@ -18,6 +19,7 @@
     else
     {
     $sql = "SELECT firstName,lastName,userName,password,email FROM Users WHERE ID= ".$inData["ID"];
+    // $sql = "SELECT firstName,lastName,userName,password,email, dateCreated FROM Users WHERE ID= ".$inData["ID"];
 
         $result = $conn->query($sql);
 
@@ -29,8 +31,10 @@
             $userName = $row["userName"];
             $password = $row["password"];
             $email = $row["email"];
+	    //$dateCreated = $row["dateCreated"];
 
             returnWithInfo($firstName,$lastName,$userName, $password, $email);
+	    // returnWithInfo($firstName,$lastName,$userName, $password, $email, $dateCreated);
         }
         else
         {
@@ -58,9 +62,10 @@
 		sendResultInfoAsJson( $retValue );
     }
     
-    function returnWithInfo($firstName,$lastName,$userName, $password, $email)
+    function returnWithInfo($firstName,$lastName,$userName, $password, $email) //change parameters
 	{
 		$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","userName":"' . $userName . '","email":"' . $email . '","error":""}';
+	        //$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","userName":"' . $userName . '","email":"' . $email . '", "dateCreated":"' . $dateCreated .'", "error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
