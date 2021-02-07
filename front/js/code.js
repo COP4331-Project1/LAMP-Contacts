@@ -227,8 +227,8 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteContact(" + CID +")'></i>" +
 			"</div>" + "</div>"
 
-			$("#contactView").empty();
-			$("#contactView").append(boxes);
+		$("#contactView").empty();
+		$("#contactView").append(boxes);
 
 }
 
@@ -334,8 +334,7 @@ function modify(field,CID) { //Just to replace the textvalue
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
 	"</div>"
 
-	$(fieldName).append(input)
-	
+	$(fieldName).append(input)	
 }
 
 function modifySettings(field) { //Just to replace the textvalue
@@ -346,8 +345,7 @@ function modifySettings(field) { //Just to replace the textvalue
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = settings('" + field + "') aria-describedby='inputGroup-sizing-default'>" +
 	"</div>"
 
-	$(fieldName).append(input)
-		
+	$(fieldName).append(input)	
 }
 
 function update(fieldName,CID){ //For updating the contact 
@@ -382,7 +380,6 @@ function update(fieldName,CID){ //For updating the contact
 		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
 		
 }
-
 
 function deleteUser(){
 
@@ -422,12 +419,12 @@ function deleteContact(CID){
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
-
+				
+			location.reload();	
 			}
 		}
 		xhr.send(jsonData)
 		}	
-
 		catch(err) {
 
 		console.log(err.message) //otherwise output error
@@ -516,6 +513,7 @@ function readCookie()
 	
 }
 
+
 function searchAll(){
 
 	$("#searchbar").val("");
@@ -587,7 +585,6 @@ function changeSettings() {
 		  "<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
 		  + "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
 		
-
 	$("#settingsModal").empty();
 	$("#settingsModal").append(boxes);
 
