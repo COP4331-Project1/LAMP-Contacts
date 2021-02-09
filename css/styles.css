@@ -204,15 +204,5 @@ select{
     align-items:flex-end;
  
  }
- 
-//Changes made here
-#pass
-{
- margin-top: 0px;
-}
 
-#danger
-{
- margin-top: -50px;
-}
  
