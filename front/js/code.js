@@ -612,7 +612,7 @@ function changeSettings() {
 		  "<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 	    
 	    	//Change made here
-	    	"<div class = 'alert alert-dark' role = 'alert'>Date Created:</div>" +
+	    	"<div class = 'alert alert-dark' role = 'alert'>" + 'Date Created:'+ dateCreated +"</div>" +
 
 		  "<div class = 'password' id = 'pass'>" +
 		  "<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
