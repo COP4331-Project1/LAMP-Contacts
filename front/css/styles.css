@@ -216,3 +216,15 @@ input[type="text"],input[type="password"]{
     color: mediumvioletred;
    
 }
+
+
+//Changes made here
+#pass
+{
+  margin-top: 0px;
+}
+
+#danger
+{
+  margin-top: -50px;
+}
