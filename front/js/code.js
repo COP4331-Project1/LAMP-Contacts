@@ -2,6 +2,7 @@ firstName = ""
 lastName = ""
 email = ""
 userName = ""
+dateCreated = "" //added
 ID  = 0
 
 var contacts = []
@@ -70,7 +71,7 @@ function register() {
 	var firstName = $("#firstName").val()
 	var lastName = $("#lastName").val()
 	var userName = $("#userName").val() //gets the username and password from the input field
-    var password =  $("#password").val()
+   	var password =  $("#password").val()
 	var email = $("#email").val()
 	var url = "http://159.203.70.233/LAMPAPI/Register.php"
 
