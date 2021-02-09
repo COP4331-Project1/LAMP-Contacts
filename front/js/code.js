@@ -645,14 +645,14 @@ function showUser() {
 		address = JSONObject.address
 		userName = JSONObject.userName
 		email = JSONObject.email
-		//dateCreated = JSONObject.dateCreated
+		dateCreated = JSONObject.dateCreated //added
 
 		firstName = checkEmpty(firstName)
 		lastName = checkEmpty(lastName)
 		address = checkEmpty(address)
 		phoneNumber = checkEmpty(phoneNumber)
 		email = checkEmpty(email)
-		//dateCreated = JSONObject.dateCreated
+		dateCreated = checkEmpty(dateCreated) //added
 
 		changeSettings()
 		}
