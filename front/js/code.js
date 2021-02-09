@@ -615,9 +615,9 @@ function changeSettings() {
 	    	//Change made here
 	    	"<div class = 'alert alert-dark' role = 'alert'>Date Created: " + dateCreated + "</div>" +
 
-		  "<div class = 'password' id = 'pass'>" +
+		  "<div class = 'password'>" +
 		  "<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
-		  + "<button type='button' id = 'danger' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
+		  + "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
 		
 	$("#settingsModal").empty();
 	$("#settingsModal").append(boxes);
