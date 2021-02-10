@@ -381,8 +381,6 @@ function modifySettings(field) { //Replaces the paragraph for settings
 
 function update(fieldName,CID){ //For updating the contact 
 
-		
-
 		var field = "." + fieldName
 		var updateField = "#" + fieldName + "text"
 		var updateValue = $(updateField).val()
