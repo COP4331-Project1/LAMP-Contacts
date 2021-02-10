@@ -190,7 +190,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'titleBox'>" +
 	"<h3 id = 'contactAttribute'>First</h3>" + 
 	"<div class = 'd-flex w-100 justify-content-end'>" +
-	"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" +
+	"<i class='bi-pencil' onclick = 'modify(" + '"FirstName"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'contactFirstName'>" +
 	"<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  + "</div>" +
@@ -199,7 +199,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'informationBox'>" +
 	"<div class = 'titleBox'>" +
 	"<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
-	"<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" +
+	"<i class='bi-pencil' onclick = 'modify(" + '"LastName"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'contactLastName'>" +
 	"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
@@ -210,7 +210,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
 	"<i class='bi-pencil' onclick = 'modify(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
-	"<div class = 'phoneNumber'>" +
+	"<div class = 'contactPhoneNumber'>" +
 	"<p>" + phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
 
 	"<div class = 'row w-100 p-3'>" +
@@ -219,7 +219,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
 	"<i class='bi-pencil' onclick = 'modify(" + '"address"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
-	"<div class = 'address'>" +
+	"<div class = 'contactAddress'>" +
 	"<p>" + address + "</p>" + "</div>" + "</div>" + "</div>" +
 
 	"<div class = 'row w-100 p-3'>" +
@@ -228,7 +228,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
 	"<i class='bi-pencil' onclick = 'modify(" + '"email"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
-	"<div class = 'email'>" +
+	"<div class = 'contactEmail'>" +
 	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 	"<div class = 'row w-100 p-2'>"+
 	"<div id = 'deleteButton'>" +
@@ -359,7 +359,7 @@ function addContact() {
 
 function modify(field,CID) { //Replaces the paragraph for show contact
 
-	var fieldName = "." + field //Gets the field needed to be changed
+	var fieldName = ".contact" + field //Gets the field needed to be changed
 	var fieldText = field +"text" //For the text box
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
@@ -381,7 +381,7 @@ function modifySettings(field) { //Replaces the paragraph for settings
 
 function update(fieldName,CID){ //For updating the contact 
 
-		var field = "." + fieldName
+		var field = ".contact" + fieldName
 		var updateField = "#" + fieldName + "text"
 		var updateValue = $(updateField).val()
 	
