@@ -96,16 +96,17 @@ document.addEventListener('DOMContentLoaded', function()
 
         <div class = "col-sm-5 h-100 g-0 border border-2 border-muted " id = "contactSearch" > 
         
-          <div class="input-group mb-0 p-2">
-       
-            <div class="input-group-prepend">
-              <button class="btn btn-outline-muted" type="button" onclick = "searchAll()">View All</button>
-            </div>
+      
+          <div class = "row w-100 g-0 bg-light overflow-auto d-flex" id = "contactBox">
 
-            <input type="text" class="form-control form-control-md" id = "searchbar" placeholder = "Search for a Contact" onchange = "search()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
-            </div>
-     
-          <div class = "row h-75 w-100 g-0 bg-light overflow-auto d-flex" id = "contactBox">
+            <div class="input-group mb-0 p-2">
+       
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-muted" type="button" onclick = "searchAll()">View All</button>
+              </div>
+  
+              <input type="text" class="form-control form-control-md" id = "searchbar" placeholder = "Search for a Contact" onchange = "search()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
+              </div>
 
             <div class = "col" id ="contacts">
 
