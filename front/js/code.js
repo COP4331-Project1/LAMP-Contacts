@@ -359,8 +359,6 @@ function addContact() {
 
 function modify(field,CID) { //Replaces the paragraph for show contact
 
-	if(field == "email") 
-
 	var fieldName = "." + field //Gets the field needed to be changed
 	var fieldText = field +"text" //For the text box
 	$(fieldName).empty()
