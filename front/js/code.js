@@ -16,21 +16,23 @@ function openHTTP(url,action){
 
 function login() {
 
-    userName = $("#userName").val() //gets the username and password from the input field
-	var password = $("#password").val()
+    userName = $("#userName").val() //Gets user name from login username field
+	var password = $("#password").val() //Gets password from login password field
 	
-	password = md5(password)
+	password = md5(password) //Hashes the password
 
-    var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //Json is formatted in key value pairs
+    var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //formats json to be sent over to login endpoint 
 
-	if (userName == ""||password == "") {
+	if (userName == ""||password == "") { //User needs to provide username and password to log in
 		$(".errorBar").empty();
 		$(".errorBar").append("<p id = 'errorText'> Please enter a username and password</p>");
 		return;
 	}
+
 	url = "http://159.203.70.233/LAMPAPI/Login.php"
 	
   	try {
+
 		var xhr = openHTTP(url,"POST")
 	    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
@@ -47,6 +49,7 @@ function login() {
 			$(".errorBar").empty();
 			$(".errorBar").append("<p id = 'errorText'> Incorrect Username/Password </p>");
 			return;
+
 		} else {
 
 			firstName = jsonObject.firstName; //Gets the first name
@@ -54,13 +57,13 @@ function login() {
 		
 			window.location.href = "../html/home.html"
 			saveCookie(); //have firstName last name saved in scope.
+			}
 		}
-		}
+
 		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response	
 	}
     catch(err){	
-
 		$(".errorBar").append("<p> Internal Server Error </p>" );
 		}
 
@@ -68,14 +71,14 @@ function login() {
 
 function register() {
 
-	var firstName = $("#firstName").val()
-	var lastName = $("#lastName").val()
-	var userName = $("#userName").val() //gets the username and password from the input field
-   	var password =  $("#password").val()
-	var email = $("#email").val()
+	var firstName = $("#firstName").val() // Gets the first name from register fields
+	var lastName = $("#lastName").val() //Gets the last name from register fields
+	var userName = $("#userName").val() //gets the username from register fields
+   	var password =  $("#password").val() //gets the password from register field
+	var email = $("#email").val() // gets the email from register field
 	var url = "http://159.203.70.233/LAMPAPI/Register.php"
 
-	if(userName =="" || password == "") {
+	if(userName =="" || password == "") { // Need to provide username and password
 
 	 $(".errorBar").empty();
 	 $(".errorBar").append("<p id = 'errorText'> User Name and Password are required fields </p>")
@@ -83,9 +86,9 @@ function register() {
 
 	}
 
-	password = md5(password)
+	password = md5(password) //Hashes the password for the databse
 
-	var jsonData = JSON.stringify({"firstName":firstName,"lastName":lastName,"userName":userName , "password":  password , "email": email}) //Json 
+	var jsonData = JSON.stringify({"firstName":firstName,"lastName":lastName,"userName":userName , "password":  password , "email": email}) 
 	
 	try {
 
@@ -110,7 +113,9 @@ function register() {
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
 	}
 	catch(err){
-		console.log(err.message)
+
+		//Need to figure out how to handle erros
+
 	}
 }
 
@@ -118,7 +123,7 @@ function search() {
 
 	var search = $("#searchbar").val() //gets the value from the search bar
 
-	var	url = "http://159.203.70.233/LAMPAPI/search.php"
+	var	url = "http://159.203.70.233/LAMPAPI/search.php" 
 	var jsonData = JSON.stringify({"ID":ID, "search":search})
 	var xhr = openHTTP(url,"POST");
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -132,15 +137,14 @@ function search() {
 		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		
 		 //Will send the data and when the state changes will recieve a response
-		fillSearchBox(JSONObject);
+		fillSearchBox(JSONObject); // fill the search boxes with the necessary information
 		}
 		};
 		xhr.send(jsonData);	
 	}	
 	catch(err) {
 
-		var errorMessage = "<h3>" + err.message + "</h3>"
-		console.log(errorMessage)		
+		var errorMessage = "<h3>" + err.message + "</h3>" //Determine how to handler server erros	
 		$("#contacts").append(errorMessage)
 		
 	}
@@ -150,17 +154,18 @@ function search() {
 function fillSearchBox(JSONObject) {
 
 	contacts = []
-	$("#contacts").empty()
+	$("#contacts").empty() //Clears the information already in the contact boxes
 	
-	var entries = JSONObject.entries
+	var entries = JSONObject.entries //Number of contacts returned
 
-	if(entries == 0){
+	if(entries == 0){ //Means there are no contacts matching the information.
 		$("#contacts").append("<p> 0 results </p>")
 		return;
 
 	} 
 
-	for(var i = 0 ; i < entries ; i++){
+	for(var i = 0 ; i < entries ; i++){ //Creates all the contact boxes that are shown when searched.
+
 	var contactFirstName = JSONObject.results[i].contactFirstName
 	var contactLastName = JSONObject.results[i].contactLastName
 
@@ -173,82 +178,83 @@ function fillSearchBox(JSONObject) {
 	"<h3 style = 'padding-left:20%'>" + contactLastName + "</h4> </div>" +
 	"<div class = 'col-1'>" + "</div>"
 	$("#contacts").append(button)
+
 	}
 
 }
-function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID) {
+function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID) { //Shows the contact information when clicked on
 
 	var boxes = "<div class = 'col w-100 bg-light h-auto border border-2 border-muted' id = 'showContacts'>" +
 	"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
-	  "<div class = 'titleBox'>" +
-		"<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-		"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" +
+	"<div class = 'titleBox'>" +
+	"<h3 id = 'contactAttribute'>First</h3>" + 
+	"<div class = 'd-flex w-100 justify-content-end'>" +
+	"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
-	  "<div class = 'contactFirstName'>" +
-	  "<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  + "</div>" +
+	"<div class = 'contactFirstName'>" +
+	"<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  + "</div>" +
 
-	  "<div class = 'row w-100 p-3'>" +
-	  "<div class = 'informationBox'>" +
-		"<div class = 'titleBox'>" +
-		  "<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
-		  "<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" +
-	"</div> " +
-		"<div class = 'contactLastName'>" +
-		"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
-
-		"<div class = 'row w-100 p-3'>" +
+	"<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
-	  "<div class = 'titleBox'>" +
-		"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
-		"<i class='bi-pencil' onclick = 'modify(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" +
-	 "</div> " +
-	  "<div class = 'phoneNumber'>" +
-	  "<p>" + phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<div class = 'titleBox'>" +
+	"<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
+	"<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" +
+	"</div> " +
+	"<div class = 'contactLastName'>" +
+	"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
 
-	  "<div class = 'row w-100 p-3'>" +
-	  "<div class = 'informationBox'>" +
-		"<div class = 'titleBox'>" +
-		  "<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-		  "<i class='bi-pencil' onclick = 'modify(" + '"address"' + "," + CID + ")'></i>" + "</div>" +
-	   "</div> " +
-		"<div class = 'address'>" +
-		"<p>" + address + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	"<div class = 'titleBox'>" +
+	"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
+	"<i class='bi-pencil' onclick = 'modify(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" +
+	"</div> " +
+	"<div class = 'phoneNumber'>" +
+	"<p>" + phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
 
-		"<div class = 'row w-100 p-3'>" +
-		"<div class = 'informationBox'>" +
-		  "<div class = 'titleBox'>" +
-			"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-			"<i class='bi-pencil' onclick = 'modify(" + '"email"' + "," + CID + ")'></i>" + "</div>" +
-		 "</div> " +
-		  "<div class = 'email'>" +
-		  "<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
-		"<div class = 'row w-100 p-2'>"+
-			"<div id = 'deleteButton'>" +
-			"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteAlertBox(" + CID + ")'></i>" +
-			"</div>" + "</div>"
+	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	"<div class = 'titleBox'>" +
+	"<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
+	"<i class='bi-pencil' onclick = 'modify(" + '"address"' + "," + CID + ")'></i>" + "</div>" +
+	"</div> " +
+	"<div class = 'address'>" +
+	"<p>" + address + "</p>" + "</div>" + "</div>" + "</div>" +
 
-		$("#contactView").empty();
-		$("#contactView").append(boxes);
+	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	"<div class = 'titleBox'>" +
+	"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
+	"<i class='bi-pencil' onclick = 'modify(" + '"email"' + "," + CID + ")'></i>" + "</div>" +
+	"</div> " +
+	"<div class = 'email'>" +
+	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<div class = 'row w-100 p-2'>"+
+	"<div id = 'deleteButton'>" +
+	"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteAlertBox(" + CID + ")'></i>" +
+	"</div>" + "</div>"
+
+	$("#contactView").empty();
+	$("#contactView").append(boxes);
 
 }
 
-function deleteAlertBox(CID) {
-
+function deleteAlertBox(CID) { //Displays the dialog box for deleting a contact
 
 	var deleteModal = "<div class='modal fade in' id='deleteContact' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>"
-	  + "<div class='modal-dialog modal-dialog-centered' role='document'>"
-	  + "<div class='modal-content'>" 
-	  +	"<div class='modal-header'>" 
-	  + "<h5 class='modal-title' id='exampleModalLongTitle'>Are you sure you want to delete this contact</h5>"
-	  + "<button type='button' class='close' onclick = 'closeDelete()' aria-label='Close'>" 
+	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
+	+ "<div class='modal-content'>" 
+	+ "<div class='modal-header'>" 
+	+ "<h5 class='modal-title' id='exampleModalLongTitle'>Are you sure you want to delete this contact</h5>"
+	+ "<button type='button' class='close' onclick = 'closeDelete()' aria-label='Close'>" 
 	  
-	  + "<span aria-hidden='true'>&times;</span>" 
-	  + "</button>" 
-	  + "</div>" 
-	  + "<div class= modal-body>"
-	  + "<button type='button' class='btn btn-danger' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>Delete</button>"
-	  + "</div> " + "</div>" + "</div>" + "</div>"
+	+ "<span aria-hidden='true'>&times;</span>" 
+	+ "</button>" 
+	+ "</div>" 
+	+ "<div class= modal-body>"
+	+ "<button type='button' class='btn btn-danger' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>Delete</button>"
+	+ "</div> " + "</div>" + "</div>" + "</div>"
 		
 	
 	$("#mainContainer").append(deleteModal)
@@ -257,18 +263,18 @@ function deleteAlertBox(CID) {
 }
 
 
-function checkEmpty(string) {
+function checkEmpty(string) { //Function to see 
 
 	if(string == "") return "N/A"
 	else return string
 
 }
 
-function showContact(contactNumber){
+function showContact(contactNumber){ //Interacts with show contact endpoint to retreive necessary informatoin
 
 
 	var url = "http://159.203.70.233/LAMPAPI/ShowContact.php"
-	var CID = contacts[contactNumber]
+	var CID = contacts[contactNumber] //Uses the array of contacts to retreive the CID of the contact clicked on .
 
 	var jsonData= JSON.stringify({"CID":CID})
 
@@ -294,16 +300,16 @@ function showContact(contactNumber){
 		contactAddress = checkEmpty(address)
 		contactPhoneNumber = checkEmpty(phoneNumber)
 		contactEmail = checkEmpty(email)
-
-		
+	
 		createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID)
 		}
-	}
+
+		}
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
 		
 	}
 	catch (err) {
-		console.log(err.message)
+	
 	}
 }
 
@@ -316,7 +322,7 @@ function addContact() {
 	var contactEmail = $("#email").val()
 
 
-	if(contactFirstName == "" || contactLastName == "") {
+	if(contactFirstName == "" || contactLastName == "") { //Need to provide a first and last name
 		$(".errorBar").empty();
 		$(".errorBar").append("<p id = 'errorText'> First Name and Last Name are required field </p>");
 		return;
@@ -334,27 +340,27 @@ function addContact() {
 
 			if(this.status == 200 && this.readyState == 4){
 				var JSONObject = JSON.parse(xhr.responseText);
-				if(JSONObject.err = "This contact already exists.");
+				if(JSONObject.err = "This contact already exists."){
 				$(".errorBar").empty();
 				$(".errorBar").append("<p id = 'errorText'> This contact already exists. </p>");
 				return;
+				}
 			}
 		}
 		xhr.send(jsonData)
 	}
 	catch(err){
 
-		console.log(err.message)
 	}
 
 	$('.modal').modal('hide')
 		
 }
 
-function modify(field,CID) { //Just to replace the textvalue
+function modify(field,CID) { //Replaces the paragraph for show contact
 
-	var fieldName = "." + field
-	var fieldText = field +"text"
+	var fieldName = "." + field //Gets the field needed to be changed
+	var fieldText = field +"text" //For the text box
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
 	"</div>"
@@ -362,7 +368,7 @@ function modify(field,CID) { //Just to replace the textvalue
 	$(fieldName).append(input)	
 }
 
-function modifySettings(field) { //Just to replace the textvalue
+function modifySettings(field) { //Replaces the paragraph for settings
 
 	var fieldName = "." + field
 	var fieldText = field +"textSettings"
@@ -393,11 +399,14 @@ function update(fieldName,CID){ //For updating the contact
 			var JSONObject = JSON.parse(xhr.responseText);
 			if(JSONObject.err == "Update Success.") return;
 			}
+
+
 		}
 		xhr.send(jsonData)
+
 		}	
 		catch(err) {
-			console.log(err.message) //otherwise output error
+			
 			return;
 		}
 
@@ -459,7 +468,8 @@ function deleteContact(CID){
 
 }
 
-function settings(fieldName) {
+
+function settings(fieldName) { //updates the user settings.
 
 	var field = "." + fieldName
 	var updateField = "#" + fieldName + "textSettings"
@@ -475,6 +485,7 @@ function settings(fieldName) {
 
 
 	try {
+
 		xhr = openHTTP(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 		xhr.onreadystatechange = function() {
@@ -499,6 +510,8 @@ function settings(fieldName) {
 			return;
 		}
 		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
+
+
 }
 	
 function saveCookie(){ //Need to save cookies so if user refreshes page they are still remembered
@@ -546,6 +559,8 @@ function searchAll(){
 	search();
 }
 
+//Following code is for the modals
+
 function addModal() {
 
 	$('#add').modal('show')
@@ -573,51 +588,53 @@ function closeModal() {
 	$('#settings').modal('hide')
 }
 
+
+//For changing user information
 function changeSettings() {
 
 	var boxes = "<div class = 'row w-100 p-3'>" +
 	"<div class = 'informationBox'>" +
-	  "<div class = 'titleBox'>" +
-		"<h3 id = 'contactAttribute'>Username</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-		"<i class='bi-pencil' onclick = 'modifySettings(" + '"userName"' +")'></i>" + "</div>" +
+	"<div class = 'titleBox'>" +
+	"<h3 id = 'contactAttribute'>Username</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
+	"<i class='bi-pencil' onclick = 'modifySettings(" + '"userName"' +")'></i>" + "</div>" +
 	"</div> " +
-	  "<div class = 'userName'>" +
-	  "<p>" + userName + "</p>" + "</div>" + "</div>"  + "</div>" +
+	"<div class = 'userName'>" +
+	"<p>" + userName + "</p>" + "</div>" + "</div>"  + "</div>" +
 
-	  "<div class = 'row w-100 p-3'>" +
-	  "<div class = 'informationBox'>" +
-		"<div class = 'titleBox'>" +
-		  "<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
-		  "<i class='bi-pencil' onclick = 'modifySettings(" + '"firstName"' +")'></i>" + "</div>" +
+	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	"<div class = 'titleBox'>" +
+	"<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
+	"<i class='bi-pencil' onclick = 'modifySettings(" + '"firstName"' +")'></i>" + "</div>" +
 	"</div> " +
-		"<div class = 'firstName'>" +
-		"<p>" + firstName + "</p>" + "</div>" + "</div>" + "</div>" +
+    "<div class = 'firstName'>" +
+	"<p>" + firstName + "</p>" + "</div>" + "</div>" + "</div>" +
 
 
-	  "<div class = 'row w-100 p-3'>" +
-	  "<div class = 'informationBox'>" +
-		"<div class = 'titleBox'>" +
-		  "<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-		  "<i class='bi-pencil' onclick = 'modifySettings(" + '"lastName"' + ")'></i>" + "</div>" +
-	   "</div> " +
-		"<div class = 'lastName'>" +
-		"<p>" + lastName + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	"<div class = 'titleBox'>" +
+	"<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
+	"<i class='bi-pencil' onclick = 'modifySettings(" + '"lastName"' + ")'></i>" + "</div>" +
+	"</div> " +
+	"<div class = 'lastName'>" +
+	"<p>" + lastName + "</p>" + "</div>" + "</div>" + "</div>" +
 
-		"<div class = 'row w-100 p-3'>" +
-		"<div class = 'informationBox'>" +
-		  "<div class = 'titleBox'>" +
-			"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-			"<i class='bi-pencil' onclick = 'modifySettings(" + '"email"' +")'></i>" + "</div>" +
-		 "</div> " +
-		  "<div class = 'email'>" +
-		  "<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'informationBox'>" +
+	"<div class = 'titleBox'>" +
+	"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
+	"<i class='bi-pencil' onclick = 'modifySettings(" + '"email"' +")'></i>" + "</div>" +
+	"</div> " +
+	"<div class = 'email'>" +
+	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 	    
-	    	//Change made here
-	    	"<div class = 'alert alert-dark' role = 'alert'>Date Created: " + dateCreated + "</div>" +
+	//Change made here
+	"<div class = 'alert alert-dark' role = 'alert'>Date Created: " + dateCreated + "</div>" +
 
-		  "<div class = 'password'>" +
-		  "<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
-		  + "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
+	"<div class = 'password'>" +
+	"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
+	+ "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
 		
 	$("#settingsModal").empty();
 	$("#settingsModal").append(boxes);

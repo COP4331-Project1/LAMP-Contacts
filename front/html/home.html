@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
 <script type="text/javascript">
 
+<title>Home</title>
 document.addEventListener('DOMContentLoaded', function() 
 	{
 	readCookie();
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function()
 
 <div class = "container-fluid min-vh-100 vw-100 g-0 p-0 bg-light" id = "mainContainer">
 
-  <!-- Modal -->
+  <!--  Add Modal -->
   <div class="modal fade in" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -33,33 +34,34 @@ document.addEventListener('DOMContentLoaded', function()
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-           <div class='input-group mb-1'>
+          <div class="modal-body">
+            <div class='input-group mb-1'>
               <input type='text' class='form-control' placeholder = "First Name" id = 'contactFirstName' aria-describedby='inputGroup-sizing-default'>
-          </div>
+            </div>
 
-          <div class='input-group mb-1'>
-            <input type='text' class='form-control' placeholder = "Last Name" id = 'contactLastName' aria-describedby='inputGroup-sizing-default'>
-          </div>
+            <div class='input-group mb-1'>
+              <input type='text' class='form-control' placeholder = "Last Name" id = 'contactLastName' aria-describedby='inputGroup-sizing-default'>
+            </div>
 
-          <div class='input-group mb-1'>
+            <div class='input-group mb-1'>
             <input type='text' class='form-control' placeholder = "Phone Number" id = 'phoneNumber' aria-describedby='inputGroup-sizing-default'  maxlength="10">
-          </div>
+            </div>
 
-          <div class='input-group mb-1'>
-            <input type='text' class='form-control' placeholder = "Email" id = 'email' aria-describedby='inputGroup-sizing-default'>
-          </div>
+            <div class='input-group mb-1'>
+              <input type='text' class='form-control' placeholder = "Email" id = 'email' aria-describedby='inputGroup-sizing-default'>
+            </div>
 
 
-          <div class='input-group mb-1'>
-            <input type='text' class='form-control' placeholder = "Address" id = 'address' aria-describedby='inputGroup-sizing-default'>
-          </div>
+            <div class='input-group mb-1'>
+              <input type='text' class='form-control' placeholder = "Address" id = 'address' aria-describedby='inputGroup-sizing-default'>
+            </div>
 
           <div class = 'errorBar'>
 
           </div>
 
-        </div>
+          </div>
+
         <div class="modal-footer">
 
           <button type="button" class="btn btn-primary" onclick = addContact()>Add</button>
@@ -69,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function()
   </div>
 
 
-   <!-- Settings -->
+   <!-- Settings Modal -->
    <div class="modal fade in" id="settings" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -81,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function()
           </button>
         </div>
             <div class= modal-body  id =  settingsModal >
-       
           </div>
           </div>
               
@@ -89,41 +90,51 @@ document.addEventListener('DOMContentLoaded', function()
      
       </div>
 
-  <div class="container-fluid h-100 bg-light g-0">
 
-     <div class = "row h-100 w-100 g-0 "> 
+     <!-- Home page HTML -->
 
-        <div class = "col-sm-5 max-vh-100 g-0 border border-2 border-muted " id = "contactSearch" > 
-        <div class="input-group mb-0 p-2">
+
+  <div class="container-fluid vh-100 bg-light g-0">
+
+     <div class = "row h-100 w-100 g-0"> 
+
+        <div class = "col-sm-5 h-100 g-0 border border-2 border-muted " id = "contactSearch" > 
+        
+          <div class="input-group mb-0 p-2">
        
             <div class="input-group-prepend">
               <button class="btn btn-outline-muted" type="button" onclick = "searchAll()">View All</button>
             </div>
+
             <input type="text" class="form-control form-control-md" id = "searchbar" placeholder = "Search for a Contact" onchange = "search()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-md">
             </div>
      
           <div class = "row h-75 w-100 g-0 bg-light overflow-auto d-flex" id = "contactBox">
-            <div class = "col-12" id ="contacts">
+
+            <div class = "col" id ="contacts">
 
             </div>
+
           </div>
-         </div>
+         
+        </div>
 
-        <div class = "col-sm-7 min-vh-100  g-0 ">
+        <div class = "col-sm-7 h-100  g-0 ">
           
-
           <div class = "homebackgroundImage">
 
-            <div class = "row h-auto p-4 g-0 d-flex" id = "viewContacts">
-              <div class = "py-5"></div>
+            <div class = "row min-vh-100 p-4 g-0 d-flex" id = "viewContacts">
+
+              <div class = "py-3"></div>
              
               <div class = "row h-75 g-0">
-              <div class="col-lg-12 h-100 d-flex justify-content-center align-items-center g-0" id= "contactView">
 
-                <div class = "col-10 bg-light h-100 border border-2 border-muted rounded-3 shadow-lg bg-white rounded p-2">
+                <div class="col h-100 d-flex justify-content-center align-items-center g-0" id= "contactView">
 
-                  <h1 style id = "startPageTitle" style = "text-align:center"> Getting Started </h1>
-                  <p></p>
+                  <div class = "col-10 bg-light h-100 border border-2 border-muted rounded-3 shadow-lg bg-white rounded p-2">
+
+                    <h1 style id = "startPageTitle" style = "text-align:center"> Getting Started </h1>
+               
                     <div class = "row w-100 p-1">
                     <i class="bi-box-arrow-in-left" style = "color:rgb(133, 133, 133); font-size:50px;"></i>
                     <p id ="startPageGuide">Logout</p>
@@ -138,51 +149,41 @@ document.addEventListener('DOMContentLoaded', function()
                       
                     <i class="bi-plus-square" style = "color:rgb(133, 133, 133);font-size:50px"></i>
                     <p id ="startPageGuide">Add Contact</p>
-                  </div>
-
-                </div>
-                </div>
-            
-                </div>
-
-                <div class = "py-5"></div>
-               
-                <div class = "row">
-                <div class="col-lg-12 d-flex align-self-end h-auto w-100 p-4 g-0 bg-transparent ">
-              
-                  <div class = "col-6 d-flex  g-0 justify-content-start align-items-end">
-                    <div class = "d-flex justify-content-inline">
-                    <i class="bi-box-arrow-in-left" style = "color:rgb(236, 236, 236); font-size:50px;" onclick = "window.location.href = 'index.html'"></i>
-                    <i class="bi-gear" style = "color:rgb(236, 236, 236); font-size:50px;" onclick = "settingsModal()"></i>
-                  </div>
-                  </div>
-                 
-                  <div class = "col-6 d-flex g-0 justify-content-end align-items-end">
-                    <i class="bi-plus-square" style = "color:rgb(236, 236, 236);font-size:50px" onclick = 'addModal()'></i>
                     </div>
 
                   </div>
-
-                  </div>
-                </div>
                 </div>
             
-            </div>
-  
               </div>
+               
+              <div class = "row">
+                <div class="col-lg-12 d-flex align-self-end h-auto w-100 p-4 g-0 bg-transparent ">
+              
+                <div class = "col-6 d-flex  g-0 justify-content-start align-items-end">
+                  <div class = "d-flex justify-content-inline">
+                    <i class="bi-box-arrow-in-left" style = "color:rgb(236, 236, 236); font-size:50px;" onclick = "window.location.href = 'index.html'"></i>
+                    <i class="bi-gear" style = "color:rgb(236, 236, 236); font-size:50px;" onclick = "settingsModal()"></i>
+                    </div>
                 </div>
-              </div>
-            </div>
+                 
+                <div class = "col-6 d-flex g-0 justify-content-end align-items-end">
+                  <i class="bi-plus-square" style = "color:rgb(236, 236, 236);font-size:50px" onclick = 'addModal()'></i>
+                </div>
 
+                </div>
+
+              </div>
+              
+            
             </div>
           </div>
+            
         </div>
-     
-        </div>
-        </div>
-      </div>
-
-
-
   
+      </div>
+    </div>
+  </div>
+</div>
+
+          
 </body>
