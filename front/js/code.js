@@ -210,7 +210,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
 	"<i class='bi-pencil' onclick = 'modify(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
-	"<div class = 'contactPhoneNumber'>" +
+	"<div class = 'contactphoneNumber'>" +
 	"<p>" + phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
 
 	"<div class = 'row w-100 p-3'>" +
@@ -219,7 +219,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
 	"<i class='bi-pencil' onclick = 'modify(" + '"address"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
-	"<div class = 'contactAddress'>" +
+	"<div class = 'contactaddress'>" +
 	"<p>" + address + "</p>" + "</div>" + "</div>" + "</div>" +
 
 	"<div class = 'row w-100 p-3'>" +
@@ -228,7 +228,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
 	"<i class='bi-pencil' onclick = 'modify(" + '"email"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
-	"<div class = 'contactEmail'>" +
+	"<div class = 'contactemail'>" +
 	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 	"<div class = 'row w-100 p-2'>"+
 	"<div id = 'deleteButton'>" +
@@ -360,7 +360,7 @@ function addContact() {
 function modify(field,CID) { //Replaces the paragraph for show contact
 
 	var fieldName = ".contact" + field //Gets the field needed to be changed
-	var fieldText = field +"text" //For the text box
+	var fieldText = "contact" + field + "text" //For the text box
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
 	"</div>"
@@ -382,7 +382,7 @@ function modifySettings(field) { //Replaces the paragraph for settings
 function update(fieldName,CID){ //For updating the contact 
 
 		var field = ".contact" + fieldName
-		var updateField = "#" + fieldName + "text"
+		var updateField = "#contact" + fieldName + "text"
 		var updateValue = $(updateField).val()
 	
 		var url = "http://159.203.70.233/LAMPAPI/UpdateContact.php"
