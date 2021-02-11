@@ -185,7 +185,7 @@ function fillSearchBox(JSONObject) {
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
 
 	var boxes = "<div class = 'col w-100 bg-light h-auto border border-2 border-muted' id = 'showContacts'>" +
-	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
 	"<div class = 'titleBox'>" +
 	"<h3 id = 'contactAttribute'>First</h3>" + 
@@ -195,7 +195,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'contactFirstName'>" +
 	"<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  + "</div>" +
 
-	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
 	"<div class = 'titleBox'>" +
 	"<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
@@ -204,7 +204,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'contactLastName'>" +
 	"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
 
-	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
 	"<div class = 'titleBox'>" +
 	"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
@@ -213,7 +213,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'phoneNumber'>" +
 	"<p>" + phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
 
-	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
 	"<div class = 'titleBox'>" +
 	"<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
@@ -222,7 +222,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'address'>" +
 	"<p>" + address + "</p>" + "</div>" + "</div>" + "</div>" +
 
-	"<div class = 'row w-100 p-3'>" +
+	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
 	"<div class = 'titleBox'>" +
 	"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
