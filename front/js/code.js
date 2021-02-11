@@ -183,7 +183,7 @@ function fillSearchBox(JSONObject) {
 	}
 
 }
-function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID) { //Shows the contact information when clicked on
+function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
 
 	var boxes = "<div class = 'col w-100 bg-light h-auto border border-2 border-muted' id = 'showContacts'>" +
 	"<div class = 'row w-100 p-3'>" +
@@ -232,6 +232,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'contactEmail'>" +
 	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 	"<div class = 'row w-100 p-2'>"+
+	"div class = 'd-flex justify-self-start'>" +dataCreated +"</div>"
 	"<div id = 'deleteButton'>" +
 	"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteAlertBox(" + CID + ")'></i>" +
 	"</div>" + "</div>"
@@ -295,6 +296,7 @@ function showContact(contactNumber){ //Interacts with show contact endpoint to r
 		var address = JSONObject.address
 		var phoneNumber = JSONObject.phoneNumber
 		var email = JSONObject.email
+		var dataCreated = JSONObject.dataCreated
 		//var dateCreated = JSONObject.dateCreated
 
 		contactFirstName = checkEmpty(contactFirstName)
@@ -302,9 +304,10 @@ function showContact(contactNumber){ //Interacts with show contact endpoint to r
 		contactAddress = checkEmpty(address)
 		contactPhoneNumber = checkEmpty(phoneNumber)
 		contactEmail = checkEmpty(email)
+		
 		//contactDateCreated = checkEmpty(dateCreated)
 	
-		createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID) //update parameters with dateCreated
+		createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) //update parameters with dateCreated
 		}
 
 		}
