@@ -105,7 +105,8 @@ function register() {
 		return;
 		}
 		else {
-		window.location.href = "../html/index.html"
+		window.location.href = "../html/home.html" //changed here
+		saveCookie(); //changed here
 		}
 
 		}
