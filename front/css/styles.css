@@ -208,7 +208,7 @@ input[type="text"],input[type="password"]{
 #startPageTitle{
     display:flex;
     align-self:center;
-    font-size: 60px;
+    font-size: 45px;
     font-family: "Bebas Neue", Sans-serif;
     font-weight: bold;
     color: black;
