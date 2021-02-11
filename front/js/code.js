@@ -294,14 +294,16 @@ function showContact(contactNumber){ //Interacts with show contact endpoint to r
 		var address = JSONObject.address
 		var phoneNumber = JSONObject.phoneNumber
 		var email = JSONObject.email
+		//var dateCreated = JSONObject.dateCreated
 
 		contactFirstName = checkEmpty(contactFirstName)
 		contactLastName = checkEmpty(contactLastName)
 		contactAddress = checkEmpty(address)
 		contactPhoneNumber = checkEmpty(phoneNumber)
 		contactEmail = checkEmpty(email)
+		//contactDateCreated = checkEmpty(dateCreated)
 	
-		createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID)
+		createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID) //update parameters with dateCreated
 		}
 
 		}
