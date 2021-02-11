@@ -63,6 +63,7 @@
 	{
 		if(($field != "contactFirstName" && $field != "contactLastName"))
 		{
+			debugging("Not applicable");
 			return false;
 		}
 
@@ -73,6 +74,8 @@
 
 		if($result->num_rows > 0)
 		{
+			debugging("made it inside");
+
 			// The other part of the name so we can verify the other name doesnt match.
 			$currentValue = $result->row[$currentTag];
 
@@ -90,8 +93,9 @@
 
 				return false;
 			}
-
 		}
+		else
+			debugging("No rows come up. Check query");
 
 	}
 ?>
