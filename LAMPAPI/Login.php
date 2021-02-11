@@ -33,7 +33,7 @@
 			$row = $result->fetch_assoc();
 			$firstName = $row["firstName"];
 			$lastName = $row["lastName"];
-          
+			
 			$id = $row["ID"];
 			
 			// Then packaging the info as a JSON and sending it off.
@@ -66,7 +66,7 @@
 	
 	function returnWithInfo( $firstName, $lastName, $id )
 	{
-		$retValue = '{"ID":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","email":"' . $email. '","error":""}';
+		$retValue = '{"ID":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName .  '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
