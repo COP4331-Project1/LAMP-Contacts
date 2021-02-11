@@ -93,9 +93,6 @@
 			{
 				while ($row = $result->fetch_array(MYSQLI_ASSOC))
 				{
-					debugging($row[$currentTag]);
-					debugging($row[$currentValue]);
-
 					if(($row[$currentTag] == $currentValue) && ($row[$field] == $value))
 					{
 						return true;
