@@ -85,7 +85,7 @@
 			$currentValue = $row[$currentTag];
 
 			// get first last FROM Contacts WHERE lastName = lastNamesupplied and CID
-			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $currentTag . "='" . $value . "' AND ID=" . $ID;
+			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $currentTag . "='" . $currentValue . "' AND ID=" . $ID;
 			$result = $conn->query($sql);
 
 			if($result->num_rows > 0)
