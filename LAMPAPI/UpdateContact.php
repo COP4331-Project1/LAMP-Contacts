@@ -86,6 +86,8 @@
 			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $field . "='" . $value . "' AND ID=" . $ID . " AND CID <> " . $inData["CID"];
 
 			$result = $conn->query($sql);
+			returnWithError($conn->error);
+
 			if($result->num_rows > 0)
 			{
 				while ($row = $result->fetch_array(MYSQLI_ASSOC))
