@@ -107,7 +107,6 @@ function register() {
 		else {
 		saveCookie(); //changed here	
 		window.location.href = "../html/home.html" //changed here
-		
 		}
 
 		}
@@ -498,7 +497,7 @@ function settings(fieldName) { //updates the user settings.
 			var JSONObject = JSON.parse(xhr.responseText);
 
 			if(JSONObject.err == "That username already exists!"){
-				$(".errorBar").append("<p id = 'errorText'>Username already exists</p>");
+				$(".errorBarSettings").append("<p id = 'errorText'>Username already exists</p>");
 				return;
 			} 
 
@@ -642,7 +641,7 @@ function changeSettings() {
 	//Change made here
 	"<div class = 'alert alert-dark' role = 'alert'>Date Created: " + dateCreated + "</div>" +
 
-	"<div class = 'errorBar '>" + "</div>" +
+	"<div class = 'errorBarSettings'>" + "</div>" +
 	"<div class = 'password'>" +
 	"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
 	+ "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
