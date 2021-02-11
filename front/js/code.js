@@ -496,12 +496,12 @@ function settings(fieldName) { //updates the user settings.
 			if(this.status == 200 && this.readyState == 4){
 			var JSONObject = JSON.parse(xhr.responseText);
 
-			if(JSONObject.err == "That username already exists!"){
+			if(JSONObject.error == "That username already exists!"){
 				$(".userName").append("<p id = 'errorText'>Username already exists</p>");
 				return;
 			} 
 
-			if(JSONObject.err == "Update Success.") return;
+			if(JSONObject.error == "Update Success.") return;
 			}
 		}
 
