@@ -232,10 +232,10 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'contactEmail'>" +
 	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 	"<div class = 'row w-100 p-2 d-flex justify-content-inline'>"+
-	"<div class = 'alert alert-dark w-50 p-2' role = 'alert'>Date Created: " + dateCreated + "</div>" +
-	"<div id = 'deleteButton'>" +
+	"<div class = 'alert alert-dark w-50' role = 'alert'>Date Created: " + dateCreated + "</div>" +
+
 	"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteAlertBox(" + CID + ")'></i>" +
-	"</div>" + "</div>"
+	"</div>" 
 
 	$("#contactView").empty();
 	$("#contactView").append(boxes);
