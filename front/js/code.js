@@ -399,7 +399,7 @@ function update(fieldName,CID){ //For updating the contact
 		var url = "http://159.203.70.233/LAMPAPI/UpdateContact.php"
 
 		if(fieldName == "contactEmail") fieldName = "email"
-		var jsonData = JSON.stringify({"CID":CID,"field":fieldName,"value":updateValue})
+		var jsonData = JSON.stringify({"CID":CID,"field":fieldName,"value":updateValue,"ID":ID})
 		
 		try {
 

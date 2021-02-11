@@ -5,7 +5,7 @@
 	// localhost, admin_username, password, database
 	$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
     
-	$CID = $inData["CID"];
+	$ID = $inData["ID"];
     $field = $inData["field"];
     $value = $inData["value"];
 
@@ -16,7 +16,7 @@
 	} 
 	else
 	{	
-		if(isDuplicate($conn, $CID, $field, $value))
+		if(isDuplicate($conn, $ID, $field, $value))
 		{
 			returnWithError("That full name already exists!");
 			$conn->close();
@@ -59,7 +59,7 @@
 		sendResultInfoAsJson( $retValue );
 	}
 
-	function isDuplicate($conn, $CID, $field, $value)
+	function isDuplicate($conn, $ID, $field, $value)
 	{
 		if(($field != "contactFirstName" && $field != "contactLastName"))
 		{
@@ -71,7 +71,7 @@
 
 		// First get the current contacts original info.
 		// SELECT contactFirstName FROM Contacts WHERE CID= n
-		$sql = "SELECT ". $currentTag . " FROM Contacts WHERE CID=" . $CID;
+		$sql = "SELECT ". $currentTag . " FROM Contacts WHERE ID=" . $ID;
 		$result = $conn->query($sql);
 
 		
@@ -85,7 +85,7 @@
 			$currentValue = $row[$currentTag];
 
 			// get first last FROM Contacts WHERE lastName = lastNamesupplied and CID
-			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $currentTag . "='" . $value . "' AND CID=" . $CID;
+			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $currentTag . "='" . $value . "' AND ID=" . $ID;
 			$result = $conn->query($sql);
 
 			if($result->num_rows > 0)
