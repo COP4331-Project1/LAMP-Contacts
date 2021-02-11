@@ -9,6 +9,7 @@
     $phoneNumber = "";
     $email = "";
     $address = "";
+    $dateCreated = "";
 
     if($conn->connect_error)
     {
@@ -17,7 +18,7 @@
     }
     else
     {
-        $sql = "SELECT contactFirstName,contactLastName,phoneNumber,email,address FROM Contacts WHERE CID=" . $inData["CID"];
+        $sql = "SELECT contactFirstName,contactLastName,phoneNumber,email,address,dateCreated FROM Contacts WHERE CID=" . $inData["CID"];
 
         $result = $conn->query($sql);
 
@@ -29,8 +30,9 @@
             $address = $row["address"];
             $contactFirstName = $row["contactFirstName"];
             $contactLastName = $row["contactLastName"];
+            $dateCreated = $row["dateCreated"];
 
-            returnWithInfo($contactFirstName,$contactLastName,$phoneNumber, $email, $address);
+            returnWithInfo($contactFirstName,$contactLastName,$phoneNumber, $email, $address, $dateCreated);
         }
         else
         {
@@ -58,9 +60,15 @@
 		sendResultInfoAsJson( $retValue );
     }
     
-    function returnWithInfo($contactFirstName,$contactLastName,$phoneNumber, $email, $address)
+    function returnWithInfo($contactFirstName,$contactLastName,$phoneNumber, $email, $address, $dateCreated)
 	{
-		$retValue = '{"contactFirstName":"' . $contactFirstName . '","contactLastName":"' . $contactLastName . '","phoneNumber":"' . $phoneNumber . '","email":"' . $email . '","address":"' . $address . '","error":""}';
+		$retValue = '{"contactFirstName":"' . $contactFirstName 
+            . '","contactLastName":"' . $contactLastName 
+            . '","phoneNumber":"' . $phoneNumber 
+            . '","email":"' . $email 
+            . '","address":"' . $address
+            . '","dateCreated":"' . $dateCreated
+            . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 

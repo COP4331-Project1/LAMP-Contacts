@@ -16,8 +16,21 @@
 	}
 	else
 	{
-    //update the data on mySQL (Is this updated correctly?)
-    $sql =  "UPDATE Users SET ".$field." = '".$value."' WHERE ID = ".$inData["ID"];
+	
+		// Need to check whether the userName already exists as that is the only field that we accept as unique.
+		if($field == "userName")
+		{
+			$sql = "SELECT userName FROM Users WHERE userName='" . $value . "'";
+
+			// If any rows comeback, then there is an existing userName
+			if(($result = $conn->query($sql))->num_rows > 0)
+			{
+				returnWithError("That username already exists!");
+			}
+		}
+		
+		// Set the respective fields along with their value according to the user ID.
+		$sql =  "UPDATE Users SET ".$field." = '".$value."' WHERE ID = ".$inData["ID"];
 		
 		if ($result = $conn->query($sql) != TRUE)
 		{
