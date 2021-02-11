@@ -51,11 +51,11 @@ function login() {
 			return;
 
 		} else {
-			firstName = JSONObject.firstName;
-			lastName = JSONObject.lastName;
+			firstName = jsonObject.firstName;
+			lastName = jsonObject.lastName;
 			
 			window.location.href = "../html/home.html"
-			saveCookie();
+			saveCookie(); 
 			}
 		}
 
