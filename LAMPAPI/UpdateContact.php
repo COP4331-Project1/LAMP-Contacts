@@ -75,7 +75,7 @@
 		{
 			$row = $result->fetch_assoc();
 			// The other part of the name so we can verify the other name doesnt match.
-			$currentValue = $result->row[$currentTag];
+			$currentValue = $row[$currentTag];
 
 			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $currentTag . "='" . $value . "' AND CID=" . $CID;
 				
