@@ -5,6 +5,7 @@
 	// localhost, admin_username, password, database
 	$conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
     
+	$CID = $inData["CID"];
 	$ID = $inData["ID"];
     $field = $inData["field"];
     $value = $inData["value"];
@@ -16,14 +17,14 @@
 	} 
 	else
 	{	
-		if(isDuplicate($conn, $ID, $inData["CID"], $field, $value))
+		if(isDuplicate($conn, $ID, $CID, $field, $value))
 		{
 			returnWithError("That full name already exists!");
 			$conn->close();
 			return;
 		}		
 
-        $sql =  "UPDATE Contacts SET ".$field." = '".$value."' WHERE CID = ".$inData["CID"];
+        $sql =  "UPDATE Contacts SET ".$field." = '".$value."' WHERE CID = ".$CID;
 
 		if ($result = $conn->query($sql) != TRUE)
 		{
