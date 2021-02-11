@@ -53,11 +53,16 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
+	function debugging( $log )
+	{
+		$retValue = '{"log":"' . $log . '"}';
+		sendResultInfoAsJson( $retValue );
+	}
+
 	function isDuplicate($conn, $CID, $field, $value)
 	{
-		if($field != "contactFirstName" || $field != "contactLastName")
+		if(($field != "contactFirstName" && $field != "contactLastName"))
 		{
-			echo "Does not apply.\n";
 			return false;
 		}
 
@@ -68,7 +73,6 @@
 
 		if($result->num_rows > 0)
 		{
-			echo "Nothing showed up\n";
 			// The other part of the name so we can verify the other name doesnt match.
 			$currentValue = $result->row[$currentTag];
 
