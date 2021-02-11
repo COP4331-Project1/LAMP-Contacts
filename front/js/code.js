@@ -232,7 +232,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'contactEmail'>" +
 	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 	"<div class = 'row w-100 p-2'>"+
-	"div class = 'd-flex justify-self-start'>" +dateCreated +"</div>"
+	"<div class = 'd-flex justify-self-start'>" + dateCreated + "</div>"
 	"<div id = 'deleteButton'>" +
 	"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteAlertBox(" + CID + ")'></i>" +
 	"</div>" + "</div>"
