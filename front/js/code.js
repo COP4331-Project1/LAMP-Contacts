@@ -497,6 +497,7 @@ function settings(fieldName) { //updates the user settings.
 
 			if(JSONObject.err == "That username already exists!"){
 				$(".errorBar").append("<p id = 'errorText'>Username already exists</p>");
+				return;
 			} 
 
 			if(JSONObject.err == "Update Success.") return;
