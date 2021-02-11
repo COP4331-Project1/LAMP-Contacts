@@ -51,12 +51,8 @@ function login() {
 			return;
 
 		} else {
-
-			firstName = jsonObject.firstName; //Gets the first name
-			lastName = jsonObject.lastName;
 		
-			window.location.href = "../html/home.html"
-			saveCookie(); //have firstName last name saved in scope.
+			window.location.href = "../html/index.html"
 			}
 		}
 
