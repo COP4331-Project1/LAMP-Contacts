@@ -208,10 +208,10 @@ input[type="text"],input[type="password"]{
 #startPageTitle{
     display:flex;
     align-self:center;
-    font-size: 40px;
+    font-size: 45px;
     font-family: "Bebas Neue", Sans-serif;
     font-weight: bold;
-    color: mediumvioletred;
+    color: black;
     text-align:center;
 }
 
