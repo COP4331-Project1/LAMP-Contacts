@@ -26,6 +26,8 @@
 			if(($result = $conn->query($sql))->num_rows > 0)
 			{
 				returnWithError("That username already exists!");
+				$conn->close();
+				return;
 			}
 		}
 		
