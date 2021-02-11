@@ -78,7 +78,7 @@
 		if($result->num_rows > 0)
 		{
 			debugging("Made it here!");
-			
+
 			$row = $result->fetch_assoc();
 			// The other part of the name so we can verify the other name doesnt match.
 			// CurrentValue will be the LastName
@@ -86,9 +86,9 @@
 
 			// get first last FROM Contacts WHERE lastName = lastNamesupplied and CID
 			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $currentTag . "='" . $value . "' AND CID=" . $CID;
-			
+			$result = $conn->query($sql);
 
-			if($result = $conn->query($sql)->num_rows > 0)
+			if($result->num_rows > 0)
 			{
 				debugging("Made it this far");		
 				while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
