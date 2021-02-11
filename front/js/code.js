@@ -494,6 +494,11 @@ function settings(fieldName) { //updates the user settings.
 
 			if(this.status == 200 && this.readyState == 4){
 			var JSONObject = JSON.parse(xhr.responseText);
+
+			if(JSONObject.err == "That username already exists!"){
+				$(".errorBar").append("<p id = 'errorText'>Username already exists</p>");
+			} 
+
 			if(JSONObject.err == "Update Success.") return;
 			}
 		}
@@ -634,6 +639,7 @@ function changeSettings() {
 	//Change made here
 	"<div class = 'alert alert-dark' role = 'alert'>Date Created: " + dateCreated + "</div>" +
 
+	"<div class = 'errorBar '>" + "</div>" +
 	"<div class = 'password'>" +
 	"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
 	+ "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
