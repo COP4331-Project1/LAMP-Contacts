@@ -104,8 +104,14 @@ function register() {
 		return;
 		}
 		else {
-		saveCookie(); //changed here	
-		window.location.href = "../html/home.html" //changed here
+			
+		//firstName = jsonObject.firstName;
+		//lastName = jsonObject.lastName;
+			
+		//window.location.href = "../html/home.html"
+		//saveCookie(); 	
+			
+		window.location.href = "../html/index.html" //changed here
 		}
 
 		}
