@@ -230,7 +230,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"</div> " +
 	"<div class = 'contactEmail'>" +
 	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
-	"<div class = 'row w-100 p-2 d-flex justify-content-flex-row'>"+
+	"<div class = 'row w-100 p-2 d-flex flex-row'>"+
 	"<div class = 'alert alert-dark w-50' role = 'alert'>Date Created: " + dateCreated + "</div>" +
 	"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteAlertBox(" + CID + ")'></i>" +
 	"</div>" 
