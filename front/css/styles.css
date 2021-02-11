@@ -206,12 +206,11 @@ input[type="text"],input[type="password"]{
 
 
 #startPageTitle{
-    display:flex;
-    align-self:center;
+   
     font-size: 45px;
     font-family: "Bebas Neue", Sans-serif;
     font-weight: bold;
-    color: blueviolet;
+    color: mediumvioletred;
     text-align:center;
 }
 
