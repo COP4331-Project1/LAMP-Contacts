@@ -71,7 +71,7 @@
 
 		// First get the current contacts original info.
 		// SELECT contactFirstName FROM Contacts WHERE CID= n
-		$sql = "SELECT ". $currentTag . " FROM Contacts WHERE ID=" . $ID;
+		$sql = "SELECT ". $currentTag . " FROM Contacts WHERE CID=" . $inData["CID"];
 		$result = $conn->query($sql);
 
 		
