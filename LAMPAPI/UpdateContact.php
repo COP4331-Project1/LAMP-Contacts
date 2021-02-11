@@ -70,7 +70,6 @@
 		$currentTag = ($field == "contactFirstName") ? "contactLastName" : "contactFirstName"; 
 
 		// First get the current contacts original info.
-		// SELECT contactFirstName FROM Contacts WHERE CID= n
 		$sql = "SELECT ". $currentTag . " FROM Contacts WHERE CID=" . $inData["CID"];
 		$result = $conn->query($sql);
 
@@ -87,11 +86,14 @@
 			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $field . "='" . $value . "' AND ID=" . $ID . " AND CID <> " . $inData["CID"];
 
 			$result = $conn->query($sql);
-
+			debugging($result);
 			if($result->num_rows > 0)
 			{
 				while ($row = $result->fetch_array(MYSQLI_ASSOC))
 				{
+					debugging($row[$currentTag]);
+					debugging($row[$currentValue]);
+
 					if(($row[$currentTag] == $currentValue) && ($row[$field] == $value))
 					{
 						return true;
