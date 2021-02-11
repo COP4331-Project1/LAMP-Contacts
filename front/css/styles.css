@@ -182,8 +182,12 @@ input[type="text"],input[type="password"]{
 
  }
 
+ .loginIcon{
 
-
+    background-image: url("../../images/logo.png");
+    height:100%;
+    width:100%;
+ }
 
 #errorText {
 
@@ -202,7 +206,9 @@ input[type="text"],input[type="password"]{
 
 
 #startPageTitle{
-    font-size: 30px;
+    display:flex;
+    align-self:center;
+    font-size: 40px;
     font-family: "Bebas Neue", Sans-serif;
     font-weight: bold;
     color: mediumvioletred;
