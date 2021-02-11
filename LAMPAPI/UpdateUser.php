@@ -16,7 +16,7 @@
 	}
 	else
 	{
-	
+		// This is a test
 		// Need to check whether the userName already exists as that is the only field that we accept as unique.
 		if($field == "userName")
 		{
