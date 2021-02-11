@@ -91,7 +91,7 @@
 			if($result->num_rows > 0)
 			{
 				debugging("Made it this far");		
-				while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
+				while ($row = $result->fetch_array(MYSQLI_ASSOC))
 				{
 					if($row[$currentTag] == $currentValue && $row[$field] == $value)
 					{
