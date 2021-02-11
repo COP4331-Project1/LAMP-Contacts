@@ -296,7 +296,7 @@ function showContact(contactNumber){ //Interacts with show contact endpoint to r
 		var address = JSONObject.address
 		var phoneNumber = JSONObject.phoneNumber
 		var email = JSONObject.email
-		var dataCreated = JSONObject.dataCreated
+		var dateCreated = JSONObject.dataCreated
 		//var dateCreated = JSONObject.dateCreated
 
 		contactFirstName = checkEmpty(contactFirstName)
