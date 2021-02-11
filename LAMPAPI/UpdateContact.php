@@ -70,9 +70,8 @@
 			// The other part of the name so we can verify the other name doesnt match.
 			$currentValue = $result->row[$currentTag];
 
-			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $currentTag . "='" . $value . "'";
-			
-			
+			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $currentTag . "='" . $value . "' AND CID=" . $CID;
+				
 			if($result = $conn->query($sql)->num_rows > 0)
 			{
 				while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
