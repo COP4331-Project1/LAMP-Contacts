@@ -54,7 +54,7 @@ function login() {
 			firstName = jsonObject.firstName;
 			lastName = jsonObject.lastName;
 			
-			window.location.href = "../html/home.html"
+			window.location.href = "home.html" //change here
 			saveCookie(); 
 			}
 		}
