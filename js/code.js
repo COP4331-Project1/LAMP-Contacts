@@ -440,7 +440,7 @@ function deleteUser(){
 
 			if(this.status == 200 && this.readyState == 4){
 
-				window.location.href = "../html/index.html"
+				window.location.href = "/index.html"
 			}
 		}
 		xhr.send(jsonData)
