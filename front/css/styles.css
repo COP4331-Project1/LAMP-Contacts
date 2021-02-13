@@ -209,7 +209,7 @@ input[type="text"],input[type="password"]{
    
     font-size: 45px;
     font-family: "Bebas Neue", Sans-serif;
-    font-weight: bold;
+    font-weight: normal;
     color: black;
     text-align:center;
 }
