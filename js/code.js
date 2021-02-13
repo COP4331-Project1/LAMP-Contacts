@@ -111,7 +111,7 @@ function register() {
 		//window.location.href = "../html/home.html"
 		//saveCookie(); 	
 			
-		window.location.href = "../html/index.html" //changed here
+		window.location.href = "/index.html" //changed here
 		}
 
 		}
