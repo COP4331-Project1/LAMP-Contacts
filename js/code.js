@@ -332,6 +332,7 @@ function addContact() {
 	var address= $("#address").val()
 	var phoneNumber = $("#phoneNumber").val()
 	var contactEmail = $("#email").val()
+	var flag = 0;
 
 
 	if(contactFirstName == "" || contactLastName == "") { //Need to provide a first and last name
@@ -355,6 +356,7 @@ function addContact() {
 				if(JSONObject.err = "This contact already exists."){
 				$(".errorBar").empty();
 				$(".errorBar").append("<p id = 'errorText'> This contact already exists. </p>");
+				flag = 1;
 				return;
 				}
 			}
@@ -365,7 +367,7 @@ function addContact() {
 
 	}
 
-	$('.modal').modal('hide')
+	if(!flag) $('.modal').modal('hide')
 		
 }
 
