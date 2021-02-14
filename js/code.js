@@ -75,7 +75,7 @@ function register() {
 	var userName = $("#userName").val() //gets the username from register fields
    	var password =  $("#password").val() //gets the password from register field
 	var email = $("#email").val() // gets the email from register field
-	var url = "http://159.203.70.233/LAMPAPI/Register.php"
+	var url = "http://www.cop4331group17.tech/LAMPAPI/Register.php"
 
 	if(userName =="" || password == "") { // Need to provide username and password
 
