@@ -129,7 +129,7 @@ function search() {
 
 	var search = $("#searchbar").val() //gets the value from the search bar
 
-	var	url = "http://159.203.70.233/LAMPAPI/search.php" 
+	var	url = "http://www.cop4331group17.tech/LAMPAPI/search.php" 
 	var jsonData = JSON.stringify({"ID":ID, "search":search})
 	var xhr = openHTTP(url,"POST");
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -280,7 +280,7 @@ function checkEmpty(string) { //Function to see
 function showContact(contactNumber){ //Interacts with show contact endpoint to retreive necessary informatoin
 
 
-	var url = "http://159.203.70.233/LAMPAPI/ShowContact.php"
+	var url = "http://www.cop4331group17.tech/LAMPAPI/ShowContact.php"
 	var CID = contacts[contactNumber] //Uses the array of contacts to retreive the CID of the contact clicked on .
 
 	var jsonData= JSON.stringify({"CID":CID})
@@ -340,7 +340,7 @@ function addContact() {
 	}
 
 	var jsonData = JSON.stringify({"ID":ID,"contactFirstName":contactFirstName,"contactLastName":contactLastName,"address":address,"phoneNumber":phoneNumber,"email":contactEmail})
-	var url = "http://159.203.70.233/LAMPAPI/AddContact.php"
+	var url = "http://www.cop4331group17.tech/LAMPAPI/AddContact.php"
 
 	try {
 
@@ -396,7 +396,7 @@ function update(fieldName,CID){ //For updating the contact
 		var updateField = "#" + fieldName + "text"
 		var updateValue = $(updateField).val()
 	
-		var url = "http://159.203.70.233/LAMPAPI/UpdateContact.php"
+		var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateContact.php"
 
 		if(fieldName == "contactEmail") fieldName = "email"
 		var jsonData = JSON.stringify({"CID":CID,"field":fieldName,"value":updateValue,"ID":ID})
@@ -428,7 +428,7 @@ function update(fieldName,CID){ //For updating the contact
 
 function deleteUser(){
 
-	var url = "http://159.203.70.233/LAMPAPI/DeleteAccount.php"
+	var url = "http://www.cop4331group17.tech/LAMPAPI/DeleteAccount.php"
 	var jsonData = JSON.stringify({"ID":ID})
 
 	try {
@@ -454,7 +454,7 @@ function deleteContact(CID){
 
 	$("#mainContaner").remove("#deleteContact")
 	
-	var url = "http://159.203.70.233/LAMPAPI/DeleteContact.php"
+	var url = "http://www.cop4331group17.tech/LAMPAPI/DeleteContact.php"
 
 	var jsonData = JSON.stringify({"CID":CID})
 
@@ -490,7 +490,7 @@ function settings(fieldName) { //updates the user settings.
 		updateValue = md5(updateValue)
 	}
 	
-	var url = "http://159.203.70.233/LAMPAPI/UpdateUser.php"
+	var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateUser.php"
 
 	var jsonData = JSON.stringify({"ID":ID,"field":fieldName,"value":updateValue})
 
@@ -660,7 +660,7 @@ function changeSettings() {
 
 function showUser() {
 
-	var url = "http://159.203.70.233/LAMPAPI/ShowUser.php"
+	var url = "http://www.cop4331group17.tech/LAMPAPI/ShowUser.php"
 
 	var jsonData= JSON.stringify({"ID":ID})
 
