@@ -242,7 +242,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteAlertBox(" + CID + ")'></i>" +
 	"</div>" 
 
-	$(document).scrollTop(600) 
+	$(document).scrollTop($(document).height()) 
 	$("#contactView").empty();
 	$("#contactView").append(boxes);
 
