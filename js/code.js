@@ -29,7 +29,7 @@ function login() {
 		return;
 	}
 
-	url = "http://159.203.70.233/LAMPAPI/Login.php"
+	url = "http://www.cop4331group17.tech/LAMPAPI/Login.php"
 	
   	try {
 
