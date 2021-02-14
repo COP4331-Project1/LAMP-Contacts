@@ -353,10 +353,9 @@ function addContact() {
 
 			if(this.status == 200 && this.readyState == 4){
 				var JSONObject = JSON.parse(xhr.responseText);
-				if(JSONObject.err = "This contact already exists."){
+				if(JSONObject.err == "This contact already exists."){
 				$(".errorBar").empty();
-				$(".errorBar").append("<p id = 'errorText'> This contact already exists. </p>");
-				
+				$(".errorBar").append("<p id = 'errorText'> This contact already exists. </p>")
 				return;
 				}
 				else $('#add').modal('hide')
@@ -367,8 +366,6 @@ function addContact() {
 	catch(err){
 
 	}
-
-	
 		
 }
 
