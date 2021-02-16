@@ -705,7 +705,7 @@ function gettingStarted(userName){
 	+ "<h1 style id = 'startPageTitle' style = 'text-align:center'> Welcome " + userName + "</h1>"
 	
 	+ "<div class = 'row w-100 p-1'>"
-	+ "<p id ='startPageGuide'>Use any one of our helpful features located at the bottom of the screen to manage your people</p>"
+	+ "<p id ='startPageGuide'>Guide</p>"
 	+ "</div>"
 
 
