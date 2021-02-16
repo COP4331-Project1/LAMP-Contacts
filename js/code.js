@@ -711,11 +711,14 @@ function gettingStarted(userName){
 
     + "<div class='datetime'>"
    	 + "<div class='date'>"
-         + "<span id ='datetime'>Day</span>, "
-		+ "<script> var dt = new Date(); document.getElementById('datetime').innerHTML = dt.toLocaleDateString(); </script>"
+         + "<span id ='day'>Day</span>, "
+		+ "<script> var dt = new Date(); document.getElementById('day').innerHTML = dt.getDay(); </script>"
          + "<span id='month'>Month</span> "
+		+ "<script> var dt = new Date(); document.getElementById('month').innerHTML = dt.getMonth(); </script>"
          + "<span id='daynum'>00</span>, "
+		+ "<script> var dt = new Date(); document.getElementById('day').innerHTML = dt.getDate(); </script>"
          + "<span id='dayname'>Year</span> "
+		+ "<script> var dt = new Date(); document.getElementById('day').innerHTML = dt.getFullYear(); </script>"
     + "</div>"
 	
     +"<div class='time'>"
