@@ -716,9 +716,9 @@ function gettingStarted(userName){
          + "<span id='month'>Month</span> "
 		+ "<script> var dt = new Date(); document.getElementById('month').innerHTML = dt.getMonth(); </script>"
          + "<span id='daynum'>00</span>, "
-		+ "<script> var dt = new Date(); document.getElementById('day').innerHTML = dt.getDate(); </script>"
-         + "<span id='dayname'>Year</span> "
-		+ "<script> var dt = new Date(); document.getElementById('day').innerHTML = dt.getFullYear(); </script>"
+		+ "<script> var dt = new Date(); document.getElementById('daynum').innerHTML = dt.getDate(); </script>"
+         + "<span id='year'>Year</span> "
+		+ "<script> var dt = new Date(); document.getElementById('year').innerHTML = dt.getFullYear(); </script>"
     + "</div>"
 	
     +"<div class='time'>"
