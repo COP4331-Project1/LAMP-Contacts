@@ -709,21 +709,21 @@ function gettingStarted(userName){
 	+ "</div>"
 
 
-	+ "<div class = 'row w-100 p-1'>"
-	+ "<i class='bi-box-arrow-in-left' style = 'color:rgb(133, 133, 133); font-size:50px;'></i>"
-	+ "<p id ='startPageGuide'>Logout</p>"
-	+ "</div>"
-
-	+ "<div class = 'row w-100 p-1'>"
-	+ "<i class='bi-gear' style = 'color:rgb(133, 133, 133); font-size:50px; '></i>"
-	+ "<p id ='startPageGuide'>Settings</p>"
-	+ "</div>"
-
-	+ "<div class = 'row w-100 p-1'>"
-	  
-	+ "<i class='bi-plus-square' style = 'color:rgb(133, 133, 133);font-size:50px'></i>"
-	+ "<p id ='startPageGuide'>Add Contact</p>"
-	+ "</div>"
+    + "<div class='datetime'>"
+   	 + "<div class='date'>"
+         + "<span id='dayname'>Day</span>,"
+         + "<span id='month'>Month</span>"
+         + "<span id='daynum'>00</span>,"
+         + "<span id='dayname'>Year</span>"
+    + "</div>"
+	
+    +"<div class='time'>"
+        + "<span id='hour'>00</span>:"
+        + "<span id='minutes'>00</span>:"
+        + "<span id='seconds'>00</span>"
+        + "<span id='period'>AM</span>"
+    +"</div>"
+	+"</div>"
     + "</div>"
 
 
