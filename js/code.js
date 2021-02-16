@@ -705,21 +705,21 @@ function gettingStarted(userName){
 	+ "<h1 style id = 'startPageTitle' style = 'text-align:center'> Welcome " + userName + "</h1>"
 	
 	+ "<div class = 'row w-100 p-1'>"
-	+ "<p id ='startPageGuide'>Guide</p>"
+	+ "<p id ='startPageGuide'>Today's Date</p>"
 	+ "</div>"
 
 
     + "<div class='datetime'>"
    	 + "<div class='date'>"
-         + "<span id='dayname'>Day</span>,"
+         + "<span id='dayname'>Day</span>, "
          + "<span id='month'>Month</span>"
-         + "<span id='daynum'>00</span>,"
+         + "<span id='daynum'>00</span>, "
          + "<span id='dayname'>Year</span>"
     + "</div>"
 	
     +"<div class='time'>"
-        + "<span id='hour'>00</span>:"
-        + "<span id='minutes'>00</span>:"
+        + "<span id='hour'>00</span>: "
+        + "<span id='minutes'>00</span>: "
         + "<span id='seconds'>00</span>"
         + "<span id='period'>AM</span>"
     +"</div>"
