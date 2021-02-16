@@ -701,6 +701,8 @@ function showUser() {
 
 function gettingStarted(){
 
+	readCookie()
+
 	var box = "<div class = 'col-10 bg-light h-100 border border-2 border-muted rounded-3 shadow-lg bg-white rounded p-2'>" 
 	+ "<h1 style id = 'startPageTitle' style = 'text-align:center'> Welcome " + userName + "</h1>" 
 	+ "<div class = 'row w-100 p-1'>"
