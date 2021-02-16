@@ -711,7 +711,8 @@ function gettingStarted(userName){
 
     + "<div class='datetime'>"
    	 + "<div class='date'>"
-         + "<span id='dayname'>Day</span>, "
+         + "<span id ='datetime'>Day</span>, "
+		+ "<script> var dt = new Date(); document.getElementById('datetime').innerHTML = dt.toLocaleDateString(); </script>"
          + "<span id='month'>Month</span> "
          + "<span id='daynum'>00</span>, "
          + "<span id='dayname'>Year</span> "
