@@ -14,6 +14,16 @@
 	{
 
 		// Numbers do not need quotes.
+		$sql = "DELETE FROM Contacts WHERE ID=" . $inData["ID"];
+
+		if($result = $conn->query($sql) != TRUE)
+		{
+			returnWithError($conn->error);
+			$conn->close();
+			return;
+		}
+
+
 		$sql = "DELETE FROM Users WHERE ID=". $inData["ID"];
 
 		if ($result = $conn->query($sql) != TRUE)

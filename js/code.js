@@ -565,7 +565,7 @@ function readCookie()
 	}
 	if( ID < 0 )
 	{
-		window.location.href = "index.html";
+		window.location.href = "/index.html";
 	}
 	
 }
