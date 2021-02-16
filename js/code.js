@@ -712,7 +712,7 @@ function gettingStarted(userName){
     + "<div class='datetime'>"
    	 + "<div class='date'>"
          + "<span id ='day'>Day</span>, "
-		+ "<script> var dt = new Date(); document.getElementById('day').innerHTML = dt.getDay(); </script>"
+		+ "<script> var dt = new Date(); var temp = dt.getDay(); var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']; document.getElementById('day').innerHTML = week[temp]; </script>"
          + "<span id='month'>Month</span> "
 		+ "<script> var dt = new Date(); document.getElementById('month').innerHTML = dt.getMonth(); </script>"
          + "<span id='daynum'>00</span>, "
