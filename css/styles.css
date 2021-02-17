@@ -1,6 +1,6 @@
 .background
 {
-    background-image: url(../images/background.jpg) ;
+    background-image: url(images/background.jpg) ;
     background-size:cover;
 }
 
@@ -139,7 +139,7 @@ input[type="text"],input[type="password"]{
  
  .homebackgroundImage {
  
-    background-image: url("../../images/background.jpg");
+    background-image: url("images/background.jpg");
     background-size:cover;
     height:100%;
     width:100%;
@@ -150,7 +150,7 @@ input[type="text"],input[type="password"]{
     display:flex;
     height:50%;
     width:50%;
-    background-image: url("../../images/background.jpg");
+    background-image: url("images/background.jpg");
     border-radius: 50%;
     padding:35%;
     align-items:center;
@@ -184,7 +184,7 @@ input[type="text"],input[type="password"]{
 
  .loginIcon{
 
-    background-image: url("../../images/logo.png");
+    background-image: url("images/logo.png");
     height:100%;
     width:100%;
  }
