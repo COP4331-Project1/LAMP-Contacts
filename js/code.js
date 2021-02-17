@@ -722,12 +722,11 @@ function gettingStarted(userName){
     + "</div>"
 	
     +"<div class='time'>"
-        + "<span id='hour'>00</span>: "
-		
+        + "<span id='hour'>00</span>: "	
         + "<span id='minutes'>00</span>: "
         + "<span id='seconds'>00</span> "
         + "<span id='period'>AM</span> "
-		+ "<script> var dt = new Date(); var hr = dt.getHours(), pe = 'AM'; if(hr == 0){ hr = 12;} if(hr > 12){ hr = hr - 12; pe='PM';} document.getElementById('hour').innerHTML = hr; document.getElementById('minutes').innerHTML= dt.getMinutes(); document.getElementById('seconds').innerHTML = dt.getSeconds; document.getElementById('period').innerHTML = pe; </script>"
+		+ "<script> var dt = new Date(); var hr = dt.getHours(), pe = 'AM'; if(hr == 0){ hr = 12;} if(hr > 12){ hr = hr - 12; pe='PM';} document.getElementById('hour').innerHTML = hr; document.getElementById('minutes').innerHTML= dt.getMinutes(); document.getElementById('seconds').innerHTML = dt.getSeconds(); document.getElementById('period').innerHTML = pe; </script>"
     +"</div>"
 	+"</div>"
     + "</div>"
