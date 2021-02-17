@@ -723,6 +723,7 @@ function gettingStarted(userName){
 	
     +"<div class='time'>"
         + "<span id='hour'>00</span>: "
+		+"<script> var dt = new Date(); document.getElementById('hour') = dt.getHours();<script>"
         + "<span id='minutes'>00</span>: "
         + "<span id='seconds'>00</span> "
         + "<span id='period'>AM</span> "
