@@ -252,7 +252,7 @@ function deleteAlertBox(CID) { //Displays the dialog box for deleting a contact
 	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
 	+ "<div class='modal-content'>" 
 	+ "<div class='modal-header'>" 
-	+ "<h5 class='modal-title' id='exampleModalLongTitle'>Are you sure you want to delete this contact</h5>"
+	+ "<h5 class='modal-title' id='exampleModalLongTitle'>Are you sure you want to delete this contact?</h5>"
 	+ "<button type='button' class='close' onclick = 'closeDelete()' aria-label='Close'>" 
 	  
 	+ "<span aria-hidden='true'>&times;</span>" 
@@ -705,25 +705,30 @@ function gettingStarted(userName){
 	+ "<h1 style id = 'startPageTitle' style = 'text-align:center'> Welcome " + userName + "</h1>"
 	
 	+ "<div class = 'row w-100 p-1'>"
-	+ "<p id ='startPageGuide'>Guide</p>"
+	+ "<p id ='startPageGuide'>Today's Date</p>"
 	+ "</div>"
 
 
-	+ "<div class = 'row w-100 p-1'>"
-	+ "<i class='bi-box-arrow-in-left' style = 'color:rgb(133, 133, 133); font-size:50px;'></i>"
-	+ "<p id ='startPageGuide'>Logout</p>"
-	+ "</div>"
-
-	+ "<div class = 'row w-100 p-1'>"
-	+ "<i class='bi-gear' style = 'color:rgb(133, 133, 133); font-size:50px; '></i>"
-	+ "<p id ='startPageGuide'>Settings</p>"
-	+ "</div>"
-
-	+ "<div class = 'row w-100 p-1'>"
-	  
-	+ "<i class='bi-plus-square' style = 'color:rgb(133, 133, 133);font-size:50px'></i>"
-	+ "<p id ='startPageGuide'>Add Contact</p>"
-	+ "</div>"
+    + "<div class='datetime'>"
+   	 + "<div class='date'>"
+         + "<span id ='day'>Day</span>, "
+		+ "<script> var dt = new Date(); var temp = dt.getDay(); var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']; document.getElementById('day').innerHTML = week[temp]; </script>"
+         + "<span id='month'>Month</span> "
+		+ "<script> var dt = new Date(); var temp = dt.getMonth(); var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; document.getElementById('month').innerHTML = month[temp]; </script>"
+         + "<span id='daynum'>00</span>, "
+		+ "<script> var dt = new Date(); document.getElementById('daynum').innerHTML = dt.getDate(); </script>"
+         + "<span id='year'>Year</span> "
+		+ "<script> var dt = new Date(); document.getElementById('year').innerHTML = dt.getFullYear(); </script>"
+    + "</div>"
+	
+    +"<div class='time'>"
+        + "<span id='hour'>00</span>: "	
+        + "<span id='minutes'>00</span>: "
+        + "<span id='seconds'>00</span> "
+        + "<span id='period'>AM</span> "
+		+ "<script> var dt = new Date(); var hr = dt.getHours(), pe = 'AM'; if(hr == 0){ hr = 12;} if(hr > 12){ hr = hr - 12; pe='PM';} document.getElementById('hour').innerHTML = hr; document.getElementById('minutes').innerHTML= dt.getMinutes(); document.getElementById('seconds').innerHTML = dt.getSeconds(); document.getElementById('period').innerHTML = pe; </script>"
+    +"</div>"
+	+"</div>"
     + "</div>"
 
 
