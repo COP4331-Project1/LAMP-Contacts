@@ -7,7 +7,7 @@ $conFirstName = $inData["contactFirstName"];
 $conLastName = $inData["contactLastName"];
 $phoneNumber = $inData["phoneNumber"];
 $address = $inData["address"];
-$email = $inData["email"];
+$email = $inData["cemail"];
 
 // localhost, admin_username, password, database
 $conn = new mysqli("localhost", "group17", "cop4331c", "COP4331");
@@ -38,7 +38,7 @@ else
 		}
 
 		// Generates the mySql command to insert the request info.
-        $sql = "insert into Contacts (contactFirstName,contactLastName,phoneNumber,address,email,ID) VALUES ('" . $conFirstName . "','" . $conLastName . "','" . $phoneNumber . "','" . $address . "','" . $email ."',". $ID . ")";
+        $sql = "insert into Contacts (contactFirstName,contactLastName,phoneNumber,address,cemail,ID) VALUES ('" . $conFirstName . "','" . $conLastName . "','" . $phoneNumber . "','" . $address . "','" . $email ."',". $ID . ")";
 		
 		if($result = $conn->query($sql) != TRUE)
 		{
