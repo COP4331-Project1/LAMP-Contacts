@@ -1,113 +1,180 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<html><head>
     <title>Register Form</title>
     <script type="text/javascript" src="/js/code.js"></script>
     <script type="text/javascript" src="/js/md5.js"></script>
-    
- 
+
+
     <link href="/css/styles.css" rel="stylesheet">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script type="text/javascript" src="/js/code.js"></script>
   </head>
   <body>
 
-    <div class = "background" style = "height:100vh; width: 100vw">
-     <div class = "container w-100 h-100 d-flex align-items-center justify-content-center">
+    <style>
+      input[type=text]
+      {
+        width:100%;
+        border: 2px solid silver;
+        border-radius: 4px;
+        margin: 8px 0;
+        outline:none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: .3s;
+      }
 
-      <div class = "row w-100 h-100 d-flex justify-content-center align-items-center g-0">
-        <div class = "col-md-8 col-lg-6 p-4 bg-light border border-2 border-muted rounded-3 shadow-lg bg-white rounded g-0">
-                
-        <div class = "py-3"></div>
+      input[type=text]:focus{
+        border-color: pink;
+        box-shadow: 0 0 10px 0 pink;
+      }
 
-            <div class = "row">
-                <div class = "col-12">
-                    <div class = "d-flex justify-content-center">
+      input[type=password]
+      {
+        width:100%;
+        border: 2px solid silver;
+        border-radius: 4px;
+        margin: 8px 0;
+        outline:none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: .3s;
+      }
+
+      input[type=password]:focus{
+        border-color: pink;
+        box-shadow: 0 0 10px 0 pink;
+      }
+
+      .inputWithIcon input[text=text]{
+        padding-left:40px;
+      }
+
+      .inputWithIcon{
+        position: relative;
+      }
+
+      .inputWithIcon
+      {
+        top:10px;
+      }
+
+      .input-icons i {
+              position: absolute;
+          }
+
+          .input-icons {
+              width: 100%;
+              margin-bottom: 10px;
+          }
+
+          .icon {
+              padding: 25px;
+              color: grey;
+              min-width: 50px;
+              text-align: center;
+          }
+
+          .input-field {
+              width: 100%;
+              padding: 10px;
+              text-align: center;
+          }
+
+    </style>
+
+    <div class="background" style="height:100vh; width: 100vw">
+     <div class="container w-100 h-100 d-flex align-items-center justify-content-center">
+
+      <div class="row w-100 h-100 d-flex justify-content-center align-items-center g-0">
+        <div class="col-md-8 col-lg-5 p-1 bg-light border border-2 border-muted rounded-3 shadow-lg bg-white rounded g-0">
+
+        <div class="py-2"></div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center">
                     <span id="title">SIGN UP</span>
                      </div>
                 </div>
             </div>
 
-            <div class = "py-3"></div>
+            <div class="py-1"></div>
 
-            <div class = "row justify-content-center">
-                <div class = "col-10 p-2">
-                        <div class="input-group mb-3">
-                           <div class = "input-group-prepend">
-                             <span class = "input-group-text" id="basic-addon1">☺</span>
-                                                                  </div>
-                              <input type="text" id="userName" class="form-control" placeholder="Username" aria-label="username" aria-describedby="basic-addon1">
-                          </div>
-                         
+            <div class="row justify-content-center">
+                <div class="col-8 p-0">
+                  <div class="input-icons">
+            					<i class="fa fa-user icon">
+            				</i>
+            					<input class="input-field" type="text" placeholder="Username" id="userName">
+            			</div>
+
                      </div>
                 </div>
-         
 
-            <div class = "row justify-content-center">
-                <div class = "col-10 p-2">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">♙</span>
-                          </div>
-                              <input type="password" id="password" class="form-control" placeholder="Password" aria-label="password" aria-describedby="basic-addon1">
-                          </div>
-                   
-                </div>
-            </div>
 
-            <div class = "row justify-content-center">
-                <div class = "col-10 p-2">           
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">★</span>
-                          </div>
-                              <input type="text" id="firstName" class="form-control" placeholder="First Name" aria-label="firstName" aria-describedby="basic-addon1">
-                            </div>
-              
-                </div>
-            </div>
-         
-            <div class = "row justify-content-center">
-                <div class = "col-10 p-2">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                                      <span class = "input-group-text" id="basic-addon1">✔</span>
-                                      </div>
-                          <input type="text" id="lastName" class="form-control" placeholder="Last Name" aria-label="lastName" aria-describedby="basic-addon1">
-                          </div>
-                  
-                </div>
-            </div>
-
-            <div class = "row justify-content-center">
-             <div class = "col-10 p-2">       
-              <div class="input-group mb-3">
-                <div class= "input-group-prepend">
-                            <span class= "input-group-text" id = "basic-addon1">✉</span>
-                          </div>
-              <input type="text" id="email" class="form-control form-control-md" placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
+            <div class="row justify-content-center">
+                <div class="col-8 p-0">
+                  <div class="input-icons">
+                      <i class="fa fa-lock icon">
+                    </i>
+                      <input class="input-field" type="password" placeholder="Password" id="password">
+                  </div>
           </div>
-  
-                
+
+                </div>
+
+            <div class="row justify-content-center">
+                <div class="col-8 p-0">
+                  <div class="input-icons">
+                    <i class="fa fa-star icon"></i>
+
+                      <input class="input-field" type="text" placeholder="First Name" id="firstName">
+                  </div>
+
+                </div>
             </div>
 
-        <div class = "errorBar" >
+            <div class="row justify-content-center">
+                <div class="col-8 p-0">
+                  <div class="input-icons">
+                    <i class="fa fa-laptop icon"></i>
+
+                      <input class="input-field" type="text" placeholder="Last Name" id="lastName">
+                  </div>
+
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+             <div class="col-8 p-0">
+               <div class="input-icons">
+                 <i class="fa fa-envelope icon"></i>
+
+                   <input class="input-field" type="text" placeholder="Email" id="email">
+               </div>
+
+
+            </div>
+
+        <div class="errorBar">
 
         </div>
 
-        <div class = "row p-4">
-            <div class = "col-6">
-                <div class = "d-flex justify-content-start">
-                    <i class="bi bi-arrow-left-circle" style = "font-size:50px;color:blue;" onclick =  "window.location.href = 'index.html'"></i>
+        <div class="row p-4">
+            <div class="col-6">
+                <div class="d-flex justify-content-start">
+                    <i class="bi bi-arrow-left-circle" style="font-size:50px;color:#4C1A7E;" onclick="window.location.href = 'index.html'"></i>
             </div>
         </div>
-                <div class = "col-6">
-                    <div class = "d-flex justify-content-end">
-                        <i class="bi bi-check-circle" style = "font-size:50px ; color:blue;" onclick = "register()"></i>
+                <div class="col-6">
+                    <div class="d-flex justify-content-end">
+                        <i class="bi bi-check-circle" style="font-size:50px ; color:#4C1A7E;" onclick="register()"></i>
                 </div>
             </div>
         </div>
@@ -115,5 +182,6 @@
       </div>
     </div>
 
-  </body>
-</html>
+
+
+</div></div></div></body></html>
