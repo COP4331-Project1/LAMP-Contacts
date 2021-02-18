@@ -361,10 +361,10 @@ function addContact() {
 function cancelChange(fieldText,text,field) {
 
 	var textInput = "#" + fieldText
-	field = "." + field
+	var fieldName = "." + field
 	$(textInput).empty()
 	$(field).empty()
-	$(field).append("<p id = " + field + " > " + text + " </p>")
+	$(field).append("<p id = " + fieldName + " > " + text + " </p>")
 }
 
 function modify(field,CID) { //Replaces the paragraph for show contact
