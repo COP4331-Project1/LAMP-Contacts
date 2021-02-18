@@ -179,7 +179,7 @@ function fillSearchBox(JSONObject) {
 	}
 
 }
-function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,cemail,CID,dateCreated) { //Shows the contact information when clicked on
+function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
 
 	var boxes = "<div class = 'col w-100 bg-light h-auto border border-2 border-muted' id = 'showContacts'>" +
 	"<div class = 'row w-100 p-2'>" +
@@ -226,7 +226,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,ce
 	"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'contactEmail'>" +
-	"<p>"+ cemail + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 	"<div class = 'row w-100 p-2 g-0 d-flex flex-row'>"+
 	"<div class = 'alert alert-dark w-50' role = 'alert'>Date Created: " + dateCreated + "</div>" +
 	"<div id = 'deleteButton'>" +
