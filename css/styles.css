@@ -260,6 +260,26 @@ input[type="text"],input[type="password"]{
   margin-top: -50px;
 }
 
+#contactFirstName
+{
+	border-radius: 0.3em;
+}
+
+#contactLastName
+{
+	border-radius: 0.3em;
+}
+
+#phoneNumber
+{
+	border-radius: 0.3em;
+}
+
+#address
+{
+	border-radius: 0.3em;
+}
+
 #basic-addon1
 {
   background-color: #EDE9ED;
