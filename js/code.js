@@ -362,7 +362,7 @@ function cancelChange(text,field) {
 
 	var fieldName = "." + field
 	$(fieldName).empty()
-	$(fieldName).append("<p id = " + field + " >" + text +" </p>")
+	$(fieldName).append("<p id = " + field + " > '" + text + "' </p>")
 }
 
 function modify(field,CID) { //Replaces the paragraph for show contact
