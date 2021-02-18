@@ -360,8 +360,8 @@ function addContact() {
 
 function cancelChange(text,field) {
 
-	var text = field + "text"
-	$(text).empty()
+	var textInput = field + "text"
+	$(textInput).empty()
 	$(field).empty()
 	$(field).append("<p id = " + field + " > " + text + " </p>")
 }
