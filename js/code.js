@@ -102,13 +102,7 @@ function register() {
 		return;
 		}
 		else {
-			
-		//firstName = jsonObject.firstName;
-		//lastName = jsonObject.lastName;
-			
-		//window.location.href = "../html/home.html"
-		//saveCookie(); 	
-			
+				
 		window.location.href = "/index.html" //changed here
 		}
 
@@ -118,7 +112,6 @@ function register() {
 	}
 	catch(err){
 
-		//Need to figure out how to handle erros
 
 	}
 }
@@ -301,15 +294,13 @@ function showContact(contactNumber){ //Interacts with show contact endpoint to r
 		var phoneNumber = JSONObject.phoneNumber
 		var email = JSONObject.email
 		var dateCreated = JSONObject.dateCreated
-		//var dateCreated = JSONObject.dateCreated
 
 		contactFirstName = checkEmpty(contactFirstName)
 		contactLastName = checkEmpty(contactLastName)
 		contactAddress = checkEmpty(address)
 		contactPhoneNumber = checkEmpty(phoneNumber)
 		contactEmail = checkEmpty(email)
-		
-		//contactDateCreated = checkEmpty(dateCreated)
+
 	
 		createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) //update parameters with dateCreated
 		}
@@ -367,13 +358,20 @@ function addContact() {
 		
 }
 
+function cancelChange(text,field) {
+
+	$(field).empty()
+	$(field).append("<p id = " + field + " > " + text + " </p>")
+}
+
 function modify(field,CID) { //Replaces the paragraph for show contact
 
 	var fieldName = "." + field //Gets the field needed to be changed
 	var fieldText = field +"text" //For the text box
+	var currentText = $(fieldName).val()
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
-	"</div>"
+	"</div>" +   "<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange(" + currentText + "," + field + ")>Button</button>" + "</div>"
 
 	$(fieldName).append(input)	
 }
@@ -382,9 +380,10 @@ function modifySettings(field) { //Replaces the paragraph for settings
 
 	var fieldName = "." + field
 	var fieldText = field +"textSettings"
+	var currentText = $(fieldName).val()
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = settings('" + field + "') aria-describedby='inputGroup-sizing-default'>" +
-	"</div>"
+	"</div>" +  "<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange(" + currentText + "," + field + ")>Button</button>" + "</div> </div>"
 
 	$(fieldName).append(input)	
 }
@@ -593,7 +592,6 @@ function closeDelete() {
 function settingsModal() {
 
 	$('#settings').modal('show')
-
 	showUser()
 }
 
