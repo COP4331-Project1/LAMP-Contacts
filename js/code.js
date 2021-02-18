@@ -361,6 +361,7 @@ function addContact() {
 function cancelChange(fieldText,text,field) {
 
 	var textInput = "#" + fieldText
+	field = "." + field
 	$(textInput).empty()
 	$(field).empty()
 	$(field).append("<p id = " + field + " > " + text + " </p>")
@@ -373,7 +374,7 @@ function modify(field,CID) { //Replaces the paragraph for show contact
 	var currentText = $(fieldName).val()
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
-	"<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange('" + fieldText + "','" + currentText + "','" + fieldName + "')>Button</button>" + "</div></div>"
+	"<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange('" + fieldText + "','" + currentText + "','" + field + "')>Button</button>" + "</div></div>"
 
 	$(fieldName).append(input)	
 }
@@ -385,7 +386,7 @@ function modifySettings(field) { //Replaces the paragraph for settings
 	var currentText = $(fieldName).val()
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = settings('" + field + "') aria-describedby='inputGroup-sizing-default'>" +
-	"<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange('" + fieldText + "','" + currentText + "','" + fieldName + "')>Button</button>" + "</div></div>"
+	"<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange('" + fieldText + "','" + currentText + "','" + field + "')>Button</button>" + "</div></div>"
 
 	$(fieldName).append(input)	
 }
