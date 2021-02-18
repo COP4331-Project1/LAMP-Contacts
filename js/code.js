@@ -320,7 +320,7 @@ function addContact() {
 	var contactLastName = $("#contactLastName").val()
 	var address= $("#address").val()
 	var phoneNumber = $("#phoneNumber").val()
-	var contactEmail = $("#cemail").val()
+	var contactEmail = $("#email").val()
 	
 
 
@@ -330,7 +330,7 @@ function addContact() {
 		return;
 	}
 
-	var jsonData = JSON.stringify({"ID":ID,"contactFirstName":contactFirstName,"contactLastName":contactLastName,"address":address,"phoneNumber":phoneNumber,"cemail":contactEmail})
+	var jsonData = JSON.stringify({"ID":ID,"contactFirstName":contactFirstName,"contactLastName":contactLastName,"address":address,"phoneNumber":phoneNumber,"email":contactEmail})
 	var url = "http://www.cop4331group17.tech/LAMPAPI/AddContact.php"
 
 	try {
