@@ -8,7 +8,7 @@
   font-family: 'myFirstFont';
   src: url(fonts/Adam.otf);
   background: purple;
-  color : green;
+  
 }
 
 @font-face {font-family: "Modern No.20"; src: url("//db.onlinewebfonts.com/t/75135d5bab4eade37ad4d20803c7ffbd.eot"); src: url("//db.onlinewebfonts.com/t/75135d5bab4eade37ad4d20803c7ffbd.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/75135d5bab4eade37ad4d20803c7ffbd.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/75135d5bab4eade37ad4d20803c7ffbd.woff") format("woff"), url("//db.onlinewebfonts.com/t/75135d5bab4eade37ad4d20803c7ffbd.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/75135d5bab4eade37ad4d20803c7ffbd.svg#Modern No.20") format("svg"); }
