@@ -12,9 +12,12 @@
     {
         returnWithError( $conn->connect_error );
     }
-    
     else
     {
+        $fullName = explode(" ", $inData["search"]);
+
+        returnWithError(count($fullName));
+
         $sql = "SELECT contactFirstName,contactLastName,CID FROM Contacts where contactFirstName LIKE '%" .$inData["search"] . "%' AND ID=" . $inData["ID"] . " OR contactLastName LIKE '%" . $inData["search"] . "%' AND ID=" .$inData["ID"];
         
         $result = $conn->query($sql); #Will return an array
