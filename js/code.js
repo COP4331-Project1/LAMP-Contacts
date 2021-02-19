@@ -190,7 +190,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'contactFirstName'>" +
-	"<p id = 'contactFirstName'>" + contactFirstName + "</p>" + "</div>" + "</div>"  + "</div>" +
+	"<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  + "</div>" +
 
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
@@ -199,7 +199,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'contactLastName'>" +
-	"<p id = 'contactLastName'>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
 
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
@@ -208,7 +208,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'modify(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'phoneNumber'>" +
-	"<p id = 'phoneNumber'>" + phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<p>" + phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
 
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
@@ -217,7 +217,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'modify(" + '"address"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'address'>" +
-	"<p id = 'address'>" + address + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<p>" + address + "</p>" + "</div>" + "</div>" + "</div>" +
 
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
@@ -226,7 +226,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'contactEmail'>" +
-	"<p id = 'contactEmail'>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 	"<div class = 'row w-100 p-2 g-0 d-flex flex-row'>"+
 	"<div class = 'alert alert-dark w-50' role = 'alert'>Date Created: " + dateCreated + "</div>" +
 	"<div id = 'deleteButton'>" +
@@ -374,13 +374,13 @@ function cancelChange(text,field) {
 
 function modify(field,CID) { //Replaces the paragraph for show contact
 
-	var pValue = "#" + field
 	var fieldName = "." + field //Gets the field needed to be changed
 	var fieldText = field +"text" //For the text box
-	var currentText = $(pValue).text()
+	var currentText = $(fieldName).val()
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
-	"<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange('" + currentText + "','" + field + "')>Cancel</button>" + "</div></div>"
+	"<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange('" + currentText + "','" + field + "')>Button</button>" + "</div></div>"
+
 	$(fieldName).append(input)	
 }
 
