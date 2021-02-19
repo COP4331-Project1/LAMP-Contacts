@@ -225,7 +225,7 @@ input[type="text"],input[type="password"]{
     font-size: 45px;
     font-family: "Helvetica Neue", Sans-serif;
     font-weight: italic;
-    color: #A9A9A9;
+    color: red !important;
     text-align:center;
 }
 
