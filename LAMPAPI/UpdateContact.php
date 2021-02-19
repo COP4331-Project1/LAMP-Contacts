@@ -54,12 +54,6 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function debugging( $log )
-	{
-		$retValue = '{"log":"' . $log . '"}';
-		sendResultInfoAsJson( $retValue );
-	}
-
 	function isDuplicate($conn, $ID, $CID, $field, $value)
 	{
 		if(($field != "contactFirstName" && $field != "contactLastName"))
@@ -72,6 +66,7 @@
 
 		// First get the current contacts original info.
 		$sql = "SELECT ". $currentTag . " FROM Contacts WHERE CID=" . $CID;
+		
 		$result = $conn->query($sql);
 
 		
@@ -84,23 +79,26 @@
 			$currentValue = $row[$currentTag];
 
 			// get first last FROM Contacts WHERE lastName = lastNamesupplied and CID
-			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $field . "='" . $value . "' AND ID=" . $ID . " AND CID <> " . $CID;
-
+			//$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $field . "='" . $value . "' AND ID=" . $ID . " AND CID <> " . $CID;
+			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $field . "='" . $value . "' AND " . $currentTag . "='" . $currentValue . "' AND ID=" . $ID;
+			
 			$result = $conn->query($sql);
-			returnWithError($conn->error);
 
 			if($result->num_rows > 0)
 			{
-				while ($row = $result->fetch_array(MYSQLI_ASSOC))
-				{
-					if(($row[$currentTag] == $currentValue) && ($row[$field] == $value))
-					{
-						return true;
-					}
-				}
+				return true;
+				// while ($row = $result->fetch_array(MYSQLI_ASSOC))
+				// {
+				// 	if(($row[$currentTag] == $currentValue) && ($row[$field] == $value))
+				// 	{
+				// 		return true;
+				// 	}
+				// }
 
-				return false;
+				// return false;
 			}
+			else
+				return false;
 		}
 
 	}
