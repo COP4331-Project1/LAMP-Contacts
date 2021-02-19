@@ -190,7 +190,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'contactFirstName'>" +
-	"<p>" + contactFirstName + "</p>" + "</div>" + "</div>"  + "</div>" +
+	"<h4>" + contactFirstName + "</h4>" + "</div>" + "</div>"  + "</div>" +
 
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
@@ -199,7 +199,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'contactLastName'>" +
-	"<p>" + contactLastName + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<h4>" + contactLastName + "</h4>" + "</div>" + "</div>" + "</div>" +
 
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
@@ -208,7 +208,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'modify(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'phoneNumber'>" +
-	"<p>" + phoneNumber + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<h4>" + phoneNumber + "</h4>" + "</div>" + "</div>" + "</div>" +
 
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
@@ -217,7 +217,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'modify(" + '"address"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'address'>" +
-	"<p>" + address + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<h4>" + address + "</h4>" + "</div>" + "</div>" + "</div>" +
 
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
@@ -226,7 +226,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + "," + CID + ")'></i>" + "</div>" +
 	"</div> " +
 	"<div class = 'contactEmail'>" +
-	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
+	"<h4>"+ email + "</h4>" + "</div>" + "</div>" + "</div>" +
 	"<div class = 'row w-100 p-2 g-0 d-flex flex-row'>"+
 	"<div class = 'alert alert-dark w-50' role = 'alert'>Date Created: " + dateCreated + "</div>" +
 	"<div id = 'deleteButton'>" +
@@ -410,7 +410,7 @@ function update(fieldName,CID){ //For updating the contact
 		}
 
 		$(field).empty()
-		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
+		$(field).append("<h4 id = " + field + " > " + updateValue + " </h4>")
 		
 }
 
