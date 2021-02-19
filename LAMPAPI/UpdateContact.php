@@ -66,7 +66,7 @@
 
 		// First get the current contacts original info.
 		$sql = "SELECT ". $currentTag . " FROM Contacts WHERE CID=" . $CID;
-		
+
 		$result = $conn->query($sql);
 
 		
@@ -74,12 +74,11 @@
 		{
 
 			$row = $result->fetch_assoc();
+			
 			// The other part of the name so we can verify the other name doesnt match.
 			// CurrentValue will be the LastName
 			$currentValue = $row[$currentTag];
 
-			// get first last FROM Contacts WHERE lastName = lastNamesupplied and CID
-			//$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $field . "='" . $value . "' AND ID=" . $ID . " AND CID <> " . $CID;
 			$sql = "SELECT contactFirstName,contactLastName FROM Contacts WHERE " . $field . "='" . $value . "' AND " . $currentTag . "='" . $currentValue . "' AND ID=" . $ID;
 			
 			$result = $conn->query($sql);
@@ -87,15 +86,6 @@
 			if($result->num_rows > 0)
 			{
 				return true;
-				// while ($row = $result->fetch_array(MYSQLI_ASSOC))
-				// {
-				// 	if(($row[$currentTag] == $currentValue) && ($row[$field] == $value))
-				// 	{
-				// 		return true;
-				// 	}
-				// }
-
-				// return false;
 			}
 			else
 				return false;
