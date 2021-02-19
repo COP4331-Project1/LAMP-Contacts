@@ -322,8 +322,6 @@ function addContact() {
 	var phoneNumber = $("#phoneNumber").val()
 	var contactEmail = $("#email").val()
 	
-
-
 	if(contactFirstName == "" || contactLastName == "") { //Need to provide a first and last name
 		$(".errorBar").empty();
 		$(".errorBar").append("<p id = 'errorText'> First Name and Last Name are required field </p>");
@@ -369,7 +367,7 @@ function modify(field,CID) { //Replaces the paragraph for show contact
 
 	var fieldName = "." + field //Gets the field needed to be changed
 	var fieldText = field +"text" //For the text box
-	var currentText = $(fieldName).text()
+	var currentText = $(fieldName).val()
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
 	"<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange('" + currentText + "','" + field + "')>Button</button>" + "</div></div>"
@@ -381,7 +379,7 @@ function modifySettings(field) { //Replaces the paragraph for settings
 
 	var fieldName = "." + field
 	var fieldText = field +"textSettings"
-	var currentText = $(fieldName).text()
+	var currentText = $(fieldName).val()
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = settings('" + field + "') aria-describedby='inputGroup-sizing-default'>" +
 	"<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange('" + currentText + "','" + field + "')>Cancel</button>" + "</div></div>"
