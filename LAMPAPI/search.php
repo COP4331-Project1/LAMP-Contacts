@@ -14,10 +14,6 @@
     }
     else
     {
-        $fullName = explode(" ", $inData["search"]);
-
-        returnWithError(count($fullName));
-
         $sql = "SELECT contactFirstName,contactLastName,CID FROM Contacts where contactFirstName LIKE '%" .$inData["search"] . "%' AND ID=" . $inData["ID"] . " OR contactLastName LIKE '%" . $inData["search"] . "%' AND ID=" .$inData["ID"];
         
         $result = $conn->query($sql); #Will return an array
@@ -34,12 +30,12 @@
                 $searchResults .= '{"contactFirstName": "'.$row["contactFirstName"] .'" ,"contactLastName":"'.$row["contactLastName"].'","CID":"'.$row["CID"].'"}';
             }
 
-        returnWithInfo($searchResults,$searchCount);
-            
+        returnWithInfo($searchResults, $searchCount);
+        
         }
         else
         {
-        returnWithError( "No Records Found" );
+            returnWithError( "No Records Found" );
         }
         $conn->close();
     }
@@ -63,7 +59,7 @@
     
     function returnWithInfo( $searchResults,$searchCount )
     {
-        $retValue = '{"results":[' . $searchResults . '],"error":"","entries":'.$searchCount.'}';
+        $retValue = '{"results":[' . $searchResults . '],"error":"","entries":'.$searchCount. '}';
         sendResultInfoAsJson( $retValue );
     }
     
