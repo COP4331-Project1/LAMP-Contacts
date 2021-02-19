@@ -168,7 +168,7 @@ input[type="text"],input[type="password"]{
  
  #contactAttribute {
     font-family: "Trirong", serif;
-    color: blue;
+    color: blue !important;
  }
  
  #deleteButton {
