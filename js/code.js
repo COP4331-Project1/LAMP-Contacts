@@ -357,14 +357,6 @@ function addContact() {
 }
 
 
-function modify() {
-
-	$(fieldName).show() //Show the text
-    $(fieldName).hide() // Hide the paragraph
-
-
-}
-
 
 function modify(field,CID) { //Replaces the paragraph for show contact
 
