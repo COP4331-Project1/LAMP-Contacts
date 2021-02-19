@@ -377,10 +377,10 @@ function modify(field,CID) { //Replaces the paragraph for show contact
 	var pValue = "#" + field
 	var fieldName = "." + field //Gets the field needed to be changed
 	var fieldText = field +"text" //For the text box
-	var currentText = $(pValue).val()
+	var currentText = $(pValue).text()
 	$(fieldName).empty()
 	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>" +
-	"<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange('" + currentText + "','" + field + "')>Button</button>" + "</div></div>"
+	"<div class='input-group-append'>" + "<button class='btn btn-outline-danger' type='button' onclick = cancelChange('" + currentText + "','" + field + "')>Cancel</button>" + "</div></div>"
 	$(fieldName).append(input)	
 }
 
