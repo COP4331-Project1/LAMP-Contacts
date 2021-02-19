@@ -264,7 +264,7 @@ function deleteAlertBox(CID) { //Displays the dialog box for deleting a contact
 
 function checkEmpty(string) { //Function to see 
 
-	if(string == "") return "N/A"
+	if(string == " ") return "N/A"
 	else return string
 
 }
@@ -356,14 +356,12 @@ function addContact() {
 		
 }
 
-
-
 function modify(field,CID) { //Replaces the paragraph for show contact
 
 	var fieldName = "." + field //Gets the field needed to be changed
 	var fieldText = field +"text" //For the text box
 	$(fieldName).empty()
-	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('" + field + "','" + CID + "') aria-describedby='inputGroup-sizing-default'>"
+	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('"+field+"','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	"</div>"
 
 	$(fieldName).append(input)	
@@ -398,8 +396,8 @@ function update(fieldName,CID){ //For updating the contact
 		xhr.onreadystatechange = function() {
 
 			if(this.status == 200 && this.readyState == 4){
-			var JSONObject = JSON.parse(xhr.responseText);
-			if(JSONObject.err == "Update Success.") return;
+			var JSONObject = JSON.parse(xhr.responseText)
+			if(JSONObject.err == "Update Success.") return
 			}
 
 		}
