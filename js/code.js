@@ -699,7 +699,7 @@ function showUser() {
 function gettingStarted(userName){
 
 	var box = "<div class = 'col-10 bg-light h-100 border border-2 border-muted rounded-3 shadow-lg bg-white rounded p-2'>" 
-	+ "<h1 style id = 'startPageTitle' style = 'text-align:center'> Welcome " + userName + "</h1>"
+	+ "<h1 style id = 'startPageTitle' style = 'text-align:center'> Welcome, " + userName + "!</h1>"
 	
 	+ "<div class = 'row w-100 p-1'>"
 	+ "<p id ='startPageGuide'>Today's Date</p>"
@@ -723,7 +723,7 @@ function gettingStarted(userName){
         + "<span id='minutes'>00</span>: "
         + "<span id='seconds'>00</span> "
         + "<span id='period'>AM</span> "
-		+ "<script> var dt = new Date(); var hr = dt.getHours(), pe = 'AM'; if(hr == 0){ hr = 12;} if(hr > 12){ hr = hr - 12; pe='PM';} document.getElementById('hour').innerHTML = hr; document.getElementById('minutes').innerHTML= dt.getMinutes(); document.getElementById('seconds').innerHTML = dt.getSeconds(); document.getElementById('period').innerHTML = pe; </script>"
+		+ "<script> var dt = new Date(); var hr = dt.getHours(), pe = 'AM', min = dt.getMinutes() ; if(hr == 0){ hr = 12;} if(hr > 12){ hr = hr - 12; pe='PM';} document.getElementById('hour').innerHTML = hr; document.getElementById('minutes').innerHTML= min; document.getElementById('seconds').innerHTML = dt.getSeconds(); document.getElementById('period').innerHTML = pe; </script>"
     +"</div>"
 	+"</div>"
     + "</div>"
