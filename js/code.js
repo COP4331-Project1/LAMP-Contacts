@@ -122,7 +122,7 @@ function search() {
 
 	var	url = "http://www.cop4331group17.tech/LAMPAPI/search.php" 
 	var jsonData = JSON.stringify({"ID":ID, "search":search})
-	var xhr = openHTTP(url,"POST");
+	var xhr = openHTTP(url,"GET");
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	
 	try {	
@@ -279,7 +279,7 @@ function showContact(contactNumber){ //Interacts with show contact endpoint to r
 
 	try
 	{
-		var xhr = openHTTP(url,"POST")
+		var xhr = openHTTP(url,"GET")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 		xhr.onreadystatechange = function() {
@@ -391,7 +391,7 @@ function update(fieldName,CID){ //For updating the contact
 		
 		try {
 
-		xhr = openHTTP(url,"POST")
+		xhr = openHTTP(url,"PATCH")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 		xhr.onreadystatechange = function() {
 
@@ -421,7 +421,7 @@ function deleteUser(){
 
 	try {
 		
-		xhr = openHTTP(url,"POST")
+		xhr = openHTTP(url,"DELETE")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 
 		xhr.onreadystatechange = function() {
@@ -447,7 +447,7 @@ function deleteContact(CID){
 
 	try {
 
-		xhr = openHTTP(url,"POST")
+		xhr = openHTTP(url,"DELETE")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 
 		xhr.onreadystatechange = function() {
@@ -484,7 +484,7 @@ function settings(fieldName) { //updates the user settings.
 
 	try {
 
-		xhr = openHTTP(url,"POST")
+		xhr = openHTTP(url,"PATCH")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 		xhr.onreadystatechange = function() {
 
