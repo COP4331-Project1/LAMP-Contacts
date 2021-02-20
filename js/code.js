@@ -122,7 +122,7 @@ function search() {
 
 	var	url = "http://www.cop4331group17.tech/LAMPAPI/search.php" 
 	var jsonData = JSON.stringify({"ID":ID, "search":search})
-	var xhr = openHTTP(url,"GET");
+	var xhr = openHTTP(url,"POST");
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	
 	try {	
@@ -279,7 +279,7 @@ function showContact(contactNumber){ //Interacts with show contact endpoint to r
 
 	try
 	{
-		var xhr = openHTTP(url,"GET")
+		var xhr = openHTTP(url,"POST")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 		xhr.onreadystatechange = function() {
