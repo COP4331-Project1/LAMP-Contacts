@@ -78,8 +78,7 @@ function register() {
 
 	if(userName =="" || password == "") { // Need to provide username and password
 
-	 $(".errorBar").empty();
-	 $(".errorBar").append("<p id = 'errorText'> User Name and Password are required fields </p>")
+	 createAlert("User Name and Password are required fields","danger",".errorBar")	
 	 return;
 
 	}
@@ -98,8 +97,7 @@ function register() {
 		var jsonObject = JSON.parse(xhr.responseText); 
 
 		if(jsonObject.error == "This username already exists, try another one."){
-		$(".errorBar").empty();	
-		$(".errorBar").append("<p id = 'errorText'>" + jsonObject.error + "</p>")
+		createAlert("This username already exists, try another one.","danger",".errorBar")	
 		return;
 		}
 		else {
