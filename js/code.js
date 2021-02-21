@@ -272,7 +272,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	$('#contactFirstNameInput').hide();
 	$('#contactLastNameInput').hide();
 	$('#addressInput').hide();
-	$('#confirmLast').hide();
+	$('.confirmLast').hide();
 	$('#phoneNumberInput').hide();
 	$('#emailInput').hide();
 
