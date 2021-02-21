@@ -341,7 +341,7 @@ function deleteAccountModal() { //Displays the dialog box for deleting a contact
 	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
 	+ "<div class='modal-content'>" 
 	+ "<div class='modal-header'>" 
-	+ "<h5 class='modal-title' id='exampleModalLongTitle'>Are you sure you want to delete this contact?</h5>"
+	+ "<h5 class='modal-title' id='exampleModalLongTitle'>Are you sure you want to delete this account?</h5>"
 	+ "<button type='button' class='close' onclick = 'closeDeleteAccount()' aria-label='Close'>" 
 	  
 	+ "<span aria-hidden='true'>&times;</span>" 
@@ -541,15 +541,16 @@ function settings(field) { //updates the user settings.
 	inputField = "#" +field + "Input"
 	textField = "#" +field + "Text"
 
-	var updateValue = $(inputField).val()
-	var correctField = field;
-
-	if(field == "userEmail") correctField = "email"
-
-	if(field== "password") {
+	if(field == "password"){
+		updateValue = $("#newPassword").value
 		updateValue = md5(updateValue)
 	}
-	
+	else {
+	var updateValue = $(inputField).val()
+	var correctField = field;
+	if(field == "userEmail") correctField = "email"
+	}
+
 	var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateUser.php"
 
 	var jsonData = JSON.stringify({"ID":ID,"field":correctField,"value":updateValue})
@@ -564,7 +565,7 @@ function settings(field) { //updates the user settings.
 			var JSONObject = JSON.parse(xhr.responseText);
 
 			if(JSONObject.error == "That username already exists!"){
-				$(".userName").append("<p id = 'errorText'>Username already exists</p>");
+				alert("That username already exists!")
 				return;
 			} 
 
@@ -579,9 +580,10 @@ function settings(field) { //updates the user settings.
 			return;
 		}
 
-
-		$(textField).text(updateValue)
+		if(field!= "password"){
+ 		$(textField).text(updateValue)
 		cancel(field)
+		}
 
 }
 	
@@ -618,6 +620,53 @@ function showSettings() {
 function closeSettings() {
 
 	$('#settings').modal('hide')
+}
+
+function confirmChange() {
+
+	var initialPassword = $('#initialPassword').val();
+	var newPassword = $('#newPassword').val();
+
+	if(newPassword != initialPassword) createAlert("Passwords Do Not Match")
+	else settings("password")
+
+}
+
+function createAlert(message) {
+
+	$("#mainContaner").remove("#alertBox")
+
+	var alert = "<div class='alert alert-warning alert-dismissible fade show' role='alert' id ='alertBox'>" +
+    "<strong>Error</strong>" +  errorMessage + "</div> "
+		
+	$("#mainContainer").append()
+
+	$(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function(){
+		$(".alert-dismissible").alert('close');
+	});
+}
+
+
+function changePassword() {
+
+	"<div class='modal fade in' id='changePassword' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>"
+	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
+	+ "<div class='modal-content'>" 
+	+ "<div class='modal-header'>" 
+	+ "<h5 class='modal-title' id='exampleModalLongTitle'></h5>"
+	+ "<button type='button' class='close' onclick = 'closeChangePassword()' aria-label='Close'>" 
+	+ "<span aria-hidden='true'>&times;</span>" 
+	+ "</button>" 
+
+
+	+ "</div>" 
+	+ "<div class= modal-body>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'initialPassword'  aria-describedby='inputGroup-sizing-default'>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'>"
+
+	+ "<button type='button' class='btn btn-primary' onclick = 'confirmChange()' aria-label='Close'>Confirm</button>"
+	+ "</div> " + "</div>" + "</div>" + "</div>"
+		
 }
 
 function changeSettings() {
@@ -678,7 +727,7 @@ function changeSettings() {
 	+"</div><div id = 'userEmailText' class = 'informationText'>" + address + "</div></div>"
 
 	+"<div class = 'password'>" 
-	+"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
+	+"<button type='button' class='btn btn-primary' onclick = changePassword() >Change Password</button>" + "</div><br></br>"
 	+ "<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" 
 	+ "<button type='button' class='btn btn-danger' onclick = deleteAccountModal()>Delete Account</button>"
 
