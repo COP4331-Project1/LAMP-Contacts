@@ -608,7 +608,7 @@ function changeSettings() {
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmuserName' onclick = settings('userName',)></i>"  
 	+"</div></div>"
 	+"<div class = 'userName'>" 
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userInput' aria-describedby='inputGroup-sizing-default'>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userNameInput' aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'userText'><h4 id = 'userName'>" + userName + "</h4></div></div></div>"
 
 	+"<div class = 'row w-100 p-2'>" 
@@ -648,7 +648,7 @@ function changeSettings() {
 	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'canceluserEmail' onclick = cancel('userEmail')></i>"
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmemail' onclick = settings('userEmail)></i>"  
 	+"</div></div>"
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'emailInput'  aria-describedby='inputGroup-sizing-default'>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userEmailInput'  aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'userEmailText'><h4 id = 'userEmail'>" + address + "</h4></div></div>"
 
 	+"<div class = 'password'>" 
