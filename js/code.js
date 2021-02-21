@@ -349,7 +349,7 @@ function deleteAccountModal() { //Displays the dialog box for deleting a contact
 	+ "<button type='button' class='btn btn-danger' onclick = 'deleteUser()' aria-label='Close'>Delete</button>"
 	+ "</div> " + "</div>" + "</div>" + "</div>"
 		
-	$("#mainContainer").append(deleteAccount)
+	$("#mainContainer").append(deleteModal)
 
 }
 
