@@ -542,7 +542,7 @@ function settings(field) { //updates the user settings.
 	textField = "#" +field + "Text"
 
 	if(field == "password"){
-		updateValue = $("#newPassword").value
+		updateValue = $("#newPassword").val()
 		updateValue = md5(updateValue)
 	}
 	else {
@@ -622,6 +622,13 @@ function closeSettings() {
 	$('#settings').modal('hide')
 }
 
+function closeChangePassword() {
+
+	$("#changePassword").modal('hide')
+	$("#settings").modal('show')
+
+}
+
 function confirmChange() {
 
 	var initialPassword = $('#initialPassword').val();
@@ -636,7 +643,7 @@ function createAlert(errorMessage) {
 
 	$("#mainContaner").remove("#alertBox")
 
-	var alert = "<div class='alert alert-warning alert-dismissible fade show p-0 g-0' role='alert' id ='alertBox'>" +
+	var alert = "<div class='alert alert-warning alert-dismissible fade show' role='alert' id ='alertBox'>" +
     "<strong>Error</strong>" +  errorMessage + "</div>"
 		
 	$("#mainContainer").prepend(alert)
@@ -645,7 +652,6 @@ function createAlert(errorMessage) {
 		$(".alert-dismissible").alert('close');
 	});
 }
-
 
 function changePassword() {
 
@@ -660,8 +666,8 @@ function changePassword() {
 
 	+"</div>" 
 	+"<div class= modal-body>"
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'initialPassword'  aria-describedby='inputGroup-sizing-default'></div>"
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'></div>"
+	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' id = 'initialPassword' aria-describedby='inputGroup-sizing-default'></div>"
+	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'></div>"
 
 	+"<div class='modal-footer'>"
 	+ "<button type='button' class='btn btn-primary' onclick = 'confirmChange()' aria-label='Close'>Confirm</button>"
