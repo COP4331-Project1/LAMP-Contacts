@@ -433,12 +433,12 @@ function addContact() {
 			if(this.status == 200 && this.readyState == 4){
 				var JSONObject = JSON.parse(xhr.responseText);
 				if(JSONObject.error == "This contact already exists."){
-				createAlert("This Contact Already Exists","danger","errorBar")
+				createAlert("This Contact Already Exists","danger",".errorBar")
 				return;
 				}
 				else{
 					$('#add').modal('hide')
-					createAlert("Successfully Added Contact","success","#mainContainer")
+					createAlert("Successfully Added Contact","success",".errorBar")
 				}
 			}
 		}
@@ -649,7 +649,7 @@ function createAlert(errorMessage,type,page) {
 
 	$(page).remove("#alertBox")
 
-	var alert = "<div class='alert alert-dismissible alert-" +type+" id ='alertBox' m-0 >" + errorMessage + "</div>"
+	var alert = "<div class='alert alert-dismissible alert-" +type+" id ='alertBox' >" + errorMessage + "</div>"
 		
 	$(page).prepend(alert)
 
