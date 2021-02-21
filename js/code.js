@@ -169,7 +169,7 @@ function fillSearchBox(JSONObject) {
 	contacts.push(JSONObject.results[i].CID)	
 	var button = "<div class = 'row w-100 border border-1 border-muted h-auto p-1 g-0' onClick = showContact('" + i +"')>" +
     "<div class = 'col-4 p-0 g-0 d-flex align-items-center justify-content-center'>" +
-	"<div class = 'circle'><h3>"+ contactFirstName[0] + contactLastName[0] +"</h3></div>" + "</div>" + 
+	"<div class = 'circle'><h3>"+ contactFirstName[0].toUpperCase() + contactLastName[0].toUpperCase() +"</h3></div>" + "</div>" + 
 	"<div class = 'col-7 d-flex flex-column justify-content-center p-0 g-0'>" +
 	"<h3 style = 'padding-left:5%'>" + contactFirstName + "</h4>" +
 	"<h3 style = 'padding-left:20%'>" + contactLastName + "</h4> </div>" +
@@ -690,7 +690,7 @@ function showUser() {
 function gettingStarted(userName){
 
 	var box = "<div class = 'col-10 bg-light h-100 border border-2 border-muted rounded-3 shadow-lg bg-white rounded p-2'>" 
-	+ "<h1 style id = 'startPageTitle' style = 'text-align:center'> Welcome, " + userName + "!</h1>"
+	+ "<h1 style id = 'startPageTitle'> Welcome, " + userName + "!</h1>"
 	
 	+ "<div class = 'row w-100 p-1'>"
 	+ "<p id ='startPageGuide'>Today's Date</p>"
