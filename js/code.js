@@ -424,9 +424,7 @@ function update(field,CID){ //For updating the contact
 			return;
 		}
 
-		$(inputField).hide()
-		$(textField).text(updateValue)
-		$(textField).show()
+		cancel(field)
 	
 }
 
