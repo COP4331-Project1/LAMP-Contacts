@@ -319,7 +319,8 @@ function deleteAlertBox(CID) { //Displays the dialog box for deleting a contact
 	+ "</div>" 
 	+ "<div class= modal-body>"
 	+ "<button type='button' class='btn btn-danger' onclick = 'deleteContact(" + CID + ")' aria-label='Close'>Delete</button>"
-	+ "</div> " + "</div>" + "</div>" + "</div>"
+	+ "<div class = 'errorBar'>"
+	+ "</div></div></div></div>"
 		
 
 	$("#mainContainer").append(deleteModal)
@@ -523,8 +524,7 @@ function deleteContact(CID){
 
 			if(this.status == 200 && this.readyState == 4){
 
-			if(jsonData.err = "Successful delete.") createAlert("Contact Deleted","success","#mainContainer")
-			delay(2000)
+			if(jsonData.err = "Successful delete.") createAlert("Contact Deleted","success",".errorBar")
 			window.location.reload();	
 			}
 		}
@@ -570,7 +570,7 @@ function settings(field) { //updates the user settings.
 			var JSONObject = JSON.parse(xhr.responseText);
 
 			if(JSONObject.error == "That username already exists!"){
-				alert("That username already exists!")
+				createAlert("That username already exists!","danger",".errorBar")
 				return;
 			} 
 
