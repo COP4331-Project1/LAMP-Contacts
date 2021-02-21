@@ -633,15 +633,13 @@ function changeSettings() {
 	    
 	//Change made here
 	
-
-	"<div class = 'password'>" +
-	"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
-
+	
 	+ "<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" +
+	"<div class='modal-footer'>" 
+	+"<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
+	+"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>"
+	+"</div>"
 
-
-	"<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
-		
 	$("#settingsModal").empty();
 	$("#settingsModal").append(boxes);
 
