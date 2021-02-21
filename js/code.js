@@ -233,7 +233,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"</div></div>" 
 	+"<div class = 'address'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'addressInput' onchange = update('address','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'addressText'><h4 id = 'contactFirstName'>" + address + "</h4></div></div></div>"
+	+"</div><div id = 'addressText'><h4 id = 'address'>" + address + "</h4></div></div></div>"
 
 	+"<div class = 'row w-100 p-2'>" 
 	+"<div class = 'informationBox'>" 
@@ -258,11 +258,11 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 
 	$("#contactView").empty();
 	$("#contactView").append(boxes);
-	$('contactFirstNameInput').hide();
-	$('contactLastNameInput').hide();
-	$('contactAddressInput').hide();
-	$('contactPhoneNumberInput').hide();
-	$('contactEmailInput').hide();
+	$('#contactFirstNameInput').hide();
+	$('#contactLastNameInput').hide();
+	$('#contactAddressInput').hide();
+	$('#contactPhoneNumberInput').hide();
+	$('#contactEmailInput').hide();
 
 }
 
