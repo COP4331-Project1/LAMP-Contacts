@@ -391,7 +391,7 @@ function update(fieldName,CID){ //For updating the contact
 		
 		try {
 
-		xhr = openHTTP(url,"POST")
+		xhr = openHTTP(url,"PATCH")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 		xhr.onreadystatechange = function() {
 
@@ -421,7 +421,7 @@ function deleteUser(){
 
 	try {
 		
-		xhr = openHTTP(url,"POST")
+		xhr = openHTTP(url,"DELETE")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 
 		xhr.onreadystatechange = function() {
@@ -447,7 +447,7 @@ function deleteContact(CID){
 
 	try {
 
-		xhr = openHTTP(url,"POST")
+		xhr = openHTTP(url,"DELETE")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 
 		xhr.onreadystatechange = function() {
@@ -484,7 +484,7 @@ function settings(fieldName) { //updates the user settings.
 
 	try {
 
-		xhr = openHTTP(url,"POST")
+		xhr = openHTTP(url,"PATCH")
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 		xhr.onreadystatechange = function() {
 
@@ -692,11 +692,19 @@ function gettingStarted(userName){
 	var box = "<div class = 'col-10 bg-light h-100 border border-2 border-muted rounded-3 shadow-lg bg-white rounded p-2'>" 
 	+ "<h1 style id = 'startPageTitle'> Welcome, " + userName + "!</h1>"
 	
-	+ "<div class = 'row w-100 p-1'>"
-	+ "<p id ='startPageGuide'>Today's Date</p>"
-	+ "</div>"
+	+ "<center>"
+	+"<div class='col-10 align-self-center p-2'>"
++ "<h2 id='quote' style='font-size:17px; color:grey; font-family: arial'>Thank you for choosing The People Wallet where all of your people are stored, updated, and deleted within the reach of your pocket.</h2></div>"
++"</center>"
+	+"<p></p>"
+	
++"<div class='row justify-content-center'>"
+    +"<div class='col align-self-center'>"
+   + "<center id='startPageGuide'>Today's Date</center>"
+   + "</div>"
++"</div>"
 
-
++"<center>"
     + "<div class='datetime'>"
    	 + "<div class='date'>"
          + "<span id ='day'>Day</span>, "
@@ -717,6 +725,18 @@ function gettingStarted(userName){
 		+ "<script> var dt = new Date(); var hr = dt.getHours(), pe = 'AM', min = dt.getMinutes() ; if(hr == 0){ hr = 12;} if(hr > 12){ hr = hr - 12; pe='PM';} document.getElementById('hour').innerHTML = hr; document.getElementById('minutes').innerHTML= min; document.getElementById('seconds').innerHTML = dt.getSeconds(); document.getElementById('period').innerHTML = pe; </script>"
     +"</div>"
 	+"</div>"
+	+"</center>"
+	
+	+"<div class='container'>"
+    +"<div class='row justify-content-center'>"
+
+        +"<div class='col-lg-8 d-flex align-items-center justify-content-center'>"
+   	+"<img class='img-fluid' src='/images/friends.png' alt='Responsive Image' width='270'>"
+       +" </div>"
+
+        +"</div>"
+
++"</div>"
     + "</div>"
 
 
