@@ -597,8 +597,8 @@ function changeSettings() {
 	var boxes = "<div class = 'row w-100 p-3'>" 
 	+"<div class = 'informationBox'>" 
 	+"<div class = 'titleBox'>" 
-	+"<h3 id = 'contactAttribute'>Username</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-	+"<i class='bi-pencil' onclick = 'modifySettings(" + '"userName"' +")'></i>" + "</div>" +
+	+"<h3 id = 'contactAttribute'>Username</h3>" + "<div class = 'd-flex w-100 justify-content-end'>"
+	+"<i class='bi-pencil' onclick = 'modifySettings(" + '"userName"' +")'></i></div>"
 	+"</div> " 
 	+"<div class = 'userName'>" 
 	+"<p>" + userName + "</p></div></div></div>"
