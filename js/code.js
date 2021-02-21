@@ -217,7 +217,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<div class = 'titleBox'>" 
 	+"<h3 id = 'contactAttribute'>Phone</h3>" 
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
-	+"<i class='bi-pencil' onclick = 'edit(" + '"phoneNuber"' + "," + CID + ")'></i>" + "</div>" 
+	+"<i class='bi-pencil' onclick = 'edit(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" 
 	+"</div></div>" 
 	+"<div class = 'phoneNumber'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'phoneNumberInput' onchange = update('phoneNumber','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
