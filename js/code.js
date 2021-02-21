@@ -186,7 +186,7 @@ function edit(field) {
 	$("#" + field +"Text").hide();
 	$('#cancelLast').show();
 	$('#confirmLast').show();
-	$('#editLast').show();
+	$('#editLast').hide();
 }
 
 function cancel(field) {
