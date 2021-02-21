@@ -273,7 +273,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmemail' onclick = update('email','"+CID+"')></i>"  
 	+"</div></div>"
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'emailInput' onchange = update('email','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'emailText'><h4 id = 'email'>" + email + "</h4></div></div></div>"
+	+"</div><div id = 'emailText'><h4 id = 'email'>" + email + "</h4></div></div>"
 
 	+"<div class = 'row w-100 p-2 g-0 d-flex flex-row'>"
 	+"<div class = 'alert alert-primary w-50' role = 'alert'>Date Created: " + dateCreated + "</div>" 
