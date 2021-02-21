@@ -653,7 +653,7 @@ function changePassword() {
 	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
 	+ "<div class='modal-content'>" 
 	+ "<div class='modal-header'>" 
-	+ "<h5 class='modal-title' id='exampleModalLongTitle'></h5>"
+	+ "<h5 class='modal-title' id='exampleModalLongTitle'>Change Password</h5>"
 	+ "<button type='button' class='close' onclick = 'closeChangePassword()' aria-label='Close'>" 
 	+ "<span aria-hidden='true'>&times;</span>" 
 	+ "</button>" 
