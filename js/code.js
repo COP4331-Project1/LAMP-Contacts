@@ -7,6 +7,8 @@ ID  = 0
 
 var contacts = []
 
+
+
 function openHTTP(url,action){
 
 	var xhr = new XMLHttpRequest();
@@ -46,8 +48,7 @@ function login() {
 		
 		if( ID < 1 ) //Represents an error 
 		{		
-			$(".errorBar").empty();
-			$(".errorBar").append("<p id = 'errorText'> Incorrect Username/Password </p>");
+			createAlert("Incorrect Username/Password","danger","#loginBox")
 			return;
 
 		} else {
@@ -65,6 +66,8 @@ function login() {
 		}
 
 }
+
+
 
 function register() {
 
@@ -438,7 +441,7 @@ function addContact() {
 				}
 				else{
 					$('#add').modal('hide')
-					createAlert("Successfully Added Contact","success",".errorBar")
+					createAlert("Successfully Added Contact","success","#mainContainer")
 				}
 			}
 		}
@@ -446,10 +449,8 @@ function addContact() {
 	}
 	catch(err){
 
-	}
-		
+	}		
 }
-
 function update(field,CID){ //For updating the contact 
 
 		var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateContact.php"
