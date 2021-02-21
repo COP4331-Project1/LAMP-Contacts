@@ -585,7 +585,8 @@ function settings(field) { //updates the user settings.
 		if(field!= "password"){
  		$(textField).text(updateValue)
 		cancel(field)
-		}
+		} else closeChangePassword();
+
 
 }
 	
