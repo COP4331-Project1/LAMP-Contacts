@@ -547,12 +547,6 @@ function settings(field) { //updates the user settings.
 			return;
 		}
 
-		$(field).empty()
-
-		if(fieldName == "password"){
-			$(field).append("<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button></div><br></br>")
-			return;
-		}
 
 		$(textField).text(updateValue)
 		cancel(field)
