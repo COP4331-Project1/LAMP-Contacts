@@ -388,6 +388,10 @@ function update(field,CID){ //For updating the contact
 
 		var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateContact.php"
 
+		inputField = "#" +field + "Input"
+		textField = "#" +field + "Text"
+
+		var updateValue = $(inputField).val()
 		if(field == "contactEmail") field = "email"
 		var jsonData = JSON.stringify({"CID":CID,"field":field,"value":updateValue,"ID":ID})
 		
@@ -409,8 +413,8 @@ function update(field,CID){ //For updating the contact
 			return;
 		}
 
-		$("#" +field + "input").hide()
-		$("#" +field + "text").text() = updateValue;
+		$().hide()
+		$().text() = updateValue;
 		$(fieldText).show()
 	
 }
