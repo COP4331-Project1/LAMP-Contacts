@@ -180,11 +180,11 @@ function fillSearchBox(JSONObject) {
 
 }
 
-function edit(fieldText,fieldInput,CID) {
+function edit(field) {
 
-	$("#inputs").show();
-	$(".contactFirstNameText").hide();
-	update(fieldText,fieldInput,CID)
+	$("#" + field +"Input").show();
+	$("#" + field +"Text").hide();
+	update(field,CID)
 
 }
 
@@ -196,11 +196,11 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'titleBox'>" +
 	"<h3 id = 'contactAttribute'>First</h3>" + 
 	"<div class = 'd-flex w-100 justify-content-end'>" +
-	"<i class='bi-pencil' onclick = 'edit(" + '"contactFirstNameText"' + "," + CID + ")'></i>" + "</div>" 
+	"<i class='bi-pencil' onclick = 'edit(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" 
 	+"</div></div>" 
 	+"<div class = 'contactFirstName'>" 
-	+"<div class='input-group mb-1' id = 'inputs'>" +"<input type='text' class='form-control' id = 'contactFirstNameInput' onchange = update('contactFirstNameText','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div class = 'contactFirstNameText'><h4 id = 'contactFirstName'>" + contactFirstName + "</h4></div></div></div>"
+	+"<div class='input-group mb-1' id = 'contactFirstNameInput'>" +"<input type='text' class='form-control' id = 'contactFirstNameInput' onchange = update('contactFirstName','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"</div><div id = 'contactFirstNameText'><h4 id = 'contactFirstName'>" + contactFirstName + "</h4></div></div></div>"
 
 	+"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
@@ -384,7 +384,7 @@ function modifySettings(field) { //Replaces the paragraph for settings
 	$(fieldName).append(input)	
 }
 
-function update(fieldText,fieldInput,CID){ //For updating the contact 
+function update(field,CID){ //For updating the contact 
 
 
 		var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateContact.php"
@@ -410,8 +410,8 @@ function update(fieldText,fieldInput,CID){ //For updating the contact
 			return;
 		}
 
-		$(fieldInput).hide()
-		$(fieldText).text() = updateValue;
+		$("#" +field + "input").hide()
+		$("#" +field + "text").text() = updateValue;
 		$(fieldText).show()
 	
 }
