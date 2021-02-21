@@ -632,7 +632,7 @@ function confirmChange() {
 
 }
 
-function createAlert(message) {
+function createAlert(errorMessage) {
 
 	$("#mainContaner").remove("#alertBox")
 
@@ -649,7 +649,7 @@ function createAlert(message) {
 
 function changePassword() {
 
-	"<div class='modal fade in' id='changePassword' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>"
+	var modal = "<div class='modal fade in' id='changePassword' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>"
 	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
 	+ "<div class='modal-content'>" 
 	+ "<div class='modal-header'>" 
@@ -666,6 +666,9 @@ function changePassword() {
 
 	+ "<button type='button' class='btn btn-primary' onclick = 'confirmChange()' aria-label='Close'>Confirm</button>"
 	+ "</div> " + "</div>" + "</div>" + "</div>"
+
+	$("#settings").modal('hide')
+	$("#changePassowrd").modal('show')
 		
 }
 
