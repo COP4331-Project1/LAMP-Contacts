@@ -658,12 +658,12 @@ function changePassword() {
 	+ "<span aria-hidden='true'>&times;</span>" 
 	+ "</button>" 
 
+	+"</div>" 
+	+"<div class= modal-body>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'initialPassword'  aria-describedby='inputGroup-sizing-default'></div>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'></div>"
 
-	+ "</div>" 
-	+ "<div class= modal-body>"
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'initialPassword'  aria-describedby='inputGroup-sizing-default'>"
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'>"
-
+	+"<div class='modal-footer'>"
 	+ "<button type='button' class='btn btn-primary' onclick = 'confirmChange()' aria-label='Close'>Confirm</button>"
 	+ "</div> " + "</div>" + "</div>" + "</div>"
 
