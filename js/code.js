@@ -523,6 +523,7 @@ function deleteContact(CID){
 
 			if(this.status == 200 && this.readyState == 4){
 
+			if(jsonData.err = "Successful delete.") createAlert("Contact Deleted","danger","#mainContainer")
 			window.location.reload();	
 			}
 		}
