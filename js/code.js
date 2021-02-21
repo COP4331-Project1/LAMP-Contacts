@@ -65,7 +65,21 @@ function login() {
 
 }
 
+function passwordStrength(password) {
 
+	for (i = 0; i < cars.length; i++) {
+		text += cars[i] + "<br>";
+	  }
+
+	  str.match(/[a-z]/i);
+	  str.match(/[a-z]/i);
+
+	//Weak Password < 6 , only letters or numbers
+	//Mid password < 6 , letters and number
+	//Strong password >6 , only letters or numbes
+	//Very Strong Password , >6 letter and numbers
+
+}
 
 function register() {
 
@@ -736,7 +750,7 @@ function changeSettings() {
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmuserEmail' onclick = settings('userEmail')></i>"  
 	+"</div></div>"
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userEmailInput'  aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'userEmailText' class = 'informationText'>" + address + "</div></div>"
+	+"</div><div id = 'userEmailText' class = 'informationText'>" + address + "</div></div></div>"
 
 	+"<div class = 'password'>" 
 	+"<button type='button' class='btn btn-primary' onclick = changePassword() >Change Password</button>" + "</div><br></br>"
