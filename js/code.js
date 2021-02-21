@@ -181,7 +181,7 @@ function fillSearchBox(JSONObject) {
 }
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
 
-	var boxes = "<div class = 'col w-100 bg-light h-auto border border-2 border-muted' id = 'showContacts'>" +
+	var boxes = "<div class = 'col w-100 bg-light h-75 border border-2 border-muted' id = 'showContacts'>" +
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
 	"<div class = 'titleBox'>" +
