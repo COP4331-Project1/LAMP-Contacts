@@ -195,6 +195,7 @@ function cancel(field) {
 	$("#" + field +"Text").show();
 	$('#cancelLast').hide();
 	$('#confirmLast').hide();
+	$('#editLast').show();
 }
 
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
