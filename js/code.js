@@ -184,7 +184,6 @@ function edit(field) {
 
 	$("#" + field +"Input").show();
 	$("#" + field +"Text").hide();
-
 }
 
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
@@ -246,7 +245,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 
 	$("#contactView").empty();
 	$("#contactView").append(boxes);
-	$('#inputs').hide();
+	$('input').hide();
 
 }
 
