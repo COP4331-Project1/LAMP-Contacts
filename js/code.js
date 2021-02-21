@@ -244,9 +244,10 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"</div>" 
 
 	$(document).scrollTop($(document).height()) 
-	$('#inputs').hide();
+
 	$("#contactView").empty();
 	$("#contactView").append(boxes);
+	$('#inputs').hide();
 
 }
 
