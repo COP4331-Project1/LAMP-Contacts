@@ -189,7 +189,6 @@ function edit(field,CID) {
 
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
 
-
 	var boxes = "<div class = 'col w-100 bg-light border border-2 border-muted id = 'showContacs'>" +
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
@@ -200,7 +199,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"</div>"
 	+"</div> " 
 	+"<div class = 'contactFirstName'>" 
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactFirstNameText' onchange = update('contactFirstNameText','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"<div class='input-group mb-1' id = 'inputs'>" +"<input type='text' class='form-control' id = 'contactFirstNameText' onchange = update('contactFirstNameText','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	+"<h4>" + contactFirstName + "</h4>" + "</div>" + "</div>"  + "</div>" +
 
 	"<div class = 'row w-100 p-2'>" +
@@ -245,7 +244,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"</div>" 
 
 	$(document).scrollTop($(document).height()) 
-	$('#contactFirstNameText').hide();
+	$('#inputs').hide();
 	$("#contactView").empty();
 	$("#contactView").append(boxes);
 
