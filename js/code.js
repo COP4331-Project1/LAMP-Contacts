@@ -639,7 +639,7 @@ function createAlert(errorMessage) {
 	var alert = "<div class='alert alert-warning alert-dismissible fade show' role='alert' id ='alertBox'>" +
     "<strong>Error</strong>" +  errorMessage + "</div> "
 		
-	$("#mainContainer").appendTop(alert)
+	$("#mainContainer").prepend(alert)
 
 	$(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function(){
 		$(".alert-dismissible").alert('close');
