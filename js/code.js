@@ -415,8 +415,7 @@ function addContact() {
 	var contactEmail = $("#email").val()
 	
 	if(contactFirstName == "" || contactLastName == "") { //Need to provide a first and last name
-		$(".errorBar").empty();
-		$(".errorBar").append("<p id = 'errorText'> First Name and Last Name are required field </p>");
+		alert("First and Last name are required fields")
 		return;
 	}
 
@@ -433,11 +432,13 @@ function addContact() {
 			if(this.status == 200 && this.readyState == 4){
 				var JSONObject = JSON.parse(xhr.responseText);
 				if(JSONObject.error == "This contact already exists."){
-				$(".errorBar").empty();
-				$(".errorBar").append("<p id = 'errorText'> This contact already exists. </p>")
+				alert("This Contact Already Exists")
 				return;
 				}
-				else $('#add').modal('hide')
+				else{
+					$('#add').modal('hide')
+					alert("Successfully Added Contact")
+				}
 			}
 		}
 		xhr.send(jsonData)
