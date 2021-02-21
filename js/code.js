@@ -446,9 +446,8 @@ function update(field,CID){ //For updating the contact
 		catch(err) {	
 			return;
 		}
-
+		$(textField).val(updateValue)
 		cancel(field)
-	
 }
 
 function deleteUser(){
