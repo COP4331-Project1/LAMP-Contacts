@@ -28,6 +28,19 @@
     color: Black;
 }
 
+.informationText{
+
+    font-size: 40px;
+    width: 100%;
+    margin: 2% 5%;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    color: Black;
+
+
+
+}
+
 #loginDiv
 {
     font-size: 50px;
