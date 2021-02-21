@@ -636,8 +636,8 @@ function createAlert(errorMessage) {
 
 	$("#mainContaner").remove("#alertBox")
 
-	var alert = "<div class='alert alert-warning alert-dismissible fade show' role='alert' id ='alertBox'>" +
-    "<strong>Error</strong>" +  errorMessage + "</div> "
+	var alert = "<div class='alert alert-warning alert-dismissible fade show p-0 g-0' role='alert' id ='alertBox'>" +
+    "<strong>Error</strong>" +  errorMessage + "</div>"
 		
 	$("#mainContainer").prepend(alert)
 
