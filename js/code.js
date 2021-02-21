@@ -437,7 +437,7 @@ function addContact() {
 				}
 				else{
 					$('#add').modal('hide')
-					createAlert("Successfully Added Contact","success","add")
+					createAlert("Successfully Added Contact","success","#mainContainer")
 				}
 			}
 		}
@@ -645,11 +645,9 @@ function confirmChange() {
 
 function createAlert(errorMessage,type,page) {
 
-	page = "." + page
-
 	$(page).remove("#alertBox")
 
-	var alert = "<div class='alert alert-dismissible alert-"+type+" fade show role='alert' id ='alertBox' >" + errorMessage + "</div>"
+	var alert = "<div class='alert alert-dismissible alert-" +type+" fade show role='alert' id ='alertBox' >" + errorMessage + "</div>"
 		
 	$(page).prepend(alert)
 
