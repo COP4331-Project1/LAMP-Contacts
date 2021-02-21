@@ -263,7 +263,7 @@ function deleteAlertBox(CID) { //Displays the dialog box for deleting a contact
 
 
 function checkEmpty(string) { //Function to see 
-
+	console.log(string.length)
 	if((!string || 0 === string.length)) return "N/A"
 	else return string
 
