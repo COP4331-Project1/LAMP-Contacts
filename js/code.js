@@ -180,14 +180,13 @@ function fillSearchBox(JSONObject) {
 
 }
 
-function edit(field,CID) {
+function edit(fieldText,fieldInput,CID) {
 
 	$("#inputs").show();
 	$(".contactFirstNameText").hide();
+	update(fieldText,fieldInput,CID)
 
-	
 }
-
 
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
 
@@ -198,8 +197,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<h3 id = 'contactAttribute'>First</h3>" + 
 	"<div class = 'd-flex w-100 justify-content-end'>" +
 	"<i class='bi-pencil' onclick = 'edit(" + '"contactFirstNameText"' + "," + CID + ")'></i>" + "</div>" 
-	+"</div>"
-	+"</div> " 
+	+"</div></div>" 
 	+"<div class = 'contactFirstName'>" 
 	+"<div class='input-group mb-1' id = 'inputs'>" +"<input type='text' class='form-control' id = 'contactFirstNameInput' onchange = update('contactFirstNameText','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div class = 'contactFirstNameText'><h4 id = 'contactFirstName'>" + contactFirstName + "</h4></div></div></div>"
@@ -386,12 +384,9 @@ function modifySettings(field) { //Replaces the paragraph for settings
 	$(fieldName).append(input)	
 }
 
-function update(fieldName,CID){ //For updating the contact 
+function update(fieldText,fieldInput,CID){ //For updating the contact 
 
-		var field = "." + fieldName
-		var updateField = "#" + fieldName + "text"
-		var updateValue = $(updateField).val()
-	
+
 		var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateContact.php"
 
 		if(fieldName == "contactEmail") fieldName = "email"
@@ -411,14 +406,14 @@ function update(fieldName,CID){ //For updating the contact
 		xhr.send(jsonData)
 
 		}	
-		catch(err) {
-			
+		catch(err) {	
 			return;
 		}
 
-		$(field).empty()
-		$(field).append("<h4 id = " + field + " > " + updateValue + " </h4>")
-		
+		$(fieldInput).hide()
+		$(fieldText).text() = updateValue;
+		$(fieldText).show()
+	
 }
 
 function deleteUser(){
