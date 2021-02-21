@@ -669,7 +669,7 @@ function changePassword() {
 
 	$("#mainContainer").append(modal)
 	$("#settings").modal('hide')
-	$("#changePassowrd").modal('show')
+	$("#changePassword").modal('show')
 		
 }
 
