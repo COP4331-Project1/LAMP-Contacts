@@ -640,7 +640,7 @@ function changeSettings() {
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
 	+"<i class='bi-pencil' id = 'edituserEmail' onclick = edit('userEmail')></i>" + "</div>" 
 	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'canceluserEmail' onclick = cancel('userEmail')></i>"
-	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmuserEmail' onclick = settings('userEmail)></i>"  
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmuserEmail' onclick = settings('userEmail')></i>"  
 	+"</div></div>"
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userEmailInput'  aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'userEmailText'><h4 id = 'userEmail'>" + address + "</h4></div></div>"
