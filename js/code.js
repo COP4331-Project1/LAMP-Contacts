@@ -503,20 +503,24 @@ function deleteContact(CID){
 }
 
 
-function settings(fieldName) { //updates the user settings.
+function settings(field) { //updates the user settings.
 
-	var field = "." + fieldName
-	var updateField = "#" + fieldName + "textSettings"
-	var updateValue = $(updateField).val()
 
-	if(fieldName == "password") {
+	inputField = "#" +field + "Input"
+	textField = "#" +field + "Text"
+
+	var updateValue = $(inputField).val()
+	var correctField = field;
+
+	if(field == "userEmail") correctField = "email"
+
+	if(field== "password") {
 		updateValue = md5(updateValue)
 	}
 	
 	var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateUser.php"
 
-	var jsonData = JSON.stringify({"ID":ID,"field":fieldName,"value":updateValue})
-
+	var jsonData = JSON.stringify({"ID":ID,"field":correctField,"value":updateValue})
 
 	try {
 
@@ -549,8 +553,9 @@ function settings(fieldName) { //updates the user settings.
 			$(field).append("<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button></div><br></br>")
 			return;
 		}
-		$(field).append("<p id = " + field + " > " + updateValue + " </p>")
 
+		$(textField).text(updateValue)
+		cancel(field)
 
 }
 	
@@ -592,40 +597,60 @@ function closeSettings() {
 function changeSettings() {
 
 	var boxes = "<div class = 'row w-100 p-3'>" 
+	
+	+"<div class = 'row w-100 p-2'>" 
 	+"<div class = 'informationBox'>" 
 	+"<div class = 'titleBox'>" 
-	+"<h3 id = 'contactAttribute'>Username</h3>" + "<div class = 'd-flex w-100 justify-content-end'>"
-	+"<i class='bi-pencil' onclick = 'modifySettings(" + '"userName"' +")'></i></div>"
-	+"</div> " 
+	+"<h3 id = 'contactAttribute'>Username</h3>" 
+	+"<div class = 'd-flex w-100 justify-content-end'>" 
+	+"<i class='bi-pencil' id = 'edituserName' onclick = 'edit(" + '"userName"' + "," + CID + ")'></i>" + "</div>" 
+	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'canceluserName' onclick = cancel('userName')></i>"
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmuserName' onclick = settings('userName','"+CID+"')></i>"  
+	+"</div></div>"
 	+"<div class = 'userName'>" 
-	+"<p>" + userName + "</p></div></div></div>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userInput' aria-describedby='inputGroup-sizing-default'>"
+	+"</div><div id = 'userText'><h4 id = 'userName'>" + userName + "</h4></div></div></div>"
 
-	+"<div class = 'row w-100 p-3'>"
+	+"<div class = 'row w-100 p-2'>" 
 	+"<div class = 'informationBox'>" 
 	+"<div class = 'titleBox'>" 
-	+"<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex w-100 justify-content-end'>"
-	+"<i class='bi-pencil' onclick = 'modifySettings(" + '"firstName"' +")'></i></div></div>"
-    +"<div class = 'firstName'>"
-	+"<p>" + firstName + "</p></div></div></div>"
+	+"<h3 id = 'contactAttribute'>First</h3>" 
+	+"<div class = 'd-flex w-100 justify-content-end'>" 
+	+"<i class='bi-pencil' id = 'firstName' onclick = 'edit(" + '"firstName"' + "," + CID + ")'></i>" + "</div>" 
+	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'cancelfirstName' onclick = cancel('firstName')></i>"
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmcontactfirstName' onclick = settings('firstName','"+CID+"')></i>"  
+	+"</div></div>"
+	+"<div class = 'firstName'>" 
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'firstNameInput'  aria-describedby='inputGroup-sizing-default'>"
+	+"</div><div id = 'firstNameText'><h4 id = 'firstName'>" + firstName + "</h4></div></div></div>"
 
-	+"<div class = 'row w-100 p-3'>"
-	+"<div class = 'informationBox'>"
-	+"<div class = 'titleBox'>"
-	+"<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>"
-	+"<i class='bi-pencil' onclick = 'modifySettings(" + '"lastName"' + ")'></i></div>"
-	+"</div> " 
-	+"<div class = 'lastName'>" 
-	+"<p>" + lastName + "</p></div></div></div>"
 
-	+"<div class = 'row w-100 p-3'>"
-	+"<div class = 'informationBox'>"
+	+"<div class = 'row w-100 p-2'>" 
+	+"<div class = 'informationBox'>" 
 	+"<div class = 'titleBox'>" 
-	+"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>"
-	+"<i class='bi-pencil' onclick = 'modifySettings(" + '"email"' +")'></i></div>"
-	+"</div> " 
-	+"<div class = 'email'>"
-	+"<p>"+ email + "</p></div></div></div>"
-	    
+	+"<h3 id = 'contactAttribute'>Last</h3>" 
+	+"<div class = 'd-flex w-100 justify-content-end'>" 
+	+"<i class='bi-pencil' id = 'editlastName' onclick = 'edit(" + '"lastName"' + "," + CID + ")'></i>" + "</div>" 
+	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'cancellastName' onclick = cancel('lastName')></i>"
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmlastName' onclick = settings('lastName','"+CID+"')></i>"  
+	+"</div></div>"
+	+"<div class = 'lastName'>" 
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'lastNameInput'  aria-describedby='inputGroup-sizing-default'>"
+	+"</div><div id = 'lastNameText'><h4 id = 'lastNamer'>" + lastName + "</h4></div></div></div>"
+
+
+	+"<div class = 'row w-100 p-2'>" 
+	+"<div class = 'informationBox'>" 
+	+"<div class = 'titleBox'>" 
+	+"<h3 id = 'contactAttribute'>Email</h3>" 
+	+"<div class = 'd-flex w-100 justify-content-end'>" 
+	+"<i class='bi-pencil' id = 'edituserEmail' onclick = 'edit(" + '"userEmail"' + "," + CID + ")'></i>" + "</div>" 
+	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'canceluserEmail' onclick = cancel('userEmail')></i>"
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmemail' onclick = settings('userEmail','"+CID+"')></i>"  
+	+"</div></div>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'emailInput'  aria-describedby='inputGroup-sizing-default'>"
+	+"</div><div id = 'userEmailText'><h4 id = 'userEmail'>" + address + "</h4></div></div>"
+
 	+"<div class = 'password'>" 
 	+"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
 	+ "<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" 
@@ -633,6 +658,24 @@ function changeSettings() {
 
 	$("#settingsModal").empty();
 	$("#settingsModal").append(boxes);
+
+
+	$('#firstNameInput').hide();
+	$('#lastNameInput').hide();
+	$('#userEmailInput').hide();
+
+	$('#confirmcontactFirstName').hide();
+	$('#cancelcontactFirstName').hide();
+	$('#confirmphoneNumber').hide();
+	$('#cancelphoneNumber').hide();
+	$('#confirmcontactLastName').hide();
+	$('#cancelcontactLastName').hide();
+	$('#confirmaddress').hide();
+	$('#canceladdress').hide();
+	$('#confirmemail').hide();
+	$('#cancelemail').hide();
+
+
 }
 
 
