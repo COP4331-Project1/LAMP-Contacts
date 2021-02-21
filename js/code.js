@@ -184,6 +184,14 @@ function edit(field) {
 
 	$("#" + field +"Input").show();
 	$("#" + field +"Text").hide();
+	$('#confirmationLast').show();
+}
+
+function cancel(field) {
+
+	$("#" + field +"Input").hide();
+	$("#" + field +"Text").show();
+	$('#confirmationLast').hide();
 }
 
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
@@ -207,8 +215,12 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
 	+"<i class='bi-pencil' onclick = 'edit(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" 
 	+"</div></div>" 
+	+"<div class = 'd-flex w-100 justify-content-end' id = 'confirmationLast'>" 
+	+"<i class='bi-x' onclick = 'cancel('contactLastName)'></i>" + "</div>"
+	+"<i class='bi-check' onclick = update('contactLastName','"+CID+"')'></i>" + "</div>"  
+	+"</div>"
 	+"<div class = 'contactLastName'>" 
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactLastNameInput' onchange = update('contactLastName','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactLastNameInput'  aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'contactLastNameText'><h4 id = 'contactLastName'>" + contactLastName + "</h4></div></div></div>"
 
 
@@ -261,6 +273,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	$('#contactFirstNameInput').hide();
 	$('#contactLastNameInput').hide();
 	$('#addressInput').hide();
+	$('#confirmationLast').hide();
 	$('#phoneNumberInput').hide();
 	$('#emailInput').hide();
 
@@ -377,28 +390,6 @@ function addContact() {
 		
 }
 
-function modify(field,CID) { //Replaces the paragraph for show contact
-
-	var fieldName = "." + field //Gets the field needed to be changed
-	var fieldText = field +"text" //For the text box
-	$(fieldName).empty()
-	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('"+field+"','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
-	"</div>"
-
-	$(fieldName).append(input)	
-}
-
-function modifySettings(field) { //Replaces the paragraph for settings
-
-	var fieldName = "." + field
-	var fieldText = field +"textSettings"
-	$(fieldName).empty()
-	var input = "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = settings('" + field + "') aria-describedby='inputGroup-sizing-default'>"
-	 + "</div>"
-
-	$(fieldName).append(input)	
-}
-
 function update(field,CID){ //For updating the contact 
 
 		var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateContact.php"
@@ -408,7 +399,8 @@ function update(field,CID){ //For updating the contact
 
 		var updateValue = $(inputField).val()
 		console.log(updateValue)
-		if(field == "contactEmail") field = "email"
+
+
 		var jsonData = JSON.stringify({"CID":CID,"field":field,"value":updateValue,"ID":ID})
 		
 		try {
