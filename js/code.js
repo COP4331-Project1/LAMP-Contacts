@@ -247,7 +247,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmphoneNumber' onclick = update('phoneNumber','"+CID+"')></i>"  
 	+"</div></div>"
 	+"<div class = 'phoneNumber'>" 
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'phoneNumberInput' onchange = update('phoneNumber','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'phoneNumberInput'  aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'phoneNumberText'><h4 id = 'phoneNumber'>" + phoneNumber + "</h4></div></div></div>"
 
 
@@ -260,7 +260,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'canceladdress' onclick = cancel('address')></i>"
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmaddress' onclick = update('address','"+CID+"')></i>"  
 	+"</div></div>"
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'addressInput' onchange = update('address','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'addressInput'  aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'addressText'><h4 id = 'address'>" + address + "</h4></div></div>"
 
 	+"<div class = 'row w-100 p-2'>" 
@@ -272,7 +272,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'cancelemail' onclick = cancel('email')></i>"
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmemail' onclick = update('email','"+CID+"')></i>"  
 	+"</div></div>"
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'emailInput' onchange = update('email','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'emailInput' aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'emailText'><h4 id = 'email'>" + email + "</h4></div></div>"
 
 	+"<div class = 'row w-100 p-2 g-0 d-flex flex-row'>"
