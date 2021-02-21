@@ -664,16 +664,14 @@ function changeSettings() {
 	$('#lastNameInput').hide();
 	$('#userEmailInput').hide();
 
-	$('#confirmcontactFirstName').hide();
-	$('#cancelcontactFirstName').hide();
-	$('#confirmphoneNumber').hide();
-	$('#cancelphoneNumber').hide();
-	$('#confirmcontactLastName').hide();
-	$('#cancelcontactLastName').hide();
-	$('#confirmaddress').hide();
-	$('#canceladdress').hide();
-	$('#confirmemail').hide();
-	$('#cancelemail').hide();
+	$('#confirmfirstName').hide();
+	$('#cancelfirstName').hide();
+	$('#confirmuserName').hide();
+	$('#canceluserName').hide();
+	$('#confirmlastName').hide();
+	$('#cancellastName').hide();
+	$('#confirmuserEmail').hide();
+	$('#canceluserEmail').hide();
 
 
 }
