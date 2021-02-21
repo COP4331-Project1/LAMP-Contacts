@@ -198,7 +198,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'd-flex w-100 justify-content-end'>" +
 	"<i class='bi-pencil' onclick = 'edit(" + '"contactFirstNameText"' + "," + CID + ")'></i>" + "</div>" 
 	+"</div>"
-	+ "</div> " 
+	+"</div> " 
 	+"<div class = 'contactFirstName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactFirstNameText' onchange = update('contactFirstNameText','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	+"<h4>" + contactFirstName + "</h4>" + "</div>" + "</div>"  + "</div>" +
@@ -245,7 +245,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"</div>" 
 
 	$(document).scrollTop($(document).height()) 
-	$("#contactFirstNameText").hide();
+	$('#contactFirstNameText').hide();
 	$("#contactView").empty();
 	$("#contactView").append(boxes);
 
