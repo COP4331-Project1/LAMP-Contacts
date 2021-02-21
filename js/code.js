@@ -327,6 +327,32 @@ function deleteAlertBox(CID) { //Displays the dialog box for deleting a contact
 
 }
 
+function closeDeleteAccount(){
+
+	$("#deleteAccount").modal('hide')
+	$("#settings").modal('show')
+}
+
+function deleteAccountBox() { //Displays the dialog box for deleting a contact
+
+	var deleteModal = "<div class='modal fade in' id='deleteAccount' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>"
+	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
+	+ "<div class='modal-content'>" 
+	+ "<div class='modal-header'>" 
+	+ "<h5 class='modal-title' id='exampleModalLongTitle'>Are you sure you want to delete this contact?</h5>"
+	+ "<button type='button' class='close' onclick = 'closeDeleteAccount()' aria-label='Close'>" 
+	  
+	+ "<span aria-hidden='true'>&times;</span>" 
+	+ "</button>" 
+	+ "</div>" 
+	+ "<div class= modal-body>"
+	+ "<button type='button' class='btn btn-danger' onclick = 'deleteUser()' aria-label='Close'>Delete</button>"
+	+ "</div> " + "</div>" + "</div>" + "</div>"
+		
+	$("#mainContainer").append(deleteAccount)
+
+}
+
 
 
 function showContact(contactNumber){ //Interacts with show contact endpoint to retreive necessary informatoin
