@@ -432,12 +432,12 @@ function addContact() {
 			if(this.status == 200 && this.readyState == 4){
 				var JSONObject = JSON.parse(xhr.responseText);
 				if(JSONObject.error == "This contact already exists."){
-				alert("This Contact Already Exists")
+				createAlert("This Contact Already Exists")
 				return;
 				}
 				else{
 					$('#add').modal('hide')
-					alert("Successfully Added Contact")
+					createAlert("Successfully Added Contact")
 				}
 			}
 		}
