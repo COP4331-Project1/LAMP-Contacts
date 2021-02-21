@@ -188,64 +188,81 @@ function edit(field) {
 
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
 
-	var boxes = "<div class = 'col w-100 bg-light border border-2 border-muted id = 'showContacs'>" +
-	"<div class = 'row w-100 p-2'>" +
-	"<div class = 'informationBox'>" +
-	"<div class = 'titleBox'>" +
-	"<h3 id = 'contactAttribute'>First</h3>" + 
-	"<div class = 'd-flex w-100 justify-content-end'>" +
-	"<i class='bi-pencil' onclick = 'edit(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" 
+	var boxes = "<div class = 'col w-100 bg-light border border-2 border-muted id = 'showContacts'>" 
+	+"<div class = 'row w-100 p-2'>" 
+	+"<div class = 'informationBox'>" 
+	+"<div class = 'titleBox'>" 
+	+"<h3 id = 'contactAttribute'>First</h3>" 
+	+"<div class = 'd-flex w-100 justify-content-end'>" 
+	+"<i class='bi-pencil' onclick = 'edit(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" 
 	+"</div></div>" 
 	+"<div class = 'contactFirstName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactFirstNameInput' onchange = update('contactFirstName','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'contactFirstNameText'><h4 id = 'contactFirstName'>" + contactFirstName + "</h4></div></div></div>"
 
-	+"<div class = 'row w-100 p-2'>" +
-	"<div class = 'informationBox'>" +
-	"<div class = 'titleBox'>" +
-	"<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
-	"<i class='bi-pencil' onclick = 'modify(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" +
-	"</div> " +
-	"<div class = 'contactLastName'>" +
-	"<h4>" + contactLastName + "</h4>" + "</div>" + "</div>" + "</div>" +
+	+"<div class = 'row w-100 p-2'>" 
+	+"<div class = 'informationBox'>" 
+	+"<div class = 'titleBox'>" 
+	+"<h3 id = 'contactAttribute'>Last</h3>" 
+	+"<div class = 'd-flex w-100 justify-content-end'>" 
+	+"<i class='bi-pencil' onclick = 'edit(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" 
+	+"</div></div>" 
+	+"<div class = 'contactLastName'>" 
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactLastNameInput' onchange = update('contactLastName','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"</div><div id = 'contactLastNameText'><h4 id = 'contactLastName'>" + contactLastName + "</h4></div></div></div>"
 
-	"<div class = 'row w-100 p-2'>" +
-	"<div class = 'informationBox'>" +
-	"<div class = 'titleBox'>" +
-	"<h3 id = 'contactAttribute'>Phone</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
-	"<i class='bi-pencil' onclick = 'modify(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" +
-	"</div> " +
-	"<div class = 'phoneNumber'>" +
-	"<h4>" + phoneNumber + "</h4>" + "</div>" + "</div>" + "</div>" +
 
-	"<div class = 'row w-100 p-2'>" +
-	"<div class = 'informationBox'>" +
-	"<div class = 'titleBox'>" +
-	"<h3 id = 'contactAttribute'>Address</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-	"<i class='bi-pencil' onclick = 'modify(" + '"address"' + "," + CID + ")'></i>" + "</div>" +
-	"</div> " +
-	"<div class = 'address'>" +
-	"<h4>" + address + "</h4>" + "</div>" + "</div>" + "</div>" +
+	+"<div class = 'row w-100 p-2'>" 
+	+"<div class = 'informationBox'>" 
+	+"<div class = 'titleBox'>" 
+	+"<h3 id = 'contactAttribute'>Phone</h3>" 
+	+"<div class = 'd-flex w-100 justify-content-end'>" 
+	+"<i class='bi-pencil' onclick = 'edit(" + '"phoneNuber"' + "," + CID + ")'></i>" + "</div>" 
+	+"</div></div>" 
+	+"<div class = 'phoneNumber'>" 
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'phoneNumber' onchange = update('phoneNumber','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"</div><div id = 'phoneNumberText'><h4 id = 'phoneNumber'>" + phoneNumber + "</h4></div></div></div>"
 
-	"<div class = 'row w-100 p-2'>" +
-	"<div class = 'informationBox'>" +
-	"<div class = 'titleBox'>" +
-	"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-	"<i class='bi-pencil' onclick = 'modify(" + '"contactEmail"' + "," + CID + ")'></i>" + "</div>" +
-	"</div> " +
-	"<div class = 'contactEmail'>" +
-	"<h4>"+ email + "</h4>" + "</div>" + "</div>" + "</div>" +
-	"<div class = 'row w-100 p-2 g-0 d-flex flex-row'>"+
-	"<div class = 'alert alert-primary w-50' role = 'alert'>Date Created: " + dateCreated + "</div>" +
-	"<div id = 'deleteButton'>" +
-	"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteAlertBox(" + CID + ")'></i>" +
-	"</div>" 
+
+	+"<div class = 'row w-100 p-2'>" 
+	+"<div class = 'informationBox'>" 
+	+"<div class = 'titleBox'>" 
+	+"<h3 id = 'contactAttribute'>Address</h3>" 
+	+"<div class = 'd-flex w-100 justify-content-end'>" 
+	+"<i class='bi-pencil' onclick = 'edit(" + '"address"' + "," + CID + ")'></i>" + "</div>" 
+	+"</div></div>" 
+	+"<div class = 'address'>" 
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'addressInput' onchange = update('address','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"</div><div id = 'addressText'><h4 id = 'contactFirstName'>" + address + "</h4></div></div></div>"
+
+	+"<div class = 'row w-100 p-2'>" 
+	+"<div class = 'informationBox'>" 
+	+"<div class = 'titleBox'>" 
+	+"<h3 id = 'contactAttribute'>Email</h3>" 
+	+"<div class = 'd-flex w-100 justify-content-end'>" 
+	+"<i class='bi-pencil' onclick = 'edit(" + '"email"' + "," + CID + ")'></i>" + "</div>" 
+	+"</div></div>" 
+	+"<div class = 'email'>" 
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactFirstNameInput' onchange = update('contactFirstName','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"</div><div id = 'emailText'><h4 id = 'email'>" + email + "</h4></div></div></div>"
+
+
+
+	+"<div class = 'row w-100 p-2 g-0 d-flex flex-row'>"
+	+"<div class = 'alert alert-primary w-50' role = 'alert'>Date Created: " + dateCreated + "</div>" 
+	+"<div id = 'deleteButton'>" 
+	+"<i class='bi-trash' style = 'color:red; font-size:30px' onclick = 'deleteAlertBox(" + CID + ")'></i>" 
+	+"</div>" 
 
 	$(document).scrollTop($(document).height()) 
 
 	$("#contactView").empty();
 	$("#contactView").append(boxes);
-	$('input').hide();
+	$('contactFirstNameInput').hide();
+	$('contactLastNameInput').hide();
+	$('contactAddressInput').hide();
+	$('contactPhoneNumberInput').hide();
+	$('contactEmailInput').hide();
 
 }
 
