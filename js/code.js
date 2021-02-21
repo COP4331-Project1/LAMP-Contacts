@@ -704,7 +704,7 @@ function gettingStarted(userName){
    + "</div>"
 +"</div>"
 
-
++"<center>"
     + "<div class='datetime'>"
    	 + "<div class='date'>"
          + "<span id ='day'>Day</span>, "
@@ -725,6 +725,7 @@ function gettingStarted(userName){
 		+ "<script> var dt = new Date(); var hr = dt.getHours(), pe = 'AM', min = dt.getMinutes() ; if(hr == 0){ hr = 12;} if(hr > 12){ hr = hr - 12; pe='PM';} document.getElementById('hour').innerHTML = hr; document.getElementById('minutes').innerHTML= min; document.getElementById('seconds').innerHTML = dt.getSeconds(); document.getElementById('period').innerHTML = pe; </script>"
     +"</div>"
 	+"</div>"
+	+"</center>"
     + "</div>"
 
 
