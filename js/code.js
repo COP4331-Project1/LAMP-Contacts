@@ -540,19 +540,19 @@ function settings(field) { //updates the user settings.
 
 	inputField = "#" +field + "Input"
 	textField = "#" +field + "Text"
-
+	var updateValue;
+	var correctField;
 	if(field == "password"){
 		updateValue = $("#newPassword").val()
-		updateValue = md5(updateValue)
+		correctField = md5(updateValue)
 	}
 	else {
-	var updateValue = $(inputField).val()
-	var correctField = field;
-	if(field == "userEmail") correctField = "email"
+		updateValue = $(inputField).val()
+		correctField = field;
+		if(field == "userEmail") correctField = "email"
 	}
 
 	var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateUser.php"
-
 	var jsonData = JSON.stringify({"ID":ID,"field":correctField,"value":updateValue})
 
 	try {
