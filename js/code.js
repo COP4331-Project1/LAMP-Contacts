@@ -632,10 +632,14 @@ function changeSettings() {
 	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
 	    
 	//Change made here
-	"<div class = 'alert alert-dark' role = 'alert'>Date Created: " + dateCreated + "</div>" +
+	
 
 	"<div class = 'password'>" +
 	"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
+
+	"<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" +
+
+
 	+ "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
 		
 	$("#settingsModal").empty();
