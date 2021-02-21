@@ -540,11 +540,13 @@ function settings(field) { //updates the user settings.
 
 	inputField = "#" +field + "Input"
 	textField = "#" +field + "Text"
+
 	var updateValue;
 	var correctField;
+
 	if(field == "password"){
-		updateValue = $("#newPassword").val()
-		correctField = md5(updateValue)
+		updateValue = md5($('#newPassword').val())
+		correctField = field
 	}
 	else {
 		updateValue = $(inputField).val()
