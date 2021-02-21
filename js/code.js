@@ -594,51 +594,46 @@ function closeModal() {
 //For changing user information
 function changeSettings() {
 
-	var boxes = "<div class = 'row w-100 p-3'>" +
-	"<div class = 'informationBox'>" +
-	"<div class = 'titleBox'>" +
-	"<h3 id = 'contactAttribute'>Username</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-	"<i class='bi-pencil' onclick = 'modifySettings(" + '"userName"' +")'></i>" + "</div>" +
-	"</div> " +
-	"<div class = 'userName'>" +
-	"<p>" + userName + "</p>" + "</div>" + "</div>"  + "</div>" +
+	var boxes = "<div class = 'row w-100 p-3'>" 
+	+"<div class = 'informationBox'>" 
+	+"<div class = 'titleBox'>" 
+	+"<h3 id = 'contactAttribute'>Username</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
+	+"<i class='bi-pencil' onclick = 'modifySettings(" + '"userName"' +")'></i>" + "</div>" +
+	+"</div> " 
+	+"<div class = 'userName'>" 
+	+"<p>" + userName + "</p></div></div></div>"
 
-	"<div class = 'row w-100 p-3'>" +
-	"<div class = 'informationBox'>" +
-	"<div class = 'titleBox'>" +
-	"<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" + 
-	"<i class='bi-pencil' onclick = 'modifySettings(" + '"firstName"' +")'></i>" + "</div>" +
-	"</div> " +
-    "<div class = 'firstName'>" +
-	"<p>" + firstName + "</p>" + "</div>" + "</div>" + "</div>" +
+	+"<div class = 'row w-100 p-3'>"
+	+"<div class = 'informationBox'>" 
+	+"<div class = 'titleBox'>" 
+	+"<h3 id = 'contactAttribute'>First</h3>" + "<div class = 'd-flex w-100 justify-content-end'>"
+	+"<i class='bi-pencil' onclick = 'modifySettings(" + '"firstName"' +")'></i></div></div>"
+    +"<div class = 'firstName'>"
+	+"<p>" + firstName + "</p></div></div></div>"
 
+	+"<div class = 'row w-100 p-3'>"
+	+"<div class = 'informationBox'>"
+	+"<div class = 'titleBox'>"
+	+"<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>"
+	+"<i class='bi-pencil' onclick = 'modifySettings(" + '"lastName"' + ")'></i></div>"
+	+"</div> " 
+	+"<div class = 'lastName'>" 
+	+"<p>" + lastName + "</p></div></div></div>"
 
-	"<div class = 'row w-100 p-3'>" +
-	"<div class = 'informationBox'>" +
-	"<div class = 'titleBox'>" +
-	"<h3 id = 'contactAttribute'>Last</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-	"<i class='bi-pencil' onclick = 'modifySettings(" + '"lastName"' + ")'></i>" + "</div>" +
-	"</div> " +
-	"<div class = 'lastName'>" +
-	"<p>" + lastName + "</p>" + "</div>" + "</div>" + "</div>" +
-
-	"<div class = 'row w-100 p-3'>" +
-	"<div class = 'informationBox'>" +
-	"<div class = 'titleBox'>" +
-	"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>" +
-	"<i class='bi-pencil' onclick = 'modifySettings(" + '"email"' +")'></i>" + "</div>" +
-	"</div> " +
-	"<div class = 'email'>" +
-	"<p>"+ email + "</p>" + "</div>" + "</div>" + "</div>" +
+	+"<div class = 'row w-100 p-3'>"
+	+"<div class = 'informationBox'>"
+	+"<div class = 'titleBox'>" 
+	+"<h3 id = 'contactAttribute'>Email</h3>" + "<div class = 'd-flex w-100 justify-content-end'>"
+	+"<i class='bi-pencil' onclick = 'modifySettings(" + '"email"' +")'></i></div>"
+	+"</div> " 
+	+"<div class = 'email'>"
+	+"<p>"+ email + "</p></div></div></div>"
 	    
-	//Change made here
-	
-	
-	"<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" +
-	"<div class='modal-footer' d-flex justify-content-end>" 
-	+"<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
-	+"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>"
-	+"</div>"
+	+"<div class = 'password'>" 
+	+"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
+
+	+ "<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" 
+	+ "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
 
 	$("#settingsModal").empty();
 	$("#settingsModal").append(boxes);
