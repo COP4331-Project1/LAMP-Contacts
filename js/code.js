@@ -214,11 +214,11 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<h3 id = 'contactAttribute'>Last</h3>" 
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
 	+"<i class='bi-pencil' onclick = 'edit(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" 
-	+"</div></div>" 
-	+"<div class = 'd-flex w-100 justify-content-end' id = 'confirmationLast'>" 
+	+"</div>"
+	+"<div class = 'd-flex w-100 justify-content-end' id = 'confirmLast'>" 
 	+"<i class='bi-x' onclick = 'cancel('contactLastName)'></i>"
 	+"<i class='bi-check' onclick = update('contactLastName','"+CID+"')'></i>"  
-	+"</div>"
+	+"</div></div>"
 	+"<div class = 'contactLastName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactLastNameInput'  aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'contactLastNameText'><h4 id = 'contactLastName'>" + contactLastName + "</h4></div></div></div>"
@@ -273,7 +273,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	$('#contactFirstNameInput').hide();
 	$('#contactLastNameInput').hide();
 	$('#addressInput').hide();
-	$('#confirmationLast').hide();
+	$('#confirmLast').hide();
 	$('#phoneNumberInput').hide();
 	$('#emailInput').hide();
 
