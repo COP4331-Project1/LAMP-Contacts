@@ -217,7 +217,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<h3 id = 'contactAttribute'>Last</h3>" 
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
 	+"<i class='bi-pencil' id = 'editLast' onclick = 'edit(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" 
-	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'cancelLast' onclick = cancel('contactLastName)'></i>"
+	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'cancelLast' onclick = cancel('contactLastName')></i>"
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmLast' onclick = update('contactLastName','"+CID+"')></i>"  
 	+"</div>"
 	+"<div class = 'contactLastName'>" 
