@@ -182,20 +182,28 @@ function fillSearchBox(JSONObject) {
 
 function edit(field) {
 
+	var cancel = "#cancel" + field
+	var confirm = "#confirm" + field
+	var edit = "#edit" + field
+
 	$("#" + field +"Input").show();
 	$("#" + field +"Text").hide();
-	$('#cancelLast').show();
-	$('#confirmLast').show();
-	$('#editLast').hide();
+	$(cancel).show();
+	$(confirm).show();
+	$(edit).hide();
 }
 
 function cancel(field) {
 
+	var cancel = "#cancel" + field
+	var confirm = "#confirm" + field
+	var edit = "#edit" + field
+
 	$("#" + field +"Input").hide();
 	$("#" + field +"Text").show();
-	$('#cancelLast').hide();
-	$('#confirmLast').hide();
-	$('#editLast').show();
+	$(cancel).hide();
+	$(confirm).hide();
+	$(edit).show();
 }
 
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
@@ -206,8 +214,10 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<div class = 'titleBox'>" 
 	+"<h3 id = 'contactAttribute'>First</h3>" 
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
-	+"<i class='bi-pencil' onclick = 'edit(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" 
-	+"</div></div>" 
+	+"<i class='bi-pencil' id = 'editFirst' onclick = 'edit(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" 
+	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'cancelcontactFirstName' onclick = cancel('contactFirstName')></i>"
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmcontactFirstName' onclick = update('contactFirstName','"+CID+"')></i>"  
+	+"</div>"
 	+"<div class = 'contactFirstName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactFirstNameInput' onchange = update('contactFirstName','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'contactFirstNameText'><h4 id = 'contactFirstName'>" + contactFirstName + "</h4></div></div></div>"
@@ -218,8 +228,8 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<h3 id = 'contactAttribute'>Last</h3>" 
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
 	+"<i class='bi-pencil' id = 'editLast' onclick = 'edit(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" 
-	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'cancelLast' onclick = cancel('contactLastName')></i>"
-	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmLast' onclick = update('contactLastName','"+CID+"')></i>"  
+	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'cancelcontactLastName' onclick = cancel('contactLastName')></i>"
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmcontactLastName' onclick = update('contactLastName','"+CID+"')></i>"  
 	+"</div>"
 	+"<div class = 'contactLastName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactLastNameInput'  aria-describedby='inputGroup-sizing-default'>"
@@ -231,8 +241,10 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<div class = 'titleBox'>" 
 	+"<h3 id = 'contactAttribute'>Phone</h3>" 
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
-	+"<i class='bi-pencil' onclick = 'edit(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" 
-	+"</div></div>" 
+	+"<i class='bi-pencil' id = 'editPhone' onclick = 'edit(" + '"phoneNumber"' + "," + CID + ")'></i>" + "</div>" 
+	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'cancelphoneNumber' onclick = cancel('phoneNumber')></i>"
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmphoneNumber' onclick = update('phoneNumber','"+CID+"')></i>"  
+	+"</div>"
 	+"<div class = 'phoneNumber'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'phoneNumberInput' onchange = update('phoneNumber','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'phoneNumberText'><h4 id = 'phoneNumber'>" + phoneNumber + "</h4></div></div></div>"
@@ -243,9 +255,10 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<div class = 'titleBox'>" 
 	+"<h3 id = 'contactAttribute'>Address</h3>" 
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
-	+"<i class='bi-pencil' onclick = 'edit(" + '"address"' + "," + CID + ")'></i>" + "</div>" 
-	+"</div></div>" 
-	+"<div class = 'address'>" 
+	+"<i class='bi-pencil' id = 'editAddress' onclick = 'edit(" + '"address"' + "," + CID + ")'></i>" + "</div>" 
+	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'canceladdress' onclick = cancel('address')></i>"
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmaddress' onclick = update('address','"+CID+"')></i>"  
+	+"</div>"
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'addressInput' onchange = update('address','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'addressText'><h4 id = 'address'>" + address + "</h4></div></div></div>"
 
@@ -254,9 +267,10 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<div class = 'titleBox'>" 
 	+"<h3 id = 'contactAttribute'>Email</h3>" 
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
-	+"<i class='bi-pencil' onclick = 'edit(" + '"email"' + "," + CID + ")'></i>" + "</div>" 
-	+"</div></div>" 
-	+"<div class = 'email'>" 
+	+"<i class='bi-pencil' id = 'editLast' onclick = 'edit(" + '"email"' + "," + CID + ")'></i>" + "</div>" 
+	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'cancelemail' onclick = cancel('email')></i>"
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmemail' onclick = update('email','"+CID+"')></i>"  
+	+"</div>"
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'emailInput' onchange = update('email','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'emailText'><h4 id = 'email'>" + email + "</h4></div></div></div>"
 
@@ -275,10 +289,20 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	$('#contactFirstNameInput').hide();
 	$('#contactLastNameInput').hide();
 	$('#addressInput').hide();
-	$('#confirmLast').hide();
-	$('#cancelLast').hide();
 	$('#phoneNumberInput').hide();
 	$('#emailInput').hide();
+
+	$('#confirmcontactFirstName').hide();
+	$('#cancelcontactFirstName').hide();
+	$('#confirmphoneNumber').hide();
+	$('#cancelphoneNumber').hide();
+	$('#confirmcontactLastName').hide();
+	$('#cancelcontactLastName').hide();
+	$('#confirmaddress').hide();
+	$('#canceladdress').hide();
+	$('#confirmemail').hide();
+	$('#cancelemail').hide();
+
 
 }
 
