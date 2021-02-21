@@ -179,6 +179,14 @@ function fillSearchBox(JSONObject) {
 	}
 
 }
+
+function edit(field,CID) {
+
+	$("#" + field).show();
+
+}
+
+
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
 
 	var boxes = "<div class = 'col w-100 bg-light border border-2 border-muted id = 'showContacs'>" +
@@ -187,7 +195,9 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<div class = 'titleBox'>" +
 	"<h3 id = 'contactAttribute'>First</h3>" + 
 	"<div class = 'd-flex w-100 justify-content-end'>" +
-	"<i class='bi-pencil' onclick = 'modify(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" +
+	"<i class='bi-pencil' onclick = 'edit(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" 
+	+ "<div class='input-group mb-1'>" + "<input type='text' class='form-control' id = '"+ fieldText + "' onchange = update('"+field+"','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	"</div>"
 	"</div> " +
 	"<div class = 'contactFirstName'>" +
 	"<h4>" + contactFirstName + "</h4>" + "</div>" + "</div>"  + "</div>" +
@@ -393,7 +403,6 @@ function update(fieldName,CID){ //For updating the contact
 			var JSONObject = JSON.parse(xhr.responseText)
 			if(JSONObject.err == "Update Success.") return
 			}
-
 		}
 		xhr.send(jsonData)
 
@@ -512,8 +521,6 @@ function settings(fieldName) { //updates the user settings.
 
 }
 	
-
-
 function searchAll(){
 
 	$("#searchbar").val("");
