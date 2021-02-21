@@ -413,8 +413,8 @@ function update(field,CID){ //For updating the contact
 			return;
 		}
 
-		$().hide()
-		$().text() = updateValue;
+		$(inputField).hide()
+		$(textField).text(updateValue)
 		$(fieldText).show()
 	
 }
