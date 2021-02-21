@@ -234,7 +234,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"</div></div>"
 	+"<div class = 'contactLastName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactLastNameInput'  aria-describedby='inputGroup-sizing-default'>"
-	+"</div><h4 id = 'contactLastName'>" + contactLastName + "</h4></div></div>"
+	+"</div><div id = 'contactFirstNameText'><h4 id = 'contactLastName'>" + contactLastName + "</h4></div></div></div>"
 
 
 	+"<div class = 'row w-100 p-2'>" 
