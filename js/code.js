@@ -189,6 +189,7 @@ function edit(field,CID) {
 
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
 
+	$("input").hide();
 	var boxes = "<div class = 'col w-100 bg-light border border-2 border-muted id = 'showContacs'>" +
 	"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
