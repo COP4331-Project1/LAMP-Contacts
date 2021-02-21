@@ -635,7 +635,7 @@ function changeSettings() {
 	
 	
 	"<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" +
-	"<div class='modal-footer'>" 
+	"<div class='modal-footer' d-flex justify-content-end>" 
 	+"<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
 	+"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>"
 	+"</div>"
