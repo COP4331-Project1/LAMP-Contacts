@@ -183,7 +183,7 @@ function fillSearchBox(JSONObject) {
 function edit(field,CID) {
 
 	$("#inputs").show();
-	$(".contactFirstName").hide();
+	$(".contactFirstNameText").hide();
 
 	
 }
@@ -201,8 +201,8 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"</div>"
 	+"</div> " 
 	+"<div class = 'contactFirstName'>" 
-	+"<div class='input-group mb-1' id = 'inputs'>" +"<input type='text' class='form-control' id = 'contactFirstNameText' onchange = update('contactFirstNameText','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
-	+"</div><h4 id = 'contactFirstName'>" + contactFirstName + "</h4>" + "</div>" + "</div>"
+	+"<div class='input-group mb-1' id = 'inputs'>" +"<input type='text' class='form-control' id = 'contactFirstNameInput' onchange = update('contactFirstNameText','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"</div><div class = 'contactFirstNameText'> h4 id = 'contactFirstName'>" + contactFirstName + "</h4></div></div></div>"
 
 	+"<div class = 'row w-100 p-2'>" +
 	"<div class = 'informationBox'>" +
