@@ -297,9 +297,9 @@ function showContact(contactNumber){ //Interacts with show contact endpoint to r
 
 		contactFirstName = checkEmpty(contactFirstName)
 		contactLastName = checkEmpty(contactLastName)
-		contactAddress = checkEmpty(contactAddress)
-		contactPhoneNumber = checkEmpty(contactPhoneNumber)
-		contactEmail = checkEmpty(contactEmail)
+		address = checkEmpty(address)
+		phoneNumber = checkEmpty(phoneNumber)
+		email = checkEmpty(email)
 
 	
 		createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) //update parameters with dateCreated
