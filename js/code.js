@@ -221,7 +221,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"</div></div>"
 	+"<div class = 'contactFirstName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactFirstNameInput' aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'contactFirstNameText'><h4 id = 'contactFirstName'>" + contactFirstName + "</h4></div></div></div>"
+	+"</div><div id = 'contactFirstNameText' class = 'informationText>" + contactFirstName + "</div></div></div>"
 
 	+"<div class = 'row w-100 p-2'>" 
 	+"<div class = 'informationBox'>" 
@@ -234,7 +234,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"</div></div>"
 	+"<div class = 'contactLastName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactLastNameInput'  aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'contactLastNameText'><h4 id = 'contactLastName'>" + contactLastName + "</h4></div></div></div>"
+	+"</div><div id = 'contactLastNameText' class = 'informationText>" + contactLastName + "</div></div></div>"
 
 
 	+"<div class = 'row w-100 p-2'>" 
@@ -248,7 +248,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"</div></div>"
 	+"<div class = 'phoneNumber'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'phoneNumberInput'  aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'phoneNumberText'><h4 id = 'phoneNumber'>" + phoneNumber + "</h4></div></div></div>"
+	+"</div><div id = 'phoneNumberText' class = 'informationText>" + phoneNumber + "</div></div></div>"
 
 
 	+"<div class = 'row w-100 p-2'>" 
@@ -261,7 +261,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmaddress' onclick = update('address','"+CID+"')></i>"  
 	+"</div></div>"
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'addressInput'  aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'addressText'><h4 id = 'address'>" + address + "</h4></div></div>"
+	+"</div><div id = 'addressText' class = 'informationText>" + address + "</div></div>"
 
 	+"<div class = 'row w-100 p-2'>" 
 	+"<div class = 'informationBox'>" 
@@ -273,7 +273,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmemail' onclick = update('email','"+CID+"')></i>"  
 	+"</div></div>"
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'emailInput' aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'emailText'><h4 id = 'email'>" + email + "</h4></div></div>"
+	+"</div><div id = 'emailText' class = 'informationText>" + email + "</div></div>"
 
 	+"<div class = 'row w-100 p-2 g-0 d-flex flex-row'>"
 	+"<div class = 'alert alert-primary w-50' role = 'alert'>Date Created: " + dateCreated + "</div>" 
@@ -603,7 +603,7 @@ function changeSettings() {
 	+"</div></div>"
 	+"<div class = 'userName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userNameInput' aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'userNameText'><h4 id = 'userName'>" + userName + "</h4></div></div></div>"
+	+"</div><div id = 'userNameText' class = 'informationText>" + userName + "</div></div></div>"
 
 	+"<div class = 'row w-100 p-2'>" 
 	+"<div class = 'informationBox'>" 
@@ -616,7 +616,7 @@ function changeSettings() {
 	+"</div></div>"
 	+"<div class = 'firstName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'firstNameInput'  aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'firstNameText'><h4 id = 'firstName'>" + firstName + "</h4></div></div></div>"
+	+"</div><div id = 'firstNameText' class = 'informationText>" + firstName + "</div></div></div>"
 
 
 	+"<div class = 'row w-100 p-2'>" 
@@ -643,7 +643,7 @@ function changeSettings() {
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmuserEmail' onclick = settings('userEmail')></i>"  
 	+"</div></div>"
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userEmailInput'  aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'userEmailText'><h4 id = 'userEmail'>" + address + "</h4></div></div>"
+	+"</div><div id = 'userEmailText' class = 'informationText>" + address + "</div></div>"
 
 	+"<div class = 'password'>" 
 	+"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
