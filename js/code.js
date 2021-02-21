@@ -737,7 +737,7 @@ function changeSettings() {
 	+"</div></div>"
 	+"<div class = 'lastName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'lastNameInput'  aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'lastNameText' class = 'informationText'>" + lastName + "</div></div>"
+	+"</div><div id = 'lastNameText' class = 'informationText'>" + lastName + "</div></div></div>"
 
 
 	+"<div class = 'row w-100 p-2'>" 
