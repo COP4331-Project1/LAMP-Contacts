@@ -637,7 +637,7 @@ function changeSettings() {
 	"<div class = 'password'>" +
 	"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
 
-	"<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" +
+	+ "<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" +
 
 
 	+ "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
