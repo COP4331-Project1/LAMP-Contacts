@@ -416,7 +416,7 @@ function addContact() {
 	var contactEmail = $("#email").val()
 	
 	if(contactFirstName == "" || contactLastName == "") { //Need to provide a first and last name
-		alert("First and Last name are required fields")
+		createAlert("First and Last name are required fields","danger","errorBar")
 		return;
 	}
 
@@ -649,7 +649,7 @@ function createAlert(errorMessage,type,page) {
 
 	$(page).remove("#alertBox")
 
-	var alert = "<div class='alert alert-dismissible alert-" +type+" fade show role='alert' id ='alertBox' >" + errorMessage + "</div>"
+	var alert = "<div class='alert alert-dismissible alert-" +type+" id ='alertBox' >" + errorMessage + "</div>"
 		
 	$(page).prepend(alert)
 
