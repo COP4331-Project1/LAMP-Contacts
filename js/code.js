@@ -692,6 +692,11 @@ function gettingStarted(userName){
 	var box = "<div class = 'col-10 bg-light h-100 border border-2 border-muted rounded-3 shadow-lg bg-white rounded p-2'>" 
 	+ "<h1 style id = 'startPageTitle' style = 'text-align:center'> Welcome, " + userName + "!</h1>"
 	
+	+ "<center>"
+	+"<div class='col-10 align-self-center p-2'>"
++ "<h2 id='quote' style='font-size:17px; color:grey; font-family: 'arial''>Thank you for choosing The People Wallet where all of your people are stored, updated, and deleted within the reach of your pocket.</h2></div>"
++"</center>"
+	
 	+ "<div class = 'row w-100 p-1'>"
 	+ "<p id ='startPageGuide'>Today's Date</p>"
 	+ "</div>"
