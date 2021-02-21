@@ -432,12 +432,12 @@ function addContact() {
 			if(this.status == 200 && this.readyState == 4){
 				var JSONObject = JSON.parse(xhr.responseText);
 				if(JSONObject.error == "This contact already exists."){
-				createAlert("This Contact Already Exists")
+				createAlert("This Contact Already Exists",danger,"mainContainer")
 				return;
 				}
 				else{
 					$('#add').modal('hide')
-					createAlert("Successfully Added Contact")
+					createAlert("Successfully Added Contact",success,"mainContainer")
 				}
 			}
 		}
@@ -643,14 +643,17 @@ function confirmChange() {
 
 }
 
-function createAlert(errorMessage) {
+function createAlert(errorMessage,type,page) {
 
-	$("#mainContaner").remove("#alertBox")
 
-	var alert = "<div class='alert alert-warning alert-dismissible fade show' role='alert' id ='alertBox'>" +
-    "<strong>Error</strong>" +  errorMessage + "</div>"
+	page = "#" + page
+
+	$(page).remove("#alertBox")
+
+	var alert = "<div class='alert alert-dismissible fade show alert-'"+type+"role='alert' id ='alertBox' >" +
+     +  errorMessage + "</div>"
 		
-	$("#mainContainer").prepend(alert)
+	$(page).prepend(alert)
 
 	$(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function(){
 		$(".alert-dismissible").alert('close');
