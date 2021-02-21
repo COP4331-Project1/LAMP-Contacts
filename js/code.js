@@ -694,7 +694,7 @@ function gettingStarted(userName){
 	
 	+ "<center>"
 	+"<div class='col-10 align-self-center p-2'>"
-+ "<h2 id='quote' style='font-size:17px; color:grey; font-family: "arial"'>Thank you for choosing The People Wallet where all of your people are stored, updated, and deleted within the reach of your pocket.</h2></div>"
++ "<h2 id='quote' style='font-size:17px; color:grey; font-family: 'arial''>Thank you for choosing The People Wallet where all of your people are stored, updated, and deleted within the reach of your pocket.</h2></div>"
 +"</center>"
 	
 	+ "<div class = 'row w-100 p-1'>"
