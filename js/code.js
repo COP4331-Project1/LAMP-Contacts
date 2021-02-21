@@ -184,7 +184,7 @@ function edit(field) {
 
 	$("#" + field +"Input").show();
 	$("#" + field +"Text").hide();
-	update(field,CID)
+
 
 }
 
