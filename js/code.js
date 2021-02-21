@@ -432,7 +432,7 @@ function addContact() {
 			if(this.status == 200 && this.readyState == 4){
 				var JSONObject = JSON.parse(xhr.responseText);
 				if(JSONObject.error == "This contact already exists."){
-				createAlert("This Contact Already Exists","danger","add")
+				createAlert("This Contact Already Exists","danger","errorBar")
 				return;
 				}
 				else{
@@ -645,7 +645,7 @@ function confirmChange() {
 
 function createAlert(errorMessage,type,page) {
 
-	page = "#" + page
+	page = "." + page
 
 	$(page).remove("#alertBox")
 
