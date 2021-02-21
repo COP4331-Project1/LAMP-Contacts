@@ -262,12 +262,6 @@ function deleteAlertBox(CID) { //Displays the dialog box for deleting a contact
 }
 
 
-function checkEmpty(string) { //Function to see 
-
-	if(!string || string.length == 0) return "N/A"
-	else return string
-
-}
 
 function showContact(contactNumber){ //Interacts with show contact endpoint to retreive necessary informatoin
 
@@ -518,42 +512,7 @@ function settings(fieldName) { //updates the user settings.
 
 }
 	
-function saveCookie(){ //Need to save cookies so if user refreshes page they are still remembered
 
-	var minutes = 20; //The time to save cookie
-	var date = new Date();
-	date.setTime(date.getTime()+(minutes*60*1000));	
-    document.cookie = "userName=" + userName + ",ID=" + ID + ";expires=" + date.toGMTString();
-    
-    //Saves the cookie to keep track of the user
-}
-
-function readCookie()
-{
-	ID = -1;
-	var data = document.cookie;
-	var splits = data.split(",");
-	for(var i = 0; i < splits.length; i++) 
-	{
-		var thisOne = splits[i].trim();
-		var tokens = thisOne.split("=");
-		if( tokens[0] == "userName" )
-		{
-			userName = tokens[1];
-		}
-		else if( tokens[0] == "ID" )
-		{
-			ID = parseInt( tokens[1].trim() );
-		}
-	}
-	if( ID < 0 )
-	{
-		window.location.href = "/index.html";
-	}
-
-	gettingStarted(userName)
-	
-}
 
 function searchAll(){
 
@@ -563,7 +522,7 @@ function searchAll(){
 
 //Following code is for the modals
 
-function addModal() {
+function showAdd() {
 
 	$(".errorBar").empty();
 	$('#add').modal('show')
@@ -579,19 +538,17 @@ function closeDelete() {
 	$('#deleteContact').modal('hide')
 }
 
-function settingsModal() {
+function showSettings() {
 
 	$('#settings').modal('show')
 	showUser()
 }
 
-function closeModal() {
+function closeSettings() {
 
 	$('#settings').modal('hide')
 }
 
-
-//For changing user information
 function changeSettings() {
 
 	var boxes = "<div class = 'row w-100 p-3'>" 
@@ -631,14 +588,13 @@ function changeSettings() {
 	    
 	+"<div class = 'password'>" 
 	+"<button type='button' class='btn btn-primary' onclick = modifySettings(" + '"password"' +")>Change Password</button>" + "</div><br></br>"
-
 	+ "<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" 
 	+ "<button type='button' class='btn btn-danger' onclick = deleteUser()>Delete Account</button>"
 
 	$("#settingsModal").empty();
 	$("#settingsModal").append(boxes);
-
 }
+
 
 function showUser() {
 
@@ -653,26 +609,28 @@ function showUser() {
 
 		xhr.onreadystatechange = function() {
 
-		if(this.readyState == 4 && this.status == 200) {
+			if(this.readyState == 4 && this.status == 200) {
 		
-		var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
+				var JSONObject = JSON.parse(xhr.responseText); //Parses the response text, converts to javascript object
 		
-		firstName = JSONObject.firstName
-		lastName  = JSONObject.lastName
-		address = JSONObject.address
-		userName = JSONObject.userName
-		email = JSONObject.email
-		dateCreated = JSONObject.dateCreated //added
+				firstName = JSONObject.firstName
+				lastName  = JSONObject.lastName
+				address = JSONObject.address
+				userName = JSONObject.userName
+				email = JSONObject.email
+				dateCreated = JSONObject.dateCreated //added
 
-		firstName = checkEmpty(firstName)
-		lastName = checkEmpty(lastName)
-		address = checkEmpty(address)
-		phoneNumber = checkEmpty(phoneNumber)
-		email = checkEmpty(email)
+				firstName = checkEmpty(firstName)
+				lastName = checkEmpty(lastName)
+				address = checkEmpty(address)
+				phoneNumber = checkEmpty(phoneNumber)
+				email = checkEmpty(email)
 		
-		changeSettings()
+				changeSettings()
+			}
 		}
-		}
+
+
 		xhr.send(jsonData); //Will send the data and when the state changes will recieve a response
 		
 	}
@@ -690,35 +648,35 @@ function gettingStarted(userName){
 	
 	+ "<center>"
 	+"<div class='col-10 align-self-center p-2'>"
-+ "<h2 id='quote' style='font-size:17px; color:grey; font-family: arial'>Thank you for choosing The People Wallet where all of your people are stored, updated, and deleted within the reach of your pocket.</h2></div>"
-+"</center>"
+	+ "<h2 id='quote' style='font-size:17px; color:grey; font-family: arial'>Thank you for choosing The People Wallet where all of your people are stored, updated, and deleted within the reach of your pocket.</h2></div>"
+	+"</center>"
 	+"<p></p>"
 	
-+"<div class='row justify-content-center'>"
+	+"<div class='row justify-content-center'>"
     +"<div class='col align-self-center'>"
-   + "<center id='startPageGuide'>Today's Date</center>"
-   + "</div>"
-+"</div>"
+   	+ "<center id='startPageGuide'>Today's Date</center>"
+   	+ "</div>"
+	+"</div>"
 
-+"<center>"
+	+"<center>"
     + "<div class='datetime'>"
-   	 + "<div class='date'>"
-         + "<span id ='day'>Day</span>, "
-		+ "<script> var dt = new Date(); var temp = dt.getDay(); var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']; document.getElementById('day').innerHTML = week[temp]; </script>"
-         + "<span id='month'>Month</span> "
-		+ "<script> var dt = new Date(); var temp = dt.getMonth(); var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; document.getElementById('month').innerHTML = month[temp]; </script>"
-         + "<span id='daynum'>00</span>, "
-		+ "<script> var dt = new Date(); document.getElementById('daynum').innerHTML = dt.getDate(); </script>"
-         + "<span id='year'>Year</span> "
-		+ "<script> var dt = new Date(); document.getElementById('year').innerHTML = dt.getFullYear(); </script>"
+   	+ "<div class='date'>"
+    + "<span id ='day'>Day</span>, "
+	+ "<script> var dt = new Date(); var temp = dt.getDay(); var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']; document.getElementById('day').innerHTML = week[temp]; </script>"
+    + "<span id='month'>Month</span> "
+	+ "<script> var dt = new Date(); var temp = dt.getMonth(); var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; document.getElementById('month').innerHTML = month[temp]; </script>"
+    + "<span id='daynum'>00</span>, "
+	+ "<script> var dt = new Date(); document.getElementById('daynum').innerHTML = dt.getDate(); </script>"
+    + "<span id='year'>Year</span> "
+	+ "<script> var dt = new Date(); document.getElementById('year').innerHTML = dt.getFullYear(); </script>"
     + "</div>"
 	
     +"<div class='time'>"
-        + "<span id='hour'>00</span>: "	
-        + "<span id='minutes'>00</span>: "
-        + "<span id='seconds'>00</span> "
-        + "<span id='period'>AM</span> "
-		+ "<script> var dt = new Date(); var hr = dt.getHours(), pe = 'AM', min = dt.getMinutes() ; if(hr == 0){ hr = 12;} if(hr > 12){ hr = hr - 12; pe='PM';} document.getElementById('hour').innerHTML = hr; document.getElementById('minutes').innerHTML= min; document.getElementById('seconds').innerHTML = dt.getSeconds(); document.getElementById('period').innerHTML = pe; </script>"
+    + "<span id='hour'>00</span>: "	
+    + "<span id='minutes'>00</span>: "
+    + "<span id='seconds'>00</span> "
+    + "<span id='period'>AM</span> "
+	+ "<script> var dt = new Date(); var hr = dt.getHours(), pe = 'AM', min = dt.getMinutes() ; if(hr == 0){ hr = 12;} if(hr > 12){ hr = hr - 12; pe='PM';} document.getElementById('hour').innerHTML = hr; document.getElementById('minutes').innerHTML= min; document.getElementById('seconds').innerHTML = dt.getSeconds(); document.getElementById('period').innerHTML = pe; </script>"
     +"</div>"
 	+"</div>"
 	+"</center>"
@@ -726,17 +684,59 @@ function gettingStarted(userName){
 	+"<div class='container'>"
     +"<div class='row justify-content-center'>"
 
-        +"<div class='col-lg-8 d-flex align-items-center justify-content-center'>"
+    +"<div class='col-lg-8 d-flex align-items-center justify-content-center'>"
    	+"<img class='img-fluid' src='/images/friends.png' alt='Responsive Image' width='270'>"
-       +" </div>"
-
-        +"</div>"
-
-+"</div>"
+    +" </div>"
+    +"</div>"
+	+"</div>"
     + "</div>"
-
 
 	$("#contactView").append(box)
 
+}
+
+
+function saveCookie(){ //Need to save cookies so if user refreshes page they are still remembered
+
+	var minutes = 20; //The time to save cookie
+	var date = new Date();
+	date.setTime(date.getTime()+(minutes*60*1000));	
+    document.cookie = "userName=" + userName + ",ID=" + ID + ";expires=" + date.toGMTString();
+    
+    //Saves the cookie to keep track of the user
+}
+
+function readCookie()
+{
+	ID = -1;
+	var data = document.cookie;
+	var splits = data.split(",");
+	for(var i = 0; i < splits.length; i++) 
+	{
+		var thisOne = splits[i].trim();
+		var tokens = thisOne.split("=");
+		if( tokens[0] == "userName" )
+		{
+			userName = tokens[1];
+		}
+		else if( tokens[0] == "ID" )
+		{
+			ID = parseInt( tokens[1].trim() );
+		}
+	}
+	if( ID < 0 )
+	{
+		window.location.href = "/index.html";
+	}
+
+	gettingStarted(userName)
+	
+}
+
+
+function checkEmpty(string) { //Function to see 
+
+	if(!string || string.length == 0) return "N/A"
+	else return string
 
 }
