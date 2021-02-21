@@ -667,7 +667,7 @@ function changePassword() {
 	+ "<button type='button' class='btn btn-primary' onclick = 'confirmChange()' aria-label='Close'>Confirm</button>"
 	+ "</div> " + "</div>" + "</div>" + "</div>"
 
-	$("#mainContainer").append(deleteModal)
+	$("#mainContainer").append(modal)
 	$("#settings").modal('hide')
 	$("#changePassowrd").modal('show')
 		
