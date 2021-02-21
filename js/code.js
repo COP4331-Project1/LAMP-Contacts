@@ -187,7 +187,7 @@ function edit(field) {
 	var edit = "#edit" + field
 
 	$("#" + field +"Input").show();
-	$("#" + field +"Text").hide();
+	$("#" + field).hide();
 	$(cancel).show();
 	$(confirm).show();
 	$(edit).hide();
@@ -200,7 +200,7 @@ function cancel(field) {
 	var edit = "#edit" + field
 
 	$("#" + field +"Input").hide();
-	$("#" + field +"Text").show();
+	$("#" + field).show();
 	$(cancel).hide();
 	$(confirm).hide();
 	$(edit).show();
@@ -421,7 +421,7 @@ function update(field,CID){ //For updating the contact
 		var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateContact.php"
 
 		inputField = "#" +field + "Input"
-		textField = "#" +field + "Text"
+		textField = "#" +field
 
 		var updateValue = $(inputField).val()
 		console.log(updateValue)
