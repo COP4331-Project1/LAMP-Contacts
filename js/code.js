@@ -392,6 +392,7 @@ function update(field,CID){ //For updating the contact
 		textField = "#" +field + "Text"
 
 		var updateValue = $(inputField).val()
+		console.log(updateValue)
 		if(field == "contactEmail") field = "email"
 		var jsonData = JSON.stringify({"CID":CID,"field":field,"value":updateValue,"ID":ID})
 		
