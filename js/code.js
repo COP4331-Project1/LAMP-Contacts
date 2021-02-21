@@ -185,7 +185,6 @@ function edit(field) {
 	$("#" + field +"Input").show();
 	$("#" + field +"Text").hide();
 
-
 }
 
 function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,email,CID,dateCreated) { //Shows the contact information when clicked on
@@ -199,7 +198,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	"<i class='bi-pencil' onclick = 'edit(" + '"contactFirstName"' + "," + CID + ")'></i>" + "</div>" 
 	+"</div></div>" 
 	+"<div class = 'contactFirstName'>" 
-	+"<div class='input-group mb-1' id = 'contactFirstNameInput'>" +"<input type='text' class='form-control' id = 'contactFirstNameInput' onchange = update('contactFirstName','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactFirstNameInput' onchange = update('contactFirstName','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'contactFirstNameText'><h4 id = 'contactFirstName'>" + contactFirstName + "</h4></div></div></div>"
 
 	+"<div class = 'row w-100 p-2'>" +
