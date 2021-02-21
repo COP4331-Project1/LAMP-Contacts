@@ -184,7 +184,9 @@ function edit(field) {
 
 	$("#" + field +"Input").show();
 	$("#" + field +"Text").hide();
-	$('#confirmationLast').show();
+	$('#cancelLast').show();
+	$('#confirmLast').show();
+	$('#editLast').show();
 }
 
 function cancel(field) {
@@ -213,7 +215,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<div class = 'titleBox'>" 
 	+"<h3 id = 'contactAttribute'>Last</h3>" 
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
-	+"<i class='bi-pencil' onclick = 'edit(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" 
+	+"<i class='bi-pencil' id = 'editLast' onclick = 'edit(" + '"contactLastName"' + "," + CID + ")'></i>" + "</div>" 
 	+"<i class='bi-x' id = 'cancelLast' onclick = 'cancel('contactLastName)'></i>"
 	+"<i class='bi-check' id = 'confirmLast' onclick = update('contactLastName','"+CID+"')'></i>"  
 	+"</div>"
