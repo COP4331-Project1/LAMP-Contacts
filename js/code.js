@@ -264,7 +264,7 @@ function deleteAlertBox(CID) { //Displays the dialog box for deleting a contact
 
 function checkEmpty(string) { //Function to see 
 
-	if(string=="") return "N/A"
+	if(string=="" || (!string)) return "N/A"
 	else return string
 
 }
