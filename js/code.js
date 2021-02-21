@@ -187,7 +187,7 @@ function edit(field) {
 	var edit = "#edit" + field
 
 	$("#" + field +"Input").show();
-	$("#" + field).hide();
+	$("#" + field +"Text").hide();
 	$(cancel).show();
 	$(confirm).show();
 	$(edit).hide();
@@ -200,7 +200,7 @@ function cancel(field) {
 	var edit = "#edit" + field
 
 	$("#" + field +"Input").hide();
-	$("#" + field).show();
+	$("#" + field +"Text").show();
 	$(cancel).hide();
 	$(confirm).hide();
 	$(edit).show();
@@ -234,7 +234,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"</div></div>"
 	+"<div class = 'contactLastName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'contactLastNameInput'  aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'contactLastNameText'><h4 id = 'contactLastName'>" + contactLastName + "</h4></div></div></div>"
+	+"</div><h4 id = 'contactLastName'>" + contactLastName + "</h4></div></div></div>"
 
 
 	+"<div class = 'row w-100 p-2'>" 
@@ -421,7 +421,7 @@ function update(field,CID){ //For updating the contact
 		var url = "http://www.cop4331group17.tech/LAMPAPI/UpdateContact.php"
 
 		inputField = "#" +field + "Input"
-		textField = "#" +field
+		textField = "#" +field + "Text"
 
 		var updateValue = $(inputField).val()
 		console.log(updateValue)
