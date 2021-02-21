@@ -182,8 +182,9 @@ function fillSearchBox(JSONObject) {
 
 function edit(field,CID) {
 
-	$("#contactFirstName").hide();
 	$("#inputs").show();
+	$("#contactFirstName").hide();
+
 	
 }
 
