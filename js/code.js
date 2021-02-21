@@ -8,7 +8,6 @@ ID  = 0
 var contacts = []
 
 
-
 function openHTTP(url,action){
 
 	var xhr = new XMLHttpRequest();
@@ -26,8 +25,7 @@ function login() {
     var jsonData = JSON.stringify({"userName" : userName , "password":  password}) //formats json to be sent over to login endpoint 
 
 	if (userName == ""||password == "") { //User needs to provide username and password to log in
-		$(".errorBar").empty();
-		$(".errorBar").append("<p id = 'errorText'> Please enter a username and password</p>");
+		createAlert("Please enter a username and password","danger",".errorBar")
 		return;
 	}
 
@@ -48,7 +46,7 @@ function login() {
 		
 		if( ID < 1 ) //Represents an error 
 		{		
-			createAlert("Incorrect Username/Password","danger","#loginBox")
+			createAlert("Incorrect Username/Password","danger",".errorBar")
 			return;
 
 		} else {
@@ -419,7 +417,7 @@ function addContact() {
 	var contactEmail = $("#email").val()
 	
 	if(contactFirstName == "" || contactLastName == "") { //Need to provide a first and last name
-		createAlert("First and Last name are required fields","danger","errorBar")
+		createAlert("First and Last name are required fields","danger",".errorBar")
 		return;
 	}
 
