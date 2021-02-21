@@ -416,7 +416,7 @@ function update(field,CID){ //For updating the contact
 
 		$(inputField).hide()
 		$(textField).text(updateValue)
-		$(fieldText).show()
+		$(textField).show()
 	
 }
 
