@@ -220,7 +220,7 @@ function createInfoBoxes(contactFirstName,contactLastName,address,phoneNumber,em
 	+"<i class='bi-pencil' onclick = 'edit(" + '"phoneNuber"' + "," + CID + ")'></i>" + "</div>" 
 	+"</div></div>" 
 	+"<div class = 'phoneNumber'>" 
-	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'phoneNumber' onchange = update('phoneNumber','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
+	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'phoneNumberInput' onchange = update('phoneNumber','"+CID+"') aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'phoneNumberText'><h4 id = 'phoneNumber'>" + phoneNumber + "</h4></div></div></div>"
 
 
