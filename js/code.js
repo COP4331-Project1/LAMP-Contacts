@@ -770,12 +770,10 @@ function changeSettings() {
 	+"</div></div>"
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userEmailInput'  aria-describedby='inputGroup-sizing-default'>"
 	+"</div><div id = 'userEmailText' class = 'informationText'>" + email + "</div></div></div>"
-
-	+"<div class = 'password'>" 
-	+"<button type='button' class='btn btn-primary' onclick = changePassword() >Change Password</button>" + "</div><br></br>"
 	+ "<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" 
 	+ "<button type='button' class='btn btn-danger' onclick = deleteAccountModal()>Delete Account</button>"
-
+	+"<div class = 'password'>" 
+	+"<button type='button' class='btn btn-primary' onclick = changePassword() >Change Password</button>" + "</div><br></br>"
 	$("#settingsModal").empty();
 	$("#settingsModal").append(boxes);
 
