@@ -69,7 +69,7 @@ function passwordStrength() {
 
 	password = $("#password").val();
 	var length = password.length
-	var mix =0;
+	var mix = 0;
 	var strength;
 	if(password.match("^[A-Za-z0-9]+$")) mix = 1;
 	
@@ -81,8 +81,9 @@ function passwordStrength() {
 
 	if(length >= 6 && mix == 1 ) strength = 100
 
+
 	var progress = "<div class='progress'>"
-  	+ "<div class='progress-bar' role='progressbar' style='width:" + strength + ";' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'>25%</div></div>"
+  	+ "<div class='progress-bar' role='progressbar' style='width:" + strength + "%;' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div></div>"
 
 	$("#passwordBox").empty()
 	$("#passwordBox").append(progress)
