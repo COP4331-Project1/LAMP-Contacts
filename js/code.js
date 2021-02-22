@@ -374,7 +374,7 @@ function deleteAccountModal() { //Displays the dialog box for deleting a contact
 	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
 	+ "<div class='modal-content'>" 
 	+ "<div class='modal-header'>" 
-	+ "<h5 class='modal-title' id='exampleModalLongTitle'>Are you sure you want to delete this account?</h5>"
+	+ "<h5 class='modal-title' id='title'>Are you sure you want to delete this account?</h5>"
 	+ "<button type='button' class='close' onclick = 'closeDeleteAccount()' aria-label='Close'>" 
 	  
 	+ "<span aria-hidden='true'>&times;</span>" 
@@ -694,7 +694,7 @@ function changePassword() {
 	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
 	+ "<div class='modal-content'>" 
 	+ "<div class='modal-header'>" 
-	+ "<h5 class='modal-title' id='exampleModalLongTitle'>Change Password</h5>"
+	+ "<h5 class='modal-title' id='title'>Change Password</h5>"
 	+ "<button type='button' class='close' onclick = 'closeChangePassword()' aria-label='Close'>" 
 	+ "<span aria-hidden='true'>&times;</span>" 
 	+ "</button>" 
