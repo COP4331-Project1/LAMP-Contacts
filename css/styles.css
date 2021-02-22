@@ -302,9 +302,4 @@ input[type="text"],input[type="password"]{
   color: black;
 }
 
-#border {
 
-    height:100%;
-    width:100%;
-    border-color: coral;
-}
