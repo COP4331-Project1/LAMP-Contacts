@@ -68,7 +68,7 @@ function login() {
 function passwordStrength() {
 
 	password = $("#password").val();
-	var length = password.length()
+	var length = password.length
 	var mix =0;
 	var strength;
 	if(password.match("^[A-Za-z0-9]+$")) mix = 1;
