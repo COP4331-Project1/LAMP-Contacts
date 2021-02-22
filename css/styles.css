@@ -302,4 +302,13 @@ input[type="text"],input[type="password"]{
   color: black;
 }
 
+.rotate_01
+{
+	webkit-transition: -webkit-transform 1s;
+	
+}
 
+.rotate_01:hover
+{
+	-webkit-transform: rotate(360deg) translateZ(0);
+}
