@@ -186,7 +186,6 @@ input[type="text"],input[type="password"]{
  #contactAttribute {
     font-family: "Trirong", serif;
     color: #9933ff;
-    background-color: red;
     animation-name: example;
     animation-duration: 10s;
     animation-iteration-count: infinite;
