@@ -21,9 +21,6 @@
 #title
 {
     font-size: 40px;
-    width: 100%;
-    margin: 2% 5%;
-    text-align: center;
     font-family: "Times New Roman", Times, serif;
     color: Black;
 }
@@ -214,9 +211,6 @@ input[type="text"],input[type="password"]{
     font-size:medium;
 
 }
-
-
-
 
 
 #startPageTitle{
