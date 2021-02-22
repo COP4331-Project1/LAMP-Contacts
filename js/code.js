@@ -345,7 +345,7 @@ function deleteAlertBox(CID) { //Displays the dialog box for deleting a contact
 	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
 	+ "<div class='modal-content'>" 
 	+ "<div class='modal-header'>" 
-	+ "<h5 class='modal-title' id='exampleModalLongTitle'>Are you sure you want to delete this contact?</h5>"
+	+ "<h5 class='modal-title' id='title'>Are you sure you want to delete this contact?</h5>"
 	+ "<button type='button' class='close' onclick = 'closeDelete()' aria-label='Close'>" 
 	  
 	+ "<span aria-hidden='true'>&times;</span>" 
@@ -769,7 +769,7 @@ function changeSettings() {
 	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmuserEmail' onclick = settings('userEmail')></i>"  
 	+"</div></div>"
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userEmailInput'  aria-describedby='inputGroup-sizing-default'>"
-	+"</div><div id = 'userEmailText' class = 'informationText'>" + address + "</div></div></div>"
+	+"</div><div id = 'userEmailText' class = 'informationText'>" + email + "</div></div></div>"
 
 	+"<div class = 'password'>" 
 	+"<button type='button' class='btn btn-primary' onclick = changePassword() >Change Password</button>" + "</div><br></br>"
