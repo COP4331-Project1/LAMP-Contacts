@@ -667,7 +667,7 @@ function closeChangePassword() {
 
 function confirmChange() {
 
-	var initialPassword = $('#initialPassword').val();
+	var initialPassword = $('#password').val();
 	var newPassword = $('#newPassword').val();
 
 	if(newPassword != initialPassword) createAlert("Passwords Do Not Match","danger","#changePassword")
@@ -701,9 +701,9 @@ function changePassword() {
 
 	+"</div>" 
 	+"<div class= modal-body>"
-	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder= Password id = 'initialPassword' aria-describedby='inputGroup-sizing-default'></div>"
-	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder= Confirm id = 'newPassword'  aria-describedby='inputGroup-sizing-default'></div>"
-
+	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder= Password id = 'password' oninput = passwordStrength() aria-describedby='inputGroup-sizing-default'></div>"
+	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder= 'Confirm Password' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'></div>"
+	+"<div id = 'passwordBox'></div>"
 	+"<div class='modal-footer'>"
 	+ "<button type='button' class='btn btn-primary' onclick = 'confirmChange()' aria-label='Close'>Confirm</button>"
 	+ "</div> " + "</div>" + "</div>" + "</div>"
