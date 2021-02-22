@@ -301,3 +301,10 @@ input[type="text"],input[type="password"]{
   background-color: #EDE9ED;
   color: black;
 }
+
+#border {
+
+    height:100%;
+    width:100%;
+    border-color: coral;
+}
