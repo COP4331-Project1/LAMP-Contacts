@@ -81,10 +81,10 @@ function passwordStrength() {
 
 	if(length >= 6 && mix == 1 ) strength = 100
 
-	var progress = "<div class='progress' id = 'progressBar'>"
-  	+ "<div class='progress-bar' role='progressbar' style='width: 25%;' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'>25%</div></div>"
+	var progress = "<div class='progress'>"
+  	+ "<div class='progress-bar' role='progressbar' style='width:" + strength + ";' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'>25%</div></div>"
 
-	$("#passwordBox").remove("#progressBar")
+	$("#passwordBox").remove(".progressBar")
 	$("#passwordBox").append(progress)
 }
 
