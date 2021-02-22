@@ -72,7 +72,7 @@ function passwordStrength() {
 	var color = "danger"
 	var mix = 0;
 	var strength;
-	if(password.match("^[A-Za-z0-9]+$")) mix = 1;
+	if(password.match("\S*(\S*([a-zA-Z]\S*[0-9])|([0-9]\S*[a-zA-Z]))\S*")) mix = 1;
 	
 	if(length < 6 && mix == 0 ) {
 	strength = 25;
