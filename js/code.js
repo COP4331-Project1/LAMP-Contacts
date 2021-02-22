@@ -84,7 +84,7 @@ function passwordStrength() {
 	var progress = "<div class='progress'>"
   	+ "<div class='progress-bar' role='progressbar' style='width:" + strength + ";' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'>25%</div></div>"
 
-	$("#passwordBox").remove(".progressBar")
+	$("#passwordBox").clear()
 	$("#passwordBox").append(progress)
 }
 
