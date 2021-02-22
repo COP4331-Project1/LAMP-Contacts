@@ -65,20 +65,27 @@ function login() {
 
 }
 
-function passwordStrength(password) {
+function passwordStrength() {
 
-	for (i = 0; i < cars.length; i++) {
-		text += cars[i] + "<br>";
-	  }
+	password = $("#password").val();
+	var length = password.length()
+	var mix =0;
+	var strength;
+	if(password.match("^[A-Za-z0-9]+$")) mix = 1;
+	
+	if(length < 6 && mix == 0 ) strength = 25;
+		
+	if(length < 6 && mix == 1 ) strength = 50 
 
-	  str.match(/[a-z]/i);
-	  str.match(/[a-z]/i);
+	if(length >= 6 && mix == 0 ) strength = 75
 
-	//Weak Password < 6 , only letters or numbers
-	//Mid password < 6 , letters and number
-	//Strong password >6 , only letters or numbes
-	//Very Strong Password , >6 letter and numbers
+	if(length >= 6 && mix == 1 ) strength = 100
 
+	var progress = "<div class='progress' id = 'progressBar'>"
+  	+ "<div class='progress-bar' role='progressbar' style='width: 25%;' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'>25%</div></div>"
+
+	$("#passwordBox").remove("#progressBar")
+	$("#passwordBox").append(progress)
 }
 
 function register() {
