@@ -876,7 +876,6 @@ function gettingStarted(userName){
     +"<div class='time'>"
     + "<span id='hour'>00</span>: "	
     + "<span id='minutes'>00</span>: "
-    + "<span id='seconds'>00</span> "
     + "<span id='period'>AM</span> "
 	+ "<script> var dt = new Date(); var hr = dt.getHours(), pe = 'AM', min = dt.getMinutes() ; if(hr == 0){ hr = 12;} if(hr > 12){ hr = hr - 12; pe='PM';} document.getElementById('hour').innerHTML = hr; document.getElementById('minutes').innerHTML= min; document.getElementById('period').innerHTML = pe; </script>"
     +"</div>"
