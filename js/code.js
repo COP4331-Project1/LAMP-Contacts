@@ -701,8 +701,8 @@ function changePassword() {
 
 	+"</div>" 
 	+"<div class= modal-body>"
-	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder= Password id = 'password' oninput = passwordStrength() aria-describedby='inputGroup-sizing-default'></div>"
-	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder= 'Confirm Password' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'></div>"
+	+"<div class='input-group mb-3'>" +"<input type='password' class='form-control' placeholder= Password id = 'password' oninput = 'passwordStrength()' aria-describedby='inputGroup-sizing-default'></div>"
+	+"<div class='input-group mb-3'>" +"<input type='password' class='form-control' placeholder= 'Confirm Password' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'></div>"
 	+"<div id = 'passwordBox'></div>"
 	+"<div class='modal-footer'>"
 	+ "<button type='button' class='btn btn-primary' onclick = 'confirmChange()' aria-label='Close'>Confirm</button>"
