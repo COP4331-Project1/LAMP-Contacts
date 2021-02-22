@@ -349,8 +349,6 @@ function closeDeleteAccount(){
 
 function deleteAccountModal() { //Displays the dialog box for deleting a contact
 
-
-
 	var deleteModal = "<div class='modal fade in' id='deleteAccount' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>"
 	+ "<div class='modal-dialog modal-dialog-centered' role='document'>"
 	+ "<div class='modal-content'>" 
@@ -682,8 +680,8 @@ function changePassword() {
 
 	+"</div>" 
 	+"<div class= modal-body>"
-	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' id = 'initialPassword' aria-describedby='inputGroup-sizing-default'></div>"
-	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'></div>"
+	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder='Old Password' id = 'initialPassword' aria-describedby='inputGroup-sizing-default'></div>"
+	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder='New Password' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'></div>"
 
 	+"<div class='modal-footer'>"
 	+ "<button type='button' class='btn btn-primary' onclick = 'confirmChange()' aria-label='Close'>Confirm</button>"
