@@ -307,7 +307,7 @@ input[type="text"],input[type="password"]{
 
 .rotate_01
 {
-	webkit-transition: -webkit-transform 1s;
+	-webkit-transition: -webkit-transform 1s;
 	
 }
 
