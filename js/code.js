@@ -886,7 +886,7 @@ function gettingStarted(userName){
     +"<div class='row justify-content-center'>"
 
     +"<div class='col-lg-8 d-flex align-items-center justify-content-center'>"
-   	+"<img class='img-fluid' src='/images/friends.png' alt='Responsive Image' width='270'>"
+   	+"<img class='img-fluid floating' src='/images/friends.png' alt='Responsive Image' width='270'>"
     +" </div>"
     +"</div>"
 	+"</div>"
