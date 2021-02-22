@@ -96,7 +96,7 @@ function passwordStrength() {
 
 
 	var progress = "<div class='progress'>"
-  	+ "<div class='progress-bar' bg-"+color+"role='progressbar' style='width:" + strength + "%;' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div></div>"
+  	+ "<div class='progress-bar bg-"+color+"'role='progressbar' style='width:" + strength + "%;' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div></div>"
 
 	$("#passwordBox").empty()
 	$("#passwordBox").append(progress)
