@@ -172,15 +172,13 @@ input[type="text"],input[type="password"]{
     justify-content:center;
  }
 
- /* The animation code */
-@keyframes example {
-    0%   {color: red;}
-    33%  {color: yellow;}
-    66%  {color: blue;}
-    100%   {color: red;}
-}
 
-/* The element to apply the animation to */
+@keyframes example {
+    0%   {color: #6699ff;}
+    33%  {color: #3333cc;}
+    66%  {color: #9933ff}
+    100%   {color: #9900cc;}
+}
 
  
  #contactAttribute {
