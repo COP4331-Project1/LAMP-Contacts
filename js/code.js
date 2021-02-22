@@ -680,7 +680,7 @@ function changePassword() {
 
 	+"</div>" 
 	+"<div class= modal-body>"
-	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder='Old Password' id = 'initialPassword' aria-describedby='inputGroup-sizing-default'></div>"
+	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder= 'Old Password' id = 'initialPassword' aria-describedby='inputGroup-sizing-default'></div>"
 	+"<div class='input-group mb-3'>" +"<input type='text' class='form-control' placeholder='New Password' id = 'newPassword'  aria-describedby='inputGroup-sizing-default'></div>"
 
 	+"<div class='modal-footer'>"
