@@ -725,7 +725,7 @@ function changeSettings() {
 	+"<div class = 'd-flex w-100 justify-content-end'>" 
 	+"<i class='bi-pencil' id = 'edituserName' onclick = edit('userName')></i>" + "</div>" 
 	+"<i class='bi-x' style = 'color:red; font-size:30px' id = 'canceluserName' onclick = cancel('userName')></i>"
-	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmuserName' onclick = settings('userName',)></i>"  
+	+"<i class='bi-check' style = 'color:green; font-size:30px' id = 'confirmuserName' onclick = settings('userName')></i>"  
 	+"</div></div>"
 	+"<div class = 'userName'>" 
 	+"<div class='input-group mb-1'>" +"<input type='text' class='form-control' id = 'userNameInput' aria-describedby='inputGroup-sizing-default'>"
@@ -773,6 +773,8 @@ function changeSettings() {
 
 
 	+ "<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" 
+
+	+ "<div class = 'errorBar'></div>"
 	
 	+"<div class = 'password'><div class = 'py-2'></div>"
 	+"<button type='button' class='btn btn-primary' onclick = changePassword() >Change Password</button>" + "</div><br></br>"
