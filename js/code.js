@@ -599,11 +599,7 @@ function settings(field) { //updates the user settings.
 			if(this.status == 200 && this.readyState == 4){
 			var JSONObject = JSON.parse(xhr.responseText);
 
-			if(JSONObject.error == "That username already exists!"){
-				createAlert("That username already exists!","danger",".errorBar")
-				cancel(field)
-				return;
-			} 
+		
 
 			if(JSONObject.error == "Update Success.") return;
 			}
@@ -615,6 +611,12 @@ function settings(field) { //updates the user settings.
 			console.log(err.message) //otherwise output error
 			return;
 		}
+
+		if(JSONObject.error == "That username already exists!"){
+			createAlert("That username already exists!","danger",".errorBar")
+			cancel(field)
+			return;
+		} 
 
 		if(field!= "password"){
  		$(textField).text(updateValue)
