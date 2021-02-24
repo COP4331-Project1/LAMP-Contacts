@@ -601,6 +601,7 @@ function settings(field) { //updates the user settings.
 
 			if(JSONObject.error == "That username already exists!"){
 				createAlert("That username already exists!","danger",".errorBar")
+				cancel(field)
 				return;
 			} 
 
