@@ -706,11 +706,11 @@ margin-bottom: 20px;
     },
     "contactFirstName" : {
       "type" : "string",
-      "example" : "Fred"
+      "example" : "Hello"
     },
     "contactLastName" : {
       "type" : "string",
-      "example" : "Lang"
+      "example" : "World"
     },
     "phoneNumber" : {
       "type" : "string",
@@ -752,7 +752,7 @@ margin-bottom: 20px;
   "properties" : {
     "userName" : {
       "type" : "string",
-      "example" : "fred"
+      "example" : "fred123"
     },
     "password" : {
       "type" : "string",
@@ -766,7 +766,7 @@ margin-bottom: 20px;
   "properties" : {
     "userName" : {
       "type" : "string",
-      "example" : "fred568"
+      "example" : "fred123"
     },
     "password" : {
       "type" : "string",
@@ -792,7 +792,7 @@ margin-bottom: 20px;
   "properties" : {
     "search" : {
       "type" : "string",
-      "example" : "Fre"
+      "example" : "He"
     },
     "ID" : {
       "type" : "integer",
@@ -822,31 +822,23 @@ margin-bottom: 20px;
 };
         defs["UpdateContact"] = {
   "type" : "object",
-  "required" : [ "CID", "address", "contactFirstName", "contactLastName", "email", "phoneNumber" ],
+  "required" : [ "CID", "ID", "field", "value" ],
   "properties" : {
     "CID" : {
       "type" : "integer",
       "example" : 1
     },
-    "contactFirstName" : {
+    "field" : {
       "type" : "string",
-      "example" : "Freddy"
+      "example" : "contactFirstName"
     },
-    "contactLastName" : {
+    "value" : {
       "type" : "string",
-      "example" : "Lang"
+      "example" : "Goodbye"
     },
-    "phoneNumber" : {
-      "type" : "string",
-      "example" : "308-858-7895"
-    },
-    "address" : {
-      "type" : "string",
-      "example" : "4586 ID Drive"
-    },
-    "email" : {
-      "type" : "string",
-      "example" : "helloSir@some.com"
+    "ID" : {
+      "type" : "integer",
+      "example" : 0
     }
   }
 };
@@ -945,7 +937,7 @@ margin-bottom: 20px;
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Add a contact associated with account.</p>
+                        <p class="marked">Add a contact to the a users account.</p>
                         <p></p>
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/AddContact.php</span></code></pre>
@@ -968,7 +960,7 @@ margin-bottom: 20px;
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-addContact-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://cop4331group17.tech/LAMPAPI/AddContact.php"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://www.cop4331group17.tech/LAMPAPI/AddContact.php"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-addContact-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1214,10 +1206,10 @@ $(document).ready(function() {
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Delete&#39;s the currently logged in users account from the User table.</p>
+                        <p class="marked">Delete&#39;s the currently logged in users account from the database, and any information associated with it.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/DeleteAccount.php</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/DeleteAccount.php</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -1237,7 +1229,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-deleteAccount-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://cop4331group17.tech/LAMPAPI/DeleteAccount.php"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "http://www.cop4331group17.tech/LAMPAPI/DeleteAccount.php"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-deleteAccount-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1483,10 +1475,10 @@ $(document).ready(function() {
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Delete a contact associated with account.</p>
+                        <p class="marked">Deletes the specified contact from the supplied ID representing the user.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/DeleteContact.php</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/DeleteContact.php</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -1506,7 +1498,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-deleteContact-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://cop4331group17.tech/LAMPAPI/DeleteContact.php"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "http://www.cop4331group17.tech/LAMPAPI/DeleteContact.php"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-deleteContact-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1752,7 +1744,7 @@ $(document).ready(function() {
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Logs in to the contact app</p>
+                        <p class="marked">Logs in to the specified user so long as the information is valid.</p>
                         <p></p>
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/Login.php</span></code></pre>
@@ -1775,7 +1767,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-login-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://cop4331group17.tech/LAMPAPI/Login.php"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://www.cop4331group17.tech/LAMPAPI/Login.php"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-login-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2044,7 +2036,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-register-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://cop4331group17.tech/LAMPAPI/Register.php"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://www.cop4331group17.tech/LAMPAPI/Register.php"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-register-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2285,12 +2277,12 @@ $(document).ready(function() {
                       <article id="api-Users-searchContact-0" data-group="User" data-name="searchContact" data-version="0">
                         <div class="pull-left">
                           <h1>searchContact</h1>
-                          <p>Partial match contacts based on input.</p>
+                          <p>Gets a list of contacts.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Partial match contacts based on input.</p>
+                        <p class="marked">Returns a list of contacts based on a match or partial match.</p>
                         <p></p>
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/search.php</span></code></pre>
@@ -2313,7 +2305,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-searchContact-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://cop4331group17.tech/LAMPAPI/search.php"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://www.cop4331group17.tech/LAMPAPI/search.php"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-searchContact-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2366,7 +2358,7 @@ public class UsersApiExample {
 
 UsersApi *apiInstance = [[UsersApi alloc] init];
 
-// Partial match contacts based on input.
+// Gets a list of contacts.
 [apiInstance searchContactWith:searchContactItem
               completionHandler: ^(NSError* error) {
                             if (error) {
@@ -2418,7 +2410,7 @@ namespace Example
 
             try
             {
-                // Partial match contacts based on input.
+                // Gets a list of contacts.
                 apiInstance.searchContact(searchContactItem);
             }
             catch (Exception e)
@@ -2474,7 +2466,7 @@ api_instance = swagger_client.UsersApi()
 searchContactItem =  # Search | SearchContact (optional)
 
 try: 
-    # Partial match contacts based on input.
+    # Gets a list of contacts.
     api_instance.search_contact(searchContactItem=searchContactItem)
 except ApiException as e:
     print("Exception when calling UsersApi->searchContact: %s\n" % e)</code></pre>
@@ -2559,7 +2551,7 @@ $(document).ready(function() {
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Shows the details of the contact in question.</p>
+                        <p class="marked">Gets all information associated with the contact in question.</p>
                         <p></p>
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/ShowContact.php</span></code></pre>
@@ -2582,7 +2574,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-showContact-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://cop4331group17.tech/LAMPAPI/ShowContact.php"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://www.cop4331group17.tech/LAMPAPI/ShowContact.php"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-showContact-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2851,7 +2843,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-showUser-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://cop4331group17.tech/LAMPAPI/ShowUser.php"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://www.cop4331group17.tech/LAMPAPI/ShowUser.php"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-showUser-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -3097,10 +3089,10 @@ $(document).ready(function() {
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Update a contact associated with account.</p>
+                        <p class="marked">Update a contact associated with ID.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/UpdateContact.php</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="patch"><code><span class="pln">/UpdateContact.php</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -3120,7 +3112,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-updateContact-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://cop4331group17.tech/LAMPAPI/UpdateContact.php"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X PATCH "http://www.cop4331group17.tech/LAMPAPI/UpdateContact.php"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-updateContact-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -3361,15 +3353,15 @@ $(document).ready(function() {
                       <article id="api-Users-updateUser-0" data-group="User" data-name="updateUser" data-version="0">
                         <div class="pull-left">
                           <h1>updateUser</h1>
-                          <p>Update a user associated with account.</p>
+                          <p>Update a user.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Update a user associated with account.</p>
+                        <p class="marked">Update the information of a user based on the changed field.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/UpdateUser.php</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="patch"><code><span class="pln">/UpdateUser.php</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -3389,7 +3381,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-updateUser-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://cop4331group17.tech/LAMPAPI/UpdateUser.php"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X PATCH "http://www.cop4331group17.tech/LAMPAPI/UpdateUser.php"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-updateUser-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -3442,7 +3434,7 @@ public class UsersApiExample {
 
 UsersApi *apiInstance = [[UsersApi alloc] init];
 
-// Update a user associated with account.
+// Update a user.
 [apiInstance updateUserWith:updateUserItem
               completionHandler: ^(NSError* error) {
                             if (error) {
@@ -3494,7 +3486,7 @@ namespace Example
 
             try
             {
-                // Update a user associated with account.
+                // Update a user.
                 apiInstance.updateUser(updateUserItem);
             }
             catch (Exception e)
@@ -3550,7 +3542,7 @@ api_instance = swagger_client.UsersApi()
 updateUserItem =  # UpdateUser | UpdateUser (optional)
 
 try: 
-    # Update a user associated with account.
+    # Update a user.
     api_instance.update_user(updateUserItem=updateUserItem)
 except ApiException as e:
     print("Exception when calling UsersApi->updateUser: %s\n" % e)</code></pre>
