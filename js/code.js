@@ -554,7 +554,7 @@ function deleteContact(CID){
 
 			if(this.status == 200 && this.readyState == 4){
 
-			if(jsonData.err = "Successful delete.") createAlert("Contact Deleted","success",".errorBar")
+			if(jsonData.err = "Successful delete.") createAlert("Contact Deleted","success","#mainContainer")
 			window.location.reload();	
 			}
 		}
