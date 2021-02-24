@@ -773,9 +773,11 @@ function changeSettings() {
 
 
 	+ "<div class = 'alert alert-primary' role = 'alert'>Date Created: " + dateCreated + "</div>" 
-	+ "<button type='button' class='btn btn-danger' onclick = deleteAccountModal()>Delete Account</button>"
+	
 	+"<div class = 'password'><div class = 'py-2'></div>"
 	+"<button type='button' class='btn btn-primary' onclick = changePassword() >Change Password</button>" + "</div><br></br>"
+	+ "<button type='button' class='btn btn-danger' onclick = deleteAccountModal()>Delete Account</button>"
+	
 	$("#settingsModal").empty();
 	$("#settingsModal").append(boxes);
 
