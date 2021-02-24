@@ -2,8 +2,8 @@ Diego Agudelo
 Diego Agudelo	
 
 
-Abdulrahman Al Sumaih
-Abdulrahman Al Sumaih	
+Abdulrahman Sumaih
+Abdulrahman Sumaih	
 
 
 Zachary Anderson
@@ -58,8 +58,8 @@ Seth Brockett
 Seth Brockett	
 
 
-Pablo Camara Ramirez
-Pablo Camara Ramirez	
+Pablo Ramirez
+Pablo Ramirez	
 
 
 Paola Canales
@@ -100,7 +100,7 @@ Adam Cook
 Victor Cook
 Victor Cook	
 
-TA
+
 Adrian Cooper
 Adrian Cooper	
 
@@ -113,8 +113,8 @@ Laurell Cuza
 Laurell Cuza 	
 
 
-Tristan De Blegiers
-Tristan De Blegiers	
+Tristan Blegiers
+Tristan Blegiers	
 
 
 James Deal
@@ -216,7 +216,6 @@ Kevin Galeano
 Kavya Garapati
 Kavya Garapati	
 
-TA
 Giampiero Giovingo
 Giampiero Giovingo	
 
@@ -245,8 +244,8 @@ Hannah Graves
 Hannah Graves	
 
 
-Juan Gutierrez Arias
-Juan Gutierrez Arias	
+Juan Arias
+Juan Arias	
 
 
 Joshua Gwynn
@@ -257,8 +256,8 @@ Noah Heikes
 Noah Heikes	
 
 
-Jose Herrada Pons
-Jose Herrada Pons	
+Jose Pons
+Jose Pons	
 
 
 Christopher Hinkle
@@ -271,7 +270,7 @@ Edgard Irineo
 Tristan Jaramillo-Pritchard
 Andres Jardon
 Aryan Jha
-Steven Jimenez Mora	
+Steven Jimenez 	
 Andrew John
 Jose Johnson
 David Jones
@@ -291,8 +290,8 @@ Rebecca Kizelewicz
 Rebecca Kizelewicz	
 
 
-Camila La Rosa Perez
-Camila La Rosa Perez	
+Camila Perez
+Camila Perez	
 
 
 Juan Landron
@@ -314,10 +313,8 @@ Ethan Legum
 Richard Leinecker
 Richard Leinecker	
 
-Teacher
 Lyndon-John Lemmers
 Lyndon-John Lemmers	
-
 
 Yubo Li
 Yubo Li	
@@ -435,8 +432,8 @@ Ryan Pattillo
 Ryan Pattillo	
 
 
-Matheus Pavini Franco Ferreira
-Matheus Pavini Franco Ferreira	
+Matheus Ferreira
+Matheus Ferreira	
 
 
 Samantha Perez
@@ -479,8 +476,8 @@ Alex Rizk
 Alex Rizk	
 
 
-Carlos Rodriguez Carrizales
-Carlos Rodriguez Carrizales	
+Carlos Carrizales
+Carlos Carrizales	
 
 
 Daniel Rodriguez
@@ -582,8 +579,8 @@ Daniel Vail
 Daniel Vail	
 
 
-Robinson Vasquez Ferrer
-Robinson Vasquez Ferrer	
+Robinson Ferrer
+Robinson Ferrer	
 
 
 Ashley Voglewede
